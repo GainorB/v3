@@ -1,6 +1,7 @@
 # always ignore :)
 .DS_Store
 /node_modules
+/dist
 
 # environments
 .env.local

@@ -4,34 +4,36 @@ A boilerplate for creating react apps. Includes hot module replacement and webpa
 
 # DEPENDENCIES
 
-1.  React
-2.  ReactDOM
+React
+ReactDOM
 
 # DEV DEPENDENCIES
 
-1.  **html-webpack-plugin:** Simplifies creation of HTML files to serve your webpack bundles
+**html-webpack-plugin:** Simplifies creation of HTML files to serve your webpack bundles
+**styled-jsx:** Full, scoped and component-friendly CSS support for JSX
 
 ## webpack
 
 To compile & bundle assets together into one file to serve to the browser
 
-2.  **webpack:**
-3.  **webpack-dev-server:**
-    Use webpack with a development server that provides live reloading. This should be used for development only.
-4.  **webpack-cli:** allows me to run webpack commands. Will use for the build script
+* **webpack:**
+
+**webpack-dev-server:**
+Use webpack with a development server that provides live reloading. This should be used for development only.
+**webpack-cli:** allows me to run webpack commands. Will use for the build script
 
 ## babel
 
 Turn ES6 (classes, imports, etc..) code into readable vanilla ES5
 
-5.  **babel-core:**
-6.  **babel-loader:** This package allows transpiling JavaScript files using Babel and webpack.
-7.  **babel-preset-env:** Babel preset that automatically determines the Babel plugins you need based on your supported environments. Compiles ES6 and beyond.
-8.  **babel-preset-react:** Transform JSX
+**babel-core:**
+**babel-loader:** This package allows transpiling JavaScript files using Babel and webpack.
+**babel-preset-env:** Babel preset that automatically determines the Babel plugins you need based on your supported environments. Compiles ES6 and beyond.
+**babel-preset-react:** Transform JSX
 
 ## INSTALL
 
-npm i react react-dom prop-types
+npm i react react-dom prop-types styled-jsx
 
 ### webpack
 
