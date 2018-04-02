@@ -11,6 +11,9 @@ A boilerplate application for creating react apps. Includes hot module replaceme
 
 * **html-webpack-plugin:** Simplifies creation of HTML files to serve your webpack bundles
 * **styled-jsx:** Full, scoped and component-friendly CSS support for JSX
+* **style-loader:** Adds CSS to the DOM by injecting a <style> tag
+* **css-loader:** interprets @import and url() like import/require() and will resolve them.
+* **file-loader:** instructs webpack to emit the required object as file and to return its public URL
 
 ## webpack
 
@@ -37,12 +40,8 @@ npm i react react-dom prop-types styled-jsx
 
 ### webpack
 
-npm i -D webpack webpack-dev-server webpack-cli
+npm i -D webpack webpack-dev-server webpack-cli css-loader style-loader html-webpack-plugin
 
 ### babel
 
 npm i -D babel-core babel-loader babel-preset-env babel-preset-react
-
-### misc
-
-npm i -D html-webpack-plugin
