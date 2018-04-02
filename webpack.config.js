@@ -19,12 +19,20 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.css$/,
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'My React App',
-      template: './src/index.html',
+      hash: true,
+      template: './src/index.html', // Load a custom template
     }),
   ],
+  devServer: {
+    port: 1337,
+  },
 };
