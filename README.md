@@ -2,6 +2,16 @@
 
 A boilerplate application for creating react apps. Includes hot module replacement and webpack's dev server.
 
+# Scripts
+
+When **webpack-dashboard** is enabled, update dev start script to:
+
+```javscript
+ "scripts": {
+    "dev": "webpack-dashboard webpack-dev-server --mode development --open --hot",
+ }
+```
+
 # DEPENDENCIES
 
 * React
@@ -15,6 +25,9 @@ A boilerplate application for creating react apps. Includes hot module replaceme
 * **css-loader:** interprets @import and url() like import/require() and will resolve them.
 * **file-loader:** instructs webpack to emit the required object as file and to return its public URL
 * **image-webpack-loader:** Minify PNG, JPEG, GIF, SVG and WEBP images with imagemin
+* **webpack-dashboard:** A CLI dashboard for webpack dev server
+* **clean-webpack-plugin:** A webpack plugin to remove your build folder(s) before building
+* **friendly-errors-webpack-plugin:** Recognizes certain classes of webpack errors and cleans, aggregates and prioritizes them to provide a better Developer Experience.
 
 ## webpack
 
@@ -40,7 +53,7 @@ npm i react react-dom prop-types styled-jsx
 
 ### webpack
 
-npm i -D webpack webpack-dev-server webpack-cli css-loader style-loader html-webpack-plugin image-webpack-loader file-loader
+npm i -D webpack webpack-dev-server webpack-cli css-loader style-loader html-webpack-plugin image-webpack-loader file-loader clean-webpack-plugin
 
 ### babel
 
