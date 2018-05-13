@@ -68,6 +68,7 @@ module.exports = {
   ],
   // webpack-dev-server options
   devServer: {
+    https: false, // enable SSL for localhost environment?
     port: 3001,
     quiet: true, // turns off webpack output including error message because FriendlyErrorsWebpackPlugin is enabled
   },
