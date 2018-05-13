@@ -1,9 +1,9 @@
 const path = require('path');
-// const webpack = require('webpack');
 // const WebpackDashboard = require('webpack-dashboard/plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const DEV_MODE = process.env.NODE_ENV !== 'production';
 
@@ -12,7 +12,7 @@ module.exports = {
   entry: './src/index.js',
   // where the compiled code goes
   output: {
-    path: path.join(__dirname, '/build'),
+    path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
   },
   // loaders
@@ -63,6 +63,7 @@ module.exports = {
       hash: true,
       template: './src/index.html', // Load a custom template
     }),
+    new Dotenv(),
     // new WebpackDashboard(), // enhanced dev experience with a cli
   ],
   // webpack-dev-server options

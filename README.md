@@ -1,6 +1,6 @@
 # create-gainor-app
 
-A boilerplate application for creating react apps. Includes hot module replacement and webpack's dev server.
+A boilerplate application for creating react apps. Includes hot module replacement and webpack's dev server. Also comes configured with ESLint and Prettier. :)
 
 # Scripts
 
@@ -37,6 +37,7 @@ To compile & bundle assets together into one file to serve to the browser
 * **webpack-dev-server:**
   Use webpack with a development server that provides live reloading. This should be used for development only.
 * **webpack-cli:** allows me to run webpack commands. Will use for the build script
+* **dotenv-webpack:** dotenv-webpack wraps dotenv and Webpack.DefinePlugin. As such, it does a text replace in the resulting bundle for any instances of process.env.
 
 ## babel
 
@@ -50,7 +51,7 @@ Turn ES6 (classes, imports, etc..) code into readable vanilla ES5
 
 ## INSTALL
 
-npm i react react-dom prop-types styled-jsx
+npm i react react-dom prop-types styled-jsx dotenv-webpack
 
 ### webpack
 
