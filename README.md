@@ -38,6 +38,8 @@ To compile & bundle assets together into one file to serve to the browser
   Use webpack with a development server that provides live reloading. This should be used for development only.
 * **webpack-cli:** allows me to run webpack commands. Will use for the build script
 * **dotenv-webpack:** dotenv-webpack wraps dotenv and Webpack.DefinePlugin. As such, it does a text replace in the resulting bundle for any instances of process.env.
+* **webpack-manifest-plugin:** will generate a manifest.json file in your root output directory with a mapping of all source file names to their corresponding output file
+* **extract-text-webpack-plugin@next:** Extract text from a bundle, or bundles, into a separate file: instead of inlining the CSS in JS, we create a separate style.css file that loads in parallel.
 
 ## babel
 
@@ -55,7 +57,7 @@ npm i react react-dom prop-types styled-jsx dotenv-webpack
 
 ### webpack
 
-npm i -D webpack webpack-dev-server webpack-cli css-loader style-loader html-webpack-plugin image-webpack-loader file-loader clean-webpack-plugin
+npm i -D webpack webpack-dev-server webpack-cli css-loader style-loader html-webpack-plugin image-webpack-loader file-loader clean-webpack-plugin extract-text-webpack-plugin@next
 
 ### babel
 

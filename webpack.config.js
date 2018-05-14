@@ -4,6 +4,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const DEV_MODE = process.env.NODE_ENV !== 'production';
 
@@ -13,7 +15,7 @@ module.exports = {
   // where the compiled code goes
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'bundle.js',
+    filename: 'static/js/bundle.js',
   },
   // loaders
   module: {
@@ -28,7 +30,10 @@ module.exports = {
       // allows importing/using css files (if I don't want to use styled-jsx)
       {
         test: /\.css$/,
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
       },
       // allows image support in .js files
       // creates an /images folder in /build when application is built
@@ -39,7 +44,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[hash]_[name].[ext]',
-              outputPath: 'images/',
+              outputPath: 'static/images/',
             },
           },
           // compress images
@@ -62,8 +67,22 @@ module.exports = {
       title: 'My React App',
       hash: true,
       template: './src/index.html', // Load a custom template
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+      },
     }),
-    new Dotenv(),
+    new ExtractTextPlugin('static/css/style.css'),
+    new Dotenv(), // allows .env support
+    new ManifestPlugin(), // will generate a manifest.json file in your root output directory with a mapping of all source file names to their corresponding output file,
     // new WebpackDashboard(), // enhanced dev experience with a cli
   ],
   // webpack-dev-server options
@@ -71,6 +90,12 @@ module.exports = {
     https: false, // enable SSL for localhost environment?
     port: 3001,
     quiet: true, // turns off webpack output including error message because FriendlyErrorsWebpackPlugin is enabled
+    // proxy: [
+    //   {
+    //     context: ['/auth', '/api'],
+    //     target: 'http://localhost:3000',
+    //   },
+    // ],
   },
   performance: {
     hints: false, // disable performance warnings
