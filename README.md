@@ -50,6 +50,7 @@ Turn ES6 (classes, imports, etc..) code into readable vanilla ES5
 * **babel-preset-env:** Babel preset that automatically determines the Babel plugins you need based on your supported environments. Compiles ES6 and beyond.
 * **babel-preset-react:** Transform JSX
 * **babel-plugin-transform-class-properties:** https://reactjs.org/docs/handling-events.html
+* **babel-plugin-transform-object-rest-spread:** Transform rest properties for object destructuring assignment and spread properties for object literals
 
 ## INSTALL
 
@@ -61,4 +62,4 @@ npm i -D webpack webpack-dev-server webpack-cli css-loader style-loader html-web
 
 ### babel
 
-npm i -D babel-core babel-loader babel-preset-env babel-preset-react babel-plugin-transform-class-properties
+npm i -D babel-core babel-loader babel-preset-env babel-preset-react babel-plugin-transform-class-properties babel-plugin-transform-object-rest-spread
