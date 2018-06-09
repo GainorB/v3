@@ -3,7 +3,6 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -81,7 +80,6 @@ module.exports = {
       },
     }),
     new ExtractTextPlugin('static/css/style.css'),
-    new Dotenv(), // allows .env support
     new ManifestPlugin(), // will generate a manifest.json file in your root output directory with a mapping of all source file names to their corresponding output file,
     // new WebpackDashboard(), // enhanced dev experience with a cli
   ],

@@ -37,7 +37,6 @@ To compile & bundle assets together into one file to serve to the browser
 * **webpack-dev-server:**
   Use webpack with a development server that provides live reloading. This should be used for development only.
 * **webpack-cli:** allows me to run webpack commands. Will use for the build script
-* **dotenv-webpack:** dotenv-webpack wraps dotenv and Webpack.DefinePlugin. As such, it does a text replace in the resulting bundle for any instances of process.env.
 * **webpack-manifest-plugin:** will generate a manifest.json file in your root output directory with a mapping of all source file names to their corresponding output file
 * **extract-text-webpack-plugin@next:** Extract text from a bundle, or bundles, into a separate file: instead of inlining the CSS in JS, we create a separate style.css file that loads in parallel.
 
