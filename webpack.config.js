@@ -13,7 +13,7 @@ module.exports = {
   entry: './src/index.js',
   // where the compiled code goes
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, './dist'),
     filename: 'static/js/bundle.js',
   },
   // loaders
@@ -60,7 +60,7 @@ module.exports = {
   // creates the template for the index.html file that react is injected into
   plugins: [
     new FriendlyErrorsWebpackPlugin(), // easier to read error messages
-    new CleanWebpackPlugin(['build']), // deletes the build folder in between builds
+    new CleanWebpackPlugin(['dist']), // deletes the build folder in between builds
     // points to the file where react is injected
     new HtmlWebpackPlugin({
       title: 'My React App',
@@ -85,9 +85,11 @@ module.exports = {
   ],
   // webpack-dev-server options
   devServer: {
+    noInfo: true,
     historyApiFallback: true, // serving index.html in place of any 404s
+    disableHostCheck: true, // fix this error: Invalid Host header
     https: false, // enable SSL for localhost environment?
-    port: 3001,
+    port: 3000,
     quiet: true, // turns off webpack output including error message because FriendlyErrorsWebpackPlugin is enabled
     // proxy: [
     //   {
