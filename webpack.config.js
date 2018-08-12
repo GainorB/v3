@@ -85,7 +85,7 @@ module.exports = {
   ],
   // webpack-dev-server options
   devServer: {
-    noInfo: true,
+    noInfo: true, // disable webpack bundle information on startup
     historyApiFallback: true, // serving index.html in place of any 404s
     disableHostCheck: true, // fix this error: Invalid Host header
     https: false, // enable SSL for localhost environment?
@@ -94,7 +94,9 @@ module.exports = {
     // proxy: [
     //   {
     //     context: ['/auth', '/api'],
-    //     target: 'http://localhost:3000',
+    //     target: 'http://[::1]:8080',
+    //     secure: false,
+    //     changeOrigin: true,
     //   },
     // ],
   },
