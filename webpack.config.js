@@ -1,38 +1,43 @@
 const path = require('path');
-// const WebpackDashboard = require('webpack-dashboard/plugin');
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const DEV_MODE = process.env.NODE_ENV !== 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   // entry file for react
   entry: './src/index.js',
   // where the compiled code goes
   output: {
-    path: path.join(__dirname, './dist'),
-    filename: 'static/js/bundle.js',
+    path: path.join(__dirname, 'dist'),
+    filename: isProduction ? 'assets/js/[name].[contenthash].js' : 'assets/js/[name].[hash].js',
   },
+  // Enable sourcemaps for debugging webpack's output.
+  devtool: !isProduction ? 'source-map' : 'inline-source-map',
   // loaders
   module: {
     rules: [
+      { test: /\.css$/, use: [{ loader: 'style-loader' }] },
       {
         test: /\.(js|jsx)$/, // (RegEXP) anything that is .js/.jsx will be compiled by babel
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /dist/],
         use: {
           loader: 'babel-loader',
         },
       },
-      // allows importing/using css files (if I don't want to use styled-jsx)
+      // handle making a single css file
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader',
-        }),
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+        ],
       },
       // allows image support in .js files
       // creates an /images folder in /build when application is built
@@ -42,8 +47,9 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[hash]_[name].[ext]',
-              outputPath: 'static/images/',
+              name: '[hash].[ext]',
+              outputPath: 'assets/images',
+              useRelativePath: isProduction,
             },
           },
           // compress images
@@ -55,16 +61,29 @@ module.exports = {
           },
         ],
       },
+      // handle fonts
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/fonts',
+            },
+          },
+        ],
+      },
     ],
   },
   // creates the template for the index.html file that react is injected into
   plugins: [
+    new webpack.HashedModuleIdsPlugin(),
     new FriendlyErrorsWebpackPlugin(), // easier to read error messages
     new CleanWebpackPlugin(['dist']), // deletes the build folder in between builds
     // points to the file where react is injected
     new HtmlWebpackPlugin({
       title: 'My React App',
-      hash: true,
       template: './src/index.html', // Load a custom template
       minify: {
         removeComments: true,
@@ -79,9 +98,13 @@ module.exports = {
         minifyURLs: true,
       },
     }),
-    new ExtractTextPlugin('static/css/style.css'),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: !isProduction ? 'assets/css/[name].css' : 'assets/css/[name].[hash].css',
+      chunkFilename: !isProduction ? 'assets/css/[id].css' : 'assets/css/[id].[hash].css',
+    }),
     new ManifestPlugin(), // will generate a manifest.json file in your root output directory with a mapping of all source file names to their corresponding output file,
-    // new WebpackDashboard(), // enhanced dev experience with a cli
   ],
   // webpack-dev-server options
   devServer: {
@@ -103,5 +126,20 @@ module.exports = {
   performance: {
     hints: false, // disable performance warnings
   },
-  devtool: DEV_MODE ? 'inline-source-map' : 'source-map',
+  // It's also good practice to extract third-party libraries,
+  // such as lodash or react, to a separate vendor chunk as they are less
+  // likely to change than our local source code. This step will allow clients
+  // to request even less from the server to stay up to date.
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
 };
