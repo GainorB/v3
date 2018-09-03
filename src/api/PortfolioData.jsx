@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { v1 } from 'uuid';
 import {
   ListGroup,
   MoreDetails,
@@ -51,25 +52,6 @@ class PortfolioData extends Component {
     ],
   };
 
-  // mapTech = tech => {
-  //   const key = {
-  //     react: '../../assets/images/tech/react.png',
-  //     js: '../../assets/images/tech/javascript.png',
-  //     html: '../../assets/images/tech/html5.png',
-  //     css: '../../assets/images/tech/css3.png',
-  //     webpack: '../../assets/images/tech/webpack.png',
-  //     node: '../../assets/images/tech/nodejs.png',
-  //     postgres: '../../assets/images/tech/postgresql.png',
-  //     mongo: '../../assets/images/tech/mongodb.png',
-  //     jquery: '../../assets/images/tech/jquery.png',
-  //     express: '../../assets/images/tech/expressjs.png',
-  //     restful: '../../assets/images/tech/restful.png',
-  //     firebase: '../../assets/images/tech/firebase.png',
-  //   };
-
-  //   return key[tech];
-  // };
-
   parseData = () => {
     const { data } = this.state;
 
@@ -85,8 +67,8 @@ class PortfolioData extends Component {
     //   height: '100%',
     // };
 
-    const output = data.map((p, idx) => (
-      <ProjectGrid key={`${p.name}_${idx}`}>
+    const output = data.map(p => (
+      <ProjectGrid key={v1()}>
         <img src={p.image} alt={p.name} />
         <Project>
           <ListGroup>
@@ -103,7 +85,7 @@ class PortfolioData extends Component {
                 </div>
               ))}
             </li> */}
-            <li>{p.technologies.map(t => <Tech>{t}</Tech>)}</li>
+            <li>{p.technologies.map(t => <Tech key={v1()}>{t}</Tech>)}</li>
             <li>
               <a href={p.resources[1]} target="_blank" rel="noopener noreferrer">
                 <Online>View Online</Online>

@@ -1,8 +1,8 @@
 import { InTouch, ListGroup } from './List';
 import { MainNav } from './Nav';
-import { MoreDetails, Online, Project, ProjectDesc, ProjectGrid, Tech } from './Portfolio';
+import { MoreDetails, Online, Project, ProjectDesc, ProjectGrid, ProjectTitle, Tech } from './Portfolio';
 import { Hub, Repo, SideMenu } from './SideMenu';
-import { MyName, ProjectTitle, SectionDesc, SectionHeader, SideMenuHeader, SubHeader } from './Text';
+import { MyName, SectionDesc, SectionHeader, SideMenuHeader } from './Text';
 import { PageWrapper, PortfolioWrapper, SectionWrapper } from './Wrapper';
 
 export {
@@ -10,7 +10,6 @@ export {
   InTouch,
   PageWrapper,
   MyName,
-  SubHeader,
   SectionHeader,
   SideMenuHeader,
   SectionDesc,

@@ -8,7 +8,7 @@ export const SectionWrapper = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 250px;
+  ${props => (props.theme.height ? `height: ${props.theme.height}` : 'min-height: 250px')};
   padding: 15px;
 
   .footer {
@@ -43,9 +43,14 @@ export const SectionWrapper = styled.div`
 
   button i {
     position: absolute;
-    left: 15px;
+    left: 22px;
     top: 24px;
     font-size: 2rem;
+  }
+
+  button span {
+    position: relative;
+    right: -17px;
   }
 
   button:hover {

@@ -65,6 +65,10 @@ export const Online = styled(MoreDetails)`
   }
 `;
 
+export const ProjectTitle = styled.h1`
+  color: #272d50;
+`;
+
 export const ProjectDesc = styled.div`
   line-height: 1.3rem;
 `;

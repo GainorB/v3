@@ -11,13 +11,6 @@ export const MyName = styled.h1`
     0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 `;
 
-export const SubHeader = styled.h2`
-  color: #f7f7f7;
-  font-size: 1rem;
-  letter-spacing: 2px;
-  margin-top: 10px;
-`;
-
 export const SectionHeader = styled.h2`
   font-size: 2rem;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
@@ -55,9 +48,4 @@ export const SideMenuHeader = styled.h4`
   border-bottom: 1px solid #10102c;
   padding-bottom: 0.5em;
   color: #10102c;
-`;
-
-// portfolio projects title
-export const ProjectTitle = styled.h1`
-  color: #272d50;
 `;

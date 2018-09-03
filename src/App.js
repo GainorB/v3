@@ -1,6 +1,7 @@
 import React from 'react';
 import PortfolioData from './api/PortfolioData.jsx';
 import TheSkills from './api/TheSkills.jsx';
+import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import Introduction from './components/Introduction.jsx';
 import Portfolio from './components/Portfolio.jsx';
@@ -22,6 +23,7 @@ const App = () => (
       {/* <Route path="/" exact component={Home} /> */}
       <Skills />
       <TheSkills />
+      <Contact />
       <Footer />
     </div>
   </PageWrapper>
