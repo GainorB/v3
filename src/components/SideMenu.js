@@ -33,9 +33,9 @@ const Feed = () => (
         <li>Crafting clean interfaces</li>
       </ListGroup>
     </div>
-    <div className="twitter">
+    {/* <div className="twitter">
       <SideMenuHeader>Twitter Feed</SideMenuHeader>
-    </div>
+    </div> */}
     {/* <div className="blog">
       <SideMenuHeader>From the blog</SideMenuHeader>
     </div> */}

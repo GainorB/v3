@@ -9,8 +9,6 @@ export const ExpGrid = styled.div`
   border: 1px solid #dddddd;
 
   .exp__companyDescription {
-    font-weight: bold;
-    font-style: italic;
     color: #666666;
   }
 
@@ -33,7 +31,7 @@ export const ExpGrid = styled.div`
 
 export const ExpHeaderGrid = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 100px 1fr;
   grid-gap: 20px;
   align-items: center;
   font-size: 1rem;
@@ -64,6 +62,7 @@ export const ExpHeaderGrid = styled.div`
 
 export const ExpFooter = styled.div`
   padding: 20px;
+  color: #2f2f3a;
   font-size: 0.9rem;
   background: #dddddd;
   margin-bottom: 0.5em;

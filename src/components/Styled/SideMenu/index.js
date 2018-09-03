@@ -8,12 +8,11 @@ import styled from 'styled-components';
 
 export const SideMenu = styled.div`
   display: grid;
-  grid-template-rows: repeat(20, auto);
-  grid-auto-flow: row;
+  grid-template-rows: repeat(6, auto);
+  grid-row-gap: 20px;
   padding: 60px 20px;
   font-size: 0.9rem;
   height: 100%;
-  overflow: auto;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   background: #f8f9fa;
 
@@ -68,10 +67,9 @@ export const SideMenu = styled.div`
     border: 1px solid #e9ecef;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 1000px) {
     grid-template-rows: repeat(5, auto);
     font-size: 0.9rem;
-    grid-row-gap: 20px;
     padding: 20px;
   }
 `;

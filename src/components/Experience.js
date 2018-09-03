@@ -70,8 +70,8 @@ const array = [
 
 const parseExperience = () => {
   const output = array.map(e => (
-    <Fragment>
-      <ExpGrid key={v1()}>
+    <Fragment key={v1()}>
+      <ExpGrid>
         <ExpHeaderGrid>
           <img src={e.companyLogo} alt={e.companyName} />
           <div className="exp__companyName">

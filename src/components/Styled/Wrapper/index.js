@@ -83,18 +83,21 @@ export const SectionWrapper = styled.div`
 
 export const PageWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1.4fr 5fr;
+  grid-template-columns: 1.5fr 5fr;
   grid-template-areas: 'sidebar main';
 
   .sidebar {
     grid-area: 'sidebar';
+    overflow: auto;
+    max-height: 100vh;
   }
 
   .miniWrapper {
+    max-height: 100vh;
     grid-area: 'main';
     display: grid;
     grid-auto-flow: row;
-    min-height: 100vh;
+    overflow: auto;
   }
 
   @media only screen and (max-width: 1200px) {
