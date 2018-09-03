@@ -1,7 +1,7 @@
 import React from 'react';
 import PortfolioData from './api/PortfolioData.jsx';
+import TheSkills from './api/TheSkills.jsx';
 import Footer from './components/Footer.jsx';
-// import Home from './components/Home.jsx';
 import Introduction from './components/Introduction.jsx';
 import Portfolio from './components/Portfolio.jsx';
 import SideMenu from './components/SideMenu.jsx';
@@ -16,12 +16,12 @@ const App = () => (
       <SideMenu />
     </div>
     <div className="miniWrapper">
-      {/* <Header /> */}
       <Introduction />
       <Portfolio />
       <PortfolioData />
       {/* <Route path="/" exact component={Home} /> */}
       <Skills />
+      <TheSkills />
       <Footer />
     </div>
   </PageWrapper>

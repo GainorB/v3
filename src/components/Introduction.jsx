@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { SectionDesc, SectionHeader, SectionWrapper } from './Styled';
+import { MyName, SectionDesc, SectionWrapper } from './Styled';
 
 // const logo = require('../../assets/images/logo.jpeg');
 const theme = {
@@ -10,7 +10,7 @@ const theme = {
 const Introduction = () => (
   <ThemeProvider theme={theme}>
     <SectionWrapper bg="#2f2f3a">
-      <SectionHeader>Introduction</SectionHeader>
+      <MyName>Gainor Bostwick</MyName>
       <SectionDesc>
         Skilled Full Stack Developer, passionate about developing applications that will bring about change in peoples’
         lives by utilizing my personal experiences, interests, and expertise to provide unforgettable experiences. A
