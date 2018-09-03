@@ -1,7 +1,7 @@
 import React from 'react';
 import Github from '../api/Github.jsx';
 import GetInTouch from './GetInTouch.jsx';
-import { ListGroup, SideMenu, SideMenuHeader } from './Styled';
+import { InTouch, ListGroup, SideMenu, SideMenuHeader } from './Styled';
 
 const logo = require('../../assets/images/logo.jpeg');
 
@@ -42,6 +42,14 @@ const Feed = () => (
     <div className="github">
       <SideMenuHeader>Github</SideMenuHeader>
       <Github />
+    </div>
+    <div className="resume">
+      <SideMenuHeader>Resume</SideMenuHeader>
+      <ListGroup>
+        <InTouch resume>
+          <i className="fas fa-id-card-alt" />
+        </InTouch>
+      </ListGroup>
     </div>
     <div className="inTouch">
       <SideMenuHeader>Stalk me</SideMenuHeader>
