@@ -6,4 +6,4 @@
 6. Include Filters for skills
 7. Case Study
 8. Redux? 🤔
-9. Fix sidebar grid layout (Stretching)
+9. ~~Fix sidebar grid layout (Stretching)~~
