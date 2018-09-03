@@ -14,7 +14,6 @@ export const SectionWrapper = styled.div`
   .footer {
     font-size: 0.9rem;
     text-transform: uppercase;
-    color: #5e5e5e;
   }
 
   button {

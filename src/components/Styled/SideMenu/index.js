@@ -13,7 +13,6 @@ export const SideMenu = styled.div`
   padding: 60px 20px;
   font-size: 0.9rem;
   height: 100%;
-  border: 1px solid #e9ecef;
   overflow: auto;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   background: #f8f9fa;

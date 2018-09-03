@@ -8,7 +8,7 @@ const theme = {
 
 const Contact = () => (
   <ThemeProvider theme={theme}>
-    <SectionWrapper bg="#45425c">
+    <SectionWrapper bg="#2f2f3a">
       <SectionHeader>By now, you're blown away. Let's 🎉.</SectionHeader>
       <SectionDesc>I am available for hire and open to any ideas of cooperation.</SectionDesc>
       <a href="mailto:hi@gainorbostwick.com" target="_blank" rel="noopener noreferrer">

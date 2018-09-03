@@ -1,5 +1,6 @@
 import React from 'react';
 import { v1 } from 'uuid';
+import { SkillContainer, SkillWrapper } from '../components/Styled';
 
 const skills = [
   'HTML5',
@@ -25,9 +26,14 @@ const skills = [
   'Ruby',
   'Rails',
   'Webpack',
+  'Handlebars',
+  'Gulp',
   // 'Flexbox',
-  // 'CSS Grid',
-  // 'Digital Ocean',
+  'CSS Grid',
+  'Digital Ocean',
+  'Mocha',
+  'Babel',
+  'Next',
 ];
 
 const mapTech = tech => {
@@ -55,40 +61,27 @@ const mapTech = tech => {
     Ruby: { src: '../../assets/images/tech/ruby.png', tech },
     Rails: { src: '../../assets/images/tech/rails.png', tech },
     Webpack: { src: '../../assets/images/tech/webpack.png', tech },
+    Handlebars: { src: '../../assets/images/tech/handlebars.png', tech },
+    Gulp: { src: '../../assets/images/tech/gulp.png', tech },
+    Mocha: { src: '../../assets/images/tech/mocha.png', tech },
+    Babel: { src: '../../assets/images/tech/babel.png', tech },
+    Next: { src: '../../assets/images/tech/next.png', tech },
+    'CSS Grid': { src: '../../assets/images/tech/cssgrid.png', tech },
+    'Digital Ocean': { src: '../../assets/images/tech/digitalocean.png', tech },
   };
 
   return key[tech];
 };
 
 const TheSkills = () => {
-  const grid = {
-    display: 'grid',
-    gridTemplateRows: '1fr auto',
-    gridGap: '10px',
-    fontSize: '0.9rem',
-    textAlign: 'center',
-    margin: '0.5em',
-  };
-
-  const outputGrid = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 100px))',
-    gridGap: '15px',
-  };
-
-  const imgStyle = {
-    width: '100%',
-    height: '100%',
-    objectFit: 'contain',
-  };
-
   const output = skills.map(mapTech).map(t => (
-    <div key={v1()}>
-      <img src={t.src} alt={t.tech} style={imgStyle} />
-    </div>
+    <SkillWrapper key={v1()}>
+      <img src={t.src} alt={t.tech} />
+      <span>{t.tech}</span>
+    </SkillWrapper>
   ));
 
-  return <div style={outputGrid}>{output}</div>;
+  return <SkillContainer>{output}</SkillContainer>;
 };
 
 export default TheSkills;

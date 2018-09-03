@@ -2,6 +2,7 @@ import { InTouch, ListGroup } from './List';
 import { MainNav } from './Nav';
 import { MoreDetails, Online, Project, ProjectDesc, ProjectGrid, ProjectTitle, Tech } from './Portfolio';
 import { Hub, Repo, SideMenu } from './SideMenu';
+import { SkillContainer, SkillWrapper } from './Skills';
 import { MyName, SectionDesc, SectionHeader, SideMenuHeader } from './Text';
 import { PageWrapper, PortfolioWrapper, SectionWrapper } from './Wrapper';
 
@@ -26,4 +27,6 @@ export {
   Tech,
   Online,
   ProjectDesc,
+  SkillWrapper,
+  SkillContainer,
 };

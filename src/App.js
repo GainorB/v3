@@ -4,6 +4,7 @@ import TheSkills from './api/TheSkills.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import Introduction from './components/Introduction.jsx';
+// import Map from './components/Map.jsx';
 import Portfolio from './components/Portfolio.jsx';
 import SideMenu from './components/SideMenu.jsx';
 // import PropTypes from 'prop-types';
@@ -24,6 +25,7 @@ const App = () => (
       <Skills />
       <TheSkills />
       <Contact />
+      {/* <Map /> */}
       <Footer />
     </div>
   </PageWrapper>
