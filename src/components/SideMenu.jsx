@@ -27,6 +27,7 @@ const Feed = () => (
       <ListGroup>
         <li>React</li>
         <li>GraphQL</li>
+        <li>Typescript</li>
         <li>Apollo Client</li>
         <li>Design Systems</li>
         <li>Crafting clean interfaces</li>

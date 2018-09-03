@@ -8,8 +8,9 @@ import styled from 'styled-components';
 
 export const SideMenu = styled.div`
   display: grid;
-  grid-template-rows: repeat(5, auto);
-  padding: 100px 20px;
+  grid-template-rows: repeat(20, auto);
+  grid-auto-flow: row;
+  padding: 60px 20px;
   font-size: 0.9rem;
   height: 100%;
   border: 1px solid #e9ecef;
@@ -69,7 +70,10 @@ export const SideMenu = styled.div`
   }
 
   @media only screen and (max-width: 700px) {
+    grid-template-rows: repeat(5, auto);
     font-size: 0.9rem;
+    grid-row-gap: 20px;
+    padding: 20px;
   }
 `;
 

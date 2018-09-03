@@ -9,8 +9,8 @@ const theme = {
 const Contact = () => (
   <ThemeProvider theme={theme}>
     <SectionWrapper bg="#45425c">
-      <SectionHeader>By now, you're blown away. Let's 🎉.</SectionHeader>
-      <SectionDesc>I am available for hire and open to any ideas of cooperation.</SectionDesc>
+      <SectionHeader>Skills</SectionHeader>
+      <SectionDesc>I work primarily with Javascript, Node.js and React.js.</SectionDesc>
     </SectionWrapper>
   </ThemeProvider>
 );

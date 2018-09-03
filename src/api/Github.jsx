@@ -18,8 +18,6 @@ class Github extends Component {
   profileInformation = async () => {
     const ENDPOINT = 'https://api.github.com/users/GainorB';
     const { id, public_repos, followers, following, updated_at } = await fetch(ENDPOINT).then(res => res.json());
-    const test = await fetch(ENDPOINT).then(res => res.json());
-    console.log(test);
 
     if (id) {
       this.setState({

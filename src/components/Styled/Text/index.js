@@ -57,3 +57,8 @@ export const SideMenuHeader = styled.h4`
   padding-bottom: 0.5em;
   color: #10102c;
 `;
+
+// portfolio projects title
+export const ProjectTitle = styled.h1`
+  color: #272d50;
+`;

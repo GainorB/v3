@@ -39,12 +39,12 @@ export const PageWrapper = styled.div`
 
   @media only screen and (max-width: 1200px) {
     grid-template-columns: 100%;
-    grid-row-gap: 20px;
     grid-template-areas: 'sidebar' 'main';
   }
 `;
 
 export const PortfolioWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
 `;
