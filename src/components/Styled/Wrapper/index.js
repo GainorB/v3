@@ -73,7 +73,7 @@ export const SectionWrapper = styled.div`
 
   button:hover {
     background: #fff;
-    color: #2f2f39;
+    color: #1c4e8a;
   }
 
   @media only screen and (max-width: 700px) {

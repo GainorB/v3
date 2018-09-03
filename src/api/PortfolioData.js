@@ -19,7 +19,7 @@ class PortfolioData extends Component {
     data: [
       {
         name: 'MaskOFF',
-        image: '../../assets/images/maskoff.png',
+        image: '../../assets/images/projects/maskoff.png',
         description:
           "A marketplace designed to trade your most hyped items (grails). A grail is a thing that is being earnestly pursued or sought after. An unregistered user is able to browse the marketplace to view active trades but to create a trade or view detailed information relating to a listing, you'll need to create an account. A registered user, is able to create listings and view detailed information regarding each listing. Furthermore, when registered you can accept trades and interact with users.",
         technologies: ['js', 'jquery', 'postgres', 'express', 'node'],
@@ -27,7 +27,7 @@ class PortfolioData extends Component {
       },
       {
         name: 'Memedr',
-        image: '../../assets/images/memedr.png',
+        image: '../../assets/images/projects/memedr.png',
         description:
           'Memedr is an application that brings people together based on their choice of memes. A meme is a humorous image, video, piece of text, etc., that is copied (often with slight variations) and spread rapidly by Internet users. A user is presented with a meme, they can choose if they like it or not. Upon liking a meme, users are matched with other users who share the same liked meme. Once matched, users see each others profile and are able to contact each other from there.',
         technologies: ['js', 'restful', 'express', 'node', 'postgres', 'react'],
@@ -35,7 +35,7 @@ class PortfolioData extends Component {
       },
       {
         name: 'GoodNews',
-        image: '../../assets/images/goodNews.png',
+        image: '../../assets/images/projects/goodNews.png',
         description:
           'An application that finds churches surrounding a user utilizing Google Places and Maps API. A user can leave reviews on churches they visited and SMS location information for easier accessibility. Reviews are published publically to help other users find churches.',
         technologies: ['js', 'restful', 'express', 'node', 'postgres'],
@@ -43,7 +43,7 @@ class PortfolioData extends Component {
       },
       {
         name: 'Typr',
-        image: '../../assets/images/typr.png',
+        image: '../../assets/images/projects/typr.png',
         description:
           'A game built primarily with vanilla Javascript, utilizing axios to fetch an API to display random unrepeating words. Focused on testing and improving typing skills and speed. The user can select the difficulty of the game by choosing the word length. At the end, high scores are saved in a Google Firebase database.',
         technologies: ['js', 'restful', 'firebase'],

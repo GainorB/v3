@@ -1,6 +1,6 @@
 import React from 'react';
-import Github from '../api/Github.jsx';
-import GetInTouch from './GetInTouch.jsx';
+import Github from '../api/Github';
+import GetInTouch from './GetInTouch';
 import { InTouch, ListGroup, SideMenu, SideMenuHeader } from './Styled';
 
 const logo = require('../../assets/images/logo.jpeg');

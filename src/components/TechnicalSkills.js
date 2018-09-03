@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { debounce } from 'lodash';
 import { ThemeProvider } from 'styled-components';
-import TheSkills from '../api/TheSkills.jsx';
+import TheSkills from '../api/TheSkills';
 import { SectionDesc, SectionHeader, SectionWrapper } from './Styled';
 
 const theme = {
