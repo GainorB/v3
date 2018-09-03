@@ -1,40 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { v1 } from 'uuid';
 import { SkillContainer, SkillWrapper } from '../components/Styled';
-
-const skills = [
-  'HTML5',
-  'CSS3',
-  'SASS',
-  'Javascript',
-  'jQuery',
-  'React',
-  'TypeScript',
-  'GraphQL',
-  'Node',
-  'Express',
-  'PostgreSQL',
-  'RESTful APIs',
-  'MongoDB',
-  'Heroku',
-  'Github',
-  'Bootstrap',
-  'Materialize',
-  'Foundation',
-  'Firebase',
-  'Wordpress',
-  'Ruby',
-  'Rails',
-  'Webpack',
-  'Handlebars',
-  'Gulp',
-  // 'Flexbox',
-  'CSS Grid',
-  'Digital Ocean',
-  'Mocha',
-  'Babel',
-  'Next',
-];
 
 const mapTech = tech => {
   const key = {
@@ -73,8 +40,8 @@ const mapTech = tech => {
   return key[tech];
 };
 
-const TheSkills = () => {
-  const output = skills.map(mapTech).map(t => (
+const TheSkills = props => {
+  const output = props.skills.map(mapTech).map(t => (
     <SkillWrapper key={v1()}>
       <img src={t.src} alt={t.tech} />
       <span>{t.tech}</span>
@@ -82,6 +49,10 @@ const TheSkills = () => {
   ));
 
   return <SkillContainer>{output}</SkillContainer>;
+};
+
+TheSkills.propTypes = {
+  skills: PropTypes.array.isRequired,
 };
 
 export default TheSkills;

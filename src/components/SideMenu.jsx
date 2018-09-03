@@ -52,7 +52,7 @@ const Feed = () => (
       </ListGroup>
     </div>
     <div className="inTouch">
-      <SideMenuHeader>Stalk me</SideMenuHeader>
+      <SideMenuHeader>Where I hang out</SideMenuHeader>
       <GetInTouch />
     </div>
     {/* <div className="instagram">

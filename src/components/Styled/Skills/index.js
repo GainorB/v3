@@ -15,7 +15,6 @@ export const SkillWrapper = styled.div`
 
   img {
     width: 100%;
-    height: 100%;
     max-height: 100px;
     object-fit: contain;
   }
@@ -35,7 +34,7 @@ export const SkillWrapper = styled.div`
 
 export const SkillContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 15px;
   margin: 1em 0;
 `;

@@ -16,6 +16,25 @@ export const SectionWrapper = styled.div`
     text-transform: uppercase;
   }
 
+  .totalSkills {
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  input[type='text'] {
+    height: 50px;
+    color: #d8d8e0;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+  }
+
   button {
     cursor: pointer;
     padding: 1em 4em;

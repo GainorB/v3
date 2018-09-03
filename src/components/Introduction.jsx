@@ -2,7 +2,6 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { MyName, SectionDesc, SectionWrapper } from './Styled';
 
-// const logo = require('../../assets/images/logo.jpeg');
 const theme = {
   fontColor: '#d8d8e0',
 };

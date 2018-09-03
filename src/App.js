@@ -1,16 +1,15 @@
 import React from 'react';
 import PortfolioData from './api/PortfolioData.jsx';
-import TheSkills from './api/TheSkills.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import Introduction from './components/Introduction.jsx';
 // import Map from './components/Map.jsx';
 import Portfolio from './components/Portfolio.jsx';
 import SideMenu from './components/SideMenu.jsx';
+import { PageWrapper } from './components/Styled';
 // import PropTypes from 'prop-types';
 // import { Route } from 'react-router-dom';
-import Skills from './components/Skills.jsx';
-import { PageWrapper } from './components/Styled';
+import TechnicalSkills from './components/TechnicalSkills.jsx';
 
 const App = () => (
   <PageWrapper>
@@ -22,8 +21,7 @@ const App = () => (
       <Portfolio />
       <PortfolioData />
       {/* <Route path="/" exact component={Home} /> */}
-      <Skills />
-      <TheSkills />
+      <TechnicalSkills />
       <Contact />
       {/* <Map /> */}
       <Footer />
