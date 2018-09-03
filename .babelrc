@@ -28,6 +28,9 @@
         "polyfill": false,
         "regenerator": true
       }
+    ],
+    [
+      "styled-components"
     ]
   ]
 }
