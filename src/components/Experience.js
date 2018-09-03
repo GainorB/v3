@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
+import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
-import { SectionHeader, SectionWrapper } from './Styled';
+import { SectionHeader, SectionWrapper, ExpGrid, ExpHeaderGrid, ExpFooter } from './Styled';
 
 const theme = {
   fontColor: '#d8d8e0',
@@ -8,12 +9,12 @@ const theme = {
 
 const array = [
   {
-    companyLogo: '../../assets/images/exp/bcse.jpg',
+    companyLogo: '../../assets/images/exp/bcse.jpeg',
     companyName: 'Bronx Charter School for Excellence',
-    companyDescription: '',
+    companyDescription: `The Bronx Charter School for Excellence (BCSE), also known as Bronx Excellence, was established in 2004, in the Parkchester neighborhood of the Bronx, NY. Bronx Excellence is a 2012 National Blue Ribbon School Award honoree – the U.S. Department of Education's highest honor for schools across the country.`,
     jobTitle: 'Computer Science Specialist',
-    location: '',
-    date: '',
+    location: 'Bronx, NY',
+    date: 'Jan 2018 - current',
     responsibilities: [
       'Created a structured computer science curriculum for the middle school and delivered lessons via the internet and traditional methods.',
       'Assisted and/or taught advanced algebra and other math topics.',
@@ -30,7 +31,7 @@ const array = [
       'General Assembly is a pioneer in education and career transformation, specializing in today’s most in-demand skills. The leading source for training, staffing, and career transitions, we foster a flourishing community of professionals pursuing careers they love.',
     jobTitle: 'Instructional Associate',
     location: 'New York, NY',
-    date: 'Dates EmployedDec 2017 – Jan 2018',
+    date: 'Dec 2017 – Jan 2018',
     responsibilities: [
       'Mentor and teach lectures, manage student projects, help plan and develop boot camp curriculum, and support the rest of the instructional team.',
       'Inspire and support students as they identify their passions and drive their own continued learning beyond the curriculum.',
@@ -68,8 +69,29 @@ const array = [
 ];
 
 const parseExperience = () => {
-  console.log(array);
-  return <div>Test</div>;
+  const output = array.map(e => (
+    <Fragment>
+      <ExpGrid key={v1()}>
+        <ExpHeaderGrid>
+          <img src={e.companyLogo} alt={e.companyName} />
+          <div className="exp__companyName">
+            {e.companyName}
+            <span className="exp__jobTitle">{e.jobTitle}</span>
+          </div>
+        </ExpHeaderGrid>
+        <div className="exp__companyDescription">{e.companyDescription}</div>
+        <ol className="exp__responsibilities">
+          <span>Responsibilities</span>
+          {e.responsibilities.map(r => <li key={v1()}>{r}</li>)}
+        </ol>
+      </ExpGrid>
+      <ExpFooter>
+        {e.date} | {e.location}
+      </ExpFooter>
+    </Fragment>
+  ));
+
+  return output;
 };
 
 const Experience = () => (

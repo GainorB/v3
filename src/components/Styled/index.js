@@ -5,6 +5,7 @@ import { Hub, Repo, SideMenu } from './SideMenu';
 import { SkillContainer, SkillWrapper } from './Skills';
 import { MyName, SectionDesc, SectionHeader, SideMenuHeader } from './Text';
 import { PageWrapper, PortfolioWrapper, SectionWrapper } from './Wrapper';
+import { ExpGrid, ExpHeaderGrid, ExpFooter } from './Experience';
 
 export {
   MainNav,
@@ -29,4 +30,7 @@ export {
   ProjectDesc,
   SkillWrapper,
   SkillContainer,
+  ExpGrid,
+  ExpHeaderGrid,
+  ExpFooter,
 };
