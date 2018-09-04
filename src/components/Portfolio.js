@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router-dom';
+import { debounce } from 'lodash';
 import { v1 } from 'uuid';
 import {
   SectionDesc,
@@ -17,11 +18,11 @@ import {
 } from './Styled';
 
 class Portfolio extends Component {
-  state = { loading: true, projects: [] };
+  state = { loading: true, projects: [], displayedProjects: [] };
 
   componentDidMount = async () => {
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
-    await this.setStateAsync({ projects, loading: false });
+    await this.setStateAsync({ projects, displayedProjects: projects, loading: false });
   };
 
   setStateAsync(state) {
@@ -29,6 +30,17 @@ class Portfolio extends Component {
       this.setState(state, resolve);
     });
   }
+
+  filterProjects = debounce(query => {
+    this.setState({
+      displayedProjects: this.state.projects.filter(c => c.technologies.includes(query)),
+    });
+  }, 500);
+
+  handleChange = e => {
+    const query = e.target.value.toLowerCase();
+    this.filterProjects(query);
+  };
 
   renderProjects = projects => {
     const output = projects.map(p => (
@@ -61,16 +73,26 @@ class Portfolio extends Component {
   };
 
   render() {
-    const { loading, projects } = this.state;
+    const { loading, displayedProjects } = this.state;
     return (
       <Fragment>
         <SectionWrapper bg="#f4f3f3">
           <SectionHeader>Portfolio</SectionHeader>
           <SectionDesc>
             Unless stated otherwise, all the back-end and front-end parts were completely done by me.
+            <input
+              type="text"
+              name="searchTerm"
+              placeholder="Filter projects by technology..."
+              onChange={this.handleChange}
+              ref={input => {
+                this.search = input;
+              }}
+            />
+            <span className="totalSkills">Currently viewing {displayedProjects.length} project(s).</span>
           </SectionDesc>
         </SectionWrapper>
-        {loading ? 'Loading...' : this.renderProjects(projects)}
+        {loading ? 'Loading...' : this.renderProjects(displayedProjects)}
       </Fragment>
     );
   }

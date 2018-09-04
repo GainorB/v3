@@ -27,7 +27,7 @@ class TechnicalSkills extends Component {
     });
   }
 
-  setDisplayedSkills = debounce(query => {
+  filterSkills = debounce(query => {
     this.setState({
       displayedSkills: this.state.techSkills.filter(c => c.toLowerCase().includes(query)),
     });
@@ -35,7 +35,7 @@ class TechnicalSkills extends Component {
 
   handleChange = e => {
     const query = e.target.value.toLowerCase();
-    this.setDisplayedSkills(query);
+    this.filterSkills(query);
   };
 
   mapTech = tech => {
