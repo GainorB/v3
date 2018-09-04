@@ -30,7 +30,7 @@ export const SectionDesc = styled.p`
   font-size: 1.2rem;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   line-height: 1.8rem;
-  padding: 10px 9%;
+  padding: 10px 8%;
   color: ${props => (props.theme.fontColor ? props.theme.fontColor : '#3b3838')};
   font-weight: regular;
   text-align: center;
