@@ -18,6 +18,7 @@ class TechnicalSkills extends Component {
   componentDidMount = async () => {
     const skills = await fetch('https://gainorportfolio.firebaseio.com/skills/.json').then(res => res.json());
     await this.setStateAsync({ techSkills: skills, displayedSkills: skills, loading: false });
+    this.search.focus();
   };
 
   setStateAsync(state) {
@@ -117,7 +118,15 @@ class TechnicalSkills extends Component {
           <SectionWrapper bg="#2f2f3a">
             <SectionHeader>Technical Skills</SectionHeader>
             <SectionDesc>Currently in ❤️ with TypeScript, React, Node, GraphQL, PostgreSQL</SectionDesc>
-            <input type="text" name="searchTerm" placeholder="Search for a skill..." onChange={this.handleChange} />
+            <input
+              type="text"
+              name="searchTerm"
+              placeholder="Search for a skill..."
+              onChange={this.handleChange}
+              ref={input => {
+                this.search = input;
+              }}
+            />
             <span className="totalSkills">Currently viewing {displayedSkills.length} skill(s).</span>
           </SectionWrapper>
         </ThemeProvider>

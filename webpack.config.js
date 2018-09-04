@@ -83,7 +83,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist']), // deletes the build folder in between builds
     // points to the file where react is injected
     new HtmlWebpackPlugin({
-      title: 'My React App',
+      title: 'Gainor Bostwick | Full Stack Developer',
       template: './src/index.html', // Load a custom template
       minify: {
         removeComments: true,
