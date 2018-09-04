@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 // PAGES
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import PortfolioData from './api/PortfolioData';
 import Introduction from './components/Introduction';
 import Portfolio from './components/Portfolio';
 import Experience from './components/Experience';
@@ -24,7 +23,6 @@ class App extends Component {
         <div className="miniWrapper">
           <Introduction />
           <Portfolio />
-          <PortfolioData />
           <TechnicalSkills />
           <Experience />
           <Contact />
