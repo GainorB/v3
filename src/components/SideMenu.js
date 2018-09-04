@@ -3,12 +3,12 @@ import Github from '../api/Github';
 import GetInTouch from './GetInTouch';
 import { InTouch, ListGroup, SideMenu, SideMenuHeader } from './Styled';
 
-const logo = require('../../assets/images/logo.jpeg');
+const logo = 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028357/portfolio/logo.jpg';
 
 const Feed = () => (
   <SideMenu>
     <div className="intro">
-      <img className="avatar" src={logo} alt="" />
+      <img className="avatar" src={logo} alt="Gainor Bostwick" />
       <p className="name">Gainor Bostwick</p>
       <p className="title">Full Stack Web Developer</p>
     </div>
