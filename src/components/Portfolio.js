@@ -45,12 +45,14 @@ class Portfolio extends Component {
 
   renderProjects = projects => {
     const output = projects.map(p => (
-      <ProjectGrid key={v1()}>
-        <img src={p.image} alt={p.name} />
-        <Link to={`/projects/${p.name}`}>
-          <Button>case study.</Button>
-        </Link>
-      </ProjectGrid>
+      <Link to={`/case-study/${p.name}`} key={v1()}>
+        <ProjectGrid>
+          <img src={p.image} alt={p.name} />
+          <div className="overlay">
+            <div className="overlay__text">{p.name}</div>
+          </div>
+        </ProjectGrid>
+      </Link>
     ));
     return <PortfolioWrapper>{output}</PortfolioWrapper>;
   };

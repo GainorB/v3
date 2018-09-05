@@ -76,22 +76,17 @@ export const SideMenu = styled.div`
 
 export const Hub = styled.li`
   display: block;
-  background: #bdc7d8;
+  background: #fff;
   color: #10102c;
-  border: 1px solid #2f2f3a;
   padding: 0.4em;
   margin: 0.3em 0;
-
-  &:hover {
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
-  }
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
 `;
 
 export const Repo = styled.div`
   padding: 0.4em;
   margin-top: 0.5em;
-  border-right: 1px solid #2f2f3a;
-  border-bottom: 2px solid #2f2f3a;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
 
   span {
     text-transform: uppercase;
@@ -102,9 +97,5 @@ export const Repo = styled.div`
   span:hover {
     cursor: pointer;
     color: #10102c;
-  }
-
-  &:hover {
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
   }
 `;

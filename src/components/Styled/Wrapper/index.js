@@ -15,10 +15,6 @@ export const SectionWrapper = styled.div`
     font-size: 1.2rem;
   }
 
-  .inputContainer {
-    position: relative;
-  }
-
   input[type='text'] {
     color: #fff;
     background: none;
