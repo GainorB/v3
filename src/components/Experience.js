@@ -1,10 +1,11 @@
 import React, { Fragment, Component } from 'react';
 import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
+import Loading from './Loading';
 import { SectionHeader, SectionWrapper, ExpGrid, ExpHeaderGrid, ExpFooter } from './Styled';
 
 const theme = {
-  fontColor: '#d8d8e0',
+  fontColor: '#fff',
 };
 
 class Experience extends Component {
@@ -55,11 +56,11 @@ class Experience extends Component {
     return (
       <Fragment>
         <ThemeProvider theme={theme}>
-          <SectionWrapper bg="#2f2f3a">
-            <SectionHeader>Experience</SectionHeader>
+          <SectionWrapper bg="#090909">
+            <SectionHeader>experience.</SectionHeader>
           </SectionWrapper>
         </ThemeProvider>
-        {loading ? 'Loading...' : this.renderExperience(experience)}
+        {loading ? <Loading /> : this.renderExperience(experience)}
       </Fragment>
     );
   }

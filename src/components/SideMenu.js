@@ -12,7 +12,7 @@ const Feed = () => (
       <p className="name">Gainor Bostwick</p>
       <p className="title">Full Stack Web Developer</p>
     </div>
-    <div className="nav">
+    {/* <div className="nav">
       <SideMenuHeader>Menu</SideMenuHeader>
       <ListGroup>
         <li>Home</li>
@@ -21,7 +21,7 @@ const Feed = () => (
         <li>Portfolio</li>
         <li>Experience</li>
       </ListGroup>
-    </div>
+    </div> */}
     <div className="focusedOn">
       <SideMenuHeader>Currently Focused On</SideMenuHeader>
       <ListGroup>

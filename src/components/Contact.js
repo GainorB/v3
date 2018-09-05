@@ -3,17 +3,18 @@ import { ThemeProvider } from 'styled-components';
 import { SectionDesc, SectionHeader, SectionWrapper } from './Styled';
 
 const theme = {
-  fontColor: '#d8d8e0',
+  fontColor: '#FFFFFF',
+  height: '500px',
 };
 
 const Contact = () => (
   <ThemeProvider theme={theme}>
-    <SectionWrapper bg="#1c4e8a">
-      <SectionHeader>By now, you're blown away. Let's 🎉.</SectionHeader>
-      <SectionDesc>I am available for hire and seeking new job opportunities.</SectionDesc>
+    <SectionWrapper bg="#2447F9">
+      <SectionHeader>Like my work?</SectionHeader>
+      <SectionDesc>Let’s talk about your project and how I can help you.</SectionDesc>
       <a href="mailto:hi@gainorbostwick.com" target="_blank" rel="noopener noreferrer">
         <button>
-          <i className="fas fa-paper-plane" /> <span>Get in Touch</span>
+          <i className="fas fa-paper-plane" /> <span>Shoot me a message</span>
         </button>
       </a>
     </SectionWrapper>

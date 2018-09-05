@@ -2,23 +2,24 @@ import React, { Component, Fragment } from 'react';
 import { debounce } from 'lodash';
 import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
-import { SectionDesc, SectionHeader, SectionWrapper, SkillWrapper, SkillContainer } from './Styled';
+import Loading from './Loading';
+import { SectionWrapper, SkillWrapper, SkillContainer, ReturnedResults } from './Styled';
 
 const theme = {
-  fontColor: '#d8d8e0',
+  fontColor: '#fff',
 };
 
 class TechnicalSkills extends Component {
   state = {
     loading: true,
-    techSkills: [],
+    skills: [],
     displayedSkills: [],
+    typing: false,
   };
 
   componentDidMount = async () => {
     const skills = await fetch('https://gainorportfolio.firebaseio.com/skills/.json').then(res => res.json());
-    await this.setStateAsync({ techSkills: skills, displayedSkills: skills, loading: false });
-    this.search.focus();
+    await this.setStateAsync({ skills, displayedSkills: skills, loading: false });
   };
 
   setStateAsync(state) {
@@ -29,13 +30,18 @@ class TechnicalSkills extends Component {
 
   filterSkills = debounce(query => {
     this.setState({
-      displayedSkills: this.state.techSkills.filter(c => c.toLowerCase().includes(query)),
+      displayedSkills: this.state.skills.filter(s => s.toLowerCase().includes(query)),
     });
-  }, 500);
+  }, 700);
 
   handleChange = e => {
     const query = e.target.value.toLowerCase();
     this.filterSkills(query);
+    if (e.target.value.length > 0) {
+      this.setState({ typing: true });
+    } else {
+      this.setState({ typing: false });
+    }
   };
 
   mapTech = tech => {
@@ -111,26 +117,21 @@ class TechnicalSkills extends Component {
   };
 
   render() {
-    const { displayedSkills, loading } = this.state;
+    const { displayedSkills, loading, typing } = this.state;
+    const { length } = displayedSkills;
     return (
       <Fragment>
         <ThemeProvider theme={theme}>
-          <SectionWrapper bg="#2f2f3a">
-            <SectionHeader>Technical Skills</SectionHeader>
-            <SectionDesc>Currently in ❤️ with TypeScript, React, Node, GraphQL, PostgreSQL</SectionDesc>
-            <input
-              type="text"
-              name="searchTerm"
-              placeholder="Search for a skill..."
-              onChange={this.handleChange}
-              ref={input => {
-                this.search = input;
-              }}
-            />
-            <span className="totalSkills">Currently viewing {displayedSkills.length} skill(s).</span>
+          <SectionWrapper bg="#090909">
+            {/* <SectionHeader>technical.</SectionHeader> */}
+            <input type="text" name="searchTerm" placeholder="technical." onChange={this.handleChange} />
+            <ReturnedResults>
+              Currently displaying {length} skill{length > 0 ? 's' : ''}.
+            </ReturnedResults>
+            {!typing && <p className="replace">Replace 'technical' with a technology to filter skills</p>}
           </SectionWrapper>
         </ThemeProvider>
-        {loading ? 'Loading...' : this.renderSkills(displayedSkills)}
+        {loading ? <Loading /> : this.renderSkills(displayedSkills)}
       </Fragment>
     );
   }

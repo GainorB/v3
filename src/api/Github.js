@@ -1,5 +1,6 @@
 import { distanceInWordsStrict } from 'date-fns';
 import React, { Component } from 'react';
+import Loading from '../components/Loading';
 import { Hub, ListGroup, Repo } from '../components/Styled';
 
 class Github extends Component {
@@ -50,7 +51,7 @@ class Github extends Component {
     const { loadingProfile, loadingRepos, profile, myRepos } = this.state;
     const random = Math.floor(Math.random() * myRepos.length);
     if (loadingProfile || loadingRepos) {
-      return <div>Loading..</div>;
+      return <Loading />;
     }
     return (
       <ListGroup>

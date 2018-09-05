@@ -2,23 +2,15 @@ import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router-dom';
 import { debounce } from 'lodash';
 import { v1 } from 'uuid';
-import {
-  SectionDesc,
-  SectionHeader,
-  SectionWrapper,
-  ListGroup,
-  MoreDetails,
-  Online,
-  PortfolioWrapper,
-  Project,
-  ProjectDesc,
-  ProjectGrid,
-  ProjectTitle,
-  Tech,
-} from './Styled';
+import { ThemeProvider } from 'styled-components';
+import { SectionWrapper, Button, PortfolioWrapper, ProjectGrid, ReturnedResults } from './Styled';
+import Loading from './Loading';
 
+const theme = {
+  fontColor: '#fff',
+};
 class Portfolio extends Component {
-  state = { loading: true, projects: [], displayedProjects: [] };
+  state = { loading: true, projects: [], displayedProjects: [], typing: false };
 
   componentDidMount = async () => {
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
@@ -32,67 +24,53 @@ class Portfolio extends Component {
   }
 
   filterProjects = debounce(query => {
-    this.setState({
-      displayedProjects: this.state.projects.filter(c => c.technologies.includes(query)),
-    });
-  }, 500);
+    if (query) {
+      this.setState({
+        displayedProjects: this.state.projects.filter(p => p.technologies.includes(query)),
+      });
+    } else {
+      this.setState({ displayedProjects: this.state.projects });
+    }
+  }, 700);
 
   handleChange = e => {
     const query = e.target.value.toLowerCase();
     this.filterProjects(query);
+    if (e.target.value.length > 0) {
+      this.setState({ typing: true });
+    } else {
+      this.setState({ typing: false });
+    }
   };
 
   renderProjects = projects => {
     const output = projects.map(p => (
       <ProjectGrid key={v1()}>
         <img src={p.image} alt={p.name} />
-        <Project>
-          <ListGroup>
-            <li>
-              <ProjectTitle>{p.name}</ProjectTitle>
-            </li>
-            <li>
-              <ProjectDesc>{p.description.substring(0, 200)}...</ProjectDesc>
-            </li>
-            <li>{p.technologies.map(t => <Tech key={v1()}>{t}</Tech>)}</li>
-            <li>
-              <a href={p.resources[1]} target="_blank" rel="noopener noreferrer">
-                <Online>View Online</Online>
-              </a>
-            </li>
-            <li>
-              <Link to={`/projects/${p.name}`}>
-                <MoreDetails>Case study</MoreDetails>
-              </Link>
-            </li>
-          </ListGroup>
-        </Project>
+        <Link to={`/projects/${p.name}`}>
+          <Button>case study.</Button>
+        </Link>
       </ProjectGrid>
     ));
     return <PortfolioWrapper>{output}</PortfolioWrapper>;
   };
 
   render() {
-    const { loading, displayedProjects } = this.state;
+    const { loading, displayedProjects, typing } = this.state;
+    const { length } = displayedProjects;
     return (
       <Fragment>
-        <SectionWrapper bg="#f4f3f3">
-          <SectionHeader>Portfolio</SectionHeader>
-          <SectionDesc>
-            Unless stated otherwise, all the back-end and front-end parts were completely done by me.
-            <input
-              type="text"
-              name="searchTerm"
-              placeholder="Filter projects by technology..."
-              onChange={this.handleChange}
-              ref={input => {
-                this.search = input;
-              }}
-            />
-            <span className="totalSkills">Currently viewing {displayedProjects.length} project(s).</span>
-          </SectionDesc>
-        </SectionWrapper>
-        {loading ? 'Loading...' : this.renderProjects(displayedProjects)}
+        <ThemeProvider theme={theme}>
+          <SectionWrapper bg="#090909">
+            {/* <SectionHeader>work.</SectionHeader> */}
+            <input type="text" name="searchTerm" placeholder="work." onChange={this.handleChange} />
+            <ReturnedResults>
+              Currently displaying {length} project{length > 0 ? 's' : ''}.
+            </ReturnedResults>
+            {!typing && <p className="replace">Replace 'work' with a technology to filter projects</p>}
+          </SectionWrapper>
+        </ThemeProvider>
+        {loading ? <Loading /> : this.renderProjects(displayedProjects)}
       </Fragment>
     );
   }

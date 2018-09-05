@@ -6,7 +6,8 @@ export const ExpGrid = styled.div`
   grid-gap: 10px;
   font-size: 1rem;
   padding: 20px;
-  border: 1px solid #dddddd;
+  border: 2px solid #090909;
+  margin: 1em 1em 0 1em;
 
   .exp__companyDescription {
     color: #666666;
@@ -22,10 +23,8 @@ export const ExpGrid = styled.div`
   }
 
   .exp__responsibilities span {
-    text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
-    letter-spacing: 1px;
   }
 `;
 
@@ -36,7 +35,7 @@ export const ExpHeaderGrid = styled.div`
   align-items: center;
   font-size: 1rem;
   padding: 15px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 2px solid #090909;
 
   img {
     width: 100%;
@@ -56,14 +55,15 @@ export const ExpHeaderGrid = styled.div`
     display: block;
     font-size: 1rem;
     margin: 0.4em 0;
-    font-style: italic;
+    font-weight: bold;
   }
 `;
 
 export const ExpFooter = styled.div`
   padding: 20px;
-  color: #2f2f3a;
-  font-size: 0.9rem;
-  background: #dddddd;
-  margin-bottom: 0.5em;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  background: #090909;
+  margin: 0 1em 1em 1em;
 `;

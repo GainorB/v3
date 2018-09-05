@@ -9,3 +9,5 @@
 9. ~~Fix sidebar grid layout (Stretching)~~
 10. LazyLoading?
 11. Code Split?
+12. Filter Project by skill
+13. Loading component

@@ -8,31 +8,41 @@ export const SectionWrapper = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  ${props => (props.theme.height ? `height: ${props.theme.height}` : 'min-height: 250px')};
+  ${props => (props.theme.height ? `height: ${props.theme.height}` : 'min-height: 280px')};
   padding: 15px;
 
   .footer {
-    font-size: 0.9rem;
-    text-transform: uppercase;
+    font-size: 1.2rem;
   }
 
-  .totalSkills {
-    font-size: 0.8rem;
-    font-weight: 300;
-    letter-spacing: 1px;
+  .inputContainer {
+    position: relative;
   }
 
   input[type='text'] {
-    height: 50px;
-    color: #d8d8e0;
+    color: #fff;
     background: none;
-    border: none;
     outline: none;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    padding: 1em;
-    width: 100%;
+    border: none;
+    font-size: 5rem;
+    letter-spacing: -0.026em;
     text-align: center;
+    font-weight: 500;
+    caret-color: #2348f3;
+  }
+
+  .replace {
+    font-size: 1.1rem;
+    color: #2348f3;
+    opacity: 0.6;
+    font-weight: bold;
+  }
+
+  input[type='text']::placeholder {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 500;
+    letter-spacing: -0.026em;
   }
 
   button {
@@ -40,10 +50,9 @@ export const SectionWrapper = styled.div`
     padding: 1em 4em;
     color: #fff;
     border: none;
-    font-weight: 700;
+    font-weight: lighter;
     letter-spacing: 1px;
     background: none;
-    text-transform: uppercase;
     font-size: 1.2rem;
     position: relative;
     text-align: center;
@@ -73,7 +82,7 @@ export const SectionWrapper = styled.div`
 
   button:hover {
     background: #fff;
-    color: #1c4e8a;
+    color: #090909;
   }
 
   @media only screen and (max-width: 700px) {

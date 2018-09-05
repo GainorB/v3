@@ -20,8 +20,20 @@ html {
   font-weight: 300;
 }
 
+@font-face {
+  font-family: 'aktiv-grotesk';
+  src: url('../fonts/aktivgrotesk_trial_md-webfont.ttf'),
+  local('aktivgrotesk_trial_md-webfont'),
+  local('aktivgrotesk_trial_md'),
+  local('aktivgrotesk_trial'),
+  local('aktivgrotesk'),
+  format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'aktiv-grotesk', sans-serif;
   font-size: 10px;
   /* text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); */
   letter-spacing: 0.01389rem;
@@ -56,10 +68,10 @@ a:active, a:link, a:visited {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #2F2F39; 
+  background: #090909; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #2F2F39; 
+  background: #090909; 
 }

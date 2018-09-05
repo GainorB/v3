@@ -8,7 +8,7 @@ export const ListGroup = styled.ul`
 
 // GET IN TOUCH BUTTONS
 export const InTouch = styled.li`
-  background: #dddddf;
+  background: #fff;
   text-transform: uppercase;
   border: 2px solid transparent;
   font-size: 1.2rem;
@@ -31,6 +31,7 @@ export const InTouch = styled.li`
   ${props => props.stack && 'color: #F38134'};
   ${props => props.email && 'color: #ba4444'};
   ${props => props.resume && 'color: #002852'};
+  box-shadow: 10px 10px 28px -8px rgba(0, 0, 0, 0.15);
 
   i {
     font-size: 2rem;
