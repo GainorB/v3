@@ -21,7 +21,7 @@ class App extends Component {
           <SideMenu />
         </div>
         <div className="miniWrapper">
-          <Introduction />
+          {/* <Introduction /> */}
           <Work />
           <Technical />
           <Experience />

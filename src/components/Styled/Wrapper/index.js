@@ -117,9 +117,11 @@ export const PageWrapper = styled.div`
 
     .sidebar {
       grid-area: 'sidebar';
+      max-height: none;
     }
 
     .miniWrapper {
+      max-height: none;
       grid-area: 'main';
     }
   }

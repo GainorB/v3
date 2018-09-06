@@ -67,10 +67,17 @@ export const SideMenu = styled.div`
     border: 1px solid #e9ecef;
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1200px) {
     grid-template-rows: repeat(5, auto);
     font-size: 0.9rem;
     padding: 20px;
+
+    .focusedOn,
+    .github,
+    .resume,
+    .inTouch {
+      display: none;
+    }
   }
 `;
 

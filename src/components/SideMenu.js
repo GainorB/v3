@@ -33,9 +33,6 @@ const Feed = () => (
         <li>Crafting clean interfaces</li>
       </ListGroup>
     </div>
-    {/* <div className="twitter">
-      <SideMenuHeader>Twitter Feed</SideMenuHeader>
-    </div> */}
     {/* <div className="blog">
       <SideMenuHeader>From the blog</SideMenuHeader>
     </div> */}
@@ -55,9 +52,6 @@ const Feed = () => (
       <SideMenuHeader>Where I hang out</SideMenuHeader>
       <GetInTouch />
     </div>
-    {/* <div className="instagram">
-      <SideMenuHeader>instagram Feed</SideMenuHeader>
-    </div> */}
   </SideMenu>
 );
 
