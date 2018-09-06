@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { debounce } from 'lodash';
 import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
-import { SectionWrapper, Button, PortfolioWrapper, ProjectGrid, ReturnedResults } from './Styled';
+import { SectionWrapper, PortfolioWrapper, ProjectGrid, ReturnedResults } from './Styled';
 import Loading from './Loading';
 
 const theme = {
@@ -64,12 +64,11 @@ class Portfolio extends Component {
       <Fragment>
         <ThemeProvider theme={theme}>
           <SectionWrapper bg="#090909">
-            {/* <SectionHeader>work.</SectionHeader> */}
             <input type="text" name="searchTerm" placeholder="work." onChange={this.handleChange} />
             <ReturnedResults>
               Currently displaying {length} project{length > 0 ? 's' : ''}.
             </ReturnedResults>
-            {!typing && <p className="replace">Replace 'work' with a technology to filter projects</p>}
+            {!typing && <p className="replace">replace 'work' with a technology to filter projects</p>}
           </SectionWrapper>
         </ThemeProvider>
         {loading ? <Loading /> : this.renderProjects(displayedProjects)}

@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { debounce } from 'lodash';
+// import FlipMove from 'react-flip-move';
 import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
 import Loading from './Loading';
@@ -123,12 +124,11 @@ class TechnicalSkills extends Component {
       <Fragment>
         <ThemeProvider theme={theme}>
           <SectionWrapper bg="#090909">
-            {/* <SectionHeader>technical.</SectionHeader> */}
             <input type="text" name="searchTerm" placeholder="technical." onChange={this.handleChange} />
             <ReturnedResults>
               Currently displaying {length} skill{length > 0 ? 's' : ''}.
             </ReturnedResults>
-            {!typing && <p className="replace">Replace 'technical' with a technology to filter skills</p>}
+            {!typing && <p className="replace">replace 'technical' with a technology to filter skills</p>}
           </SectionWrapper>
         </ThemeProvider>
         {loading ? <Loading /> : this.renderSkills(displayedSkills)}
