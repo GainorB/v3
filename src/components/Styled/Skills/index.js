@@ -3,12 +3,10 @@ import styled from 'styled-components';
 export const SkillWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 5px;
   align-items: center;
   justify-items: center;
   border: 2px solid #090909;
   padding: 1em;
-  margin: 0.7em;
   -webkit-transition: all 0.1s ease-in-out, 0.8s;
   -moz-transition: all 0.1s ease-in-out, 0.8s;
   -o-transition: all 0.1s ease-in-out, 0.8s;
@@ -38,5 +36,6 @@ export const SkillWrapper = styled.div`
 export const SkillContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  margin: 1em 0;
+  grid-gap: 10px;
+  padding: 1em;
 `;

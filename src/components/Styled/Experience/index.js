@@ -7,7 +7,6 @@ export const ExpGrid = styled.div`
   font-size: 1rem;
   padding: 20px;
   border: 2px solid #090909;
-  margin: 1em 1em 0 1em;
 
   .exp__companyDescription {
     color: #666666;
@@ -65,5 +64,9 @@ export const ExpFooter = styled.div`
   border: none;
   font-size: 1rem;
   background: #090909;
-  margin: 0 1em 1em 1em;
+  margin: 0 0 0.5em 0;
+`;
+
+export const ExperienceContainer = styled.div`
+  padding: 1em;
 `;

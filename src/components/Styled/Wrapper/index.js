@@ -19,12 +19,19 @@ export const SectionWrapper = styled.div`
     color: #fff;
     background: none;
     outline: none;
-    border: none;
     font-size: 5rem;
     letter-spacing: -0.026em;
+    border: none;
     text-align: center;
     font-weight: 500;
     caret-color: #2348f3;
+    width: 400px;
+  }
+
+  input[type='text']:focus {
+    -webkit-box-shadow: 0px 9px 0px -3px rgba(38, 73, 240, 1);
+    -moz-box-shadow: 0px 9px 0px -3px rgba(38, 73, 240, 1);
+    box-shadow: 0px 9px 0px -3px rgba(38, 73, 240, 1);
   }
 
   .replace {
@@ -101,18 +108,27 @@ export const PageWrapper = styled.div`
     max-height: 100vh;
     grid-area: 'main';
     display: grid;
-    grid-auto-flow: row;
     overflow: auto;
   }
 
   @media only screen and (max-width: 1200px) {
     grid-template-columns: 100%;
     grid-template-areas: 'sidebar' 'main';
+
+    .sidebar {
+      grid-area: 'sidebar';
+    }
+
+    .miniWrapper {
+      grid-area: 'main';
+    }
   }
 `;
 
 export const PortfolioWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 0.5em;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+  padding: 1em;
 `;

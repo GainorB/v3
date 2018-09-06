@@ -24,7 +24,6 @@ export const ProjectGrid = styled.div`
   display: grid;
   position: relative;
   grid-template-rows: 1fr auto;
-  margin: 0.5em;
 
   img {
     width: 100%;
