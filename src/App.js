@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 // import { Route } from 'react-router-dom';
 
 // PAGES
+import Nav from './components/Nav';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Introduction from './components/Introduction';
 import Work from './components/Work';
 import Experience from './components/Experience';
 import SideMenu from './components/SideMenu';
@@ -21,7 +21,7 @@ class App extends Component {
           <SideMenu />
         </div>
         <div className="miniWrapper">
-          {/* <Introduction /> */}
+          <Nav />
           <Work />
           <Technical />
           <Experience />
