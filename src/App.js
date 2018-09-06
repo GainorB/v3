@@ -5,11 +5,11 @@ import React, { Component } from 'react';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Introduction from './components/Introduction';
-import Portfolio from './components/Portfolio';
+import Work from './components/Work';
 import Experience from './components/Experience';
 import SideMenu from './components/SideMenu';
 import { PageWrapper } from './components/Styled';
-import TechnicalSkills from './components/TechnicalSkills';
+import Technical from './components/Technical';
 
 class App extends Component {
   state = {};
@@ -22,8 +22,8 @@ class App extends Component {
         </div>
         <div className="miniWrapper">
           <Introduction />
-          <Portfolio />
-          <TechnicalSkills />
+          <Work />
+          <Technical />
           <Experience />
           <Contact />
           <Footer />

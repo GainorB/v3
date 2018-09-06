@@ -9,7 +9,7 @@ import Loading from './Loading';
 const theme = {
   fontColor: '#fff',
 };
-class Portfolio extends Component {
+class Work extends Component {
   state = { loading: true, projects: [], displayedProjects: [], typing: false };
 
   componentDidMount = async () => {
@@ -68,7 +68,7 @@ class Portfolio extends Component {
             <ReturnedResults>
               Currently displaying {length} project{length > 0 ? 's' : ''}.
             </ReturnedResults>
-            {!typing && <p className="replace">replace 'work' with a technology to filter projects</p>}
+            {!typing && <p className="replace">replace 'work' above with a technology to filter projects</p>}
           </SectionWrapper>
         </ThemeProvider>
         {loading ? <Loading /> : this.renderProjects(displayedProjects)}
@@ -77,4 +77,4 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio;
+export default Work;

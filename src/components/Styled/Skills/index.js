@@ -13,6 +13,7 @@ export const SkillWrapper = styled.div`
   -moz-transition: all 0.1s ease-in-out, 0.8s;
   -o-transition: all 0.1s ease-in-out, 0.8s;
   transition: all 0.1s ease-in-out, 0.8s;
+  min-height: 124px;
 
   img {
     width: 100%;
