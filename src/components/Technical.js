@@ -4,7 +4,7 @@ import { debounce } from 'lodash';
 import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
 import Loading from './Loading';
-import { SectionWrapper, SkillWrapper, SkillContainer, ReturnedResults } from './Styled';
+import { SectionWrapper, SkillWrapper, SkillContainer, ReturnedResults, Input } from './Styled';
 import { mapTech } from '../utils';
 
 const theme = {
@@ -64,7 +64,7 @@ class Technical extends Component {
       <Fragment>
         <ThemeProvider theme={theme}>
           <SectionWrapper bg="#090909">
-            <input type="text" name="searchTerm" placeholder="technical." onChange={this.handleChange} />
+            <Input type="text" name="searchTerm" placeholder="technical." onChange={this.handleChange} />
             <ReturnedResults>
               Currently displaying {length} skill{length > 0 ? 's' : ''}.
             </ReturnedResults>

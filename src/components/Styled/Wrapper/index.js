@@ -11,37 +11,11 @@ export const SectionWrapper = styled.div`
   ${props => (props.theme.height ? `height: ${props.theme.height}` : 'min-height: 280px')};
   padding: 15px;
 
-  input[type='text'] {
-    color: #fff;
-    background: none;
-    outline: none;
-    font-size: 5rem;
-    letter-spacing: -0.026em;
-    border: none;
-    text-align: center;
-    font-weight: 500;
-    caret-color: #2348f3;
-    width: 400px;
-  }
-
-  input[type='text']:focus {
-    -webkit-box-shadow: 0px 9px 0px -3px rgba(38, 73, 240, 1);
-    -moz-box-shadow: 0px 9px 0px -3px rgba(38, 73, 240, 1);
-    box-shadow: 0px 9px 0px -3px rgba(38, 73, 240, 1);
-  }
-
   .replace {
     font-size: 1.1rem;
     color: #2348f3;
     opacity: 0.6;
     font-weight: bold;
-  }
-
-  input[type='text']::placeholder {
-    color: #fff;
-    font-size: 5rem;
-    font-weight: 500;
-    letter-spacing: -0.026em;
   }
 
   button {

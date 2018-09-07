@@ -7,9 +7,11 @@ import { MyName, SectionDesc, SectionHeader, SideMenuHeader, ReturnedResults } f
 import { PageWrapper, PortfolioWrapper, SectionWrapper } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExperienceContainer } from './Experience';
 import { Foot } from './Footer';
+import { Input } from './Input';
 
 export {
   Nav,
+  Input,
   Foot,
   InTouch,
   PageWrapper,

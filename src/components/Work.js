@@ -1,9 +1,9 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { debounce } from 'lodash';
 import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
-import { SectionWrapper, PortfolioWrapper, ProjectGrid, ReturnedResults } from './Styled';
+import { SectionWrapper, PortfolioWrapper, ProjectGrid, ReturnedResults, Input } from './Styled';
 import Loading from './Loading';
 
 const theme = {
@@ -64,7 +64,7 @@ class Work extends Component {
       <div>
         <ThemeProvider theme={theme}>
           <SectionWrapper bg="#090909">
-            <input type="text" name="searchTerm" placeholder="work." onChange={this.handleChange} />
+            <Input type="text" name="searchTerm" placeholder="work." onChange={this.handleChange} />
             <ReturnedResults>
               Currently displaying {length} project{length > 0 ? 's' : ''}.
             </ReturnedResults>
