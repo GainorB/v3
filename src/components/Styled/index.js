@@ -6,9 +6,11 @@ import { SkillContainer, SkillWrapper } from './Skills';
 import { MyName, SectionDesc, SectionHeader, SideMenuHeader, ReturnedResults } from './Text';
 import { PageWrapper, PortfolioWrapper, SectionWrapper } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExperienceContainer } from './Experience';
+import { Foot } from './Footer';
 
 export {
   Nav,
+  Foot,
   InTouch,
   PageWrapper,
   MyName,

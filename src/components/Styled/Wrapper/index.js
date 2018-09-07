@@ -11,18 +11,6 @@ export const SectionWrapper = styled.div`
   ${props => (props.theme.height ? `height: ${props.theme.height}` : 'min-height: 280px')};
   padding: 15px;
 
-  .footer {
-    font-size: 1.2rem;
-  }
-
-  .footer__bottom {
-    color: #3d3d3d;
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin: 0;
-    padding: 0;
-  }
-
   input[type='text'] {
     color: #fff;
     background: none;
