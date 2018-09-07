@@ -61,7 +61,7 @@ class Work extends Component {
     const { loading, displayedProjects, typing } = this.state;
     const { length } = displayedProjects;
     return (
-      <Fragment>
+      <div>
         <ThemeProvider theme={theme}>
           <SectionWrapper bg="#090909">
             <input type="text" name="searchTerm" placeholder="work." onChange={this.handleChange} />
@@ -72,7 +72,7 @@ class Work extends Component {
           </SectionWrapper>
         </ThemeProvider>
         {loading ? <Loading /> : this.renderProjects(displayedProjects)}
-      </Fragment>
+      </div>
     );
   }
 }

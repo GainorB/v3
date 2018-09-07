@@ -47,7 +47,8 @@ export const SideMenu = styled.div`
     font-size: 1.4rem;
   }
 
-  .focusedOn li {
+  .focusedOn li,
+  .toolSet li {
     padding: 0.2em 0;
   }
 

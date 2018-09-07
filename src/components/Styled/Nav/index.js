@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-export const MainNav = styled.ul`
+export const Nav = styled.ul`
   background: #090909;
   display: flex;
-  position: fixed;
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;

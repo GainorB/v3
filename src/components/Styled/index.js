@@ -1,5 +1,5 @@
 import { InTouch, ListGroup } from './List';
-import { MainNav } from './Nav';
+import { Nav } from './Nav';
 import { Button, Project, ProjectDesc, ProjectGrid, ProjectTitle, Tech } from './Portfolio';
 import { Hub, Repo, SideMenu } from './SideMenu';
 import { SkillContainer, SkillWrapper } from './Skills';
@@ -8,7 +8,7 @@ import { PageWrapper, PortfolioWrapper, SectionWrapper } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExperienceContainer } from './Experience';
 
 export {
-  MainNav,
+  Nav,
   InTouch,
   PageWrapper,
   MyName,

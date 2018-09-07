@@ -12,6 +12,7 @@ const Footer = () => (
   <ThemeProvider theme={theme}>
     <SectionWrapper bg="#090909">
       <p className="footer">&copy; {date.getFullYear()} Gainor Bostwick. Made with ❤️ in New York.</p>
+      <p className="footer__bottom">hi@gainorbostwick.com</p>
     </SectionWrapper>
   </ThemeProvider>
 );

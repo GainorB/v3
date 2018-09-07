@@ -12,25 +12,24 @@ const Feed = () => (
       <p className="name">Gainor Bostwick</p>
       <p className="title">Full Stack Web Developer</p>
     </div>
-    {/* <div className="nav">
-      <SideMenuHeader>Menu</SideMenuHeader>
+    <div className="toolSet">
+      <SideMenuHeader>Toolset</SideMenuHeader>
       <ListGroup>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Portfolio</li>
-        <li>Experience</li>
+        <li>React</li>
+        <li>Apollo</li>
+        <li>Express</li>
+        <li>Node</li>
+        <li>GraphQL</li>
+        <li>Postgres</li>
       </ListGroup>
-    </div> */}
+    </div>
     <div className="focusedOn">
-      <SideMenuHeader>Currently Focused On</SideMenuHeader>
+      <SideMenuHeader>Focused On</SideMenuHeader>
       <ListGroup>
         <li>React</li>
         <li>GraphQL</li>
         <li>Typescript</li>
         <li>Apollo Client</li>
-        <li>Design Systems</li>
-        <li>Crafting clean interfaces</li>
       </ListGroup>
     </div>
     {/* <div className="blog">
@@ -43,9 +42,11 @@ const Feed = () => (
     <div className="resume">
       <SideMenuHeader>Resume</SideMenuHeader>
       <ListGroup>
-        <InTouch resume>
-          <i className="fas fa-id-card-alt" />
-        </InTouch>
+        <a href="../../assets/GainorBostwickResume.pdf">
+          <InTouch resume>
+            <i className="fas fa-id-card-alt" />
+          </InTouch>
+        </a>
       </ListGroup>
     </div>
     <div className="inTouch">
