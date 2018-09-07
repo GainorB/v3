@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { MyName, SectionDesc, SectionWrapper } from './Styled';
+import { MyName, SectionDesc, Section } from './Styled';
 
 const theme = {
   fontColor: '#5D5D5D',
@@ -8,7 +8,7 @@ const theme = {
 
 const Introduction = () => (
   <ThemeProvider theme={theme}>
-    <SectionWrapper bg="#fff">
+    <Section bg="#fff">
       {/* <MyName>Gainor Bostwick</MyName> */}
       {/* <SectionDesc>
         Skilled Full Stack Developer, passionate about developing applications that will bring about change in peoples’
@@ -16,7 +16,7 @@ const Introduction = () => (
         lifelong learner dedicated to continuously learning and implementing new practices to perfect my craft and
         create innovative applications.
       </SectionDesc> */}
-    </SectionWrapper>
+    </Section>
   </ThemeProvider>
 );
 

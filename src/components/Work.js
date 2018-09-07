@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { debounce } from 'lodash';
 import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
-import { SectionWrapper, PortfolioWrapper, ProjectGrid, ReturnedResults, Input } from './Styled';
+import { Section, PortfolioWrapper, ProjectGrid, ReturnedResults, Input } from './Styled';
 import Loading from './Loading';
 
 const theme = {
@@ -63,13 +63,13 @@ class Work extends Component {
     return (
       <div>
         <ThemeProvider theme={theme}>
-          <SectionWrapper bg="#090909">
+          <Section bg="#090909">
             <Input type="text" name="searchTerm" placeholder="work." onChange={this.handleChange} />
             <ReturnedResults>
               Currently displaying {length} project{length > 0 ? 's' : ''}.
             </ReturnedResults>
             {!typing && <p className="replace">replace 'work' above with a technology to filter projects</p>}
-          </SectionWrapper>
+          </Section>
         </ThemeProvider>
         {loading ? <Loading /> : this.renderProjects(displayedProjects)}
       </div>

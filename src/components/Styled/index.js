@@ -3,12 +3,13 @@ import { Nav } from './Nav';
 import { Project, ProjectDesc, ProjectGrid, ProjectTitle, Tech } from './Portfolio';
 import { Hub, Repo, SideMenu } from './SideMenu';
 import { SkillContainer, SkillWrapper } from './Skills';
-import { MyName, SectionDesc, SectionHeader, SideMenuHeader, ReturnedResults } from './Text';
-import { PageWrapper, PortfolioWrapper, SectionWrapper } from './Wrapper';
+import { SideMenuHeader, ReturnedResults } from './Text';
+import { PageWrapper, PortfolioWrapper } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExperienceContainer } from './Experience';
 import { Foot } from './Footer';
 import { Input } from './Input';
 import { Button } from './Button';
+import { Section, SectionDesc, SectionHeader } from './Section';
 
 export {
   Nav,
@@ -17,11 +18,10 @@ export {
   Foot,
   InTouch,
   PageWrapper,
-  MyName,
+  Section,
   SectionHeader,
-  SideMenuHeader,
   SectionDesc,
-  SectionWrapper,
+  SideMenuHeader,
   SideMenu,
   Hub,
   Repo,

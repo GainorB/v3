@@ -3,7 +3,7 @@ import React, { Fragment, Component } from 'react';
 import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
 import Loading from './Loading';
-import { SectionHeader, SectionWrapper, ExpGrid, ExpHeaderGrid, ExpFooter, ExperienceContainer } from './Styled';
+import { SectionHeader, Section, ExpGrid, ExpHeaderGrid, ExpFooter, ExperienceContainer } from './Styled';
 
 const theme = {
   fontColor: '#fff',
@@ -57,9 +57,9 @@ class Experience extends Component {
     return (
       <Fragment>
         <ThemeProvider theme={theme}>
-          <SectionWrapper bg="#090909">
+          <Section bg="#090909">
             <SectionHeader>experience.</SectionHeader>
-          </SectionWrapper>
+          </Section>
         </ThemeProvider>
         {loading ? <Loading /> : this.renderExperience(experience)}
       </Fragment>
