@@ -4,7 +4,7 @@ import { debounce } from 'lodash';
 import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
 import Loading from './Loading';
-import { Section, SkillWrapper, SkillContainer, ReturnedResults, Input } from './Styled';
+import { Section, Skill, SkillContainer, ReturnedResults, Input } from './Styled';
 import { mapTech } from '../utils';
 
 const theme = {
@@ -48,10 +48,10 @@ class Technical extends Component {
 
   renderSkills = skills => {
     const output = skills.map(mapTech).map(t => (
-      <SkillWrapper key={v1()}>
+      <Skill key={v1()}>
         <img src={t.src} alt={t.tech} />
         <span>{t.tech}</span>
-      </SkillWrapper>
+      </Skill>
     ));
 
     return <SkillContainer>{output}</SkillContainer>;

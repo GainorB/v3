@@ -67,6 +67,6 @@ export const ExpFooter = styled.div`
   margin: 0 0 0.5em 0;
 `;
 
-export const ExperienceContainer = styled.div`
+export const ExpContainer = styled.div`
   padding: 1em;
 `;

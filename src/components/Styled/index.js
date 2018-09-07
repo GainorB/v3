@@ -1,11 +1,11 @@
 import { InTouch, ListGroup } from './List';
 import { Nav } from './Nav';
-import { Project, ProjectDesc, ProjectGrid, ProjectTitle, Tech } from './Portfolio';
-import { Hub, Repo, SideMenu } from './SideMenu';
-import { SkillContainer, SkillWrapper } from './Skills';
-import { SideMenuHeader, ReturnedResults } from './Text';
+import { ProjectGrid } from './Portfolio';
+import { Hub, Repo, SideMenu, SideMenuTitle } from './SideMenu';
+import { SkillContainer, Skill } from './Skills';
+import { ReturnedResults } from './Text';
 import { PageWrapper, PortfolioWrapper } from './Wrapper';
-import { ExpGrid, ExpHeaderGrid, ExpFooter, ExperienceContainer } from './Experience';
+import { ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Experience';
 import { Foot } from './Footer';
 import { Input } from './Input';
 import { Button } from './Button';
@@ -21,19 +21,15 @@ export {
   Section,
   SectionHeader,
   SectionDesc,
-  SideMenuHeader,
+  SideMenuTitle,
   SideMenu,
   Hub,
   Repo,
   ListGroup,
   PortfolioWrapper,
-  ProjectTitle,
-  ExperienceContainer,
+  ExpContainer,
   ProjectGrid,
-  Project,
-  Tech,
-  ProjectDesc,
-  SkillWrapper,
+  Skill,
   SkillContainer,
   ExpGrid,
   ExpHeaderGrid,

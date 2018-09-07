@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SkillWrapper = styled.div`
+export const Skill = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;

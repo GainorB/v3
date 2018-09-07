@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-// const BackgroundGradient = keyframes`
-//   0% {background-position: 0% 50%;}
-//   50% {background-position: 100% 50%;}
-//   100% {background-position: 0% 50%;}
-// `;
-
 export const SideMenu = styled.div`
   display: grid;
   grid-template-rows: repeat(6, auto);
@@ -80,6 +74,15 @@ export const SideMenu = styled.div`
       display: none;
     }
   }
+`;
+
+export const SideMenuTitle = styled.h4`
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #090909;
+  padding-bottom: 0.5em;
+  color: #090909;
 `;
 
 export const Hub = styled.li`

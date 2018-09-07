@@ -18,4 +18,14 @@ export const Foot = styled.div`
     margin: 0;
     padding: 0;
   }
+
+  a:link,
+  a:active {
+    color: #3d3d3d;
+    text-transform: none;
+  }
+
+  a:hover {
+    color: #fff;
+  }
 `;

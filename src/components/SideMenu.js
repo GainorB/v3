@@ -1,7 +1,7 @@
 import React from 'react';
 import Github from '../api/Github';
 import GetInTouch from './GetInTouch';
-import { InTouch, ListGroup, SideMenu, SideMenuHeader } from './Styled';
+import { InTouch, ListGroup, SideMenu, SideMenuTitle } from './Styled';
 
 const logo = 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028357/portfolio/logo.jpg';
 
@@ -13,7 +13,7 @@ const Feed = () => (
       <p className="title">Full Stack Web Developer</p>
     </div>
     <div className="toolSet">
-      <SideMenuHeader>Toolset</SideMenuHeader>
+      <SideMenuTitle>Toolset</SideMenuTitle>
       <ListGroup>
         <li>React</li>
         <li>Apollo</li>
@@ -24,7 +24,7 @@ const Feed = () => (
       </ListGroup>
     </div>
     <div className="focusedOn">
-      <SideMenuHeader>Focused On</SideMenuHeader>
+      <SideMenuTitle>Focused On</SideMenuTitle>
       <ListGroup>
         <li>React</li>
         <li>GraphQL</li>
@@ -33,14 +33,14 @@ const Feed = () => (
       </ListGroup>
     </div>
     {/* <div className="blog">
-      <SideMenuHeader>From the blog</SideMenuHeader>
+      <SideMenuTitle>From the blog</SideMenuTitle>
     </div> */}
     <div className="github">
-      <SideMenuHeader>Github</SideMenuHeader>
+      <SideMenuTitle>Github</SideMenuTitle>
       <Github />
     </div>
     <div className="resume">
-      <SideMenuHeader>Resume</SideMenuHeader>
+      <SideMenuTitle>Resume</SideMenuTitle>
       <ListGroup>
         <a href="../../assets/GainorBostwickResume.pdf">
           <InTouch resume>
@@ -50,7 +50,7 @@ const Feed = () => (
       </ListGroup>
     </div>
     <div className="inTouch">
-      <SideMenuHeader>Where I hang out</SideMenuHeader>
+      <SideMenuTitle>Where I hang out</SideMenuTitle>
       <GetInTouch />
     </div>
   </SideMenu>
