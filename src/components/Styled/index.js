@@ -3,7 +3,7 @@ import { Nav } from './Nav';
 import { ProjectGrid } from './Portfolio';
 import { Hub, Repo, SideMenu, SideMenuTitle } from './SideMenu';
 import { SkillContainer, Skill } from './Skills';
-import { ReturnedResults } from './Text';
+import { ReturnedResults, Replace } from './Text';
 import { PageWrapper, PortfolioWrapper } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Experience';
 import { Foot } from './Footer';
@@ -13,6 +13,7 @@ import { Section, SectionDesc, SectionHeader } from './Section';
 
 export {
   Nav,
+  Replace,
   Input,
   Button,
   Foot,

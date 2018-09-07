@@ -4,7 +4,7 @@ import { debounce } from 'lodash';
 import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
 import Loading from './Loading';
-import { Section, Skill, SkillContainer, ReturnedResults, Input } from './Styled';
+import { Section, Skill, SkillContainer, ReturnedResults, Input, Replace } from './Styled';
 import { mapTech } from '../utils';
 
 const theme = {
@@ -68,7 +68,7 @@ class Technical extends Component {
             <ReturnedResults>
               Currently displaying {length} skill{length > 0 ? 's' : ''}.
             </ReturnedResults>
-            {!typing && <p className="replace">replace 'technical' above with a technology to filter skills</p>}
+            {!typing && <Replace>replace 'technical' above with a technology to filter skills</Replace>}
           </Section>
         </ThemeProvider>
         {loading ? <Loading /> : this.renderSkills(displayedSkills)}

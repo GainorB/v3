@@ -19,19 +19,6 @@ export const SideMenu = styled.div`
     padding: 0;
   }
 
-  .nav li {
-    cursor: pointer;
-    display: block;
-    padding: 0.2em 0;
-    text-transform: uppercase;
-    transition: all 200ms;
-  }
-
-  .nav li:hover {
-    color: #342c5c;
-    border-right: 3px solid #342c5c;
-  }
-
   .name,
   .title {
     text-transform: uppercase;

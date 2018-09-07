@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
   cursor: pointer;
-  padding: 1em 4em;
   color: #fff;
   border: none;
   font-weight: lighter;
