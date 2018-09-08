@@ -8,6 +8,7 @@ import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Work from './components/Work';
+import About from './components/About';
 import Experience from './components/Experience';
 import SideMenu from './components/SideMenu';
 import Technical from './components/Technical';
@@ -69,6 +70,9 @@ const App = props => (
       </ScrollableAnchor>
       <ScrollableAnchor id="skills">
         <Technical />
+      </ScrollableAnchor>
+      <ScrollableAnchor id="about">
+        <About />
       </ScrollableAnchor>
       <ScrollableAnchor id="exp">
         <Experience />
