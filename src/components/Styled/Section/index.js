@@ -11,8 +11,8 @@ export const Section = styled.div`
   ${props => (props.theme.height ? `height: ${props.theme.height}` : 'min-height: 280px')};
   padding: 15px;
 
-  @media only screen and (max-width: 700px) {
-    min-height: 200px;
+  @media only screen and (max-width: 1200px) {
+    min-height: 240px;
   }
 `;
 
@@ -24,8 +24,8 @@ export const SectionHeader = styled.h2`
   margin: 0;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 
-  @media only screen and (max-width: 700px) {
-    font-size: 1rem;
+  @media only screen and (max-width: 1200px) {
+    font-size: 3.3rem;
   }
 `;
 
@@ -37,7 +37,7 @@ export const SectionDesc = styled.p`
   font-weight: regular;
   margin: 0;
 
-  @media only screen and (max-width: 700px) {
-    font-size: 0.9rem;
+  @media only screen and (max-width: 1200px) {
+    font-size: 1.4rem;
   }
 `;

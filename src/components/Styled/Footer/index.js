@@ -28,4 +28,12 @@ export const Foot = styled.div`
   a:hover {
     color: #fff;
   }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 1rem;
+
+    .footer__email {
+      font-size: 0.9rem;
+    }
+  }
 `;

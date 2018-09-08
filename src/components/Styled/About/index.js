@@ -5,7 +5,7 @@ export const Me = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 10%;
+  padding: 5% 10%;
   line-height: 1.2;
   color: rgba(255, 255, 255, 1);
   background: #2348f3;
@@ -22,5 +22,13 @@ export const Me = styled.div`
     letter-spacing: -0.026em;
     margin: 0;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 1.4rem;
+
+    h1 {
+      font-size: 1.8rem;
+    }
   }
 `;

@@ -37,4 +37,7 @@ export const Button = styled.button`
     background: #fff;
     color: #090909;
   }
+
+  @media only screen and (max-width: 1200px) {
+  }
 `;
