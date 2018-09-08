@@ -8,7 +8,7 @@ export const Foot = styled.div`
   text-align: center;
   background: #090909;
   color: #fff;
-  height: 200px;
+  height: 250px;
   font-size: 1.2rem;
 
   .footer__email {

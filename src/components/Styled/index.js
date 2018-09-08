@@ -1,5 +1,5 @@
 import { InTouch, ListGroup } from './List';
-import { Nav } from './Nav';
+import { Nav, NavItem } from './Nav';
 import { ProjectGrid } from './Portfolio';
 import { Hub, Repo, SideMenu, SideMenuTitle } from './SideMenu';
 import { SkillContainer, Skill } from './Skills';
@@ -14,6 +14,7 @@ import { Section, SectionDesc, SectionHeader } from './Section';
 
 export {
   Nav,
+  NavItem,
   Replace,
   Input,
   Me,
