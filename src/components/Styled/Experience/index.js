@@ -9,7 +9,7 @@ export const ExpGrid = styled.div`
   border: 2px solid #090909;
 
   .exp__companyDescription {
-    color: #666666;
+    color: #090909;
   }
 
   .exp__responsibilities {

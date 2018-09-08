@@ -6,6 +6,7 @@ export const Nav = styled.ul`
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
+  position: fixed;
   margin: 0;
   padding: 20px;
   height: 100px;

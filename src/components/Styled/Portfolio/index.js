@@ -33,12 +33,23 @@ export const ProjectGrid = styled.div`
     color: #2348f3;
     font-weight: bold;
     font-size: 3rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    height: 100%;
+  }
+
+  .overlay__text .technologies {
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    font-weight: normal;
+  }
+
+  .test {
+    color: #fff;
+    font-size: 1rem;
   }
 `;

@@ -10,6 +10,5 @@ export const ReturnedResults = styled.h1`
 export const Replace = styled.h1`
   font-size: 1.1rem;
   color: #2348f3;
-  opacity: 0.6;
-  font-weight: bold;
+  font-weight: normal;
 `;

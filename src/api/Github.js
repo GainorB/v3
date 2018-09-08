@@ -65,12 +65,12 @@ class Github extends Component {
         <a href="https://github.com/GainorB?tab=following" target="_blank" rel="noopener noreferrer">
           <Hub>Following {profile.following} cool devs</Hub>
         </a>
-        <Repo>
-          <a href={myRepos[random].url} target="_blank" rel="noopener noreferrer">
+        <a href={myRepos[random].url} target="_blank" rel="noopener noreferrer">
+          <Repo>
             <span>{myRepos[random].name}</span>
-          </a>
-          <div>{myRepos[random].description}</div>
-        </Repo>
+            <div>{myRepos[random].description}</div>
+          </Repo>
+        </a>
       </ListGroup>
     );
   }

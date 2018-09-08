@@ -26,7 +26,7 @@ class Work extends Component {
   filterProjects = debounce(query => {
     if (query) {
       this.setState({
-        displayedProjects: this.state.projects.filter(p => p.technologies.includes(query)),
+        displayedProjects: this.state.projects.filter(p => p.technologies.map(t => t.toLowerCase()).includes(query)),
       });
     } else {
       this.setState({ displayedProjects: this.state.projects });
@@ -49,7 +49,20 @@ class Work extends Component {
         <ProjectGrid>
           <img src={p.image} alt={p.name} />
           <div className="overlay">
-            <div className="overlay__text">{p.name}</div>
+            <div className="overlay__text">
+              {p.name}
+              <div className="technologies">
+                {p.technologies.map((t, idx) => {
+                  const noComma = idx === p.technologies.length - 1 ? '' : ', ';
+                  return (
+                    <span key={v1()}>
+                      {t}
+                      {noComma}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </ProjectGrid>
       </Link>
