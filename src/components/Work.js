@@ -74,7 +74,7 @@ class Work extends Component {
     const { loading, displayedProjects, typing } = this.state;
     const { length } = displayedProjects;
     return (
-      <div>
+      <div style={{ marginTop: '100px' }}>
         <ThemeProvider theme={theme}>
           <Section bg="#090909">
             <Input type="text" name="searchTerm" placeholder="work." onChange={this.handleChange} />

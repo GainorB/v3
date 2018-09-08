@@ -1,21 +1,52 @@
 import styled from 'styled-components';
 
+// export const PageWrapper = styled.div`
+//   display: grid;
+//   grid-template-columns: 1.5fr 5fr;
+//   grid-template-areas: 'sidebar main';
+
+//   .sidebar {
+//     grid-area: 'sidebar';
+//     overflow: auto;
+//     max-height: 100vh;
+//   }
+
+//   .miniWrapper {
+//     max-height: 100vh;
+//     grid-area: 'main';
+//     display: grid;
+//     overflow: auto;
+//   }
+
+//   @media only screen and (max-width: 1200px) {
+//     grid-template-columns: 100%;
+//     grid-template-areas: 'sidebar' 'main';
+
+//     .sidebar {
+//       grid-area: 'sidebar';
+//       max-height: none;
+//     }
+
+//     .miniWrapper {
+//       max-height: none;
+//       grid-area: 'main';
+//     }
+//   }
+// `;
+
 export const PageWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1.5fr 5fr;
+  grid-template-columns: 400px 5fr;
   grid-template-areas: 'sidebar main';
 
   .sidebar {
     grid-area: 'sidebar';
-    overflow: auto;
     max-height: 100vh;
   }
 
   .miniWrapper {
-    max-height: 100vh;
     grid-area: 'main';
-    display: grid;
-    overflow: auto;
+    max-height: 100vh;
   }
 
   @media only screen and (max-width: 1200px) {

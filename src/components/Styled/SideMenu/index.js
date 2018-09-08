@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const SideMenu = styled.div`
   display: grid;
+  position: fixed;
   grid-template-rows: repeat(6, auto);
   grid-row-gap: 20px;
   padding: 60px 20px;
@@ -9,6 +10,8 @@ export const SideMenu = styled.div`
   height: 100%;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   background: #f8f9fa;
+  width: 400px;
+  overflow: auto;
 
   .intro {
     text-align: center;

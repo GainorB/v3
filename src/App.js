@@ -1,8 +1,10 @@
-import React, { Fragment } from 'react';
-// import { Switch, Route } from 'react-router-dom';
+import React from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Switch, Route } from 'react-router-dom';
+import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
 // PAGES
-import Navigation from './components/Navigation';
+// import Navigation from './components/Navigation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Work from './components/Work';
@@ -12,27 +14,68 @@ import Technical from './components/Technical';
 // import CaseStudy from './components/CaseStudy';
 
 // CSS
-import { PageWrapper } from './components/Styled';
+import { PageWrapper, Nav } from './components/Styled';
+import '../assets/styles/fade.css';
 
-// const Routes = () => (
-//   <Switch>
-//     <Route exact path="/case-study/:project" component={CaseStudy} />
-//   </Switch>
+configureAnchors({ offset: -100, scrollDuration: 400 });
+
+const Navigation = () => (
+  <Nav>
+    <a href="#about">
+      <li>About</li>
+    </a>
+    <a href="#work">
+      <li>Work</li>
+    </a>
+    <a href="#skills">
+      <li>Skills</li>
+    </a>
+    <a href="#exp">
+      <li>Experience</li>
+    </a>
+    <a href="#contact">
+      <li>Contact</li>
+    </a>
+  </Nav>
+);
+
+// const PageFade = props => (
+//   <CSSTransition {...props} classNames="fadeTranslate" timeout={1000} mountOnEnter unmountOnExit />
 // );
 
-const App = () => (
+// const Routes = props => {
+//   const locationKey = props.location.pathname;
+
+//   return (
+//     <TransitionGroup>
+//       <PageFade key={locationKey}>
+//         <Switch location={props.location}>
+//           <Route exact path="/case-study/:project" component={CaseStudy} />
+//         </Switch>
+//       </PageFade>
+//     </TransitionGroup>
+//   );
+// };
+
+const App = props => (
   <PageWrapper>
     <div className="sidebar">
       <SideMenu />
     </div>
     <div className="miniWrapper">
       <Navigation />
-      <Fragment>
+      <ScrollableAnchor id="work">
         <Work />
+      </ScrollableAnchor>
+      <ScrollableAnchor id="skills">
         <Technical />
+      </ScrollableAnchor>
+      <ScrollableAnchor id="exp">
         <Experience />
+      </ScrollableAnchor>
+      <ScrollableAnchor id="contact">
         <Contact />
-      </Fragment>
+      </ScrollableAnchor>
       <Footer />
     </div>
   </PageWrapper>

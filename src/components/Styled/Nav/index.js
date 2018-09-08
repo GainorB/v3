@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const Nav = styled.ul`
   background: #090909;
+  position: fixed;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
-  position: fixed;
   margin: 0;
   padding: 20px;
   height: 100px;
@@ -21,7 +21,7 @@ export const Nav = styled.ul`
     color: #fff;
     align-self: center;
     border-bottom: 3px solid #090909;
-    padding: 1.4em;
+    padding: 0.5em 1.4em;
     -webkit-transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
