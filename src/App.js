@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
@@ -42,68 +42,41 @@ const Navigation = props => {
   );
 };
 
-class App extends Component {
-  state = { ProjectComponent: null, project: null, loading: true };
-  async componentDidMount() {
-    const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
-    const projectNames = projects.map(p => p.name);
-    const { pathname } = this.props.location;
-    const path = pathname.replace('/case-study/', '');
-    const project = projects.filter(p => p.name === path)[0];
-    if (projectNames.includes(path)) {
-      await this.setStateAsync({ ProjectComponent: true, project, loading: false });
-    }
+const mainLayout = props => (
+  <Fragment>
+    <Navigation {...props} />
+    <ScrollableAnchor id="work">
+      <Work />
+    </ScrollableAnchor>
+    <ScrollableAnchor id="skills">
+      <Technical />
+    </ScrollableAnchor>
+    <ScrollableAnchor id="about">
+      <About />
+    </ScrollableAnchor>
+    <ScrollableAnchor id="exp">
+      <Experience />
+    </ScrollableAnchor>
+    <ScrollableAnchor id="contact">
+      <Contact />
+    </ScrollableAnchor>
+    <Footer />
+  </Fragment>
+);
 
-    await this.setStateAsync({ project, loading: false });
-  }
-
-  setStateAsync(state) {
-    return new Promise(resolve => {
-      this.setState(state, resolve);
-    });
-  }
-
-  render() {
-    const { ProjectComponent, project, loading } = this.state;
-    return (
-      <PageWrapper>
-        <div className="sidebar">
-          <SideMenu />
-        </div>
-        <div className="miniWrapper">
-          <Switch>
-            <Route
-              exact
-              path="/case-study/:project"
-              render={() => (loading ? 'Loading..' : <CaseStudy {...this.props} project={project} />)}
-            />
-          </Switch>
-          {ProjectComponent === null && (
-            <Fragment>
-              <Navigation {...this.props} />
-              <ScrollableAnchor id="work">
-                <Work />
-              </ScrollableAnchor>
-              <ScrollableAnchor id="skills">
-                <Technical />
-              </ScrollableAnchor>
-              <ScrollableAnchor id="about">
-                <About />
-              </ScrollableAnchor>
-              <ScrollableAnchor id="exp">
-                <Experience />
-              </ScrollableAnchor>
-              <ScrollableAnchor id="contact">
-                <Contact />
-              </ScrollableAnchor>
-              <Footer />
-            </Fragment>
-          )}
-        </div>
-      </PageWrapper>
-    );
-  }
-}
+const App = props => (
+  <PageWrapper>
+    <div className="sidebar">
+      <SideMenu />
+    </div>
+    <div className="miniWrapper">
+      <Switch>
+        <Route exact path="/" render={() => mainLayout(props)} />
+        <Route exact path="/case-study/:project" component={CaseStudy} />
+      </Switch>
+    </div>
+  </PageWrapper>
+);
 
 Navigation.propTypes = {
   location: PropTypes.object.isRequired,

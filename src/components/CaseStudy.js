@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class CaseStudy extends Component {
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+  };
+
   state = { project: null, loading: true };
 
-  componentDidMount() {
-    console.log(this.props.project);
-    if (this.props.project) {
-      this.setState({ project: this.props.project, loading: false });
-    }
+  async componentDidMount() {
+    const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
+    const requested = this.props.match.params.project;
+    const project = projects.filter(p => p.name === requested)[0];
+    await this.setStateAsync({ project, loading: false });
+  }
 
-    console.log(this.props.location.state.project);
-    if (this.props.location.state.project) {
-      this.setState({ project: this.props.location.state.project, loading: false });
-    }
+  setStateAsync(state) {
+    return new Promise(resolve => {
+      this.setState(state, resolve);
+    });
   }
 
   render() {

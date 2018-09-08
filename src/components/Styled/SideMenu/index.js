@@ -57,7 +57,7 @@ export const SideMenu = styled.div`
     position: static;
     width: 100%;
     font-size: 0.9rem;
-    padding: 20px;
+    padding: 10px;
 
     .focusedOn,
     .github,
