@@ -15,6 +15,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: isProduction ? 'assets/js/[name].[contenthash].js' : 'assets/js/[name].[hash].js',
+    publicPath: '/', // enable in Prod
   },
   // Enable sourcemaps for debugging webpack's output.
   devtool: !isProduction ? 'source-map' : 'inline-source-map',

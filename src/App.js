@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Switch, Route } from 'react-router-dom';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
@@ -12,7 +11,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import SideMenu from './components/SideMenu';
 import Technical from './components/Technical';
-// import CaseStudy from './components/CaseStudy';
+import CaseStudy from './components/CaseStudy';
 
 // CSS
 import { PageWrapper, Nav, NavItem } from './components/Styled';
@@ -43,50 +42,68 @@ const Navigation = props => {
   );
 };
 
-// const PageFade = props => (
-//   <CSSTransition {...props} classNames="fadeTranslate" timeout={1000} mountOnEnter unmountOnExit />
-// );
+class App extends Component {
+  state = { ProjectComponent: null, project: null, loading: true };
+  async componentDidMount() {
+    const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
+    const projectNames = projects.map(p => p.name);
+    const { pathname } = this.props.location;
+    const path = pathname.replace('/case-study/', '');
+    const project = projects.filter(p => p.name === path)[0];
+    if (projectNames.includes(path)) {
+      await this.setStateAsync({ ProjectComponent: true, project, loading: false });
+    }
 
-// const Routes = props => {
-//   const locationKey = props.location.pathname;
+    await this.setStateAsync({ project, loading: false });
+  }
 
-//   return (
-//     <TransitionGroup>
-//       <PageFade key={locationKey}>
-//         <Switch location={props.location}>
-//           <Route exact path="/case-study/:project" component={CaseStudy} />
-//         </Switch>
-//       </PageFade>
-//     </TransitionGroup>
-//   );
-// };
+  setStateAsync(state) {
+    return new Promise(resolve => {
+      this.setState(state, resolve);
+    });
+  }
 
-const App = props => (
-  <PageWrapper>
-    <div className="sidebar">
-      <SideMenu />
-    </div>
-    <div className="miniWrapper">
-      <Navigation {...props} />
-      <ScrollableAnchor id="work">
-        <Work />
-      </ScrollableAnchor>
-      <ScrollableAnchor id="skills">
-        <Technical />
-      </ScrollableAnchor>
-      <ScrollableAnchor id="about">
-        <About />
-      </ScrollableAnchor>
-      <ScrollableAnchor id="exp">
-        <Experience />
-      </ScrollableAnchor>
-      <ScrollableAnchor id="contact">
-        <Contact />
-      </ScrollableAnchor>
-      <Footer />
-    </div>
-  </PageWrapper>
-);
+  render() {
+    const { ProjectComponent, project, loading } = this.state;
+    return (
+      <PageWrapper>
+        <div className="sidebar">
+          <SideMenu />
+        </div>
+        <div className="miniWrapper">
+          <Switch>
+            <Route
+              exact
+              path="/case-study/:project"
+              render={() => (loading ? 'Loading..' : <CaseStudy {...this.props} project={project} />)}
+            />
+          </Switch>
+          {ProjectComponent === null && (
+            <Fragment>
+              <Navigation {...this.props} />
+              <ScrollableAnchor id="work">
+                <Work />
+              </ScrollableAnchor>
+              <ScrollableAnchor id="skills">
+                <Technical />
+              </ScrollableAnchor>
+              <ScrollableAnchor id="about">
+                <About />
+              </ScrollableAnchor>
+              <ScrollableAnchor id="exp">
+                <Experience />
+              </ScrollableAnchor>
+              <ScrollableAnchor id="contact">
+                <Contact />
+              </ScrollableAnchor>
+              <Footer />
+            </Fragment>
+          )}
+        </div>
+      </PageWrapper>
+    );
+  }
+}
 
 Navigation.propTypes = {
   location: PropTypes.object.isRequired,
