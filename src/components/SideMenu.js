@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Github from '../api/Github';
 import GetInTouch from './GetInTouch';
 import { InTouch, ListGroup, SideMenu, SideMenuTitle } from './Styled';
@@ -8,7 +9,9 @@ const logo = 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028357/port
 const Feed = () => (
   <SideMenu>
     <div className="intro">
-      <img className="avatar" src={logo} alt="Gainor Bostwick" />
+      <Link to="/">
+        <img className="avatar" src={logo} alt="Gainor Bostwick" />
+      </Link>
       <p className="name">Gainor Bostwick</p>
       <p className="title">Full Stack Web Developer</p>
     </div>

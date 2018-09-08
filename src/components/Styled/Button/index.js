@@ -41,3 +41,38 @@ export const Button = styled.button`
   @media only screen and (max-width: 1200px) {
   }
 `;
+
+export const StudyButton = styled(Button)`
+  color: #fff;
+  background: #2249ed;
+  padding: 0.7em 3em;
+  margin: 0.2em;
+
+  i {
+    top: 8px;
+    left: 15px;
+  }
+
+  span {
+    right: -15px;
+    color: #fff;
+  }
+
+  &:hover {
+    background: #090909;
+    color: #fff;
+  }
+`;
+
+export const GoBack = styled.button`
+  font-size: 1.5rem;
+  border: none;
+  padding: 0.5em 2em;
+  outline: none;
+  color: #fff;
+  background-color: #a70000;
+  cursor: pointer;
+
+  &:hover {
+  }
+`;

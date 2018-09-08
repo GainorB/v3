@@ -11,3 +11,4 @@
 11. Code Split?
 12. ~~Filter Project by skill~~
 13. ~~Loading component~~
+14. Modal for Image Preview

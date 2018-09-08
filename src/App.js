@@ -60,7 +60,6 @@ const mainLayout = props => (
     <ScrollableAnchor id="contact">
       <Contact />
     </ScrollableAnchor>
-    <Footer />
   </Fragment>
 );
 
@@ -74,6 +73,7 @@ const App = props => (
         <Route exact path="/" render={() => mainLayout(props)} />
         <Route exact path="/case-study/:project" component={CaseStudy} />
       </Switch>
+      <Footer />
     </div>
   </PageWrapper>
 );

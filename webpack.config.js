@@ -113,7 +113,7 @@ module.exports = {
     historyApiFallback: true, // serving index.html in place of any 404s
     disableHostCheck: true, // fix this error: Invalid Host header
     https: false, // enable SSL for localhost environment?
-    port: 3000,
+    port: 3002,
     quiet: true, // turns off webpack output including error message because FriendlyErrorsWebpackPlugin is enabled
     // proxy: [
     //   {

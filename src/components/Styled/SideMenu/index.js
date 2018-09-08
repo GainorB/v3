@@ -90,6 +90,7 @@ export const Hub = styled.li`
 export const Repo = styled.div`
   padding: 0.4em;
   margin-top: 0.5em;
+  background: #fff;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
 
   span {
