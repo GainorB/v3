@@ -53,6 +53,8 @@ export const SideMenu = styled.div`
   }
 
   @media only screen and (max-width: 1200px) {
+    position: static;
+    width: 100%;
     grid-template-rows: repeat(5, auto);
     font-size: 0.9rem;
     padding: 20px;

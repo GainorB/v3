@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { debounce } from 'lodash';
 import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
-import { Section, PortfolioWrapper, ProjectGrid, ReturnedResults, Input, Replace } from './Styled';
+import { Section, PortfolioWrapper, WorkWrapper, ProjectGrid, ReturnedResults, Input, Replace } from './Styled';
 import Loading from './Loading';
 
 const theme = {
@@ -74,7 +74,7 @@ class Work extends Component {
     const { loading, displayedProjects, typing } = this.state;
     const { length } = displayedProjects;
     return (
-      <div style={{ marginTop: '100px' }}>
+      <WorkWrapper>
         <ThemeProvider theme={theme}>
           <Section bg="#090909">
             <Input type="text" name="searchTerm" placeholder="work." onChange={this.handleChange} />
@@ -85,7 +85,7 @@ class Work extends Component {
           </Section>
         </ThemeProvider>
         {loading ? <Loading /> : this.renderProjects(displayedProjects)}
-      </div>
+      </WorkWrapper>
     );
   }
 }

@@ -15,6 +15,11 @@ export const Nav = styled.ul`
   width: 100%;
   z-index: 3;
   transition: all ease 0.5s;
+
+  @media only screen and (max-width: 1200px) {
+    position: static;
+    display: none;
+  }
 `;
 
 export const NavItem = styled.li`

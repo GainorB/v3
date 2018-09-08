@@ -4,7 +4,7 @@ import { ProjectGrid } from './Portfolio';
 import { Hub, Repo, SideMenu, SideMenuTitle } from './SideMenu';
 import { SkillContainer, Skill } from './Skills';
 import { ReturnedResults, Replace } from './Text';
-import { PageWrapper, PortfolioWrapper } from './Wrapper';
+import { PageWrapper, PortfolioWrapper, WorkWrapper } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Experience';
 import { Foot } from './Footer';
 import { Input } from './Input';
@@ -31,6 +31,7 @@ export {
   Repo,
   ListGroup,
   PortfolioWrapper,
+  WorkWrapper,
   ExpContainer,
   ProjectGrid,
   Skill,
