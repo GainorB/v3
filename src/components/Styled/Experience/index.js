@@ -25,6 +25,10 @@ export const ExpGrid = styled.div`
     font-size: 1rem;
     font-weight: bold;
   }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const ExpHeaderGrid = styled.div`

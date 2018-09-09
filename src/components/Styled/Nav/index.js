@@ -6,6 +6,7 @@ export const Nav = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   list-style-type: none;
   margin: 0;
   padding: 20px;
@@ -18,7 +19,7 @@ export const Nav = styled.ul`
 
   @media only screen and (max-width: 1200px) {
     position: static;
-    display: none;
+    justify-content: center;
   }
 `;
 

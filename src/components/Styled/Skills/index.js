@@ -27,7 +27,6 @@ export const Skill = styled.div`
   }
 
   &:hover {
-    cursor: crosshair;
     border-color: #2348f3;
     transform: scale(1.05, 1.05);
   }

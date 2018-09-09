@@ -17,8 +17,12 @@ export const SideMenu = styled.div`
     text-align: center;
   }
 
+  .intro img {
+    margin-bottom: 1em;
+  }
+
   .intro p {
-    margin: 0.5em;
+    margin: 0;
     padding: 0;
   }
 
@@ -28,17 +32,17 @@ export const SideMenu = styled.div`
   }
 
   .name {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-weight: bold;
   }
 
   .focusedOn li,
   .toolSet li {
-    padding: 0.2em 0;
+    padding: 0.1em 0;
   }
 
   .title {
     font-size: 1rem;
-    font-style: italic;
   }
 
   .avatar {
@@ -56,8 +60,7 @@ export const SideMenu = styled.div`
     display: block;
     position: static;
     width: 100%;
-    font-size: 0.9rem;
-    padding: 10px;
+    padding: 20px;
 
     .focusedOn,
     .github,
@@ -71,8 +74,8 @@ export const SideMenu = styled.div`
 
 export const SideMenuTitle = styled.h4`
   text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+  text-align: right;
+  font-size: 0.9rem;
   border-bottom: 1px solid #090909;
   padding-bottom: 0.5em;
   color: #090909;

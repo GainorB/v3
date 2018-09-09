@@ -62,17 +62,50 @@ export const StudyButton = styled(Button)`
     background: #090909;
     color: #fff;
   }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 1rem;
+    padding: 0.5em 2em;
+
+    span {
+      top: 1px;
+    }
+
+    i {
+      top: 6px;
+      font-size: 1.4rem;
+    }
+  }
 `;
 
 export const GoBack = styled.button`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border: none;
-  padding: 0.5em 2em;
+  display: block;
+  margin: auto;
+  width: 200px;
+  padding: 0.2em 1em;
   outline: none;
   color: #fff;
+  text-align: center;
   background-color: #a70000;
   cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out, 1s;
+  -moz-transition: all 0.1s ease-in-out, 1s;
+  -o-transition: all 0.1s ease-in-out, 1s;
+  transition: all 0.1s ease-in-out, 1s;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
 
   &:hover {
+    background: #090909;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 1rem;
+    padding: 0.5em 1em;
   }
 `;

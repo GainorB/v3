@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Me = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   padding: 5% 10%;
   line-height: 1.2;
@@ -25,10 +24,11 @@ export const Me = styled.div`
   }
 
   @media only screen and (max-width: 1200px) {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    min-height: 300px;
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
     }
   }
 `;
