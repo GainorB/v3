@@ -45,6 +45,7 @@ export const NavItem = styled.li`
   }
 
   @media only screen and (max-width: 1200px) {
+    font-size: 0.9rem;
     background: none;
     border-bottom: none;
     padding: 1em;

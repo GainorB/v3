@@ -8,7 +8,7 @@ export const ReturnedResults = styled.h1`
 `;
 
 export const Replace = styled.h1`
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #fff;
   font-weight: normal;
   margin: 0;
