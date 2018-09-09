@@ -55,7 +55,7 @@ class Github extends Component {
     }
     return (
       <ListGroup>
-        <Hub>Last updated {distanceInWordsStrict(new Date(), profile.updated_at, { addSuffix: true })}</Hub>
+        {/* <Hub>Last updated {distanceInWordsStrict(new Date(), profile.updated_at, { addSuffix: true })}</Hub> */}
         <a href="https://github.com/GainorB?tab=repositories" target="_blank" rel="noopener noreferrer">
           <Hub>{profile.public_repos} repositories</Hub>
         </a>

@@ -4,10 +4,10 @@ export const Me = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5% 10%;
+  padding: 5% 6%;
   line-height: 1.2;
-  color: rgba(255, 255, 255, 1);
-  background: #2348f3;
+  color: #090909;
+  background: #fff;
   font-size: 1.7rem;
   min-height: 350px;
 
@@ -17,7 +17,7 @@ export const Me = styled.div`
 
   h1 {
     font-size: 2.1rem;
-    font-weight: 500;
+    font-weight: bold;
     letter-spacing: -0.026em;
     margin: 0;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);

@@ -5,7 +5,7 @@ export const StudyGrid = styled.div`
   background: #f6f7fb;
   grid-template-rows: 400px 1fr auto;
   grid-gap: 1.3em;
-  padding: 1.4em;
+  padding: 1em;
 
   @media only screen and (max-width: 1200px) {
     grid-template-rows: 250px 1fr auto;
@@ -134,9 +134,9 @@ export const StudyTech = styled.li`
   font-weight: 600;
   margin: 0.3em;
   padding: 0.3em 2em;
-  background: #090909;
-  border-radius: 4px;
-  color: #fff;
+  background: none;
+  color: #090909;
+  border: 2px solid #090909;
   -webkit-transition: all 0.1s ease-in-out, 1s;
   -moz-transition: all 0.1s ease-in-out, 1s;
   -o-transition: all 0.1s ease-in-out, 1s;

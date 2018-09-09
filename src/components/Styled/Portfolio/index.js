@@ -20,6 +20,7 @@ export const ProjectGrid = styled.div`
     right: 0;
     height: 100%;
     width: 100%;
+    padding: 2em;
     opacity: 0;
     transition: 0.5s ease;
     background-color: #090909;

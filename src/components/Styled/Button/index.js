@@ -10,11 +10,6 @@ export const Button = styled.button`
   font-size: 1.2rem;
   position: relative;
   text-align: center;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
   -webkit-transition: all 0.1s ease-in-out, 1s;
   -moz-transition: all 0.1s ease-in-out, 1s;
   -o-transition: all 0.1s ease-in-out, 1s;
@@ -43,24 +38,12 @@ export const Button = styled.button`
 `;
 
 export const StudyButton = styled(Button)`
-  color: #fff;
-  background: #2249ed;
-  padding: 0.7em 3em;
   margin: 0.2em;
-
-  i {
-    top: 8px;
-    left: 15px;
-  }
-
-  span {
-    right: -15px;
-    color: #fff;
-  }
+  color: #090909;
+  border: 2px solid #090909;
 
   &:hover {
-    background: #090909;
-    color: #fff;
+    box-shadow: 0px 0px 0px 2px #090909;
   }
 
   @media only screen and (max-width: 1200px) {
@@ -84,7 +67,7 @@ export const GoBack = styled.button`
   display: block;
   margin: auto;
   width: 200px;
-  padding: 0.2em 1em;
+  padding: 0.5em 1em;
   outline: none;
   color: #fff;
   text-align: center;
@@ -94,14 +77,10 @@ export const GoBack = styled.button`
   -moz-transition: all 0.1s ease-in-out, 1s;
   -o-transition: all 0.1s ease-in-out, 1s;
   transition: all 0.1s ease-in-out, 1s;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
 
   &:hover {
     background: #090909;
+    box-shadow: 0px 0px 0px 2px #090909;
   }
 
   @media only screen and (max-width: 1200px) {

@@ -33,6 +33,7 @@ export const SideMenu = styled.div`
 
   .name {
     font-size: 1.6rem;
+    letter-spacing: 1px;
     font-weight: bold;
   }
 
@@ -74,27 +75,27 @@ export const SideMenu = styled.div`
 
 export const SideMenuTitle = styled.h4`
   text-transform: uppercase;
-  text-align: right;
   font-size: 0.9rem;
   border-bottom: 1px solid #090909;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.2em;
   color: #090909;
 `;
 
 export const Hub = styled.li`
   display: block;
   background: #fff;
-  color: #10102c;
-  padding: 0.4em;
+  color: #090909;
+  padding: 1em;
   margin: 0.3em 0;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14);
 `;
 
 export const Repo = styled.div`
-  padding: 0.4em;
+  padding: 1em;
+  color: #090909;
   margin-top: 0.5em;
   background: #fff;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14);
 
   span {
     text-transform: uppercase;

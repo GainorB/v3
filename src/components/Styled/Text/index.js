@@ -9,6 +9,8 @@ export const ReturnedResults = styled.h1`
 
 export const Replace = styled.h1`
   font-size: 1.1rem;
-  color: #2348f3;
+  color: #fff;
   font-weight: normal;
+  margin: 0;
+  margin-top: 1em;
 `;

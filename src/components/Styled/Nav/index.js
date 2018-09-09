@@ -9,17 +9,20 @@ export const Nav = styled.ul`
   align-items: center;
   list-style-type: none;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  padding-left: 10px;
   height: 100px;
   font-size: 1.1rem;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
   width: 100%;
   z-index: 3;
   transition: all ease 0.5s;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
 
   @media only screen and (max-width: 1200px) {
     position: static;
     justify-content: center;
+    background: #2649f0;
+    margin-bottom: 10px;
   }
 `;
 
@@ -39,5 +42,16 @@ export const NavItem = styled.li`
   &:hover {
     cursor: pointer;
     border-bottom: 3px solid #2649f0;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    background: none;
+    border-bottom: none;
+    padding: 1em;
+
+    &:hover {
+      color: #090909;
+      border-bottom: none;
+    }
   }
 `;
