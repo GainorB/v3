@@ -57,6 +57,18 @@ export const mapTech = tech => {
       src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028380/portfolio/digitalocean.png',
       tech,
     },
+    'Semantic UI': {
+      src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536513240/portfolio/semantic.png',
+      tech,
+    },
+    Redux: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536513431/portfolio/redux.png', tech },
+    JSON: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536513551/portfolio/json.png', tech },
+    AJAX: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536513765/portfolio/ajax.png', tech },
+    Chai: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536514159/portfolio/chai.png', tech },
+    'Responsive Design Principles': {
+      src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536514290/portfolio/responsive.png',
+      tech,
+    },
   };
 
   return key[tech];
