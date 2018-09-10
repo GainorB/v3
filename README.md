@@ -12,4 +12,4 @@
 12. ~~Filter Project by skill~~
 13. ~~Loading component~~
 14. Modal for Image Preview
-15. On Case Study Page, implement a next project or previous project selector
+15. ~~On Case Study Page, implement a next project or previous project selector~~
