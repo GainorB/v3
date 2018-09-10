@@ -7,8 +7,8 @@ const Footer = () => (
   <Foot>
     <p>&copy; {date.getFullYear()} Gainor Bostwick. All rights reserved.</p>
     <p className="footer__email">
-      <a href="mailto:hi@gainorbostwick.com" target="_blank" rel="noopener noreferrer">
-        hi@gainorbostwick.com
+      <a href="mailto:gainorbostwick@gmail.com" target="_blank" rel="noopener noreferrer">
+        gainorbostwick@gmail.com
       </a>
     </p>
   </Foot>

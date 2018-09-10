@@ -96,17 +96,23 @@ export const PrevButton = styled(Button)`
   padding: 1em 2em;
 
   &:hover {
-    box-shadow: 0px 0px 0px 2px #090909;
+    cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+    color: ${props => props.disabled && '#fff'};
+    background: ${props => props.disabled && '#6c757d'};
+    box-shadow: 0px 0px 0px 2px ${props => (props.disabled ? '#6c757d' : '#090909')};
   }
 `;
 
 export const NextButton = styled(Button)`
   font-size: 1rem;
   border: none;
-  background: #015f40;
+  background-color: ${props => (props.disabled ? '#6c757d' : '#015f40')};
   padding: 1em 2em;
 
   &:hover {
-    box-shadow: 0px 0px 0px 2px #090909;
+    cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+    color: ${props => props.disabled && '#fff'};
+    background: ${props => props.disabled && '#6c757d'};
+    box-shadow: 0px 0px 0px 2px ${props => (props.disabled ? '#6c757d' : '#090909')};
   }
 `;
