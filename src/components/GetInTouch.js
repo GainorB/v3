@@ -28,7 +28,7 @@ const GetInTouch = () => (
         <i className="fab fa-stack-overflow" />
       </InTouch>
     </a>
-    <a href="mailto:hi@gainorbostwick.com" target="_blank" rel="noopener noreferrer">
+    <a href="mailto:gainorbostwick@gmail.com" target="_blank" rel="noopener noreferrer">
       <InTouch email>
         <i className="fas fa-envelope" />
       </InTouch>

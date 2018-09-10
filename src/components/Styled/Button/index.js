@@ -92,7 +92,7 @@ export const GoBack = styled.button`
 export const PrevButton = styled(Button)`
   font-size: 1rem;
   border: none;
-  background: #a70000;
+  background: ${props => (props.disabled ? '#6c757d' : '#a70000')};
   padding: 1em 2em;
 
   &:hover {
@@ -106,7 +106,7 @@ export const PrevButton = styled(Button)`
 export const NextButton = styled(Button)`
   font-size: 1rem;
   border: none;
-  background-color: ${props => (props.disabled ? '#6c757d' : '#015f40')};
+  background: ${props => (props.disabled ? '#6c757d' : '#015f40')};
   padding: 1em 2em;
 
   &:hover {
