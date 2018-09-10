@@ -69,6 +69,7 @@ export const mapTech = tech => {
       src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536514290/portfolio/responsive.png',
       tech,
     },
+    Bitbucket: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536550083/portfolio/bitbucket.png', tech },
   };
 
   return key[tech];

@@ -52,8 +52,8 @@ class Work extends Component {
             <div className="overlay__text">
               {p.name}
               <div className="technologies">
-                {p.technologies.map((t, idx) => {
-                  const noComma = idx === p.technologies.length - 1 ? '' : ', ';
+                {p.technologies.map((t, index) => {
+                  const noComma = index === p.technologies.length - 1 ? '' : ', ';
                   return (
                     <span key={v1()}>
                       {t}

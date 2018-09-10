@@ -71,7 +71,7 @@ export const GoBack = styled.button`
   outline: none;
   color: #fff;
   text-align: center;
-  background-color: #a70000;
+  background: #a70000;
   cursor: pointer;
   -webkit-transition: all 0.1s ease-in-out, 1s;
   -moz-transition: all 0.1s ease-in-out, 1s;
@@ -86,5 +86,27 @@ export const GoBack = styled.button`
   @media only screen and (max-width: 1200px) {
     font-size: 1rem;
     padding: 0.5em 1em;
+  }
+`;
+
+export const PrevButton = styled(Button)`
+  font-size: 1rem;
+  border: none;
+  background: #a70000;
+  padding: 1em 2em;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 2px #090909;
+  }
+`;
+
+export const NextButton = styled(Button)`
+  font-size: 1rem;
+  border: none;
+  background: #015f40;
+  padding: 1em 2em;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 2px #090909;
   }
 `;

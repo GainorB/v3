@@ -42,7 +42,7 @@ const Feed = () => (
     <div className="resume">
       <SideMenuTitle>Resume</SideMenuTitle>
       <ListGroup>
-        <a href="../../assets/GainorBostwickResume.pdf">
+        <a href="https://drive.google.com/open?id=1c2p8SR4XLP6XvzRqiJJ4O5B3_04pA2S8">
           <InTouch resume>
             <i className="fas fa-id-card-alt" />
           </InTouch>

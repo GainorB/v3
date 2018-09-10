@@ -14,23 +14,29 @@ import {
   GalleryGrid,
   ListGroup,
   StudyTech,
-  GoBack,
+  // GoBack,
+  ButtonGrid,
+  PrevButton,
+  NextButton,
 } from '../components/Styled';
 
 class CaseStudy extends Component {
   static propTypes = {
     match: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired,
+    // history: PropTypes.object.isRequired,
   };
 
-  state = { project: null, loading: true, projects: null };
+  state = {
+    project: null,
+    loading: true,
+    projects: null,
+    currentIndex: null,
+  };
 
   async componentDidMount() {
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
-    // const requested = this.props.match.params.project;
     const currentIndex = Number(this.props.match.params.id);
-    // const project = projects.filter(p => p.name === requested)[0];
-    await this.setStateAsync({ project: projects[currentIndex], projects, loading: false });
+    await this.setStateAsync({ project: projects[currentIndex], projects, loading: false, currentIndex });
   }
 
   setStateAsync(state) {
@@ -39,87 +45,97 @@ class CaseStudy extends Component {
     });
   }
 
-  newProject = str => {
-    let currentIndex = Number(this.props.match.params.id);
+  newProject = key => {
+    let { currentIndex } = this.state;
     const { projects } = this.state;
-    // if (currentIndex === projects.length - 1) return;
-    switch (str) {
-      case 'next':
-        currentIndex += 1;
-        break;
-      case 'prev':
-        currentIndex -= 1;
-        break;
-      default:
-        break;
+    const max = projects.length;
+    if (currentIndex !== max || currentIndex !== -1) {
+      switch (key) {
+        case 'next':
+          currentIndex += 1;
+          break;
+        case 'prev':
+          currentIndex -= 1;
+          break;
+        default:
+          break;
+      }
+      this.setState({ project: projects[currentIndex], currentIndex });
     }
-    this.setState({ project: projects[currentIndex] });
   };
 
-  renderProject = project => (
-    <StudyGrid>
-      <StudySplash>
-        <span>{project.name}</span>
-        <span onClick={() => this.newProject('next')} style={{ color: 'white', fontSize: '2rem' }}>
-          Next Project
-        </span>
-        <span onClick={() => this.newProject('prev')} style={{ color: 'white', fontSize: '2rem' }}>
-          Previous Project
-        </span>
-      </StudySplash>
-      <StudyContainer>
-        <Study>
-          <StudyHeader>About the Project</StudyHeader>
-          <StudyContent>
-            {project.description}
-            <p>
-              <StudyButton>
-                <i className="fab fa-github" />{' '}
-                <a href={project.resources[0]} target="_blank" rel="noopener noreferrer">
-                  <span>View Repo</span>
-                </a>
-              </StudyButton>
-              <StudyButton>
-                <i className="fas fa-plug" />{' '}
-                <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
-                  <span>View Online</span>
-                </a>
-              </StudyButton>
-            </p>
-          </StudyContent>
-        </Study>
-        <StudyInner>
+  renderProject = project => {
+    const { projects, currentIndex } = this.state;
+    return (
+      <StudyGrid>
+        <StudySplash>
+          <span>{project.name}</span>
+        </StudySplash>
+
+        <StudyContainer>
           <Study>
-            <StudyHeader>Technical Information</StudyHeader>
+            <StudyHeader>About the Project</StudyHeader>
             <StudyContent>
-              <ol>{project.technicalInformation.map(f => <li key={v1()}>{f}</li>)}</ol>
-            </StudyContent>
-            <StudyHeader>Powered by</StudyHeader>
-            <StudyContent>
-              <ListGroup>{project.technologies.map(t => <StudyTech key={v1()}>{t}</StudyTech>)}</ListGroup>
+              {project.description}
+              <p>
+                <StudyButton>
+                  <i className="fab fa-github" />{' '}
+                  <a href={project.resources[0]} target="_blank" rel="noopener noreferrer">
+                    <span>View Repo</span>
+                  </a>
+                </StudyButton>
+                <StudyButton>
+                  <i className="fas fa-plug" />{' '}
+                  <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
+                    <span>View Online</span>
+                  </a>
+                </StudyButton>
+              </p>
             </StudyContent>
           </Study>
-          <Study>
-            <StudyHeader>Features</StudyHeader>
-            <StudyContent>
-              <ol>{project.features.map(f => <li key={v1()}>{f}</li>)}</ol>
-            </StudyContent>
-          </Study>
-        </StudyInner>
-      </StudyContainer>
-      <GalleryGrid>
-        <StudyHeader>Gallery</StudyHeader>
-        <StudyGallery>
-          {project.gallery.map(p => (
-            <div key={v1()}>
-              <img src={p} alt={project.name} />
-            </div>
-          ))}
-        </StudyGallery>
-      </GalleryGrid>
-      <GoBack onClick={() => this.props.history.goBack()}>Go back</GoBack>
-    </StudyGrid>
-  );
+          <StudyInner>
+            <Study>
+              <StudyHeader>Technical Information</StudyHeader>
+              <StudyContent>
+                <ol>{project.technicalInformation.map(f => <li key={v1()}>{f}</li>)}</ol>
+              </StudyContent>
+              <StudyHeader>Powered by</StudyHeader>
+              <StudyContent>
+                <ListGroup>{project.technologies.map(t => <StudyTech key={v1()}>{t}</StudyTech>)}</ListGroup>
+              </StudyContent>
+            </Study>
+            <Study>
+              <StudyHeader>Features</StudyHeader>
+              <StudyContent>
+                <ol>{project.features.map(f => <li key={v1()}>{f}</li>)}</ol>
+              </StudyContent>
+            </Study>
+          </StudyInner>
+        </StudyContainer>
+        {project.gallery.length > 1 && (
+          <GalleryGrid>
+            <StudyHeader>Gallery</StudyHeader>
+            <StudyGallery>
+              {project.gallery.map(p => (
+                <div key={v1()}>
+                  <img src={p} alt={project.name} />
+                </div>
+              ))}
+            </StudyGallery>
+          </GalleryGrid>
+        )}
+        <ButtonGrid>
+          <PrevButton onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
+            Previous Project
+          </PrevButton>
+          <NextButton onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
+            Next Project
+          </NextButton>
+        </ButtonGrid>
+        {/* <GoBack onClick={() => this.props.history.goBack()}>Go back</GoBack> */}
+      </StudyGrid>
+    );
+  };
 
   render() {
     const { project, loading } = this.state;

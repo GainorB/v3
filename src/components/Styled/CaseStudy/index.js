@@ -37,6 +37,12 @@ export const StudySplash = styled.div`
   }
 `;
 
+export const ButtonGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+`;
+
 export const StudyContainer = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;
