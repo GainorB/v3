@@ -71,7 +71,7 @@ const App = props => (
     <div className="miniWrapper">
       <Switch>
         <Route exact path="/" render={() => mainLayout(props)} />
-        <Route exact path="/case-study/:project" component={CaseStudy} />
+        <Route exact path="/case-study/:id/:project" component={CaseStudy} />
       </Switch>
       <Footer />
     </div>

@@ -44,8 +44,8 @@ class Work extends Component {
   };
 
   renderProjects = projects => {
-    const output = projects.map(p => (
-      <Link to={{ pathname: `/case-study/${p.name}`, state: { project: p } }} key={v1()}>
+    const output = projects.map((p, idx) => (
+      <Link to={{ pathname: `/case-study/${idx}/${p.name}`, state: { project: p } }} key={v1()}>
         <ProjectGrid>
           <img src={p.image} alt={p.name} />
           <div className="overlay">

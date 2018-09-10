@@ -109,6 +109,7 @@ module.exports = {
   ],
   // webpack-dev-server options
   devServer: {
+    contentBase: './',
     noInfo: true, // disable webpack bundle information on startup
     historyApiFallback: true, // serving index.html in place of any 404s
     disableHostCheck: true, // fix this error: Invalid Host header

@@ -23,13 +23,14 @@ class CaseStudy extends Component {
     history: PropTypes.object.isRequired,
   };
 
-  state = { project: null, loading: true };
+  state = { project: null, loading: true, projects: null };
 
   async componentDidMount() {
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
-    const requested = this.props.match.params.project;
-    const project = projects.filter(p => p.name === requested)[0];
-    await this.setStateAsync({ project, loading: false });
+    // const requested = this.props.match.params.project;
+    const currentIndex = Number(this.props.match.params.id);
+    // const project = projects.filter(p => p.name === requested)[0];
+    await this.setStateAsync({ project: projects[currentIndex], projects, loading: false });
   }
 
   setStateAsync(state) {
@@ -38,10 +39,33 @@ class CaseStudy extends Component {
     });
   }
 
+  newProject = str => {
+    let currentIndex = Number(this.props.match.params.id);
+    const { projects } = this.state;
+    // if (currentIndex === projects.length - 1) return;
+    switch (str) {
+      case 'next':
+        currentIndex += 1;
+        break;
+      case 'prev':
+        currentIndex -= 1;
+        break;
+      default:
+        break;
+    }
+    this.setState({ project: projects[currentIndex] });
+  };
+
   renderProject = project => (
     <StudyGrid>
       <StudySplash>
         <span>{project.name}</span>
+        <span onClick={() => this.newProject('next')} style={{ color: 'white', fontSize: '2rem' }}>
+          Next Project
+        </span>
+        <span onClick={() => this.newProject('prev')} style={{ color: 'white', fontSize: '2rem' }}>
+          Previous Project
+        </span>
       </StudySplash>
       <StudyContainer>
         <Study>
