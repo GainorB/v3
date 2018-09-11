@@ -19,6 +19,7 @@ import {
   PrevButton,
   NextButton,
 } from '../components/Styled';
+import Loading from './Loading';
 
 class CaseStudy extends Component {
   static propTypes = {
@@ -147,7 +148,7 @@ class CaseStudy extends Component {
   render() {
     const { project, loading } = this.state;
     if (loading) {
-      return <div>Loading..</div>;
+      return <Loading />;
     }
     return this.renderProject(project);
   }
