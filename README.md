@@ -1,4 +1,4 @@
-1. When performing skill search, prevent "jumpiness".
+1. ~~When performing skill search, prevent "jumpiness".~~
 2. Responsiveness
 3. Accessibility
 4. ~~AutoFocus input field when in view~~
@@ -12,4 +12,5 @@
 12. ~~Filter Project by skill~~
 13. ~~Loading component~~
 14. Modal for Image Preview
-15. ~~On Case Study Page, implement a next project or previous project selector~~
+15. ~~On Case Study Page, implement a next project or previous project selector
+16. ~~Fix direct routing with React Router in Prod~~

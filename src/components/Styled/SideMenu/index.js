@@ -57,6 +57,10 @@ export const SideMenu = styled.div`
     border: 1px solid #e9ecef;
   }
 
+  .avatar:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
   @media only screen and (max-width: 1200px) {
     display: block;
     position: static;

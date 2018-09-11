@@ -23,7 +23,7 @@ import {
 class CaseStudy extends Component {
   static propTypes = {
     match: PropTypes.object.isRequired,
-    // history: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
   };
 
   state = {
@@ -37,6 +37,13 @@ class CaseStudy extends Component {
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
     const currentIndex = Number(this.props.match.params.id);
     await this.setStateAsync({ project: projects[currentIndex], projects, loading: false, currentIndex });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { currentIndex, projects } = this.state;
+    if (prevState.currentIndex !== currentIndex && prevState.currentIndex !== null) {
+      this.props.history.push(`/case-study/${currentIndex}/${projects[currentIndex].name}`);
+    }
   }
 
   setStateAsync(state) {
