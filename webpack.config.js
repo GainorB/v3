@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
@@ -106,6 +107,13 @@ module.exports = {
       chunkFilename: !isProduction ? 'assets/css/[id].css' : 'assets/css/[id].[hash].css',
     }),
     new ManifestPlugin(), // will generate a manifest.json file in your root output directory with a mapping of all source file names to their corresponding output file,
+    new CopyWebpackPlugin([
+      {
+        from: './_redirects',
+        to: path.join(__dirname, 'dist'),
+        toType: 'dir',
+      },
+    ]),
   ],
   // webpack-dev-server options
   devServer: {
