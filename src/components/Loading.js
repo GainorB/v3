@@ -1,5 +1,6 @@
 import React from 'react';
+import { PerfectlyCentered } from './Styled';
 
-const Loading = () => <span>Loading..</span>;
+const Loading = () => <PerfectlyCentered>Loading..</PerfectlyCentered>;
 
 export default Loading;

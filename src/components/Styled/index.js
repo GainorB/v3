@@ -3,13 +3,13 @@ import { Nav, NavItem } from './Nav';
 import { ProjectGrid } from './Portfolio';
 import { Hub, Repo, SideMenu, SideMenuTitle } from './SideMenu';
 import { SkillContainer, Skill } from './Skills';
-import { ReturnedResults, Replace } from './Text';
-import { PageWrapper, PortfolioWrapper, WorkWrapper } from './Wrapper';
+import { ReturnedResults, Replace, H1, H4, ProjectError } from './Text';
+import { PageWrapper, PortfolioWrapper, WorkWrapper, PerfectlyCentered } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Experience';
 import { Foot } from './Footer';
 import { Input } from './Input';
 import { Me } from './About';
-import { Button, StudyButton, GoBack, PrevButton, NextButton } from './Button';
+import { Button, StudyButton, PrevButton, NextButton } from './Button';
 import { Section, SectionDesc, SectionHeader } from './Section';
 import {
   StudyGrid,
@@ -45,8 +45,11 @@ export {
   Replace,
   Input,
   Me,
+  ProjectError,
+  PerfectlyCentered,
+  H1,
+  H4,
   Button,
-  GoBack,
   Foot,
   InTouch,
   PageWrapper,

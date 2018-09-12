@@ -14,12 +14,12 @@ import {
   GalleryGrid,
   ListGroup,
   StudyTech,
-  // GoBack,
   ButtonGrid,
   PrevButton,
   NextButton,
 } from '../components/Styled';
 import Loading from './Loading';
+import InvalidProject from './InvalidProject';
 
 class CaseStudy extends Component {
   static propTypes = {
@@ -32,12 +32,18 @@ class CaseStudy extends Component {
     loading: true,
     projects: null,
     currentIndex: null,
+    error: null,
   };
 
   async componentDidMount() {
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
+    const currentProjects = projects.map((e, i) => i);
     const currentIndex = Number(this.props.match.params.id);
-    await this.setStateAsync({ project: projects[currentIndex], projects, loading: false, currentIndex });
+    if (currentProjects.includes(currentIndex)) {
+      await this.setStateAsync({ project: projects[currentIndex], projects, loading: false, currentIndex });
+    } else {
+      await this.setStateAsync({ error: 'Invalid Project', loading: false });
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -140,15 +146,16 @@ class CaseStudy extends Component {
             Next Project
           </NextButton>
         </ButtonGrid>
-        {/* <GoBack onClick={() => this.props.history.goBack()}>Go back</GoBack> */}
       </StudyGrid>
     );
   };
 
   render() {
-    const { project, loading } = this.state;
+    const { project, loading, error } = this.state;
     if (loading) {
       return <Loading />;
+    } else if (error) {
+      return <InvalidProject error={error} />;
     }
     return this.renderProject(project);
   }

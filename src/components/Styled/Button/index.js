@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
   cursor: pointer;
-  color: #fff;
-  border: none;
+  color: ${props => (props.notFound ? '#090909' : '#fff')};
+  border: ${props => (props.notFound ? '2px solid #090909' : 'none')};
   font-weight: lighter;
   letter-spacing: 1px;
   background: none;
@@ -29,6 +29,7 @@ export const Button = styled.button`
   }
 
   &:hover {
+    box-shadow: 0px 0px 0px 2px #090909;
     background: #fff;
     color: #090909;
   }
@@ -58,34 +59,6 @@ export const StudyButton = styled(Button)`
       top: 6px;
       font-size: 1.4rem;
     }
-  }
-`;
-
-export const GoBack = styled.button`
-  font-size: 1.3rem;
-  border: none;
-  display: block;
-  margin: auto;
-  width: 200px;
-  padding: 0.5em 1em;
-  outline: none;
-  color: #fff;
-  text-align: center;
-  background: #a70000;
-  cursor: pointer;
-  -webkit-transition: all 0.1s ease-in-out, 1s;
-  -moz-transition: all 0.1s ease-in-out, 1s;
-  -o-transition: all 0.1s ease-in-out, 1s;
-  transition: all 0.1s ease-in-out, 1s;
-
-  &:hover {
-    background: #090909;
-    box-shadow: 0px 0px 0px 2px #090909;
-  }
-
-  @media only screen and (max-width: 1200px) {
-    font-size: 1rem;
-    padding: 0.5em 1em;
   }
 `;
 

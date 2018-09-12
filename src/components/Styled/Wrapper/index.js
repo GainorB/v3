@@ -46,3 +46,13 @@ export const WorkWrapper = styled.div`
     margin: 0;
   }
 `;
+
+export const PerfectlyCentered = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+`;
