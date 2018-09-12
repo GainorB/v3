@@ -70,6 +70,10 @@ export const mapTech = tech => {
       tech,
     },
     Bitbucket: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536550083/portfolio/bitbucket.png', tech },
+    'Styled Components': {
+      src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536755033/portfolio/styledComponents.png',
+      tech,
+    },
   };
 
   return key[tech];
