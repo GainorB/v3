@@ -1,11 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { debounce } from 'lodash';
 // import FlipMove from 'react-flip-move';
-import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
 import Loading from './Loading';
 import { Section, Skill, SkillContainer, ReturnedResults, Input, Replace } from './Styled';
-import { mapTech } from '../utils';
+import { mapTech, key } from '../utils';
 
 const theme = {
   fontColor: '#fff',
@@ -48,7 +47,7 @@ class Technical extends Component {
 
   renderSkills = skills => {
     const output = skills.map(mapTech).map(t => (
-      <Skill key={v1()}>
+      <Skill key={key()}>
         <img src={t.src} alt={t.tech} />
         <span>{t.tech}</span>
       </Skill>

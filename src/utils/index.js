@@ -1,8 +1,8 @@
-// import 'React' from 'react'
+import { v1 } from 'uuid';
 
 // MAP my skills to an object containing an image
 export const mapTech = tech => {
-  const key = {
+  const map = {
     HTML5: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028382/portfolio/html5.png', tech },
     CSS3: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028380/portfolio/css3.png', tech },
     SASS: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028384/portfolio/sass.png', tech },
@@ -76,5 +76,7 @@ export const mapTech = tech => {
     },
   };
 
-  return key[tech];
+  return map[tech];
 };
+
+export const key = () => v1();

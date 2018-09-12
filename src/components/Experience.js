@@ -1,9 +1,8 @@
 import React, { Fragment, Component } from 'react';
-
-import { v1 } from 'uuid';
 import { ThemeProvider } from 'styled-components';
 import Loading from './Loading';
 import { SectionHeader, Section, ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Styled';
+import { key } from '../utils';
 
 const theme = {
   fontColor: '#fff',
@@ -28,7 +27,7 @@ class Experience extends Component {
 
   renderExperience = experience => {
     const output = experience.map(e => (
-      <Fragment key={v1()}>
+      <Fragment key={key()}>
         <ExpGrid>
           <ExpHeaderGrid>
             <img src={e.companyLogo} alt={e.companyName} />
@@ -40,7 +39,7 @@ class Experience extends Component {
           <div className="exp__companyDescription">{e.companyDescription}</div>
           <ol className="exp__responsibilities">
             <span>Responsibilities</span>
-            {e.responsibilities.map(r => <li key={v1()}>{r}</li>)}
+            {e.responsibilities.map(r => <li key={key()}>{r}</li>)}
           </ol>
         </ExpGrid>
         <ExpFooter>
