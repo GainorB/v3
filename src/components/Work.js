@@ -12,7 +12,14 @@ const theme = {
 };
 
 class Work extends Component {
-  state = { loading: true, projects: [], displayedProjects: [], typing: false, techUsed: null };
+  state = {
+    loading: true,
+    projects: [],
+    displayedProjects: [],
+    displayedProjectsTech: null,
+    typing: false,
+    techUsed: null,
+  };
 
   componentDidMount = async () => {
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
@@ -31,15 +38,23 @@ class Work extends Component {
 
   filterProjects = debounce(query => {
     if (query) {
+      const filteredProjects = this.state.projects.filter(p =>
+        p.technologies.map(t => t.toLowerCase()).includes(query)
+      );
+      const filteredProjectsTech = uniq(flattenDeep(filteredProjects.map(e => e.technologies)));
+
       this.setState({
-        displayedProjects: this.state.projects.filter(p => p.technologies.map(t => t.toLowerCase()).includes(query)),
+        displayedProjects: filteredProjects,
+        displayedProjectsTech: filteredProjectsTech,
       });
     } else {
       this.setState({ displayedProjects: this.state.projects });
     }
   }, 700);
 
-  handleChange = ({ value }) => {
+  handleChange = (data = null) => {
+    if (data === null) return;
+    const { value } = data;
     const query = value.toLowerCase();
     this.filterProjects(query);
     if (value.length > 0) {
@@ -77,7 +92,7 @@ class Work extends Component {
   };
 
   render() {
-    const { loading, displayedProjects, typing, techUsed } = this.state;
+    const { loading, displayedProjects, typing, techUsed, displayedProjectsTech } = this.state;
     const { length } = displayedProjects;
     return (
       <WorkWrapper>
@@ -85,7 +100,8 @@ class Work extends Component {
           <Section bg="#090909">
             {techUsed && <MySelect placeholder="work." onChange={this.handleChange} options={techUsed} />}
             <ReturnedResults>
-              Currently displaying {length} project{length > 0 ? 's' : ''}.
+              Currently displaying {length} project{length > 1 ? 's' : ''} with{' '}
+              {(displayedProjectsTech && displayedProjectsTech.length) || (techUsed && techUsed.length)} technologies.
             </ReturnedResults>
             {!typing && <Replace>replace 'work' above with a technology to filter projects</Replace>}
           </Section>

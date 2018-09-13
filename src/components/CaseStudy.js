@@ -92,18 +92,19 @@ class CaseStudy extends Component {
             <StudyContent>
               {project.description}
               <p>
-                <StudyButton>
-                  <i className="fab fa-github" />{' '}
-                  <a href={project.resources[0]} target="_blank" rel="noopener noreferrer">
+                <a href={project.resources[0]} target="_blank" rel="noopener noreferrer">
+                  <StudyButton>
+                    <i className="fab fa-github" />
                     <span>View Repo</span>
-                  </a>
-                </StudyButton>
-                <StudyButton>
-                  <i className="fas fa-plug" />{' '}
-                  <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
+                  </StudyButton>
+                </a>
+
+                <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
+                  <StudyButton>
+                    <i className="fas fa-plug" />
                     <span>View Online</span>
-                  </a>
-                </StudyButton>
+                  </StudyButton>
+                </a>
               </p>
             </StudyContent>
           </Study>

@@ -72,7 +72,7 @@ class Technical extends Component {
               />
             )}
             <ReturnedResults>
-              Currently displaying {length} skill{length > 0 ? 's' : ''}.
+              Currently displaying {length} skill{length > 1 ? 's' : ''}.
             </ReturnedResults>
             {!typing && <Replace>replace 'technical' above with a technology to filter skills</Replace>}
           </Section>
