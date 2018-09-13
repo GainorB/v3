@@ -98,7 +98,6 @@ export const StudyHeader = styled.h1`
   font-weight: normal;
   text-align: center;
   margin-bottom: 0.2em;
-  text-transform: lowercase;
 
   @media only screen and (max-width: 1200px) {
     font-size: 2rem;

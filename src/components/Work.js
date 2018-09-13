@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { debounce, flattenDeep, uniq } from 'lodash';
 import { ThemeProvider } from 'styled-components';
 import MySelect from './MySelect';
-import { Section, PortfolioWrapper, WorkWrapper, ProjectGrid, ReturnedResults, Input, Replace } from './Styled';
+import { Section, PortfolioWrapper, WorkWrapper, ProjectGrid, ReturnedResults, Replace } from './Styled';
 import Loading from './Loading';
 import { key } from '../utils';
 
@@ -12,7 +12,7 @@ const theme = {
 };
 
 class Work extends Component {
-  state = { loading: true, projects: [], displayedProjects: [], typing: false, techUsed: null, selectedOption: null };
+  state = { loading: true, projects: [], displayedProjects: [], typing: false, techUsed: null };
 
   componentDidMount = async () => {
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
@@ -39,19 +39,14 @@ class Work extends Component {
     }
   }, 700);
 
-  // handleChange = e => {
-  //   const query = e.target.value.toLowerCase();
-  //   this.filterProjects(query);
-  //   if (e.target.value.length > 0) {
-  //     this.setState({ typing: true });
-  //   } else {
-  //     this.setState({ typing: false });
-  //   }
-  // };
-
-  handleChange = selectedOption => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
+  handleChange = ({ value }) => {
+    const query = value.toLowerCase();
+    this.filterProjects(query);
+    if (value.length > 0) {
+      this.setState({ typing: true });
+    } else {
+      this.setState({ typing: false });
+    }
   };
 
   renderProjects = projects => {
@@ -82,21 +77,16 @@ class Work extends Component {
   };
 
   render() {
-    const { loading, displayedProjects, typing, techUsed, selectedOption } = this.state;
-    console.log(techUsed && techUsed);
-    // const { length } = displayedProjects;
+    const { loading, displayedProjects, typing, techUsed } = this.state;
+    const { length } = displayedProjects;
     return (
       <WorkWrapper>
         <ThemeProvider theme={theme}>
           <Section bg="#090909">
-            {techUsed && (
-              <MySelect placeholder="work." value={selectedOption} onChange={this.handleChange} options={techUsed} />
-            )}
-            {/* <Input type="text" name="searchTerm" placeholder="work." onChange={this.handleChange} /> */}
-            {/* {techUsed && <Suggestions data={techUsed} />} */}
-            {/* <ReturnedResults>
+            {techUsed && <MySelect placeholder="work." onChange={this.handleChange} options={techUsed} />}
+            <ReturnedResults>
               Currently displaying {length} project{length > 0 ? 's' : ''}.
-            </ReturnedResults> */}
+            </ReturnedResults>
             {!typing && <Replace>replace 'work' above with a technology to filter projects</Replace>}
           </Section>
         </ThemeProvider>

@@ -7,7 +7,6 @@ export const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   ${props => (props.theme.height ? `height: ${props.theme.height}` : 'min-height: 280px')};
   padding: 15px;
 

@@ -43,7 +43,7 @@ const Feed = () => (
       <SideMenuTitle>Resume</SideMenuTitle>
       <ListGroup>
         <a
-          href="https://drive.google.com/open?id=1c2p8SR4XLP6XvzRqiJJ4O5B3_04pA2S8"
+          href="https://drive.google.com/file/d/1SlXfoCp6r9FLhnv6xEieI5C768Fqsr_Q/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >

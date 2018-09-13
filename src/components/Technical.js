@@ -3,8 +3,9 @@ import { debounce } from 'lodash';
 // import FlipMove from 'react-flip-move';
 import { ThemeProvider } from 'styled-components';
 import Loading from './Loading';
-import { Section, Skill, SkillContainer, ReturnedResults, Input, Replace } from './Styled';
+import { Section, Skill, SkillContainer, ReturnedResults, Replace } from './Styled';
 import { mapTech, key } from '../utils';
+import MySelect from './MySelect';
 
 const theme = {
   fontColor: '#fff',
@@ -35,10 +36,10 @@ class Technical extends Component {
     });
   }, 700);
 
-  handleChange = e => {
-    const query = e.target.value.toLowerCase();
+  handleChange = ({ value }) => {
+    const query = value.toLowerCase();
     this.filterSkills(query);
-    if (e.target.value.length > 0) {
+    if (value.length > 0) {
       this.setState({ typing: true });
     } else {
       this.setState({ typing: false });
@@ -57,13 +58,19 @@ class Technical extends Component {
   };
 
   render() {
-    const { displayedSkills, loading, typing } = this.state;
+    const { displayedSkills, loading, typing, skills } = this.state;
     const { length } = displayedSkills;
     return (
       <Fragment>
         <ThemeProvider theme={theme}>
           <Section bg="#090909">
-            <Input type="text" name="searchTerm" placeholder="technical." onChange={this.handleChange} />
+            {skills && (
+              <MySelect
+                placeholder="technical."
+                onChange={this.handleChange}
+                options={skills.map(s => ({ value: s, label: s }))}
+              />
+            )}
             <ReturnedResults>
               Currently displaying {length} skill{length > 0 ? 's' : ''}.
             </ReturnedResults>
