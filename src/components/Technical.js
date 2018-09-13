@@ -36,10 +36,12 @@ class Technical extends Component {
     });
   }, 700);
 
-  handleChange = ({ value }) => {
+  handleChange = (data = null) => {
+    if (data === null) return;
+    const { value } = data;
     const query = value.toLowerCase();
     this.filterSkills(query);
-    if (value.length > 0) {
+    if (query.length > 0) {
       this.setState({ typing: true });
     } else {
       this.setState({ typing: false });
@@ -60,6 +62,7 @@ class Technical extends Component {
   render() {
     const { displayedSkills, loading, typing, skills } = this.state;
     const { length } = displayedSkills;
+
     return (
       <Fragment>
         <ThemeProvider theme={theme}>
@@ -68,7 +71,7 @@ class Technical extends Component {
               <MySelect
                 placeholder="technical."
                 onChange={this.handleChange}
-                options={skills.map(s => ({ value: s, label: s }))}
+                options={skills.map(s => ({ value: s, label: `${s.toLowerCase()}.` }))}
               />
             )}
             <ReturnedResults>

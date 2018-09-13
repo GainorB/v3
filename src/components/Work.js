@@ -25,7 +25,10 @@ class Work extends Component {
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
     // AN ARRAY OF STRINGS
     // REPRESENTING ALL THE TECH USED BETWEEN ALL PROJECTS
-    const techUsed = uniq(flattenDeep(projects.map(e => e.technologies))).map(e => ({ value: e, label: e }));
+    const techUsed = uniq(flattenDeep(projects.map(e => e.technologies))).map(e => ({
+      value: e,
+      label: `${e.toLowerCase()}.`,
+    }));
 
     await this.setStateAsync({ projects, displayedProjects: projects, loading: false, techUsed });
   };
@@ -57,7 +60,7 @@ class Work extends Component {
     const { value } = data;
     const query = value.toLowerCase();
     this.filterProjects(query);
-    if (value.length > 0) {
+    if (query.length > 0) {
       this.setState({ typing: true });
     } else {
       this.setState({ typing: false });
