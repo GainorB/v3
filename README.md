@@ -14,4 +14,5 @@
 14. Modal for Image Preview
 15. ~~On Case Study Page, implement a next project or previous project selector
 16. ~~Fix direct routing with React Router in Prod~~
-17. Provide AutoComplete when doing Work and Skills search
+17. ~~Provide AutoComplete when doing Work and Skills search~~
+18. Timestamp EXPERIENCE so it can automatically be sorted instead of using Strings for date

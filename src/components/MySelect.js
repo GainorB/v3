@@ -25,6 +25,9 @@ const theme = {
     fontSize: '5rem',
     fontWeight: 500,
     '&:hover': { borderColor: '#090909' },
+    '@media only screen and (max-width: 1200px)': {
+      fontSize: '3.3rem',
+    },
   }),
   container: styles => ({
     ...styles,
@@ -45,6 +48,10 @@ const theme = {
     backgroundColor: isFocused && '#2649f0',
     cursor: isDisabled ? 'not-allowed' : 'pointer',
     '&:hover': { backgroundColor: '#2649f0' },
+    '@media only screen and (max-width: 1200px)': {
+      fontSize: '1rem',
+      padding: '0.5em',
+    },
   }),
   dropdownIndicator: () => ({
     display: 'none',
