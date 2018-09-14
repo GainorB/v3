@@ -14,10 +14,10 @@ const theme = {
 class Work extends Component {
   state = {
     loading: true,
+    typing: false,
     projects: [],
     displayedProjects: [],
     displayedProjectsTech: null,
-    typing: false,
     techUsed: null,
   };
 
@@ -55,8 +55,11 @@ class Work extends Component {
     }
   }, 700);
 
-  handleChange = (data = null) => {
-    if (data === null) return;
+  handleChange = data => {
+    if (data === null) {
+      this.setState({ displayedProjects: this.state.projects, techUsed: this.state.techUsed });
+      return;
+    }
     const { value } = data;
     const query = value.toLowerCase();
     this.filterProjects(query);

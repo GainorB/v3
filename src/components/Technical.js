@@ -36,8 +36,11 @@ class Technical extends Component {
     });
   }, 700);
 
-  handleChange = (data = null) => {
-    if (data === null) return;
+  handleChange = data => {
+    if (data === null) {
+      this.setState({ displayedSkills: this.state.skills });
+      return;
+    }
     const { value } = data;
     const query = value.toLowerCase();
     this.filterSkills(query);
