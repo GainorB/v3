@@ -35,10 +35,14 @@ class CaseStudy extends Component {
   };
 
   async componentDidMount() {
+    // eslint-disable-next-line
+    let { id, project } = this.props.match.params;
+    project = this.removeUnderline(project);
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
     const currentProjects = projects.map((e, i) => i);
-    const currentIndex = Number(this.props.match.params.id);
-    if (currentProjects.includes(currentIndex)) {
+    const currentProjectNames = projects.map(e => e.name);
+    const currentIndex = Number(id);
+    if (currentProjects.includes(currentIndex) && currentProjectNames.includes(project)) {
       await this.setStateAsync({ project: projects[currentIndex], projects, loading: false, currentIndex });
     } else {
       await this.setStateAsync({ error: 'Invalid Project', loading: false });
@@ -70,6 +74,8 @@ class CaseStudy extends Component {
       </a>
     );
   };
+
+  removeUnderline = str => str.replace(/_/g, ' ');
 
   newProject = key => {
     let { currentIndex } = this.state;
