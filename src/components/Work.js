@@ -51,13 +51,13 @@ class Work extends Component {
         displayedProjectsTech: filteredProjectsTech,
       });
     } else {
-      this.setState({ displayedProjects: this.state.projects });
+      this.setState({ displayedProjects: this.state.projects, displayedProjectsTech: this.state.techUsed });
     }
   }, 700);
 
   handleChange = data => {
     if (data === null) {
-      this.setState({ displayedProjects: this.state.projects, techUsed: this.state.techUsed });
+      this.setState({ displayedProjects: this.state.projects, displayedProjectsTech: this.state.techUsed });
       return;
     }
     const { value } = data;
