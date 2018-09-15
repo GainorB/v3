@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import {
   StudyGrid,
   StudySplash,
-  StudyContainer,
   StudyButton,
   StudyContent,
   Study,
@@ -59,6 +58,19 @@ class CaseStudy extends Component {
     });
   }
 
+  whichRepo = repoLink => {
+    if (repoLink === '') return;
+
+    return (
+      <a href={repoLink} target="_blank" rel="noopener noreferrer">
+        <StudyButton>
+          <i className="fab fa-github" />
+          <span>View Repo</span>
+        </StudyButton>
+      </a>
+    );
+  };
+
   newProject = key => {
     let { currentIndex } = this.state;
     const { projects } = this.state;
@@ -85,48 +97,41 @@ class CaseStudy extends Component {
         <StudySplash>
           <span>{project.name}</span>
         </StudySplash>
-
-        <StudyContainer>
+        <Study>
+          <StudyHeader>About the Project</StudyHeader>
+          <StudyContent>
+            {project.description}
+            <p>
+              {this.whichRepo(project.resources[0])}
+              <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
+                <StudyButton>
+                  <i className="fas fa-plug" />
+                  <span>View Online</span>
+                </StudyButton>
+              </a>
+            </p>
+          </StudyContent>
+        </Study>
+        <StudyInner>
           <Study>
-            <StudyHeader>About the Project</StudyHeader>
+            <StudyHeader>Technical Information</StudyHeader>
             <StudyContent>
-              {project.description}
-              <p>
-                <a href={project.resources[0]} target="_blank" rel="noopener noreferrer">
-                  <StudyButton>
-                    <i className="fab fa-github" />
-                    <span>View Repo</span>
-                  </StudyButton>
-                </a>
-
-                <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
-                  <StudyButton>
-                    <i className="fas fa-plug" />
-                    <span>View Online</span>
-                  </StudyButton>
-                </a>
-              </p>
+              <ol>{project.technicalInformation.map(f => <li key={v1()}>{f}</li>)}</ol>
             </StudyContent>
           </Study>
-          <StudyInner>
-            <Study>
-              <StudyHeader>Technical Information</StudyHeader>
-              <StudyContent>
-                <ol>{project.technicalInformation.map(f => <li key={v1()}>{f}</li>)}</ol>
-              </StudyContent>
-              <StudyHeader>Powered by</StudyHeader>
-              <StudyContent>
-                <ListGroup>{project.technologies.map(t => <StudyTech key={v1()}>{t}</StudyTech>)}</ListGroup>
-              </StudyContent>
-            </Study>
-            <Study>
-              <StudyHeader>Features</StudyHeader>
-              <StudyContent>
-                <ol>{project.features.map(f => <li key={v1()}>{f}</li>)}</ol>
-              </StudyContent>
-            </Study>
-          </StudyInner>
-        </StudyContainer>
+          <Study>
+            <StudyHeader>Features</StudyHeader>
+            <StudyContent>
+              <ol>{project.features.map(f => <li key={v1()}>{f}</li>)}</ol>
+            </StudyContent>
+          </Study>
+        </StudyInner>
+        <Study>
+          <StudyHeader>Powered by</StudyHeader>
+          <StudyContent>
+            <ListGroup>{project.technologies.map(t => <StudyTech key={v1()}>{t}</StudyTech>)}</ListGroup>
+          </StudyContent>
+        </Study>
         {project.gallery.length > 1 && (
           <GalleryGrid>
             <StudyHeader>Gallery</StudyHeader>

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { debounce } from 'lodash';
 // import FlipMove from 'react-flip-move';
 import { ThemeProvider } from 'styled-components';
@@ -11,17 +11,19 @@ const theme = {
   fontColor: '#fff',
 };
 
-class Technical extends Component {
+class Technical extends PureComponent {
   state = {
     loading: true,
     skills: [],
     displayedSkills: [],
     typing: false,
+    selectOptions: null,
   };
 
   componentDidMount = async () => {
     const skills = await fetch('https://gainorportfolio.firebaseio.com/skills/.json').then(res => res.json());
-    await this.setStateAsync({ skills, displayedSkills: skills, loading: false });
+    const selectOptions = skills.map(s => ({ value: s, label: `${s.toLowerCase()}.` }));
+    await this.setStateAsync({ skills, displayedSkills: skills, loading: false, selectOptions });
   };
 
   setStateAsync(state) {
@@ -63,19 +65,15 @@ class Technical extends Component {
   };
 
   render() {
-    const { displayedSkills, loading, typing, skills } = this.state;
+    const { displayedSkills, loading, typing, selectOptions } = this.state;
     const { length } = displayedSkills;
 
     return (
       <Fragment>
         <ThemeProvider theme={theme}>
           <Section bg="#090909">
-            {skills && (
-              <MySelect
-                placeholder="technical."
-                onChange={this.handleChange}
-                options={skills.map(s => ({ value: s, label: `${s.toLowerCase()}.` }))}
-              />
+            {selectOptions && (
+              <MySelect placeholder="technical." onChange={this.handleChange} options={selectOptions} />
             )}
             <ReturnedResults>
               Currently displaying {length} skill{length > 1 ? 's' : ''}.

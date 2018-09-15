@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { debounce, flattenDeep, uniq } from 'lodash';
 import { ThemeProvider } from 'styled-components';
 import MySelect from './MySelect';
 import { Section, PortfolioWrapper, WorkWrapper, ProjectGrid, ReturnedResults, Replace } from './Styled';
 import Loading from './Loading';
-import { key } from '../utils';
+import { key, sortSkills } from '../utils';
 
 const theme = {
   fontColor: '#fff',
 };
 
-class Work extends Component {
+class Work extends PureComponent {
   state = {
     loading: true,
     typing: false,
@@ -25,10 +25,12 @@ class Work extends Component {
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
     // AN ARRAY OF STRINGS
     // REPRESENTING ALL THE TECH USED BETWEEN ALL PROJECTS
-    const techUsed = uniq(flattenDeep(projects.map(e => e.technologies))).map(e => ({
-      value: e,
-      label: `${e.toLowerCase()}.`,
-    }));
+    const techUsed = uniq(flattenDeep(projects.map(e => e.technologies)))
+      // .sort(sortSkills)
+      .map(e => ({
+        value: e,
+        label: `${e.toLowerCase()}.`,
+      }));
 
     await this.setStateAsync({ projects, displayedProjects: projects, loading: false, techUsed });
   };

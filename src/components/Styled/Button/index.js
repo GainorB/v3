@@ -29,7 +29,7 @@ export const Button = styled.button`
   }
 
   &:hover {
-    box-shadow: 0px 0px 0px 2px #090909;
+    box-shadow: ${props => (props.footer ? '' : '0px 0px 0px 2px #090909')};
     background: #fff;
     color: #090909;
   }

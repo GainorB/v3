@@ -20,7 +20,7 @@ export const ProjectGrid = styled.div`
     right: 0;
     height: 100%;
     width: 100%;
-    padding: 2em;
+    padding: 3em;
     opacity: 0;
     transition: 0.5s ease;
     background-color: #090909;
@@ -33,7 +33,7 @@ export const ProjectGrid = styled.div`
   .overlay__text {
     color: #2348f3;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2.6rem;
     display: flex;
     flex-direction: column;
     align-items: center;

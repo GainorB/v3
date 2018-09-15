@@ -14,7 +14,6 @@ import { Section, SectionDesc, SectionHeader } from './Section';
 import {
   StudyGrid,
   StudySplash,
-  StudyContainer,
   StudyContent,
   Study,
   StudyHeader,
@@ -30,7 +29,6 @@ export {
   StudyGrid,
   GalleryGrid,
   StudySplash,
-  StudyContainer,
   StudyContent,
   StudyGallery,
   Study,

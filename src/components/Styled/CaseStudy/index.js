@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StudyGrid = styled.div`
   display: grid;
   background: #f6f7fb;
-  grid-template-rows: 400px 1fr auto;
+  grid-template-rows: 300px auto auto auto auto;
   grid-gap: 1.3em;
   padding: 1em;
 
@@ -18,22 +18,18 @@ export const StudySplash = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 8rem;
+  font-size: 4rem;
   font-weight: bold;
-  background: rgba(9, 9, 9, 0.9);
+  background: #2348f3;
   color: #fff;
 
   span {
-    padding: 2rem;
-    background: rgba(9, 9, 9, 0.7);
+    padding: 10px 20px;
+    background: #090909;
   }
 
   @media only screen and (max-width: 1200px) {
     font-size: 3rem;
-
-    span {
-      padding: 1rem;
-    }
   }
 `;
 
@@ -41,18 +37,6 @@ export const ButtonGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
-`;
-
-export const StudyContainer = styled.div`
-  display: grid;
-  grid-template-rows: auto 1fr;
-  grid-gap: 10px;
-  font-size: 1rem;
-  min-height: 100vh;
-
-  @media only screen and (max-width: 1200px) {
-    font-size: 0.9rem;
-  }
 `;
 
 export const StudyInner = styled.div`
