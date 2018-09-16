@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { SectionDesc, SectionHeader, Section, Button } from './Styled';
 
@@ -7,7 +7,7 @@ const theme = {
   height: '500px',
 };
 
-class Contact extends Component {
+class Contact extends PureComponent {
   render() {
     return (
       <ThemeProvider theme={theme}>

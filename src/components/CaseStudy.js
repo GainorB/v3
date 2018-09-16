@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { v1 } from 'uuid';
 import PropTypes from 'prop-types';
 import {
@@ -20,7 +20,7 @@ import {
 import Loading from './Loading';
 import InvalidProject from './InvalidProject';
 
-class CaseStudy extends Component {
+class CaseStudy extends PureComponent {
   static propTypes = {
     match: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
@@ -64,11 +64,12 @@ class CaseStudy extends Component {
 
   whichRepo = repoLink => {
     if (repoLink === '') return;
+    const className = repoLink.includes('github') ? 'fab fa-github' : 'fab fa-bitbucket';
 
     return (
       <a href={repoLink} target="_blank" rel="noopener noreferrer">
         <StudyButton>
-          <i className="fab fa-github" />
+          <i className={className} />
           <span>View Repo</span>
         </StudyButton>
       </a>
@@ -111,7 +112,7 @@ class CaseStudy extends Component {
               {this.whichRepo(project.resources[0])}
               <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
                 <StudyButton>
-                  <i className="fas fa-plug" />
+                  <i className="fas fa-eye" />
                   <span>View Online</span>
                 </StudyButton>
               </a>

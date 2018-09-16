@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Loading from './Loading';
 import { SectionHeader, Section, ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Styled';
@@ -8,7 +8,7 @@ const theme = {
   fontColor: '#fff',
 };
 
-class Experience extends Component {
+class Experience extends PureComponent {
   state = {
     loading: true,
     experience: [],

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { SectionHeader, Section, Me } from './Styled';
 
@@ -6,7 +6,7 @@ const theme = {
   fontColor: '#fff',
 };
 
-class About extends Component {
+class About extends PureComponent {
   render() {
     return (
       <Fragment>

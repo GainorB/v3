@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 
@@ -66,29 +66,24 @@ const theme = {
   }),
 };
 
-class MySelect extends Component {
-  static propTypes = {
-    onChange: PropTypes.func.isRequired,
-    options: PropTypes.array.isRequired,
-    placeholder: PropTypes.string.isRequired,
-  };
+const MySelect = ({ onChange, options, placeholder }) => (
+  <Select
+    styles={theme}
+    // autoFocus
+    isSearchable
+    isClearable
+    closeMenuOnSelect
+    placeholder={placeholder}
+    onChange={onChange}
+    options={options}
+    isDisabled={options.length === 0 || typeof options === 'undefined'}
+  />
+);
 
-  render() {
-    const { onChange, options, placeholder } = this.props;
-    return (
-      <Select
-        styles={theme}
-        // autoFocus
-        isSearchable
-        isClearable
-        closeMenuOnSelect
-        placeholder={placeholder}
-        onChange={onChange}
-        options={options}
-        isDisabled={options.length === 0 || typeof options === 'undefined'}
-      />
-    );
-  }
-}
+MySelect.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
+  placeholder: PropTypes.string.isRequired,
+};
 
 export default MySelect;

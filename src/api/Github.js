@@ -1,9 +1,9 @@
-import { distanceInWordsStrict } from 'date-fns';
-import React, { Component } from 'react';
+// import { distanceInWordsStrict } from 'date-fns';
+import React, { PureComponent } from 'react';
 import Loading from '../components/Loading';
 import { Hub, ListGroup, Repo } from '../components/Styled';
 
-class Github extends Component {
+class Github extends PureComponent {
   state = {
     loadingProfile: true,
     loadingRepos: true,
