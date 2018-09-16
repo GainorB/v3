@@ -52,9 +52,11 @@ export const StudyInner = styled.div`
 export const StudyContent = styled.div`
   font-size: 1rem;
   line-height: 1.7;
+  padding: 15px;
 
   p {
     text-align: center;
+    margin: 0;
   }
 
   @media only screen and (max-width: 1200px) {
@@ -63,13 +65,13 @@ export const StudyContent = styled.div`
 `;
 
 export const Study = styled.div`
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  border: 1px solid #eff0f5;
+  background-color: #fff;
+  border: 2px solid #090909;
+
+  .techFeature {
+    border-bottom: 1px solid #e9ecef;
+    padding: 5px 0px;
+  }
 
   @media only screen and (max-width: 1200px) {
     padding: 15px;
@@ -77,22 +79,21 @@ export const Study = styled.div`
 `;
 
 export const StudyHeader = styled.h1`
-  font-size: 2.4rem;
-  color: #848a8a;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 0;
+  color: #fff;
   font-weight: normal;
   text-align: center;
-  margin-bottom: 0.2em;
-
-  @media only screen and (max-width: 1200px) {
-    font-size: 1.7rem;
-  }
+  background: #090909;
+  font-weight: bold;
+  text-transform: uppercase;
 `;
 
 export const GalleryGrid = styled.div`
   display: block;
-  padding: 30px;
-  background-color: white;
-  border: 1px solid #eff0f5;
+  background-color: #fff;
+  border: 2px solid #090909;
 
   @media only screen and (max-width: 1200px) {
     padding: 15px;
@@ -103,6 +104,7 @@ export const StudyGallery = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 10px;
+  padding: 15px;
 
   div {
     height: 300px;
@@ -121,8 +123,9 @@ export const StudyTech = styled.li`
   text-align: center;
   outline: none;
   font-weight: 600;
-  margin: 0.3em;
-  padding: 0.3em 2em;
+  margin: 5px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
   background: none;
   color: #090909;
   border: 2px solid #090909;

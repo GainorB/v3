@@ -41,10 +41,6 @@ export const PortfolioWrapper = styled.div`
 
 export const WorkWrapper = styled.div`
   margin-top: 100px;
-
-  @media only screen and (max-width: 1200px) {
-    margin: 0;
-  }
 `;
 
 export const PerfectlyCentered = styled.div`

@@ -65,12 +65,13 @@ class CaseStudy extends PureComponent {
   whichRepo = repoLink => {
     if (repoLink === '') return;
     const className = repoLink.includes('github') ? 'fab fa-github' : 'fab fa-bitbucket';
+    const where = repoLink.includes('github') ? 'Github' : 'Bitbucket';
 
     return (
       <a href={repoLink} target="_blank" rel="noopener noreferrer">
         <StudyButton>
           <i className={className} />
-          <span>View Repo</span>
+          <span>View on {where}</span>
         </StudyButton>
       </a>
     );
@@ -123,13 +124,25 @@ class CaseStudy extends PureComponent {
           <Study>
             <StudyHeader>Technical Information</StudyHeader>
             <StudyContent>
-              <ol>{project.technicalInformation.map(f => <li key={v1()}>{f}</li>)}</ol>
+              <ListGroup>
+                {project.technicalInformation.map(f => (
+                  <li className="techFeature" key={v1()}>
+                    {f}
+                  </li>
+                ))}
+              </ListGroup>
             </StudyContent>
           </Study>
           <Study>
             <StudyHeader>Features</StudyHeader>
             <StudyContent>
-              <ol>{project.features.map(f => <li key={v1()}>{f}</li>)}</ol>
+              <ListGroup>
+                {project.features.map(f => (
+                  <li className="techFeature" key={v1()}>
+                    {f}
+                  </li>
+                ))}
+              </ListGroup>
             </StudyContent>
           </Study>
         </StudyInner>

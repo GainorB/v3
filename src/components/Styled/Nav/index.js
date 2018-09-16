@@ -19,7 +19,7 @@ export const Nav = styled.ul`
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
 
   @media only screen and (max-width: 1200px) {
-    position: static;
+    position: fixed;
     justify-content: center;
     background: #2649f0;
     margin-bottom: 10px;
@@ -45,6 +45,7 @@ export const NavItem = styled.li`
   }
 
   @media only screen and (max-width: 1200px) {
+    font-weight: bold;
     font-size: 0.9rem;
     background: none;
     border-bottom: none;

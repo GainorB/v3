@@ -1,7 +1,7 @@
 import { InTouch, ListGroup } from './List';
 import { Nav, NavItem } from './Nav';
 import { ProjectGrid } from './Portfolio';
-import { Hub, Repo, SideMenu, SideMenuTitle } from './SideMenu';
+import { Hub, SideMenu, SideMenuTitle } from './SideMenu';
 import { SkillContainer, Skill } from './Skills';
 import { ReturnedResults, Replace, H1, H4, ProjectError } from './Text';
 import { PageWrapper, PortfolioWrapper, WorkWrapper, PerfectlyCentered } from './Wrapper';
@@ -57,7 +57,6 @@ export {
   SideMenuTitle,
   SideMenu,
   Hub,
-  Repo,
   ListGroup,
   PortfolioWrapper,
   WorkWrapper,

@@ -18,7 +18,7 @@ import NotFound from './components/NotFound';
 import { PageWrapper, Nav, NavItem } from './components/Styled';
 import '../assets/styles/fade.css';
 
-configureAnchors({ offset: -100, scrollDuration: 400 });
+configureAnchors({ offset: -99, scrollDuration: 400 });
 
 const Navigation = props => {
   const { hash } = props.location;

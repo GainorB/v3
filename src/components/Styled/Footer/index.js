@@ -5,7 +5,6 @@ export const Foot = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   background: #090909;
   color: #fff;
   height: 250px;
