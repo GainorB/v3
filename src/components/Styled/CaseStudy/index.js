@@ -24,12 +24,12 @@ export const StudySplash = styled.div`
   color: #fff;
 
   span {
-    padding: 10px 20px;
+    padding: 15px 20px;
     background: #090909;
   }
 
   @media only screen and (max-width: 1200px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 `;
 
@@ -84,7 +84,7 @@ export const StudyHeader = styled.h1`
   margin-bottom: 0.2em;
 
   @media only screen and (max-width: 1200px) {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 `;
 
