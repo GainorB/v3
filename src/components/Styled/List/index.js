@@ -11,6 +11,7 @@ export const InTouch = styled.li`
   background: #fff;
   text-transform: uppercase;
   border: 2px solid transparent;
+  border-radius: 4px;
   font-size: 1.2rem;
   text-align: center;
   -webkit-transition: all 0.1s ease-in-out, 1s;
@@ -18,7 +19,7 @@ export const InTouch = styled.li`
   -o-transition: all 0.1s ease-in-out, 1s;
   transition: all 0.1s ease-in-out, 1s;
   margin: 0.4em 0;
-  padding: 0.4em;
+  padding: 1em;
   ${props => props.twitter && 'color: #1E95DC'};
   ${props => props.instagram && 'color: #B13DAC'};
   ${props => props.github && 'color: #3F4448'};
@@ -26,7 +27,7 @@ export const InTouch = styled.li`
   ${props => props.stack && 'color: #F38134'};
   ${props => props.email && 'color: #ba4444'};
   ${props => props.resume && 'color: #002852'};
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.1);
 
   i {
     font-size: 2rem;

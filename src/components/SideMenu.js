@@ -16,7 +16,7 @@ const Feed = () => (
       <p className="title">Full Stack Web Developer</p>
     </div>
     <div className="toolSet">
-      <SideMenuTitle>Toolset</SideMenuTitle>
+      <SideMenuTitle>Stack</SideMenuTitle>
       <ListGroup>
         <li>React</li>
         <li>Apollo</li>
@@ -36,11 +36,11 @@ const Feed = () => (
       </ListGroup>
     </div>
     <div className="github">
-      <SideMenuTitle>Github</SideMenuTitle>
+      <SideMenuTitle>Github information</SideMenuTitle>
       <Github />
     </div>
     <div className="resume">
-      <SideMenuTitle>Resume</SideMenuTitle>
+      <SideMenuTitle>My Resume</SideMenuTitle>
       <ListGroup>
         <a
           href="https://drive.google.com/file/d/1SlXfoCp6r9FLhnv6xEieI5C768Fqsr_Q/view?usp=sharing"
@@ -54,7 +54,7 @@ const Feed = () => (
       </ListGroup>
     </div>
     <div className="inTouch">
-      <SideMenuTitle>Where I hang out</SideMenuTitle>
+      <SideMenuTitle>Get in touch</SideMenuTitle>
       <GetInTouch />
     </div>
   </SideMenu>

@@ -4,8 +4,8 @@ export const SideMenu = styled.div`
   display: grid;
   position: fixed;
   grid-template-rows: repeat(6, auto);
-  grid-row-gap: 20px;
-  padding: 60px 20px;
+  grid-row-gap: 15px;
+  padding: 40px 20px;
   font-size: 0.9rem;
   height: 100%;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
@@ -32,14 +32,15 @@ export const SideMenu = styled.div`
   }
 
   .name {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     letter-spacing: 1px;
     font-weight: bold;
   }
 
   .focusedOn li,
   .toolSet li {
-    padding: 0.1em 0;
+    border-bottom: 1px solid #e9ecef;
+    padding: 5px 0px;
   }
 
   .title {
@@ -65,7 +66,6 @@ export const SideMenu = styled.div`
     display: none;
     position: static;
     width: 100%;
-    padding: 20px;
 
     .focusedOn,
     .github,
@@ -79,8 +79,8 @@ export const SideMenu = styled.div`
 
 export const SideMenuTitle = styled.h4`
   text-transform: uppercase;
-  font-size: 0.9rem;
-  border-bottom: 1px solid #090909;
+  font-size: 0.8rem;
+  border-bottom: 2px solid #090909;
   padding-bottom: 0.2em;
   color: #090909;
 `;
