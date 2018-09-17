@@ -115,7 +115,7 @@ class CaseStudy extends PureComponent {
               <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
                 <StudyButton>
                   <i className="fas fa-eye" />
-                  <span>View Online</span>
+                  <span>Live</span>
                 </StudyButton>
               </a>
             </p>
