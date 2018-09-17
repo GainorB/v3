@@ -72,7 +72,7 @@ class CaseStudy extends PureComponent {
       <a href={repoLink} target="_blank" rel="noopener noreferrer">
         <StudyButton>
           <i className={className} />
-          <span>View on {where}</span>
+          <span>{where}</span>
         </StudyButton>
       </a>
     );
