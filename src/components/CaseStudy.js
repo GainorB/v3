@@ -11,7 +11,6 @@ import {
   StudyHeader,
   StudyInner,
   StudyGallery,
-  GalleryGrid,
   ListGroup,
   StudyTech,
   ButtonGrid,
@@ -155,16 +154,18 @@ class CaseStudy extends PureComponent {
           </StudyContent>
         </Study>
         {project.gallery.length > 1 && (
-          <GalleryGrid>
+          <Study>
             <StudyHeader>Gallery</StudyHeader>
-            <StudyGallery>
-              {project.gallery.map(p => (
-                <div key={v1()}>
-                  <img src={p} alt={project.name} />
-                </div>
-              ))}
-            </StudyGallery>
-          </GalleryGrid>
+            <StudyContent>
+              <StudyGallery>
+                {project.gallery.map(p => (
+                  <div key={v1()}>
+                    <img src={p} alt={project.name} />
+                  </div>
+                ))}
+              </StudyGallery>
+            </StudyContent>
+          </Study>
         )}
         <ButtonGrid>
           <PrevButton onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>

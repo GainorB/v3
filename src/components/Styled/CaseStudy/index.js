@@ -91,21 +91,10 @@ export const StudyHeader = styled.h1`
   text-transform: uppercase;
 `;
 
-export const GalleryGrid = styled.div`
-  display: block;
-  background-color: #fff;
-  border: 2px solid #090909;
-
-  @media only screen and (max-width: 1200px) {
-    padding: 15px;
-  }
-`;
-
 export const StudyGallery = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 10px;
-  padding: 15px;
 
   div {
     height: 300px;

@@ -19,7 +19,6 @@ import {
   StudyHeader,
   StudyInner,
   StudyGallery,
-  GalleryGrid,
   StudyTech,
   ButtonGrid,
 } from './CaseStudy';
@@ -28,7 +27,6 @@ export {
   Nav,
   GoHome,
   StudyGrid,
-  GalleryGrid,
   StudySplash,
   StudyContent,
   StudyGallery,
