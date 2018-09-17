@@ -57,6 +57,7 @@ export const StudyButton = styled(Button)`
 
     i {
       top: 6px;
+      left: 15px;
       font-size: 1.4rem;
     }
   }
@@ -88,4 +89,12 @@ export const NextButton = styled(Button)`
     background: ${props => props.disabled && '#6c757d'};
     box-shadow: 0px 0px 0px 2px ${props => (props.disabled ? '#6c757d' : '#090909')};
   }
+`;
+
+export const GoHome = styled(Button)`
+  padding: 1em 2em;
+  font-size: 1rem;
+  color: #090909;
+  border: 2px solid #090909;
+  width: 100%;
 `;

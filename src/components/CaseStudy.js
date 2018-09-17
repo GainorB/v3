@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { v1 } from 'uuid';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import {
   StudyGrid,
   StudySplash,
@@ -14,6 +15,7 @@ import {
   ListGroup,
   StudyTech,
   ButtonGrid,
+  GoHome,
   PrevButton,
   NextButton,
 } from '../components/Styled';
@@ -168,6 +170,9 @@ class CaseStudy extends PureComponent {
           <PrevButton onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
             Previous Project
           </PrevButton>
+          <Link to="/">
+            <GoHome>Go Home</GoHome>
+          </Link>
           <NextButton onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
             Next Project
           </NextButton>

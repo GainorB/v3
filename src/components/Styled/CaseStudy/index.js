@@ -2,14 +2,13 @@ import styled from 'styled-components';
 
 export const StudyGrid = styled.div`
   display: grid;
-  background: #f6f7fb;
-  grid-template-rows: 300px auto auto auto auto;
-  grid-gap: 1.3em;
-  padding: 1em;
+  background: #fff;
+  grid-template-rows: 200px auto auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
 
   @media only screen and (max-width: 1200px) {
-    grid-template-rows: 250px 1fr auto;
-    padding: 1em;
+    grid-gap: 0px;
   }
 `;
 
@@ -20,11 +19,11 @@ export const StudySplash = styled.div`
   justify-content: center;
   font-size: 4rem;
   font-weight: bold;
-  background: #2348f3;
+  background: none;
   color: #fff;
 
   span {
-    padding: 15px 20px;
+    padding: 20px 30px;
     background: #090909;
   }
 
@@ -35,8 +34,14 @@ export const StudySplash = styled.div`
 
 export const ButtonGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+
+  @media only screen and (max-width: 1200px) {
+    margin-top: 5px;
+    grid-template-columns: 100%;
+    grid-gap: 5px;
+  }
 `;
 
 export const StudyInner = styled.div`
@@ -46,6 +51,7 @@ export const StudyInner = styled.div`
 
   @media only screen and (max-width: 1200px) {
     grid-template-columns: 100%;
+    grid-gap: 0px;
   }
 `;
 
@@ -56,7 +62,7 @@ export const StudyContent = styled.div`
 
   p {
     text-align: center;
-    margin: 0;
+    margin: 0.5em 0;
   }
 
   @media only screen and (max-width: 1200px) {
@@ -72,10 +78,6 @@ export const Study = styled.div`
     border-bottom: 1px solid #e9ecef;
     padding: 5px 0px;
   }
-
-  @media only screen and (max-width: 1200px) {
-    padding: 15px;
-  }
 `;
 
 export const StudyHeader = styled.h1`
@@ -86,7 +88,6 @@ export const StudyHeader = styled.h1`
   font-weight: normal;
   text-align: center;
   background: #090909;
-  font-weight: bold;
   text-transform: uppercase;
 `;
 
