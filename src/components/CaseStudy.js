@@ -104,7 +104,9 @@ class CaseStudy extends PureComponent {
     return (
       <StudyGrid>
         <StudySplash>
-          <span>{project.name}</span>
+          <Link to="/">
+            <span>{project.name}</span>
+          </Link>
         </StudySplash>
         <Study>
           <StudyHeader>About the Project</StudyHeader>

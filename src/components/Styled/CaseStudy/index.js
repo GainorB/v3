@@ -20,11 +20,11 @@ export const StudySplash = styled.div`
   font-size: 4rem;
   font-weight: bold;
   background: none;
-  color: #fff;
 
   span {
     padding: 20px 30px;
     background: #090909;
+    color: #fff;
   }
 
   @media only screen and (max-width: 1200px) {
