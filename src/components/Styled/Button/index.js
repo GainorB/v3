@@ -63,24 +63,10 @@ export const StudyButton = styled(Button)`
   }
 `;
 
-export const PrevButton = styled(Button)`
+export const NewProjectButton = styled(Button)`
   font-size: 1rem;
   border: none;
-  background: ${props => (props.disabled ? '#6c757d' : '#a70000')};
-  padding: 1em 2em;
-
-  &:hover {
-    cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
-    color: ${props => props.disabled && '#fff'};
-    background: ${props => props.disabled && '#6c757d'};
-    box-shadow: 0px 0px 0px 2px ${props => (props.disabled ? '#6c757d' : '#090909')};
-  }
-`;
-
-export const NextButton = styled(Button)`
-  font-size: 1rem;
-  border: none;
-  background: ${props => (props.disabled ? '#6c757d' : '#015f40')};
+  background: ${props => (props.disabled ? '#6c757d' : '#090909')};
   padding: 1em 2em;
 
   &:hover {
@@ -97,4 +83,9 @@ export const GoHome = styled(Button)`
   color: #090909;
   border: 2px solid #090909;
   width: 100%;
+
+  &:hover {
+    color: #fff;
+    background: #090909;
+  }
 `;

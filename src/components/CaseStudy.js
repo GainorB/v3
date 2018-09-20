@@ -15,8 +15,7 @@ import {
   StudyTech,
   ButtonGrid,
   GoHome,
-  PrevButton,
-  NextButton,
+  NewProjectButton,
 } from '../components/Styled';
 import Loading from './Loading';
 import InvalidProject from './InvalidProject';
@@ -170,15 +169,15 @@ class CaseStudy extends PureComponent {
           </Study>
         )}
         <ButtonGrid>
-          <PrevButton onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
+          <NewProjectButton onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
             Previous Project
-          </PrevButton>
+          </NewProjectButton>
           <Link to="/">
             <GoHome>Go Home</GoHome>
           </Link>
-          <NextButton onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
+          <NewProjectButton onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
             Next Project
-          </NextButton>
+          </NewProjectButton>
         </ButtonGrid>
       </StudyGrid>
     );

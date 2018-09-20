@@ -25,6 +25,11 @@ export const StudySplash = styled.div`
     padding: 20px 30px;
     background: #090909;
     color: #fff;
+    transition: 500ms color;
+  }
+
+  span:hover {
+    color: #2649f0;
   }
 
   @media only screen and (max-width: 1200px) {

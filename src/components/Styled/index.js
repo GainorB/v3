@@ -9,7 +9,7 @@ import { ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Experience';
 import { Foot } from './Footer';
 import { Input } from './Input';
 import { Me } from './About';
-import { Button, StudyButton, PrevButton, NextButton, GoHome } from './Button';
+import { Button, StudyButton, NewProjectButton, GoHome } from './Button';
 import { Section, SectionDesc, SectionHeader } from './Section';
 import {
   StudyGrid,
@@ -36,8 +36,7 @@ export {
   StudyInner,
   StudyHeader,
   NavItem,
-  PrevButton,
-  NextButton,
+  NewProjectButton,
   ButtonGrid,
   Replace,
   Input,
