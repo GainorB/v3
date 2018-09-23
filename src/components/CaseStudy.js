@@ -7,6 +7,7 @@ import {
   StudySplash,
   StudyButton,
   StudyContent,
+  StudySplit,
   Study,
   StudyHeader,
   StudyInner,
@@ -65,14 +66,13 @@ class CaseStudy extends PureComponent {
   whichRepo = repoLink => {
     if (repoLink === '') return;
     const className = repoLink.includes('github') ? 'fab fa-github' : 'fab fa-bitbucket';
-    const where = repoLink.includes('github') ? 'Github' : 'Bitbucket';
+    // const where = repoLink.includes('github') ? 'Github' : 'Bitbucket';
 
     return (
       <a href={repoLink} target="_blank" rel="noopener noreferrer">
-        <StudyButton>
+        <div>
           <i className={className} />
-          <span>{where}</span>
-        </StudyButton>
+        </div>
       </a>
     );
   };
@@ -109,18 +109,15 @@ class CaseStudy extends PureComponent {
         </StudySplash>
         <Study>
           <StudyHeader>About the Project</StudyHeader>
-          <StudyContent>
-            {project.description}
-            <p>
-              {this.whichRepo(project.resources[0])}
-              <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
-                <StudyButton>
-                  <i className="fas fa-eye" />
-                  <span>Live</span>
-                </StudyButton>
-              </a>
-            </p>
-          </StudyContent>
+          <StudyContent>{project.description}</StudyContent>
+          <StudySplit>
+            {this.whichRepo(project.resources[0])}
+            <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
+              <div>
+                <i className="fas fa-eye" />
+              </div>
+            </a>
+          </StudySplit>
         </Study>
         <StudyInner>
           <Study>

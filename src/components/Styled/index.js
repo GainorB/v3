@@ -21,6 +21,7 @@ import {
   StudyGallery,
   StudyTech,
   ButtonGrid,
+  StudySplit,
 } from './CaseStudy';
 
 export {
@@ -32,6 +33,7 @@ export {
   StudyGallery,
   Study,
   StudyTech,
+  StudySplit,
   StudyButton,
   StudyInner,
   StudyHeader,
