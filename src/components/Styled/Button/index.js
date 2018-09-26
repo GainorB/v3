@@ -14,7 +14,7 @@ export const Button = styled.button`
   -moz-transition: all 0.1s ease-in-out, 1s;
   -o-transition: all 0.1s ease-in-out, 1s;
   transition: all 0.1s ease-in-out, 1s;
-  padding: 1.6em 3.5em;
+  padding: 1.6em 3em;
 
   i {
     position: absolute;
@@ -42,9 +42,18 @@ export const StudyButton = styled(Button)`
   margin: 0.2em;
   color: #090909;
   border: 2px solid #090909;
+  padding: 0.7em 2.5em;
 
   &:hover {
     box-shadow: 0px 0px 0px 2px #090909;
+  }
+
+  i {
+    top: 10px;
+  }
+
+  span {
+    left: 25px;
   }
 
   @media only screen and (max-width: 1200px) {

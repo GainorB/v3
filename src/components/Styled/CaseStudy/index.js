@@ -8,7 +8,7 @@ export const StudyGrid = styled.div`
   padding: 10px;
 
   @media only screen and (max-width: 1200px) {
-    grid-gap: 0px;
+    grid-gap: 5px;
   }
 `;
 
@@ -56,7 +56,7 @@ export const StudyInner = styled.div`
 
   @media only screen and (max-width: 1200px) {
     grid-template-columns: 100%;
-    grid-gap: 0px;
+    grid-gap: 5px;
   }
 `;
 
@@ -141,5 +141,33 @@ export const StudyTech = styled.li`
 
   @media only screen and (max-width: 1200px) {
     padding: 0.3 1em;
+  }
+`;
+
+export const StudySplit = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #090909;
+  font-size: 1rem;
+
+  div {
+    padding: 5px;
+    text-align: center;
+    -webkit-transition: all 0.1s ease-in-out, 1s;
+    -moz-transition: all 0.1s ease-in-out, 1s;
+    -o-transition: all 0.1s ease-in-out, 1s;
+    transition: all 0.1s ease-in-out, 1s;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+
+  div:hover {
+    cursor: pointer;
+    background: #fff;
+    color: #2649f0;
   }
 `;
