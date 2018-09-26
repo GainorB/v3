@@ -86,6 +86,7 @@ export const Study = styled.div`
 `;
 
 export const StudyHeader = styled.h1`
+  user-select: none;
   font-size: 1rem;
   padding: 10px;
   margin: 0;
@@ -114,22 +115,27 @@ export const StudyGallery = styled.div`
 `;
 
 export const StudyTech = styled.li`
+  user-select: none;
   display: inline-block;
   text-align: center;
   outline: none;
-  font-weight: 600;
   margin: 5px;
-  padding: 5px 10px;
-  font-size: 0.9rem;
+  padding: 3px 6px 2px;
+  line-height: 17px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
   background: none;
   color: #090909;
-  border: 2px solid #090909;
+  border: 1px solid #090909;
   -webkit-transition: all 0.1s ease-in-out, 1s;
   -moz-transition: all 0.1s ease-in-out, 1s;
   -o-transition: all 0.1s ease-in-out, 1s;
   transition: all 0.1s ease-in-out, 1s;
 
   &:hover {
+    opacity: 0.2;
     box-shadow: 0px 0px 0px 2px #090909;
   }
 
