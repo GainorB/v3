@@ -73,10 +73,11 @@ export const StudyButton = styled(Button)`
 `;
 
 export const NewProjectButton = styled(Button)`
-  font-size: 1rem;
+  font-size: 0.8rem;
   border: none;
   background: ${props => (props.disabled ? '#6c757d' : '#090909')};
   padding: 1em 2em;
+  text-transform: uppercase;
 
   &:hover {
     cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
@@ -87,11 +88,12 @@ export const NewProjectButton = styled(Button)`
 `;
 
 export const GoHome = styled(Button)`
-  padding: 1em 2em;
-  font-size: 1rem;
+  padding: 0.5em 2em;
+  font-size: 0.8rem;
   color: #090909;
   border: 2px solid #090909;
   width: 100%;
+  text-transform: uppercase;
 
   &:hover {
     color: #fff;

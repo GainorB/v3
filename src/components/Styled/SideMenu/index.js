@@ -28,6 +28,7 @@ export const SideMenu = styled.div`
 
   .name,
   .title {
+    user-select: none;
     text-transform: uppercase;
   }
 

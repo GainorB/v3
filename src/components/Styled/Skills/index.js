@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Skill = styled.div`
+  user-select: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;

@@ -16,6 +16,7 @@ export const Section = styled.div`
 `;
 
 export const SectionHeader = styled.h2`
+  user-select: none;
   color: ${props => (props.theme.fontColor ? props.theme.fontColor : '#fff')};
   font-size: 5rem;
   font-weight: 500;

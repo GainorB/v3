@@ -169,9 +169,11 @@ class CaseStudy extends PureComponent {
           <NewProjectButton onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
             Previous Project
           </NewProjectButton>
-          <Link to="/">
-            <GoHome>Go Home</GoHome>
-          </Link>
+          <div className="home__button">
+            <Link to="/">
+              <i className="fas fa-home" />
+            </Link>
+          </div>
           <NewProjectButton onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
             Next Project
           </NewProjectButton>
