@@ -1,7 +1,7 @@
 // import { distanceInWordsStrict } from 'date-fns';
 import React, { PureComponent } from 'react';
 import Loading from '../components/Loading';
-import { Hub, ListGroup, SideMenuTitle } from '../components/Styled';
+import { Hub, ListGroup } from '../components/Styled';
 
 class Github extends PureComponent {
   state = {

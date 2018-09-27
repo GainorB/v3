@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import {
   StudyGrid,
   StudySplash,
-  StudyButton,
+  // StudyButton,
   StudyContent,
   StudySplit,
   Study,
@@ -15,7 +15,7 @@ import {
   ListGroup,
   StudyTech,
   ButtonGrid,
-  GoHome,
+  // GoHome,
   NewProjectButton,
 } from '../components/Styled';
 import Loading from './Loading';
@@ -103,9 +103,9 @@ class CaseStudy extends PureComponent {
     return (
       <StudyGrid>
         <StudySplash>
-          <Link to="/">
-            <span>{project.name}</span>
-          </Link>
+          <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
+            <span>{project.title}</span>
+          </a>
         </StudySplash>
         <Study>
           <StudyHeader>About the Project</StudyHeader>
@@ -148,7 +148,11 @@ class CaseStudy extends PureComponent {
         <Study>
           <StudyHeader>Powered by</StudyHeader>
           <StudyContent>
-            <ListGroup>{project.technologies.map(t => <StudyTech key={v1()}>{t}</StudyTech>)}</ListGroup>
+            <ListGroup>
+              {project.technologies.map(t => (
+                <StudyTech key={v1()}>{t}</StudyTech>
+              ))}
+            </ListGroup>
           </StudyContent>
         </Study>
         {project.gallery.length > 1 && (

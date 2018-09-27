@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MyBio from '../api/Bio';
 import Github from '../api/Github';
 import GetInTouch from './GetInTouch';
 import { InTouch, ListGroup, SideMenu, SideMenuTitle } from './Styled';
@@ -13,26 +14,27 @@ const Feed = () => (
         <img className="avatar" src={logo} alt="Gainor Bostwick" />
       </Link>
       <p className="name">Gainor Bostwick</p>
-      <p className="title">Full Stack Web Developer</p>
+      <p className="title">Full Stack Developer</p>
+      <MyBio />
     </div>
     <div className="toolSet">
       <SideMenuTitle>Stack</SideMenuTitle>
       <ListGroup>
-        <li>React</li>
+        <li>React.js</li>
         <li>Apollo</li>
-        <li>Express</li>
-        <li>Node</li>
+        <li>Express.js</li>
+        <li>Node.js</li>
         <li>GraphQL</li>
-        <li>Postgres</li>
+        <li>PostgreSQL</li>
       </ListGroup>
     </div>
     <div className="focusedOn">
       <SideMenuTitle>Focused On</SideMenuTitle>
       <ListGroup>
-        <li>React</li>
+        <li>React.js</li>
         <li>GraphQL</li>
-        <li>Typescript</li>
-        <li>Apollo Client</li>
+        <li>TypeScript</li>
+        <li>Apollo</li>
       </ListGroup>
     </div>
     <div className="github">

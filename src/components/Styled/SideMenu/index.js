@@ -45,7 +45,7 @@ export const SideMenu = styled.div`
   }
 
   .title {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .avatar {
@@ -79,6 +79,7 @@ export const SideMenu = styled.div`
 `;
 
 export const SideMenuTitle = styled.h4`
+  user-select: none;
   text-transform: uppercase;
   font-size: 0.8rem;
   border-bottom: 2px solid #090909;
@@ -107,4 +108,13 @@ export const Hub = styled.li`
     font-weight: bold;
     letter-spacing: 2px;
   }
+`;
+
+export const Bio = styled.div`
+  user-select: none;
+  margin: 0.5em 0em;
+  font-size: 1rem;
+  font-style: italic;
+  padding: 10px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.1);
 `;

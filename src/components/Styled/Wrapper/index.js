@@ -49,6 +49,7 @@ export const PerfectlyCentered = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 100%;
   margin: 0 auto;
-  height: 100vh;
+  font-size: 1rem;
 `;
