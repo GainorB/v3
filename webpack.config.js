@@ -109,7 +109,8 @@ module.exports = {
     new ManifestPlugin(), // will generate a manifest.json file in your root output directory with a mapping of all source file names to their corresponding output file,
     new CopyWebpackPlugin([
       {
-        from: './_redirects',
+        from: './static',
+        // from: './_redirects',
         to: path.join(__dirname, 'dist'),
         toType: 'dir',
       },
