@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
-import { debounce } from 'lodash';
+import { debounce, flattenDeep } from 'lodash';
 // import FlipMove from 'react-flip-move';
 import { ThemeProvider } from 'styled-components';
 import Loading from './Loading';
@@ -18,12 +18,17 @@ class Technical extends PureComponent {
     displayedSkills: [],
     typing: false,
     selectOptions: null,
+    techUsed: null,
   };
 
   componentDidMount = async () => {
     const skills = await fetch('https://gainorportfolio.firebaseio.com/skills/.json').then(res => res.json());
+    const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
+    const techUsed = flattenDeep(projects.map(e => e.technologies));
     const selectOptions = skills.map(s => ({ value: s, label: `${s.toLowerCase()}.` }));
-    await this.setStateAsync({ skills, displayedSkills: skills, loading: false, selectOptions });
+    if (skills.length > 5 && techUsed.length > 5) {
+      await this.setStateAsync({ skills, displayedSkills: skills, loading: false, selectOptions, techUsed });
+    }
   };
 
   setStateAsync(state) {
@@ -53,19 +58,38 @@ class Technical extends PureComponent {
     }
   };
 
-  renderSkills = skills => {
-    const output = skills.map(mapTech).map(t => (
-      <Skill key={key()}>
-        <img src={t.src} alt={t.tech} />
-        <span>{t.tech}</span>
-      </Skill>
-    ));
+  renderSkills = (skills, projectTech) => {
+    const tally = projectTech.reduce((obj, skill) => {
+      if (!obj[skill]) {
+        obj[skill] = 0;
+      }
+      obj[skill] += 1;
+      return obj;
+    }, {});
+
+    const output = skills.map(mapTech).map(t => {
+      const plural = tally[t.tech] !== 1 ? 's' : '';
+      return (
+        <Skill key={key()} usedSkill={!!tally[t.tech]}>
+          <div className="skill__rows">
+            <img src={t.src} alt={t.tech} />
+            <span className="skill__Tech">{t.tech}</span>
+          </div>
+          {tally[t.tech] && (
+            <div className="skill__projectCount">
+              Used in {tally[t.tech]} project
+              {plural}
+            </div>
+          )}
+        </Skill>
+      );
+    });
 
     return <SkillContainer>{output}</SkillContainer>;
   };
 
   render() {
-    const { displayedSkills, loading, typing, selectOptions } = this.state;
+    const { displayedSkills, techUsed, loading, typing, selectOptions } = this.state;
     const { length } = displayedSkills;
 
     return (
@@ -82,7 +106,7 @@ class Technical extends PureComponent {
             {!typing && <Replace>replace 'technical' above with a technology to filter skills</Replace>}
           </Section>
         </ThemeProvider>
-        {loading ? <Loading /> : this.renderSkills(displayedSkills)}
+        {loading ? <Loading /> : this.renderSkills(displayedSkills, techUsed)}
       </Fragment>
     );
   }
