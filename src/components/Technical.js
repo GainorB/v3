@@ -71,12 +71,13 @@ class Technical extends PureComponent {
     return (
       <Fragment>
         <ThemeProvider theme={theme}>
-          <Section bg="#090909">
+          <Section bg="#090909" poly>
             {selectOptions && (
               <MySelect placeholder="technical." onChange={this.handleChange} options={selectOptions} />
             )}
             <ReturnedResults>
-              Currently displaying {length} skill{length > 1 ? 's' : ''}.
+              Currently displaying {length} skill
+              {length > 1 ? 's' : ''}.
             </ReturnedResults>
             {!typing && <Replace>replace 'technical' above with a technology to filter skills</Replace>}
           </Section>

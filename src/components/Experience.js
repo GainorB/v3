@@ -39,7 +39,9 @@ class Experience extends PureComponent {
           <div className="exp__companyDescription">{e.companyDescription}</div>
           <ol className="exp__responsibilities">
             <span>Responsibilities</span>
-            {e.responsibilities.map(r => <li key={key()}>{r}</li>)}
+            {e.responsibilities.map(r => (
+              <li key={key()}>{r}</li>
+            ))}
           </ol>
         </ExpGrid>
         <ExpFooter>
@@ -56,7 +58,7 @@ class Experience extends PureComponent {
     return (
       <Fragment>
         <ThemeProvider theme={theme}>
-          <Section bg="#090909">
+          <Section bg="#090909" poly>
             <SectionHeader>experience.</SectionHeader>
           </Section>
         </ThemeProvider>

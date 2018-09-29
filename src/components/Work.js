@@ -110,10 +110,11 @@ class Work extends PureComponent {
     return (
       <WorkWrapper>
         <ThemeProvider theme={theme}>
-          <Section bg="#090909">
+          <Section bg="#090909" poly>
             {techUsed && <MySelect placeholder="work." onChange={this.handleChange} options={techUsed} />}
             <ReturnedResults>
-              Currently displaying {length} project{length > 1 ? 's' : ''} with{' '}
+              Currently displaying {length} project
+              {length > 1 ? 's' : ''} with{' '}
               {(displayedProjectsTech && displayedProjectsTech.length) || (techUsed && techUsed.length)} technologies.
             </ReturnedResults>
             {!typing && <Replace>replace 'work' above with a technology to filter projects</Replace>}

@@ -17,9 +17,9 @@ const theme = {
   }),
   control: styles => ({
     ...styles,
-    backgroundColor: '#090909',
+    backgroundColor: 'none',
     boxShadow: `0 0 0 1px #090909`,
-    borderColor: '#090909',
+    border: 'none',
     letterSpacing: '-0.026em',
     color: '#fff',
     fontSize: '5rem',
@@ -72,6 +72,7 @@ const MySelect = ({ onChange, options, placeholder }) => (
     // autoFocus
     isSearchable
     isClearable
+    blurInputOnSelect
     closeMenuOnSelect
     placeholder={placeholder}
     onChange={onChange}
