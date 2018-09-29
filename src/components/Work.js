@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import MySelect from './MySelect';
 import { Section, PortfolioWrapper, WorkWrapper, ProjectGrid, ReturnedResults, Replace } from './Styled';
 import Loading from './Loading';
-import { key, sortSkills } from '../utils';
+import { key, sortSkills, removeWhiteSpace } from '../utils';
 
 const theme = {
   fontColor: '#fff',
@@ -72,14 +72,9 @@ class Work extends PureComponent {
     }
   };
 
-  removeWhiteSpace = str => str.replace(/\s/g, '_');
-
   renderProjects = projects => {
     const output = projects.map(p => (
-      <Link
-        to={{ pathname: `/case-study/${p.id}/${this.removeWhiteSpace(p.name)}`, state: { project: p } }}
-        key={key()}
-      >
+      <Link to={{ pathname: `/case-study/${p.id}/${removeWhiteSpace(p.name)}`, state: { project: p } }} key={key()}>
         <ProjectGrid>
           <img src={p.image} alt={p.name} />
           <div className="overlay">

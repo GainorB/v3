@@ -24,7 +24,7 @@ export const Skill = styled.div`
   .skill__projectCount {
     text-align: center;
     font-size: 0.9rem;
-    padding: 5px;
+    padding: 10px;
     background: #090909;
     color: #fff;
   }
@@ -33,6 +33,10 @@ export const Skill = styled.div`
     width: 100%;
     max-height: 100px;
     object-fit: contain;
+  }
+
+  .skill__projectCount a {
+    color: #fff;
   }
 
   .skill__Tech {

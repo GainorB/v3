@@ -2,7 +2,7 @@ import React from 'react';
 import { PerfectlyCentered } from './Styled';
 
 const style = {
-  fontSize: '2rem',
+  fontSize: '1rem',
 };
 
 const Loading = () => (

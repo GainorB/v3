@@ -1,11 +1,9 @@
 import React, { PureComponent } from 'react';
-import { v1 } from 'uuid';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
   StudyGrid,
   StudySplash,
-  // StudyButton,
   StudyContent,
   StudySplit,
   Study,
@@ -15,11 +13,11 @@ import {
   ListGroup,
   StudyTech,
   ButtonGrid,
-  // GoHome,
   NewProjectButton,
 } from '../components/Styled';
 import Loading from './Loading';
 import InvalidProject from './InvalidProject';
+import { removeUnderline, key } from '../utils';
 
 class CaseStudy extends PureComponent {
   static propTypes = {
@@ -38,7 +36,7 @@ class CaseStudy extends PureComponent {
   async componentDidMount() {
     // eslint-disable-next-line
     let { id, project } = this.props.match.params;
-    project = this.removeUnderline(project);
+    project = removeUnderline(project);
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
     const currentProjects = projects.map((e, i) => i);
     const currentProjectNames = projects.map(e => e.name);
@@ -77,14 +75,12 @@ class CaseStudy extends PureComponent {
     );
   };
 
-  removeUnderline = str => str.replace(/_/g, ' ');
-
-  newProject = key => {
+  newProject = dir => {
     let { currentIndex } = this.state;
     const { projects } = this.state;
     const max = projects.length;
     if (currentIndex !== max || currentIndex !== -1) {
-      switch (key) {
+      switch (dir) {
         case 'next':
           currentIndex += 1;
           break;
@@ -125,7 +121,7 @@ class CaseStudy extends PureComponent {
             <StudyContent>
               <ListGroup>
                 {project.technicalInformation.map(f => (
-                  <li className="techFeature" key={v1()}>
+                  <li className="techFeature" key={key()}>
                     {f}
                   </li>
                 ))}
@@ -137,7 +133,7 @@ class CaseStudy extends PureComponent {
             <StudyContent>
               <ListGroup>
                 {project.features.map(f => (
-                  <li className="techFeature" key={v1()}>
+                  <li className="techFeature" key={key()}>
                     {f}
                   </li>
                 ))}
@@ -150,7 +146,7 @@ class CaseStudy extends PureComponent {
           <StudyContent>
             <ListGroup>
               {project.technologies.map(t => (
-                <StudyTech key={v1()}>{t}</StudyTech>
+                <StudyTech key={key()}>{t}</StudyTech>
               ))}
             </ListGroup>
           </StudyContent>
@@ -161,7 +157,7 @@ class CaseStudy extends PureComponent {
             <StudyContent>
               <StudyGallery>
                 {project.gallery.map(p => (
-                  <div key={v1()}>
+                  <div key={key()}>
                     <img src={p} alt={project.name} />
                   </div>
                 ))}

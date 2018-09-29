@@ -38,7 +38,7 @@ const Feed = () => (
       </ListGroup>
     </div>
     <div className="github">
-      <SideMenuTitle>Github information</SideMenuTitle>
+      <SideMenuTitle>Github Snapshot</SideMenuTitle>
       <Github />
     </div>
     <div className="resume">

@@ -1,10 +1,11 @@
 import React, { PureComponent, Fragment } from 'react';
 import { debounce, flattenDeep } from 'lodash';
 // import FlipMove from 'react-flip-move';
+import { Link } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Loading from './Loading';
 import { Section, Skill, SkillContainer, ReturnedResults, Replace } from './Styled';
-import { mapTech, key } from '../utils';
+import { mapTech, key, removeWhiteSpace } from '../utils';
 import MySelect from './MySelect';
 
 const theme = {
@@ -76,10 +77,12 @@ class Technical extends PureComponent {
             <span className="skill__Tech">{t.tech}</span>
           </div>
           {tally[t.tech] && (
-            <div className="skill__projectCount">
-              Used in {tally[t.tech]} project
-              {plural}
-            </div>
+            <Link to={`/work?tech=${removeWhiteSpace(t.tech.toLowerCase())}`}>
+              <div className="skill__projectCount">
+                Used in {tally[t.tech]} project
+                {plural}
+              </div>
+            </Link>
           )}
         </Skill>
       );

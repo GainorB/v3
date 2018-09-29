@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StudyGrid = styled.div`
   display: grid;
   background: #fff;
-  grid-template-rows: 200px auto auto auto auto;
+  grid-template-rows: repeat(5, auto);
   grid-gap: 10px;
   padding: 10px;
 
@@ -20,6 +20,7 @@ export const StudySplash = styled.div`
   font-size: 4rem;
   font-weight: bold;
   background: none;
+  min-height: 200px;
 
   span {
     padding: 20px 30px;

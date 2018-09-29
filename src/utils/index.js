@@ -93,3 +93,7 @@ export const sortSkills = (a, b) => {
   if (newA < newB) return -1;
   return 0;
 };
+
+export const removeWhiteSpace = str => str.replace(/\s/g, '_');
+
+export const removeUnderline = str => str.replace(/_/g, ' ');

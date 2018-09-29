@@ -51,5 +51,6 @@ export const PerfectlyCentered = styled.div`
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  font-size: 1rem;
+  font-size: inherit;
+  padding: 20px 0px;
 `;

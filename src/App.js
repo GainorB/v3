@@ -13,6 +13,7 @@ import SideMenu from './components/SideMenu';
 import Technical from './components/Technical';
 import CaseStudy from './components/CaseStudy';
 import NotFound from './components/NotFound';
+import ProjectsPerTech from './components/ProjectsPerTech';
 
 // CSS
 import { PageWrapper, Nav, NavItem } from './components/Styled';
@@ -73,6 +74,7 @@ const App = props => (
       <Switch>
         <Route exact path="/" render={() => mainLayout(props)} />
         <Route exact path="/case-study/:id/:project" component={CaseStudy} />
+        <Route exact path="/work" component={ProjectsPerTech} />
         <Route component={NotFound} />
       </Switch>
       <Footer />
