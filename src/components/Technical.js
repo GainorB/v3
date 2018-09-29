@@ -71,7 +71,7 @@ class Technical extends PureComponent {
     return (
       <Fragment>
         <ThemeProvider theme={theme}>
-          <Section bg="#090909" poly>
+          <Section bg="#090909">
             {selectOptions && (
               <MySelect placeholder="technical." onChange={this.handleChange} options={selectOptions} />
             )}

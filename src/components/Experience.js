@@ -58,7 +58,7 @@ class Experience extends PureComponent {
     return (
       <Fragment>
         <ThemeProvider theme={theme}>
-          <Section bg="#090909" poly>
+          <Section bg="#090909">
             <SectionHeader>experience.</SectionHeader>
           </Section>
         </ThemeProvider>

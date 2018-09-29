@@ -110,7 +110,7 @@ class Work extends PureComponent {
     return (
       <WorkWrapper>
         <ThemeProvider theme={theme}>
-          <Section bg="#090909" poly>
+          <Section bg="#090909">
             {techUsed && <MySelect placeholder="work." onChange={this.handleChange} options={techUsed} />}
             <ReturnedResults>
               Currently displaying {length} project

@@ -11,7 +11,7 @@ class About extends PureComponent {
     return (
       <Fragment>
         <ThemeProvider theme={theme}>
-          <Section bg="#090909" poly>
+          <Section bg="#090909">
             <SectionHeader>me.</SectionHeader>
           </Section>
         </ThemeProvider>
