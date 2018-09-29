@@ -20,4 +20,4 @@
 20. Get recommendations from LinkedIn API
 21. ~~Favicon~~
 22. Context API
-23. A page that uses a query param to build a page that displays projects with that technology
+23. ~~A page that uses a query param to build a page that displays projects with that technology~~
