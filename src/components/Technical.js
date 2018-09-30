@@ -8,6 +8,7 @@ import { Section, Skill, SkillContainer, ReturnedResults, Replace } from './Styl
 import { mapTech, key, removeWhiteSpace } from '../utils';
 import Select from '../utils/MySelect';
 import api from '../api';
+import { TallyTech } from '../utils/RenderTechnologies';
 
 const theme = {
   fontColor: '#fff',
@@ -61,19 +62,12 @@ class Technical extends PureComponent {
   };
 
   renderSkills = (skills, projectTech) => {
-    const tally = projectTech.reduce((obj, skill) => {
-      if (!obj[skill]) {
-        obj[skill] = 0;
-      }
-      obj[skill] += 1;
-      return obj;
-    }, {});
-    const avg = Object.values(tally).reduce((acc, cV) => acc + cV) / Object.values(tally).length;
+    const { tally, avg } = TallyTech(projectTech);
 
     const output = skills.map(mapTech).map(t => {
       const plural = tally[t.tech] !== 1 ? 's' : '';
       return (
-        <Skill key={key()} stack={tally[t.tech] >= avg}>
+        <Skill key={key()} stack={tally[t.tech] > avg}>
           <div className="skill__rows">
             <img src={t.src} alt={t.tech} />
             <span className="skill__Tech">{t.tech}</span>

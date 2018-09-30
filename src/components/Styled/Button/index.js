@@ -64,6 +64,5 @@ export const GoHome = styled.button`
 
   &:hover {
     cursor: pointer;
-    color: #004cf3;
   }
 `;

@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import {
   StudyGrid,
   StudySplash,
@@ -102,7 +101,7 @@ class CaseStudy extends PureComponent {
       <StudyGrid>
         <StudySplash>
           <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
-            <span>{project.title.toLowerCase()}</span>
+            <span>{project.title}</span>
           </a>
         </StudySplash>
         <Study>

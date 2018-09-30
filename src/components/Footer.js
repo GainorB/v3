@@ -7,15 +7,21 @@ const Footer = () => (
   <Foot>
     <p>&copy; {date.getFullYear()} Gainor Bostwick. All rights reserved.</p>
     <FooterIcons>
-      <a href="https://github.com/GainorB/" target="_blank" rel="noopener noreferrer">
-        <i className="fab fa-github" />
-      </a>
-      <a href="mailto:gainorbostwick@gmail.com" target="_blank" rel="noopener noreferrer">
-        <i className="fas fa-at" />
-      </a>
-      <a href="https://www.linkedin.com/in/gainorbostwick/" target="_blank" rel="noopener noreferrer">
-        <i className="fab fa-linkedin-in" />
-      </a>
+      <span className="github">
+        <a href="https://github.com/GainorB/" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-github" />
+        </a>
+      </span>
+      <span className="email">
+        <a href="mailto:gainorbostwick@gmail.com" target="_blank" rel="noopener noreferrer">
+          <i className="fas fa-at" />
+        </a>
+      </span>
+      <span className="linkedin">
+        <a href="https://www.linkedin.com/in/gainorbostwick/" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-linkedin-in" />
+        </a>
+      </span>
     </FooterIcons>
     <FooterFinePrint>
       <p>This app is licensed under the MIT License.</p>

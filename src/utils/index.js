@@ -9,6 +9,10 @@ export const mapTech = tech => {
       src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028382/portfolio/javascript.png',
       tech,
     },
+    ES6: {
+      src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1538341441/portfolio/es6_logo.jpg',
+      tech,
+    },
     jQuery: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028382/portfolio/jquery.png', tech },
     'React.js': { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028384/portfolio/react.png', tech },
     TypeScript: {

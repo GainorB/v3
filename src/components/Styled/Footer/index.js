@@ -36,14 +36,25 @@ export const FooterIcons = styled.div`
   grid-gap: 15px;
   font-size: 1.5rem;
 
+  .linkedin i {
+    color: #0577b2;
+  }
+
+  .email i {
+    color: #ba4444;
+  }
+
+  .github i {
+    color: #3f4448;
+  }
+
   i {
     transition: all 500ms;
     padding: 10px;
   }
 
   i:hover {
-    cursor: pointer;
-    color: #004cf3;
+    color: #fff;
   }
 `;
 

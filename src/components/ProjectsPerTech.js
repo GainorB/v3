@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
 import { Link } from 'react-router-dom';
-import { flattenDeep, uniq } from 'lodash';
+import { flattenDeep } from 'lodash';
 import PropTypes from 'prop-types';
 import { StudySplash, StudyContent, Study, StudyHeader } from '../components/Styled';
 import api from '../api';
@@ -31,7 +31,7 @@ export default class ProjectsPerTech extends Component {
     const parsed = this.parseQuery(location.search);
     const projects = await api.projects();
     const projectsPerTech = projects.filter(p => p.technologies.map(t => t.toLowerCase()).includes(parsed));
-    const techUsed = uniq(flattenDeep(projects.map(e => e.technologies)));
+    const techUsed = flattenDeep(projects.map(e => e.technologies));
     const isThisTechValid = techUsed.map(t => t.toLowerCase()).includes(parsed);
     if (isThisTechValid) {
       await this.setStateAsync({
