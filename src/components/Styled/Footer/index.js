@@ -28,9 +28,12 @@ export const Foot = styled.div`
 
 export const FooterIcons = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-gap: 15px;
-  font-size: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 2rem;
+
+  i {
+    opacity: 0.3;
+  }
 
   .linkedin i {
     color: #0577b2;
@@ -42,6 +45,10 @@ export const FooterIcons = styled.div`
 
   .github i {
     color: #3f4448;
+  }
+
+  .twitter i {
+    color: #1e95dc;
   }
 
   i {
@@ -57,7 +64,7 @@ export const FooterIcons = styled.div`
 export const FooterFinePrint = styled.div`
   color: #fff;
   text-align: center;
-  margin-top: 40px;
+  margin: 30px 0px;
   font-size: 0.8rem;
 
   p {
