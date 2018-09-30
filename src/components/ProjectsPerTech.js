@@ -21,6 +21,7 @@ export default class ProjectsPerTech extends Component {
     projects: null,
     projectsPerTech: null,
     query: '',
+    error: null,
   };
 
   componentDidMount = async () => {
@@ -29,26 +30,28 @@ export default class ProjectsPerTech extends Component {
     const projects = await api.projects();
     const projectsPerTech = projects.filter(p => p.technologies.map(t => t.toLowerCase()).includes(parsed));
     const techUsed = uniq(flattenDeep(projects.map(e => e.technologies)));
-    await this.setStateAsync({
-      loading: false,
-      techUsed,
-      projects,
-      projectsPerTech,
-      query: parsed,
-    });
+    const isThisTechValid = techUsed.map(t => t.toLowerCase()).includes(parsed);
+    if (isThisTechValid) {
+      await this.setStateAsync({
+        loading: false,
+        techUsed,
+        projects,
+        projectsPerTech,
+        query: parsed,
+      });
+    } else {
+      await this.setStateAsync({ error: 'Invalid Technology', loading: false });
+    }
   };
 
-  shouldComponentUpdate = (nextProps, nextState) => {
-    const { location } = nextProps;
-    const { query, projects } = nextState;
-
+  componentDidUpdate = (prevProps, prevState) => {
+    const { projects, query } = this.state;
+    const { location } = this.props;
     const parsed = this.parseQuery(location.search);
-    const projectsPerTech = projects.filter(p => p.technologies.map(t => t.toLowerCase()).includes(parsed));
-    if (parsed !== query) {
-      this.setState({ projectsPerTech, query: parsed });
-      return true;
+    if (query !== parsed && prevState.query !== parsed && projects !== null) {
+      const projectsPerTech = projects.filter(p => p.technologies.map(t => t.toLowerCase()).includes(parsed));
+      this.setState({ query: parsed, projectsPerTech });
     }
-    return true;
   };
 
   setStateAsync(state) {
@@ -58,17 +61,16 @@ export default class ProjectsPerTech extends Component {
   }
 
   parseQuery = query => {
-    console.log('query', query);
+    const parsed = queryString.parse(query);
+    if (parsed.tech === undefined) return;
     if (query === '') return;
-    return removeUnderline(queryString.parse(query).tech);
+    return removeUnderline(parsed.tech);
   };
 
   render() {
-    const { location } = this.props;
-    const parsed = queryString.parse(location.search);
-    if (location.search === '' || parsed.tech === '') return <NotFound />;
-    const { techUsed, loading, projectsPerTech, query } = this.state;
+    const { techUsed, loading, projectsPerTech, query, error } = this.state;
     if (loading) return <Loading />;
+    if (error) return <NotFound />;
     return (
       <div>
         <StudySplash>
