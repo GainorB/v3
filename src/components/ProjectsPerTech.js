@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
+import { Link } from 'react-router-dom';
 import { flattenDeep, uniq } from 'lodash';
 import PropTypes from 'prop-types';
-import { StudySplash, StudyContent, Study, StudyHeader, PortfolioWrapper } from '../components/Styled';
+import { StudySplash, StudyContent, Study, StudyHeader } from '../components/Styled';
 import Loading from './Loading';
 import NotFound from './NotFound';
 import { removeUnderline } from '../utils';
@@ -74,19 +75,19 @@ export default class ProjectsPerTech extends Component {
     return (
       <div>
         <StudySplash>
-          <span>{query}</span>
+          <Link to="/">
+            <span>{query}</span>
+          </Link>
         </StudySplash>
         <Study>
-          <StudyHeader>Filterable technologies</StudyHeader>
+          <StudyHeader>Find more projects using</StudyHeader>
           <StudyContent>
             <RenderTechnologies technologies={techUsed} />
           </StudyContent>
         </Study>
         <Study>
-          <StudyHeader>Projects Powered by {query} </StudyHeader>
-          <PortfolioWrapper>
-            <RenderProjects projects={projectsPerTech} />
-          </PortfolioWrapper>
+          <StudyHeader>Projects Powered with {query} </StudyHeader>
+          <RenderProjects projects={projectsPerTech} />
         </Study>
       </div>
     );

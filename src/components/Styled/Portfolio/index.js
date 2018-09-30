@@ -43,14 +43,10 @@ export const ProjectGrid = styled.div`
   }
 
   .overlay__text .technologies {
-    font-size: 1rem;
-    color: rgb(255, 255, 255);
+    font-size: 0.9rem;
+    color: #fff;
     margin-top: 10px;
     font-weight: normal;
-  }
-
-  .test {
-    color: #fff;
-    font-size: 1rem;
+    line-height: 1.5;
   }
 `;

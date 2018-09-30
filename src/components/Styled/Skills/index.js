@@ -14,7 +14,7 @@ export const Skill = styled.div`
   transition: all 0.1s ease-in-out, 0.8s;
   ${props =>
     props.stack &&
-    `background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(https://res.cloudinary.com/dplvzflkc/image/upload/v1538266584/portfolio/fiyah.png);
+    `background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(https://res.cloudinary.com/dplvzflkc/image/upload/v1538266584/portfolio/fiyah.png);
     background-size: 70% 70%;
     background-position: center;
     `};

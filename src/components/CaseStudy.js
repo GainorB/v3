@@ -101,7 +101,7 @@ class CaseStudy extends PureComponent {
       <StudyGrid>
         <StudySplash>
           <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
-            <span>{project.title}</span>
+            <span>{project.title.toLowerCase()}</span>
           </a>
         </StudySplash>
         <Study>

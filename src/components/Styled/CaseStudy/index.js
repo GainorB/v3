@@ -27,6 +27,7 @@ export const StudySplash = styled.div`
     background: #090909;
     color: #fff;
     transition: 500ms color;
+    text-align: center;
   }
 
   span:hover {
