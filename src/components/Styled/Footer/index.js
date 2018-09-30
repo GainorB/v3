@@ -17,10 +17,6 @@ export const Foot = styled.div`
     color: #fff;
   }
 
-  a:hover {
-    text-decoration: underline;
-  }
-
   @media only screen and (max-width: 1200px) {
     font-size: 1rem;
 

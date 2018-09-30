@@ -29,17 +29,17 @@ const Footer = () => (
         Powered by{' '}
         <a href="https://github.com/GainorB/create-gainor-app" target="_blank" rel="noopener noreferrer">
           create-gainor-app
-        </a>
-        . Deployed on{' '}
+        </a>{' '}
+        and deployed on{' '}
         <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">
           Netlify
         </a>
         .
       </p>
       <p>
-        Take a peak at the{' '}
+        Take a peak{' '}
         <a href="https://github.com/GainorB/v3" target="_blank" rel="noopener noreferrer">
-          source code
+          under the hood
         </a>
         .
       </p>
