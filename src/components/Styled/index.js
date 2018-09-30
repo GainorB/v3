@@ -6,7 +6,7 @@ import { SkillContainer, Skill } from './Skills';
 import { ReturnedResults, Replace, H1, H4, ProjectError } from './Text';
 import { PageWrapper, PortfolioWrapper, WorkWrapper, PerfectlyCentered } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Experience';
-import { Foot } from './Footer';
+import { Foot, FooterIcons, FooterFinePrint } from './Footer';
 import { Input } from './Input';
 import { Me } from './About';
 import { Button, NewProjectButton, GoHome } from './Button';
@@ -49,6 +49,8 @@ export {
   H4,
   Button,
   Foot,
+  FooterIcons,
+  FooterFinePrint,
   InTouch,
   PageWrapper,
   Section,

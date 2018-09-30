@@ -30,7 +30,7 @@ const GetInTouch = () => (
     </a>
     <a href="mailto:gainorbostwick@gmail.com" target="_blank" rel="noopener noreferrer">
       <InTouch email>
-        <i className="fas fa-envelope" />
+        <i className="fas fa-at" />
       </InTouch>
     </a>
   </ListGroup>
