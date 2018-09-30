@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import { flattenDeep, uniq } from 'lodash';
 import PropTypes from 'prop-types';
 import { StudySplash, StudyContent, Study, StudyHeader } from '../components/Styled';
-import Loading from './Loading';
-import NotFound from './NotFound';
+import api from '../api';
+import Loading from '../utils/Loading';
+import NotFound from '../utils/NotFound';
 import { removeUnderline } from '../utils';
 import RenderProjects from '../utils/RenderProjects';
 import RenderTechnologies from '../utils/RenderTechnologies';
-import api from '../api';
+import ReturnHome from '../utils/ReturnHome';
 
 export default class ProjectsPerTech extends Component {
   static propTypes = {
@@ -85,10 +86,9 @@ export default class ProjectsPerTech extends Component {
             <RenderTechnologies technologies={techUsed} />
           </StudyContent>
         </Study>
-        <Study>
-          <StudyHeader>Projects Powered with {query} </StudyHeader>
-          <RenderProjects projects={projectsPerTech} />
-        </Study>
+        <StudyHeader>Projects Powered with {query} </StudyHeader>
+        <RenderProjects projects={projectsPerTech} />
+        <ReturnHome />
       </div>
     );
   }

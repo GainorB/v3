@@ -45,20 +45,6 @@ export const ButtonGrid = styled.div`
   grid-gap: 10px;
   align-items: center;
 
-  .home__button {
-    margin: 0 auto;
-  }
-
-  .home__button i {
-    font-size: 2rem;
-    color: #090909;
-    transition: 500ms color;
-  }
-
-  .home__button i:hover {
-    color: #2649f0;
-  }
-
   @media only screen and (max-width: 1200px) {
     margin-top: 5px;
     grid-template-columns: 100%;

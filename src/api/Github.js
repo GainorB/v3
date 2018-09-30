@@ -1,6 +1,6 @@
 // import { distanceInWordsStrict } from 'date-fns';
 import React, { PureComponent } from 'react';
-import Loading from '../components/Loading';
+import Loading from '../utils/Loading';
 import { Hub, ListGroup } from '../components/Styled';
 
 class Github extends PureComponent {

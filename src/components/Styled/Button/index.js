@@ -38,40 +38,6 @@ export const Button = styled.button`
   }
 `;
 
-// export const StudyButton = styled(Button)`
-//   margin: 0.2em;
-//   color: #090909;
-//   border: 2px solid #090909;
-//   padding: 0.7em 2.5em;
-
-//   &:hover {
-//     box-shadow: 0px 0px 0px 2px #090909;
-//   }
-
-//   i {
-//     top: 10px;
-//   }
-
-//   span {
-//     left: 25px;
-//   }
-
-//   @media only screen and (max-width: 1200px) {
-//     font-size: 1rem;
-//     padding: 0.5em 2em;
-
-//     span {
-//       top: 1px;
-//     }
-
-//     i {
-//       top: 6px;
-//       left: 15px;
-//       font-size: 1.4rem;
-//     }
-//   }
-// `;
-
 export const NewProjectButton = styled(Button)`
   font-size: 0.8rem;
   border: none;
@@ -87,16 +53,17 @@ export const NewProjectButton = styled(Button)`
   }
 `;
 
-// export const GoHome = styled(Button)`
-//   padding: 0.5em 2em;
-//   font-size: 0.8rem;
-//   color: #090909;
-//   border: 2px solid #090909;
-//   width: 100%;
-//   text-transform: uppercase;
+export const GoHome = styled.button`
+  display: block;
+  font-size: 2rem;
+  color: #090909;
+  transition: 500ms color;
+  background: none;
+  border: none;
+  margin: 10px auto;
 
-//   &:hover {
-//     color: #fff;
-//     background: #090909;
-//   }
-// `;
+  &:hover {
+    cursor: pointer;
+    color: #004cf3;
+  }
+`;

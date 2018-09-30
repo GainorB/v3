@@ -1,5 +1,5 @@
 import React from 'react';
-import { PerfectlyCentered } from './Styled';
+import { PerfectlyCentered } from '../components/Styled';
 
 const style = {
   fontSize: '1rem',

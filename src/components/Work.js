@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import { debounce, flattenDeep, uniq } from 'lodash';
 import { ThemeProvider } from 'styled-components';
-import MySelect from './MySelect';
+import Select from '../utils/MySelect';
 import { Section, WorkWrapper, ReturnedResults, Replace } from './Styled';
-import Loading from './Loading';
-// import { sortSkills } from '../utils';
+import Loading from '../utils/Loading';
 import RenderProjects from '../utils/RenderProjects';
 import api from '../api';
 
@@ -26,12 +25,10 @@ class Work extends PureComponent {
     const projects = await api.projects();
     // AN ARRAY OF STRINGS
     // REPRESENTING ALL THE TECH USED BETWEEN ALL PROJECTS
-    const techUsed = uniq(flattenDeep(projects.map(e => e.technologies)))
-      // .sort(sortSkills)
-      .map(e => ({
-        value: e,
-        label: `${e.toLowerCase()}.`,
-      }));
+    const techUsed = uniq(flattenDeep(projects.map(e => e.technologies))).map(e => ({
+      value: e,
+      label: `${e.toLowerCase()}.`,
+    }));
 
     await this.setStateAsync({ projects, displayedProjects: projects, loading: false, techUsed });
   };
@@ -80,7 +77,7 @@ class Work extends PureComponent {
       <WorkWrapper>
         <ThemeProvider theme={theme}>
           <Section bg="#090909">
-            {techUsed && <MySelect placeholder="work." onChange={this.handleChange} options={techUsed} />}
+            {techUsed && <Select placeholder="work." onChange={this.handleChange} options={techUsed} />}
             <ReturnedResults>
               Currently displaying {length} project
               {length > 1 ? 's' : ''} with{' '}

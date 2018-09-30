@@ -14,11 +14,12 @@ import {
   ButtonGrid,
   NewProjectButton,
 } from '../components/Styled';
-import Loading from './Loading';
-import InvalidProject from './InvalidProject';
+import Loading from '../utils/Loading';
+import InvalidProject from '../utils/InvalidProject';
 import { removeUnderline, key } from '../utils';
 import RenderTechnologies from '../utils/RenderTechnologies';
 import api from '../api';
+import ReturnHome from '../utils/ReturnHome';
 
 class CaseStudy extends PureComponent {
   static propTypes = {
@@ -166,11 +167,7 @@ class CaseStudy extends PureComponent {
           <NewProjectButton onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
             Previous Project
           </NewProjectButton>
-          <div className="home__button">
-            <Link to="/">
-              <i className="fas fa-home" />
-            </Link>
-          </div>
+          <ReturnHome />
           <NewProjectButton onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
             Next Project
           </NewProjectButton>

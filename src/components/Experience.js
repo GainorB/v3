@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import { ThemeProvider } from 'styled-components';
-import Loading from './Loading';
+import Loading from '../utils/Loading';
 import { SectionHeader, Section, ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Styled';
 import { key } from '../utils';
 import api from '../api';

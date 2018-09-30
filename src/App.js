@@ -12,8 +12,10 @@ import Experience from './components/Experience';
 import SideMenu from './components/SideMenu';
 import Technical from './components/Technical';
 import CaseStudy from './components/CaseStudy';
-import NotFound from './components/NotFound';
 import ProjectsPerTech from './components/ProjectsPerTech';
+
+// UTILS
+import NotFound from './utils/NotFound';
 
 // CSS
 import { PageWrapper, Nav, NavItem } from './components/Styled';

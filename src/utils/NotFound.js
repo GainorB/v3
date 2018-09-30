@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, PerfectlyCentered, H1, H4 } from './Styled';
+import { Button, PerfectlyCentered, H1, H4 } from '../components/Styled';
 
 const NotFound = () => (
   <PerfectlyCentered>

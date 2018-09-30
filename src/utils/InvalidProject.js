@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PerfectlyCentered, ProjectError, Button } from './Styled';
+import { PerfectlyCentered, ProjectError, Button } from '../components/Styled';
 
 const InvalidProject = ({ error }) => (
   <PerfectlyCentered>

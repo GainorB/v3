@@ -3,10 +3,10 @@ import { debounce, flattenDeep } from 'lodash';
 // import FlipMove from 'react-flip-move';
 import { Link } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import Loading from './Loading';
+import Loading from '../utils/Loading';
 import { Section, Skill, SkillContainer, ReturnedResults, Replace } from './Styled';
 import { mapTech, key, removeWhiteSpace } from '../utils';
-import MySelect from './MySelect';
+import Select from '../utils/MySelect';
 import api from '../api';
 
 const theme = {
@@ -101,9 +101,7 @@ class Technical extends PureComponent {
       <Fragment>
         <ThemeProvider theme={theme}>
           <Section bg="#090909">
-            {selectOptions && (
-              <MySelect placeholder="technical." onChange={this.handleChange} options={selectOptions} />
-            )}
+            {selectOptions && <Select placeholder="technical." onChange={this.handleChange} options={selectOptions} />}
             <ReturnedResults>
               Currently displaying {length} skill
               {length > 1 ? 's' : ''}.
