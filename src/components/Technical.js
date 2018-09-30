@@ -7,6 +7,7 @@ import Loading from './Loading';
 import { Section, Skill, SkillContainer, ReturnedResults, Replace } from './Styled';
 import { mapTech, key, removeWhiteSpace } from '../utils';
 import MySelect from './MySelect';
+import api from '../api';
 
 const theme = {
   fontColor: '#fff',
@@ -23,8 +24,8 @@ class Technical extends PureComponent {
   };
 
   componentDidMount = async () => {
-    const skills = await fetch('https://gainorportfolio.firebaseio.com/skills/.json').then(res => res.json());
-    const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
+    const skills = await api.skills();
+    const projects = await api.projects();
     const techUsed = flattenDeep(projects.map(e => e.technologies));
     const selectOptions = skills.map(s => ({ value: s, label: `${s.toLowerCase()}.` }));
     if (skills.length > 5 && techUsed.length > 5) {

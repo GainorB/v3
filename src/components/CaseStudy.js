@@ -18,6 +18,7 @@ import Loading from './Loading';
 import InvalidProject from './InvalidProject';
 import { removeUnderline, key } from '../utils';
 import RenderTechnologies from '../utils/RenderTechnologies';
+import api from '../api';
 
 class CaseStudy extends PureComponent {
   static propTypes = {
@@ -37,7 +38,7 @@ class CaseStudy extends PureComponent {
     // eslint-disable-next-line
     let { id, project } = this.props.match.params;
     project = removeUnderline(project);
-    const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
+    const projects = await api.projects();
     const currentProjects = projects.map((e, i) => i);
     const currentProjectNames = projects.map(e => e.name);
     const currentIndex = Number(id);

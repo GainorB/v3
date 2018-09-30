@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import Loading from './Loading';
 import { SectionHeader, Section, ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Styled';
 import { key } from '../utils';
+import api from '../api';
 
 const theme = {
   fontColor: '#fff',
@@ -15,7 +16,7 @@ class Experience extends PureComponent {
   };
 
   componentDidMount = async () => {
-    const experience = await fetch('https://gainorportfolio.firebaseio.com/experience/.json').then(res => res.json());
+    const experience = await api.experience();
     await this.setStateAsync({ experience, loading: false });
   };
 

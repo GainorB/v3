@@ -8,6 +8,7 @@ import NotFound from './NotFound';
 import { removeUnderline } from '../utils';
 import RenderProjects from '../utils/RenderProjects';
 import RenderTechnologies from '../utils/RenderTechnologies';
+import api from '../api';
 
 export default class ProjectsPerTech extends Component {
   static propTypes = {
@@ -25,7 +26,7 @@ export default class ProjectsPerTech extends Component {
   componentDidMount = async () => {
     const { location } = this.props;
     const parsed = this.parseQuery(location.search);
-    const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
+    const projects = await api.projects();
     const projectsPerTech = projects.filter(p => p.technologies.map(t => t.toLowerCase()).includes(parsed));
     const techUsed = uniq(flattenDeep(projects.map(e => e.technologies)));
     await this.setStateAsync({

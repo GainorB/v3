@@ -1,6 +1,5 @@
 import { v1 } from 'uuid';
 
-// MAP my skills to an object containing an image
 export const mapTech = tech => {
   const map = {
     HTML5: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028382/portfolio/html5.png', tech },
@@ -80,6 +79,8 @@ export const mapTech = tech => {
       src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536755033/portfolio/styledComponents.png',
       tech,
     },
+    Cloudinary: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1538272733/portfolio/cloudinary.png', tech },
+    Apollo: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1538272913/portfolio/apollo.png', tech },
   };
 
   return map[tech];

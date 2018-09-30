@@ -50,7 +50,7 @@ export const Skill = styled.div`
   }
 
   &:hover {
-    transform: scale(1.04, 1.04);
+    transform: scale(1.03, 1.03);
   }
 `;
 

@@ -6,6 +6,7 @@ import { Section, WorkWrapper, ReturnedResults, Replace } from './Styled';
 import Loading from './Loading';
 // import { sortSkills } from '../utils';
 import RenderProjects from '../utils/RenderProjects';
+import api from '../api';
 
 const theme = {
   fontColor: '#fff',
@@ -22,7 +23,7 @@ class Work extends PureComponent {
   };
 
   componentDidMount = async () => {
-    const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
+    const projects = await api.projects();
     // AN ARRAY OF STRINGS
     // REPRESENTING ALL THE TECH USED BETWEEN ALL PROJECTS
     const techUsed = uniq(flattenDeep(projects.map(e => e.technologies)))
