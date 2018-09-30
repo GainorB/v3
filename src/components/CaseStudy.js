@@ -11,13 +11,13 @@ import {
   StudyInner,
   StudyGallery,
   ListGroup,
-  StudyTech,
   ButtonGrid,
   NewProjectButton,
 } from '../components/Styled';
 import Loading from './Loading';
 import InvalidProject from './InvalidProject';
 import { removeUnderline, key } from '../utils';
+import RenderTechnologies from '../utils/RenderTechnologies';
 
 class CaseStudy extends PureComponent {
   static propTypes = {
@@ -144,11 +144,7 @@ class CaseStudy extends PureComponent {
         <Study>
           <StudyHeader>Powered by</StudyHeader>
           <StudyContent>
-            <ListGroup>
-              {project.technologies.map(t => (
-                <StudyTech key={key()}>{t}</StudyTech>
-              ))}
-            </ListGroup>
+            <RenderTechnologies technologies={project.technologies} />
           </StudyContent>
         </Study>
         {project.gallery.length > 1 && (

@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
 import { flattenDeep, uniq } from 'lodash';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {
-  StudySplash,
-  StudyContent,
-  Study,
-  StudyHeader,
-  ListGroup,
-  StudyTech,
-  ProjectGrid,
-  PortfolioWrapper,
-} from '../components/Styled';
+import { StudySplash, StudyContent, Study, StudyHeader, PortfolioWrapper } from '../components/Styled';
 import Loading from './Loading';
 import NotFound from './NotFound';
-import { key, removeWhiteSpace, removeUnderline } from '../utils';
+import { removeUnderline } from '../utils';
+import RenderProjects from '../utils/RenderProjects';
+import RenderTechnologies from '../utils/RenderTechnologies';
 
 export default class ProjectsPerTech extends Component {
   static propTypes = {
@@ -32,7 +24,7 @@ export default class ProjectsPerTech extends Component {
 
   componentDidMount = async () => {
     const { location } = this.props;
-    const parsed = removeUnderline(queryString.parse(location.search).tech);
+    const parsed = this.parseQuery(location.search);
     const projects = await fetch('https://gainorportfolio.firebaseio.com/projects/.json').then(res => res.json());
     const projectsPerTech = projects.filter(p => p.technologies.map(t => t.toLowerCase()).includes(parsed));
     const techUsed = uniq(flattenDeep(projects.map(e => e.technologies)));
@@ -49,7 +41,7 @@ export default class ProjectsPerTech extends Component {
     const { location } = nextProps;
     const { query, projects } = nextState;
 
-    const parsed = removeUnderline(queryString.parse(location.search).tech);
+    const parsed = this.parseQuery(location.search);
     const projectsPerTech = projects.filter(p => p.technologies.map(t => t.toLowerCase()).includes(parsed));
     if (parsed !== query) {
       this.setState({ projectsPerTech, query: parsed });
@@ -64,57 +56,10 @@ export default class ProjectsPerTech extends Component {
     });
   }
 
-  renderTechnologies = tech => {
-    const output = tech.map(t => (
-      <Link key={key()} to={`/work?tech=${removeWhiteSpace(t.toLowerCase())}`}>
-        <StudyTech>{t}</StudyTech>
-      </Link>
-    ));
-
-    return (
-      <Study>
-        <StudyHeader>Filterable technologies</StudyHeader>
-        <StudyContent>
-          <ListGroup>{output}</ListGroup>
-        </StudyContent>
-      </Study>
-    );
-  };
-
-  renderProjects = (projects, query) => {
-    if (projects.length === 0) return null;
-    const output = projects.map(p => (
-      <Link to={{ pathname: `/case-study/${p.id}/${removeWhiteSpace(p.name)}`, state: { project: p } }} key={key()}>
-        <ProjectGrid>
-          <img src={p.image} alt={p.name} />
-          <div className="overlay">
-            <div className="overlay__text">
-              {p.name}
-              <div className="technologies">
-                {p.technologies.map((t, index) => {
-                  const noComma = index === p.technologies.length - 1 ? '' : ', ';
-                  return (
-                    <span key={key()}>
-                      {t}
-                      {noComma}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </ProjectGrid>
-      </Link>
-    ));
-
-    return (
-      <Study>
-        <StudyHeader>Projects Powered by {query} </StudyHeader>
-        <StudyContent>
-          <PortfolioWrapper>{output}</PortfolioWrapper>
-        </StudyContent>
-      </Study>
-    );
+  parseQuery = query => {
+    console.log('query', query);
+    if (query === '') return;
+    return removeUnderline(queryString.parse(query).tech);
   };
 
   render() {
@@ -128,8 +73,18 @@ export default class ProjectsPerTech extends Component {
         <StudySplash>
           <span>{query}</span>
         </StudySplash>
-        {this.renderTechnologies(techUsed)}
-        {this.renderProjects(projectsPerTech, query)}
+        <Study>
+          <StudyHeader>Filterable technologies</StudyHeader>
+          <StudyContent>
+            <RenderTechnologies technologies={techUsed} />
+          </StudyContent>
+        </Study>
+        <Study>
+          <StudyHeader>Projects Powered by {query} </StudyHeader>
+          <PortfolioWrapper>
+            <RenderProjects projects={projectsPerTech} />
+          </PortfolioWrapper>
+        </Study>
       </div>
     );
   }

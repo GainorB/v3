@@ -67,11 +67,12 @@ class Technical extends PureComponent {
       obj[skill] += 1;
       return obj;
     }, {});
+    const avg = Object.values(tally).reduce((acc, cV) => acc + cV) / Object.values(tally).length;
 
     const output = skills.map(mapTech).map(t => {
       const plural = tally[t.tech] !== 1 ? 's' : '';
       return (
-        <Skill key={key()} usedSkill={!!tally[t.tech]}>
+        <Skill key={key()} stack={tally[t.tech] >= avg}>
           <div className="skill__rows">
             <img src={t.src} alt={t.tech} />
             <span className="skill__Tech">{t.tech}</span>

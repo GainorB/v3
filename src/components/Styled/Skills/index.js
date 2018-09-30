@@ -7,12 +7,17 @@ export const Skill = styled.div`
   grid-gap: 10px;
   border: 2px solid #090909;
   padding: 1em;
-  color: #090909;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   -webkit-transition: all 0.1s ease-in-out, 0.8s;
   -moz-transition: all 0.1s ease-in-out, 0.8s;
   -o-transition: all 0.1s ease-in-out, 0.8s;
   transition: all 0.1s ease-in-out, 0.8s;
+  ${props =>
+    props.stack &&
+    `background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(https://res.cloudinary.com/dplvzflkc/image/upload/v1538266584/portfolio/fiyah.png);
+    background-size: 70% 70%;
+    background-position: center;
+    `};
 
   .skill__rows {
     display: grid;
@@ -29,14 +34,14 @@ export const Skill = styled.div`
     color: #fff;
   }
 
+  .skill__projectCount a {
+    color: #fff;
+  }
+
   img {
     width: 100%;
     max-height: 100px;
     object-fit: contain;
-  }
-
-  .skill__projectCount a {
-    color: #fff;
   }
 
   .skill__Tech {
@@ -45,7 +50,6 @@ export const Skill = styled.div`
   }
 
   &:hover {
-    border-color: #2348f3;
     transform: scale(1.04, 1.04);
   }
 `;

@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
 import { debounce, flattenDeep, uniq } from 'lodash';
 import { ThemeProvider } from 'styled-components';
 import MySelect from './MySelect';
-import { Section, PortfolioWrapper, WorkWrapper, ProjectGrid, ReturnedResults, Replace } from './Styled';
+import { Section, WorkWrapper, ReturnedResults, Replace } from './Styled';
 import Loading from './Loading';
-import { key, sortSkills, removeWhiteSpace } from '../utils';
+// import { sortSkills } from '../utils';
+import RenderProjects from '../utils/RenderProjects';
 
 const theme = {
   fontColor: '#fff',
@@ -72,33 +72,6 @@ class Work extends PureComponent {
     }
   };
 
-  renderProjects = projects => {
-    const output = projects.map(p => (
-      <Link to={{ pathname: `/case-study/${p.id}/${removeWhiteSpace(p.name)}`, state: { project: p } }} key={key()}>
-        <ProjectGrid>
-          <img src={p.image} alt={p.name} />
-          <div className="overlay">
-            <div className="overlay__text">
-              {p.name}
-              <div className="technologies">
-                {p.technologies.map((t, index) => {
-                  const noComma = index === p.technologies.length - 1 ? '' : ', ';
-                  return (
-                    <span key={key()}>
-                      {t}
-                      {noComma}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </ProjectGrid>
-      </Link>
-    ));
-    return <PortfolioWrapper>{output}</PortfolioWrapper>;
-  };
-
   render() {
     const { loading, displayedProjects, typing, techUsed, displayedProjectsTech } = this.state;
     const { length } = displayedProjects;
@@ -115,7 +88,7 @@ class Work extends PureComponent {
             {!typing && <Replace>replace 'work' above with a technology to filter projects</Replace>}
           </Section>
         </ThemeProvider>
-        {loading ? <Loading /> : this.renderProjects(displayedProjects)}
+        {loading ? <Loading /> : <RenderProjects projects={displayedProjects} />}
       </WorkWrapper>
     );
   }
