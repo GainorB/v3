@@ -5,18 +5,17 @@ export const Skill = styled.div`
   display: grid;
   grid-template-rows: 1fr auto;
   grid-gap: 10px;
-  border: 2px solid #090909;
   padding: 1em;
+  border: 1px solid #dbe2e8;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
-  -webkit-transition: all 0.1s ease-in-out, 0.8s;
-  -moz-transition: all 0.1s ease-in-out, 0.8s;
-  -o-transition: all 0.1s ease-in-out, 0.8s;
-  transition: all 0.1s ease-in-out, 0.8s;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+  -webkit-transition: box-shadow 0.3s ease, border 0.3s ease;
   ${props =>
     props.stack &&
     `background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(https://res.cloudinary.com/dplvzflkc/image/upload/v1538266584/portfolio/fiyah.png);
-    background-size: 70% 70%;
-    background-position: center;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: center 50%;
     `};
 
   .skill__rows {
@@ -30,8 +29,16 @@ export const Skill = styled.div`
     text-align: center;
     font-size: 0.9rem;
     padding: 10px;
-    background: #090909;
-    color: #fff;
+    background: none;
+    border: 1px solid #dbe2e8;
+    color: #090909;
+    transition: box-shadow 0.3s ease;
+    -webkit-transition: box-shadow 0.3s ease;
+  }
+
+  .skill__projectCount:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 2px #dbe2e8;
   }
 
   .skill__projectCount a {
@@ -50,13 +57,13 @@ export const Skill = styled.div`
   }
 
   &:hover {
-    transform: scale(1.03, 1.03);
+    box-shadow: 0px 0px 0px 2px #dbe2e8;
   }
 `;
 
 export const SkillContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 10px;
   padding: 1em;
 `;
