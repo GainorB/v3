@@ -48,21 +48,6 @@ export const SideMenu = styled.div`
     font-size: 1.2rem;
   }
 
-  .avatar {
-    width: 200px;
-    height: 200px;
-    border-radius: 50% !important;
-    margin-bottom: 20px;
-    display: block;
-    margin: auto;
-    user-select: none;
-    border: 1px solid #e9ecef;
-  }
-
-  .avatar:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-
   @media only screen and (max-width: 1200px) {
     display: none;
     position: static;

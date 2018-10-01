@@ -17,7 +17,7 @@ export const StudySplash = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: bold;
   background: none;
   min-height: 200px;
@@ -131,9 +131,9 @@ export const StudyTech = styled.li`
   font-size: 11px;
   letter-spacing: 0.1rem;
   font-weight: 500;
-  background: ${props => (props.hot ? '#ff8900' : 'none')};
-  color: #090909;
-  border: 1px solid ${props => (props.hot ? '#ff5a00' : '#090909')};
+  background: ${props => (props.hot ? '#2447F9' : 'none')};
+  color: ${props => (props.hot ? '#fff' : '#090909')};
+  border: 1px solid ${props => (props.hot ? '#2447F9' : '#090909')};
   -webkit-transition: all 0.1s ease-in-out, 1s;
   -moz-transition: all 0.1s ease-in-out, 1s;
   -o-transition: all 0.1s ease-in-out, 1s;
@@ -141,7 +141,7 @@ export const StudyTech = styled.li`
 
   &:hover {
     opacity: ${props => (props.hot ? 'none' : '0.2')};
-    box-shadow: 0px 0px 0px 2px ${props => (props.hot ? '#ff5a00' : '#090909')};
+    box-shadow: 0px 0px 0px 2px ${props => (props.hot ? '#2447F9' : '#090909')};
   }
 
   @media only screen and (max-width: 1200px) {

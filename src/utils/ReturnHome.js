@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { GoHome } from '../components/Styled';
 
 const ReturnHome = () => (
-  <Link to="/">
-    <GoHome>
+  <GoHome>
+    <Link to="/">
       <i className="fas fa-home" />
-    </GoHome>
-  </Link>
+    </Link>
+  </GoHome>
 );
 
 export default ReturnHome;

@@ -7,7 +7,7 @@ import { ReturnedResults, Replace, H1, H4, ProjectError } from './Text';
 import { PageWrapper, PortfolioWrapper, WorkWrapper, PerfectlyCentered } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Experience';
 import { Foot, FooterIcons, FooterFinePrint } from './Footer';
-import { Input } from './Input';
+import { Avatar } from './Images';
 import { Me } from './About';
 import { Button, NewProjectButton, GoHome } from './Button';
 import { Section, SectionDesc, SectionHeader } from './Section';
@@ -25,6 +25,7 @@ import {
 } from './CaseStudy';
 
 export {
+  Avatar,
   GoHome,
   Bio,
   Nav,
@@ -41,7 +42,6 @@ export {
   NewProjectButton,
   ButtonGrid,
   Replace,
-  Input,
   Me,
   ProjectError,
   PerfectlyCentered,

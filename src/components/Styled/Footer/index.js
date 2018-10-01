@@ -8,7 +8,7 @@ export const Foot = styled.div`
   background: #090909;
   color: #fff;
   height: 300px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: 1px;
 
   a {
@@ -70,5 +70,9 @@ export const FooterFinePrint = styled.div`
   p {
     margin: 0.4rem 0;
     padding: 0;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 0.75rem;
   }
 `;
