@@ -30,7 +30,7 @@ export const Button = styled.button`
 
   &:hover {
     box-shadow: ${props => (props.footer ? '' : '0px 0px 0px 2px #090909')};
-    background: #fff;
+    background: ${props => (props.footer ? '' : '#fff')};
     color: #090909;
   }
 
