@@ -5,15 +5,14 @@ export const Skill = styled.div`
   display: grid;
   grid-template-rows: 1fr auto;
   grid-gap: 10px;
-  opacity: 0.3;
   padding: 1em;
   border: 1px solid #dbe2e8;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
-  transition: opacity 0.6s ease;
-  -webkit-transition: opacity 0.6s ease;
+  transition: box-shadow 0.7s ease, border 0.7s ease;
+  -webkit-transition: box-shadow 0.7s ease, border 0.7s ease;
   ${props =>
     props.stack &&
-    `background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(https://res.cloudinary.com/dplvzflkc/image/upload/v1538266584/portfolio/fiyah.png);
+    `background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(https://res.cloudinary.com/dplvzflkc/image/upload/v1538266584/portfolio/fiyah.png);
     background-size: 100px 100px;
     background-repeat: no-repeat;
     background-position: center 50%;
@@ -33,6 +32,8 @@ export const Skill = styled.div`
     background: none;
     border: 1px solid #dbe2e8;
     color: #090909;
+    max-width: 200px;
+    margin: 0 auto;
     transition: box-shadow 0.6s ease;
     -webkit-transition: box-shadow 0.6s ease;
   }
@@ -58,13 +59,13 @@ export const Skill = styled.div`
   }
 
   &:hover {
-    opacity: 1;
+    box-shadow: 0px 0px 0px 2px #dbe2e8;
   }
 `;
 
 export const SkillContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 2px;
+  grid-gap: 10px;
   padding: 1em;
 `;

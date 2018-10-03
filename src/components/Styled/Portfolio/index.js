@@ -22,7 +22,7 @@ export const ProjectGrid = styled.div`
     width: 100%;
     padding: 3em;
     opacity: 0;
-    transition: 0.5s ease;
+    transition: opacity 0.8s ease;
     background-color: #090909;
   }
 
