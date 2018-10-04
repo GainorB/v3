@@ -80,7 +80,7 @@ export const ResponsiveNav = styled.ul`
   }
 
   .responsiveNav__logo {
-    font-size: 2.5rem;
+    font-size: 2rem;
     user-select: none;
   }
 
