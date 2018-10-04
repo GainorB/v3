@@ -89,7 +89,7 @@ export const ResponsiveNav = styled.ul`
   }
 
   .responsiveNav__menu {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
     justify-self: end;
   }
 
