@@ -74,7 +74,7 @@ export const ResponsiveNav = styled.ul`
     align-items: center;
     color: #090909;
     min-height: 100px;
-    padding: 10px 30px;
+    padding: 10px;
   }
 
   .responsiveNav__grid div {
@@ -83,7 +83,7 @@ export const ResponsiveNav = styled.ul`
 
   .responsiveNav__logo {
     text-align: center;
-    font-size: 2.7rem;
+    font-size: 1.8rem;
     user-select: none;
     font-weight: bold;
   }
