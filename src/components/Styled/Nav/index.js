@@ -58,21 +58,23 @@ export const NavItem = styled.li`
 export const ResponsiveNav = styled.ul`
   display: none;
   position: fixed;
-  border-top: 3px solid #2447f9;
-  background: #090909;
+  border-top: 5px solid #2447f9;
+  background: #f8f9fa;
   z-index: 3;
   width: 100%;
   margin: 0;
   padding: 0;
   transition: all ease 0.5s;
+  border-bottom: 1px solid #dbe2e8;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
 
   .responsiveNav__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-content: center;
-    color: #fff;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    color: #090909;
     min-height: 100px;
+    padding: 10px 30px;
   }
 
   .responsiveNav__grid div {
@@ -80,19 +82,21 @@ export const ResponsiveNav = styled.ul`
   }
 
   .responsiveNav__logo {
-    font-size: 2rem;
+    text-align: center;
+    font-size: 2.7rem;
     user-select: none;
+    font-weight: bold;
   }
 
   .responsiveNav__menu {
-    font-size: 2rem;
+    font-size: 2.5rem;
     justify-self: end;
   }
 
   .responsiveNav__menu button {
     background: none;
     border: none;
-    color: #fff;
+    color: #090909;
   }
 
   .responsiveNav__menu button:hover {
@@ -107,7 +111,7 @@ export const ResponsiveNav = styled.ul`
 export const ResponsiveNavItem = styled.li`
   padding: 20px;
   display: inline-block;
-  color: white;
+  color: #090909;
   border: 0;
   transition: all 0.1s;
   font-size: 20px;

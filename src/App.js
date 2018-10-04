@@ -16,12 +16,12 @@ import ProjectsPerTech from './components/ProjectsPerTech';
 
 // UTILS
 import NotFound from './utils/NotFound';
+import { Logo } from './utils/Logo';
 
 // CSS
 import { PageWrapper, Nav, ResponsiveNav, NavItem, ResponsiveNavItem } from './components/Styled';
 import '../assets/styles/fade.css';
 import { key } from './utils';
-// import Logo from './utils/Logo';
 
 configureAnchors({ offset: -99, scrollDuration: 400 });
 
@@ -72,6 +72,9 @@ class App extends Component {
         </Nav>
         <ResponsiveNav>
           <div className="responsiveNav__grid">
+            <div>
+              <Logo />
+            </div>
             <div className="responsiveNav__logo">Gainor Bostwick</div>
             <div className="responsiveNav__menu">
               <button onClick={this.toggleMenu}>
