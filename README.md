@@ -18,8 +18,8 @@
 11. ~~Timestamp EXPERIENCE so it can automatically be sorted instead of using Strings for date~~
 12. ~~For technical Skills, create a tally for the amount of projects using each skill~~
 13. Get recommendations from LinkedIn API
-14. Context API
-15. Need to implement sometype of statement to track, HOT TECH. It works as intended on ProjectsPerTech page, but it is wrong on CaseStudy page.
+14. ~~Context API~~
+15. Need to implement some type of state management to track, HOT TECH.
 
 # FEATURES
 1.  ~~Redux? 🤔~~

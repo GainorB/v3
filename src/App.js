@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
@@ -18,74 +18,117 @@ import ProjectsPerTech from './components/ProjectsPerTech';
 import NotFound from './utils/NotFound';
 
 // CSS
-import { PageWrapper, Nav, NavItem } from './components/Styled';
+import { PageWrapper, Nav, ResponsiveNav, NavItem, ResponsiveNavItem } from './components/Styled';
 import '../assets/styles/fade.css';
+import { key } from './utils';
+// import Logo from './utils/Logo';
 
 configureAnchors({ offset: -99, scrollDuration: 400 });
 
-const Navigation = props => {
-  const { hash } = props.location;
-  return (
-    <Nav>
-      <a href="#about">
-        <NavItem isActive={hash === '#about'}>About</NavItem>
-      </a>
-      <a href="#work">
-        <NavItem isActive={hash === '#work'}>Work</NavItem>
-      </a>
-      <a href="#skills">
-        <NavItem isActive={hash === '#skills'}>Skills</NavItem>
-      </a>
-      <a href="#exp">
-        <NavItem isActive={hash === '#exp'}>Experience</NavItem>
-      </a>
-      <a href="#contact">
-        <NavItem isActive={hash === '#contact'}>Contact</NavItem>
-      </a>
-    </Nav>
+class App extends Component {
+  static propTypes = {
+    location: PropTypes.object.isRequired,
+  };
+
+  state = {
+    items: [
+      {
+        name: 'About',
+        hash: '#about',
+      },
+      {
+        name: 'Work',
+        hash: '#work',
+      },
+      {
+        name: 'Skills',
+        hash: '#skills',
+      },
+      {
+        name: 'Experience',
+        hash: '#exp',
+      },
+      {
+        name: 'Contact',
+        hash: '#contact',
+      },
+    ],
+    showMenu: false,
+  };
+
+  toggleMenu = () => this.setState(prevState => ({ showMenu: !prevState.showMenu }));
+
+  Navigation = () => {
+    const { hash } = this.props.location;
+    const { items, showMenu } = this.state;
+    return (
+      <Fragment>
+        <Nav>
+          {items.map(e => (
+            <a href={e.hash} key={key()}>
+              <NavItem isActive={hash === e.hash}>{e.name}</NavItem>
+            </a>
+          ))}
+        </Nav>
+        <ResponsiveNav>
+          <div className="responsiveNav__grid">
+            <div className="responsiveNav__logo">Gainor Bostwick</div>
+            <div className="responsiveNav__menu">
+              <button onClick={this.toggleMenu}>
+                {!showMenu ? <i className="fas fa-bars" /> : <i className="fas fa-times" />}
+              </button>
+            </div>
+          </div>
+          {showMenu &&
+            items.map(e => (
+              <a href={e.hash} key={key()}>
+                <ResponsiveNavItem onClick={this.toggleMenu}>{e.name}</ResponsiveNavItem>
+              </a>
+            ))}
+        </ResponsiveNav>
+      </Fragment>
+    );
+  };
+
+  mainLayout = () => (
+    <Fragment>
+      {this.Navigation()}
+      <ScrollableAnchor id="work">
+        <Work />
+      </ScrollableAnchor>
+      <ScrollableAnchor id="skills">
+        <Technical />
+      </ScrollableAnchor>
+      <ScrollableAnchor id="about">
+        <About />
+      </ScrollableAnchor>
+      <ScrollableAnchor id="exp">
+        <Experience />
+      </ScrollableAnchor>
+      <ScrollableAnchor id="contact">
+        <Contact />
+      </ScrollableAnchor>
+    </Fragment>
   );
-};
 
-const mainLayout = props => (
-  <Fragment>
-    <Navigation {...props} />
-    <ScrollableAnchor id="work">
-      <Work />
-    </ScrollableAnchor>
-    <ScrollableAnchor id="skills">
-      <Technical />
-    </ScrollableAnchor>
-    <ScrollableAnchor id="about">
-      <About />
-    </ScrollableAnchor>
-    <ScrollableAnchor id="exp">
-      <Experience />
-    </ScrollableAnchor>
-    <ScrollableAnchor id="contact">
-      <Contact />
-    </ScrollableAnchor>
-  </Fragment>
-);
-
-const App = props => (
-  <PageWrapper>
-    <div className="sidebar">
-      <SideMenu />
-    </div>
-    <div className="miniWrapper">
-      <Switch>
-        <Route exact path="/" render={() => mainLayout(props)} />
-        <Route exact path="/case-study/:id/:project" component={CaseStudy} />
-        <Route exact path="/work" component={ProjectsPerTech} />
-        <Route component={NotFound} />
-      </Switch>
-      <Footer />
-    </div>
-  </PageWrapper>
-);
-
-Navigation.propTypes = {
-  location: PropTypes.object.isRequired,
-};
+  render() {
+    return (
+      <PageWrapper>
+        <div className="sidebar">
+          <SideMenu />
+        </div>
+        <div className="miniWrapper">
+          <Switch>
+            <Route exact path="/" render={() => this.mainLayout()} />
+            <Route exact path="/case-study/:id/:project" component={CaseStudy} />
+            <Route exact path="/work" component={ProjectsPerTech} />
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+        </div>
+      </PageWrapper>
+    );
+  }
+}
 
 export default App;

@@ -1,20 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import MyBio from '../api/Bio';
 import Github from '../api/Github';
 import GetInTouch from './GetInTouch';
-import { InTouch, ListGroup, SideMenu, SideMenuTitle, Avatar } from './Styled';
-
-const logo = 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028357/portfolio/logo.jpg';
+import { InTouch, ListGroup, SideMenu, SideMenuTitle } from './Styled';
+import { Logo } from '../utils/Logo';
 
 const Feed = () => (
   <SideMenu>
     <div className="intro">
-      <Link to="/">
-        <Avatar>
-          <img src={logo} alt="Gainor Bostwick" />
-        </Avatar>
-      </Link>
+      <Logo />
       <p className="name">Gainor Bostwick</p>
       <p className="title">Full Stack Developer</p>
       <MyBio />

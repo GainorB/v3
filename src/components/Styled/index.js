@@ -1,5 +1,5 @@
 import { InTouch, ListGroup } from './List';
-import { Nav, NavItem } from './Nav';
+import { ResponsiveNav, Nav, NavItem, ResponsiveNavItem } from './Nav';
 import { ProjectGrid } from './Portfolio';
 import { Hub, SideMenu, SideMenuTitle, Bio } from './SideMenu';
 import { SkillContainer, Skill } from './Skills';
@@ -29,6 +29,8 @@ export {
   GoHome,
   Bio,
   Nav,
+  ResponsiveNav,
+  ResponsiveNavItem,
   StudyGrid,
   StudySplash,
   StudyContent,
