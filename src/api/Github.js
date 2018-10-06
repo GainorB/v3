@@ -59,12 +59,12 @@ class Github extends PureComponent {
         <a href="https://github.com/GainorB?tab=repositories" target="_blank" rel="noopener noreferrer">
           <Hub>{profile.public_repos} repositories</Hub>
         </a>
-        <a href="https://github.com/GainorB?tab=followers" target="_blank" rel="noopener noreferrer">
+        {/* <a href="https://github.com/GainorB?tab=followers" target="_blank" rel="noopener noreferrer">
           <Hub>{profile.followers} followers</Hub>
-        </a>
-        <a href="https://github.com/GainorB?tab=following" target="_blank" rel="noopener noreferrer">
+        </a> */}
+        {/* <a href="https://github.com/GainorB?tab=following" target="_blank" rel="noopener noreferrer">
           <Hub>Following {profile.following} cool devs</Hub>
-        </a>
+        </a> */}
         <a href={myRepos[random].url} target="_blank" rel="noopener noreferrer">
           <Hub>
             <span>{myRepos[random].name}</span>

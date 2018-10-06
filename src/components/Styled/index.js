@@ -1,13 +1,13 @@
 import { InTouch, ListGroup } from './List';
-import { ResponsiveNav, Nav, NavItem, ResponsiveNavItem } from './Nav';
+import { ResponsiveNav, Nav, NavItem, ResponsiveNavItem, ResponsiveNavSocial } from './Nav';
 import { ProjectGrid } from './Portfolio';
 import { Hub, SideMenu, SideMenuTitle, Bio } from './SideMenu';
 import { SkillContainer, Skill } from './Skills';
 import { ReturnedResults, Replace, H1, H4, ProjectError } from './Text';
 import { PageWrapper, PortfolioWrapper, WorkWrapper, PerfectlyCentered } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Experience';
-import { Foot, FooterIcons, FooterFinePrint } from './Footer';
-import { Avatar } from './Images';
+import { Foot, FooterFinePrint } from './Footer';
+import { Avatar, SocialIcons } from './Images';
 import { Me } from './About';
 import { Button, NewProjectButton, GoHome } from './Button';
 import { Section, SectionDesc, SectionHeader } from './Section';
@@ -31,6 +31,7 @@ export {
   Nav,
   ResponsiveNav,
   ResponsiveNavItem,
+  ResponsiveNavSocial,
   StudyGrid,
   StudySplash,
   StudyContent,
@@ -51,7 +52,7 @@ export {
   H4,
   Button,
   Foot,
-  FooterIcons,
+  SocialIcons,
   FooterFinePrint,
   InTouch,
   PageWrapper,

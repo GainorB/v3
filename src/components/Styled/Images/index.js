@@ -16,3 +16,42 @@ export const Avatar = styled.div`
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
 `;
+
+export const SocialIcons = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  font-size: 2rem;
+
+  i {
+    opacity: 0.3;
+  }
+
+  .resume i {
+    color: #fcc846;
+  }
+
+  .linkedin i {
+    color: #0577b2;
+  }
+
+  .email i {
+    color: #ba4444;
+  }
+
+  .github i {
+    color: #3f4448;
+  }
+
+  .twitter i {
+    color: #1e95dc;
+  }
+
+  i {
+    transition: all 500ms;
+    padding: 10px;
+  }
+
+  i:hover {
+    color: #fff;
+  }
+`;

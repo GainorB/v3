@@ -82,11 +82,17 @@ export const StudyContent = styled.div`
 
 export const Study = styled.div`
   background-color: #fff;
-  border: 2px solid #090909;
+  border: 1px solid #090909;
+  transition: box-shadow 0.7s ease;
+  -webkit-transition: box-shadow 0.7s ease;
 
   .techFeature {
     border-bottom: 1px solid #e9ecef;
     padding: 5px 0px;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 0px 2px #090909;
   }
 `;
 

@@ -15,11 +15,12 @@ import CaseStudy from './components/CaseStudy';
 import ProjectsPerTech from './components/ProjectsPerTech';
 
 // UTILS
+import SocialIcons from './utils/SocialIcons';
 import NotFound from './utils/NotFound';
 import { Logo } from './utils/Logo';
 
 // CSS
-import { PageWrapper, Nav, ResponsiveNav, NavItem, ResponsiveNavItem } from './components/Styled';
+import { PageWrapper, Nav, ResponsiveNav, NavItem, ResponsiveNavItem, ResponsiveNavSocial } from './components/Styled';
 import '../assets/styles/fade.css';
 import { key } from './utils';
 
@@ -85,9 +86,14 @@ class App extends Component {
           {showMenu &&
             items.map(e => (
               <a href={e.hash} key={key()}>
-                <ResponsiveNavItem onClick={this.toggleMenu}>{e.name}</ResponsiveNavItem>
+                <ResponsiveNavItem isActive={hash === e.hash} onClick={this.toggleMenu}>
+                  {e.name}
+                </ResponsiveNavItem>
               </a>
             ))}
+          <ResponsiveNavSocial>
+            <SocialIcons />
+          </ResponsiveNavSocial>
         </ResponsiveNav>
       </Fragment>
     );

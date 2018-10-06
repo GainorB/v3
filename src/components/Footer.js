@@ -1,5 +1,6 @@
 import React from 'react';
-import { Foot, FooterIcons, FooterFinePrint } from './Styled';
+import SocialIcons from '../utils/SocialIcons';
+import { Foot, FooterFinePrint } from './Styled';
 
 const date = new Date();
 
@@ -28,28 +29,7 @@ const Footer = () => (
         .
       </p>
     </FooterFinePrint>
-    <FooterIcons>
-      <span className="github">
-        <a href="https://github.com/GainorB/" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-github" />
-        </a>
-      </span>
-      <span className="email">
-        <a href="mailto:gainorbostwick@gmail.com" target="_blank" rel="noopener noreferrer">
-          <i className="fas fa-at" />
-        </a>
-      </span>
-      <span className="linkedin">
-        <a href="https://www.linkedin.com/in/gainorbostwick/" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-linkedin-in" />
-        </a>
-      </span>
-      <span className="twitter">
-        <a href="https://twitter.com/GainorBostwick" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-twitter" />
-        </a>
-      </span>
-    </FooterIcons>
+    <SocialIcons />
   </Foot>
 );
 

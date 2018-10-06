@@ -58,14 +58,13 @@ export const NavItem = styled.li`
 export const ResponsiveNav = styled.ul`
   display: none;
   position: fixed;
-  border-top: 5px solid #2447f9;
   background: #f8f9fa;
   z-index: 3;
   width: 100%;
   margin: 0;
   padding: 0;
   transition: all ease 0.5s;
-  border-bottom: 1px solid #dbe2e8;
+  border-top: 5px solid #2447f9;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
 
   .responsiveNav__grid {
@@ -73,7 +72,6 @@ export const ResponsiveNav = styled.ul`
     grid-template-columns: 100px 1fr auto;
     align-items: center;
     color: #090909;
-    min-height: 100px;
     padding: 10px;
   }
 
@@ -111,7 +109,8 @@ export const ResponsiveNav = styled.ul`
 export const ResponsiveNavItem = styled.li`
   padding: 20px;
   display: inline-block;
-  color: #090909;
+  font-weight: ${props => (props.isActive ? 'bold' : 'none')};
+  color: ${props => (props.isActive ? '#2649f0' : '#090909')};
   border: 0;
   transition: all 0.1s;
   font-size: 20px;
@@ -127,4 +126,10 @@ export const ResponsiveNavItem = styled.li`
   &:hover {
     color: #2447f9;
   }
+`;
+
+export const ResponsiveNavSocial = styled.div`
+  background: #090909;
+  text-align: center;
+  padding: 5px;
 `;

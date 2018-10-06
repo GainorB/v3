@@ -46,7 +46,7 @@ const Feed = () => (
           rel="noopener noreferrer"
         >
           <InTouch resume>
-            <i className="fas fa-id-card-alt" />
+            <i className="fas fa-briefcase" />
           </InTouch>
         </a>
       </ListGroup>

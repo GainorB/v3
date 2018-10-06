@@ -26,7 +26,7 @@ export const InTouch = styled.li`
   ${props => props.linkedin && 'color: #0577B2'};
   ${props => props.stack && 'color: #F38134'};
   ${props => props.email && 'color: #ba4444'};
-  ${props => props.resume && 'color: #002852'};
+  ${props => props.resume && 'color: #fcc846'};
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.1);
 
   i {
@@ -42,7 +42,7 @@ export const InTouch = styled.li`
     ${props => props.linkedin && 'background: #0577B2'};
     ${props => props.stack && 'background: #F38134'};
     ${props => props.email && 'background: #ba4444'};
-    ${props => props.resume && 'background: #002852'};
+    ${props => props.resume && 'background: #fcc846'};
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
   }
 `;
