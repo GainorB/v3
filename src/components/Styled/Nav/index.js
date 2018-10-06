@@ -67,6 +67,13 @@ export const ResponsiveNav = styled.ul`
   border-top: 5px solid #2447f9;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.24), 0 2px 2px rgba(0, 0, 0, 0.34);
 
+  .responsiveNav__title {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #c9c9c9;
+  }
+
   .responsiveNav__items {
     opacity: ${props => (props.showMenu ? '1' : '0')};
     max-height: ${props => (props.showMenu ? '500px' : '0')};
@@ -79,12 +86,8 @@ export const ResponsiveNav = styled.ul`
     grid-template-columns: 120px 1fr auto;
     align-items: center;
     color: #090909;
-    padding: 10px;
+    padding: 1em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  }
-
-  .responsiveNav__grid div {
-    padding: 0.5em;
   }
 
   .responsiveNav__logo {
@@ -92,6 +95,7 @@ export const ResponsiveNav = styled.ul`
     font-size: 1.8rem;
     user-select: none;
     font-weight: bold;
+    letter-spacing: 1px;
   }
 
   .responsiveNav__menu {

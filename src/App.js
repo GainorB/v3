@@ -76,7 +76,10 @@ class App extends Component {
             <div>
               <Logo />
             </div>
-            <div className="responsiveNav__logo">Gainor Bostwick</div>
+            <div className="responsiveNav__logo">
+              <span className="responsiveNav__name">Gainor Bostwick</span>
+              <span className="responsiveNav__title">Full Stack Developer</span>
+            </div>
             <div className="responsiveNav__menu">
               <button onClick={this.toggleMenu}>
                 {!showMenu ? <i className="fas fa-bars" /> : <i className="fas fa-times" />}
