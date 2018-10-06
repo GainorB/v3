@@ -71,7 +71,7 @@ class App extends Component {
             </a>
           ))}
         </Nav>
-        <ResponsiveNav>
+        <ResponsiveNav showMenu={showMenu}>
           <div className="responsiveNav__grid">
             <div>
               <Logo />
@@ -83,14 +83,15 @@ class App extends Component {
               </button>
             </div>
           </div>
-          {showMenu &&
-            items.map(e => (
+          <div className="responsiveNav__items">
+            {items.map(e => (
               <a href={e.hash} key={key()}>
                 <ResponsiveNavItem isActive={hash === e.hash} onClick={this.toggleMenu}>
                   {e.name}
                 </ResponsiveNavItem>
               </a>
             ))}
+          </div>
           <ResponsiveNavSocial>
             <SocialIcons />
           </ResponsiveNavSocial>
