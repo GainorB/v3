@@ -24,11 +24,12 @@ class Commits extends Component {
   };
 
   parseCommits = commits => {
+    console.log('commits', commits);
     const output = commits.map((c, idx) => (
       <Commit key={key()} isAlt={idx % 2 === 0}>
         <div className="commit__index">{idx === 0 ? <span className="commit__current">Recent</span> : idx}</div>
         <div className="commit__meta">
-          <a href={`https://github.com/GainorB/v3/commit/${c.sha}`} target="_blank" rel="noopener noreferrer">
+          <a href={c.html_url} target="_blank" rel="noopener noreferrer">
             {c.commit.message}
           </a>
           <span className="commit__date">

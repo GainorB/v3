@@ -8,7 +8,7 @@ export const Foot = styled.div`
   background: #090909;
   color: #fff;
   height: 300px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   letter-spacing: 1px;
 
   .footer__changelog a {
@@ -23,7 +23,7 @@ export const Foot = styled.div`
   }
 
   @media only screen and (max-width: 1200px) {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 `;
 

@@ -8,7 +8,7 @@ const date = new Date();
 const Footer = () => (
   <Foot>
     <p>
-      &copy; {date.getFullYear()} Gainor Bostwick. All rights reserved.{' '}
+      &copy; {date.getFullYear()} Gainor Bostwick.{' '}
       <span className="footer__changelog">
         <Link to="/changelog">— Changelog</Link>
       </span>

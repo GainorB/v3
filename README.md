@@ -21,6 +21,7 @@
 14. ~~Context API~~
 15. Need to implement some type of state management to track, HOT TECH.
 16. Visualize data?
+17. Google Analytics
 
 # FEATURES
 1.  ~~Redux? 🤔~~

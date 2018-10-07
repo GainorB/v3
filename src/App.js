@@ -54,7 +54,7 @@ class App extends Component {
       },
     ],
     showMenu: false,
-    offset: 100,
+    offset: -100,
   };
 
   componentDidMount = () => {

@@ -39,7 +39,7 @@ export const SocialIcons = styled.div`
   }
 
   .github i {
-    color: #3f4448;
+    color: #24292e;
   }
 
   .twitter i {

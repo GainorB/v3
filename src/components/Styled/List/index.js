@@ -22,7 +22,7 @@ export const InTouch = styled.li`
   padding: 1em;
   ${props => props.twitter && 'color: #1E95DC'};
   ${props => props.instagram && 'color: #B13DAC'};
-  ${props => props.github && 'color: #3F4448'};
+  ${props => props.github && 'color: #24292E'};
   ${props => props.linkedin && 'color: #0577B2'};
   ${props => props.stack && 'color: #F38134'};
   ${props => props.email && 'color: #ba4444'};
@@ -38,7 +38,7 @@ export const InTouch = styled.li`
     color: #fff;
     ${props => props.twitter && 'background: #1E95DC'};
     ${props => props.instagram && 'background: #B13DAC'};
-    ${props => props.github && 'background: #3F4448'};
+    ${props => props.github && 'background: #24292E'};
     ${props => props.linkedin && 'background: #0577B2'};
     ${props => props.stack && 'background: #F38134'};
     ${props => props.email && 'background: #ba4444'};
