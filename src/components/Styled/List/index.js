@@ -50,10 +50,33 @@ export const InTouch = styled.li`
 export const Commit = styled.li`
   display: grid;
   grid-template-columns: 100px 1fr;
-  grid-gap: 15px;
+  grid-gap: 10px;
   border-bottom: 1px solid #e9ecef;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 25px 15px;
+  background: ${props => (props.alt ? '#F4F4F4' : '')};
+
+  .commit__current {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    border: 1px solid #63d488;
+    color: #63d488;
+    font-weight: 400;
+    border-radius: 2px;
+    padding: 6px 10px 4px 10px;
+  }
+
+  .commit__meta {
+    font-weight: 400;
+  }
+
+  .commit__index {
+    color: #c9c9c9;
+    font-size: 2.5rem;
+    align-self: center;
+    justify-self: center;
+    cursor: help;
+  }
 
   .commit__date {
     display: block;

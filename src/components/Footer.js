@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SocialIcons from '../utils/SocialIcons';
 import { Foot, FooterFinePrint } from './Styled';
 
@@ -6,7 +7,12 @@ const date = new Date();
 
 const Footer = () => (
   <Foot>
-    <p>&copy; {date.getFullYear()} Gainor Bostwick. All rights reserved.</p>
+    <p>
+      &copy; {date.getFullYear()} Gainor Bostwick. All rights reserved.{' '}
+      <span className="footer__changelog">
+        <Link to="/changelog">— Changelog</Link>
+      </span>
+    </p>
 
     <FooterFinePrint>
       <p>This app is licensed under the MIT License.</p>

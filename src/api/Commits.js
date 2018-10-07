@@ -23,18 +23,21 @@ class Commits extends Component {
   };
 
   parseCommits = commits => {
-    console.log(commits);
-    const output = commits.map(c => (
-      <Commit key={key()}>
-        <a href={`https://github.com/GainorB/v3/commit/${c.sha}`} target="_blank" rel="noopener noreferrer">
-          {c.commit.message}
-        </a>
-        <span className="commit__date">
-          commited {distanceInWords(new Date(), c.commit.committer.date, { addSuffix: true, includeSeconds: true })} by{' '}
-          <a href={c.author.html_url} target="_blank" rel="noopener noreferrer">
-            GainorB
+    const output = commits.map((c, idx) => (
+      <Commit key={key()} alt={idx % 2 === 0}>
+        <div className="commit__index">{idx === 0 ? <span className="commit__current">Recent</span> : idx}</div>
+        <div className="commit__meta">
+          <a href={`https://github.com/GainorB/v3/commit/${c.sha}`} target="_blank" rel="noopener noreferrer">
+            {c.commit.message}
           </a>
-        </span>
+          <span className="commit__date">
+            commited {distanceInWords(new Date(), c.commit.committer.date, { addSuffix: true, includeSeconds: true })}{' '}
+            by{' '}
+            <a href={c.author.html_url} target="_blank" rel="noopener noreferrer">
+              GainorB
+            </a>
+          </span>
+        </div>
       </Commit>
     ));
 
