@@ -20,10 +20,10 @@ export const Avatar = styled.div`
 export const SocialIcons = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  font-size: 2rem;
+  font-size: 1.7rem;
 
   i {
-    opacity: 0.3;
+    opacity: 0.5;
   }
 
   .resume i {

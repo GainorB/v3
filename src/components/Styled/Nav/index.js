@@ -69,9 +69,10 @@ export const ResponsiveNav = styled.ul`
 
   .responsiveNav__title {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: normal;
     color: #c9c9c9;
+    margin-top: 5px;
   }
 
   .responsiveNav__items {
@@ -86,16 +87,17 @@ export const ResponsiveNav = styled.ul`
     grid-template-columns: 120px 1fr auto;
     align-items: center;
     color: #090909;
-    padding: 1em;
+    padding: 1em 2em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   }
 
   .responsiveNav__logo {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     user-select: none;
     font-weight: bold;
     letter-spacing: 1px;
+    line-height: 1;
   }
 
   .responsiveNav__menu {
@@ -122,12 +124,14 @@ export const ResponsiveNavItem = styled.li`
   padding: 20px;
   display: inline-block;
   font-weight: ${props => (props.isActive ? 'bold' : 'none')};
-  color: ${props => (props.isActive ? '#2649f0' : '#090909')};
+  color: ${props => (props.isActive ? '#2649f0' : '#fff')};
   border: 0;
+  background: #090909;
   transition: all 0.1s;
   font-size: 20px;
   text-transform: lowercase;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
   width: 100%;
   text-align: center;
   position: relative;
@@ -142,5 +146,5 @@ export const ResponsiveNavItem = styled.li`
 export const ResponsiveNavSocial = styled.div`
   background: #090909;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
 `;

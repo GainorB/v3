@@ -20,6 +20,7 @@
 13. Get recommendations from LinkedIn API
 14. ~~Context API~~
 15. Need to implement some type of state management to track, HOT TECH.
+16. Visualize data?
 
 # FEATURES
 1.  ~~Redux? 🤔~~

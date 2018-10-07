@@ -24,8 +24,6 @@ import { PageWrapper, Nav, ResponsiveNav, NavItem, ResponsiveNavItem, Responsive
 import '../assets/styles/fade.css';
 import { key } from './utils';
 
-configureAnchors({ offset: -99, scrollDuration: 400 });
-
 class App extends Component {
   static propTypes = {
     location: PropTypes.object.isRequired,
@@ -55,6 +53,11 @@ class App extends Component {
       },
     ],
     showMenu: false,
+    offset: 100,
+  };
+
+  componentDidMount = () => {
+    configureAnchors({ offset: this.state.offset, scrollDuration: 400 });
   };
 
   toggleMenu = () => this.setState(prevState => ({ showMenu: !prevState.showMenu }));
