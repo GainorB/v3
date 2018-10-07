@@ -54,7 +54,7 @@ export const Commit = styled.li`
   border-bottom: 1px solid #e9ecef;
   font-size: 1.4rem;
   padding: 25px 15px;
-  background: ${props => (props.alt ? '#F4F4F4' : '')};
+  background: ${props => (props.isAlt ? '#F4F4F4' : '')};
 
   .commit__current {
     font-size: 1.3rem;

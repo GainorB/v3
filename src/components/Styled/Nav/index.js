@@ -87,7 +87,7 @@ export const ResponsiveNav = styled.ul`
     grid-template-columns: 120px 1fr auto;
     align-items: center;
     color: #090909;
-    padding: 1em 2em;
+    padding: 1em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   }
 

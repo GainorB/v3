@@ -5,6 +5,7 @@ import Loading from '../utils/Loading';
 import { ListGroup, Commit } from '../components/Styled';
 import { key } from '../utils';
 import ErrorMessage from '../utils/ErrorMessage';
+import ReturnHome from '../utils/ReturnHome';
 
 class Commits extends Component {
   state = {
@@ -24,7 +25,7 @@ class Commits extends Component {
 
   parseCommits = commits => {
     const output = commits.map((c, idx) => (
-      <Commit key={key()} alt={idx % 2 === 0}>
+      <Commit key={key()} isAlt={idx % 2 === 0}>
         <div className="commit__index">{idx === 0 ? <span className="commit__current">Recent</span> : idx}</div>
         <div className="commit__meta">
           <a href={`https://github.com/GainorB/v3/commit/${c.sha}`} target="_blank" rel="noopener noreferrer">
@@ -48,7 +49,12 @@ class Commits extends Component {
     const { response, loading, error } = this.state;
     if (error) return <ErrorMessage error={error} />;
     if (loading) return <Loading />;
-    return <div>{this.parseCommits(response)}</div>;
+    return (
+      <div>
+        {this.parseCommits(response)}
+        <ReturnHome />
+      </div>
+    );
   }
 }
 

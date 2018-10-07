@@ -23,11 +23,7 @@ export const Foot = styled.div`
   }
 
   @media only screen and (max-width: 1200px) {
-    font-size: 1rem;
-
-    .footer__email {
-      font-size: 1rem;
-    }
+    font-size: 0.85rem;
   }
 `;
 
@@ -43,6 +39,6 @@ export const FooterFinePrint = styled.div`
   }
 
   @media only screen and (max-width: 1200px) {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 `;
