@@ -46,3 +46,19 @@ export const InTouch = styled.li`
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
   }
 `;
+
+export const Commit = styled.li`
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-gap: 15px;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 1.2rem;
+  padding: 25px 15px;
+
+  .commit__date {
+    display: block;
+    margin-top: 5px;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+`;

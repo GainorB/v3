@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PerfectlyCentered, ProjectError, Button } from '../components/Styled';
+import { PerfectlyCentered, Error, Button } from '../components/Styled';
 
-const InvalidProject = ({ error }) => (
+const ErrorMessage = ({ error }) => (
   <PerfectlyCentered>
-    <ProjectError>{error}</ProjectError>
+    <Error>{error}</Error>
     <Button notFound onClick={() => window.history.go(-1)}>
       Return to previous page
     </Button>
   </PerfectlyCentered>
 );
 
-InvalidProject.propTypes = {
+ErrorMessage.propTypes = {
   error: PropTypes.string.isRequired,
 };
 
-export default InvalidProject;
+export default ErrorMessage;

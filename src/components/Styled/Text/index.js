@@ -30,7 +30,7 @@ export const H4 = styled.h4`
 
 // ERROR TEXT
 
-export const ProjectError = styled.h1`
+export const Error = styled.div`
   font-size: 3rem;
   font-weight: bold;
   text-align: center;

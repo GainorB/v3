@@ -1,9 +1,9 @@
-import { InTouch, ListGroup } from './List';
+import { InTouch, ListGroup, Commit } from './List';
 import { ResponsiveNav, Nav, NavItem, ResponsiveNavItem, ResponsiveNavSocial } from './Nav';
 import { ProjectGrid } from './Portfolio';
 import { Hub, SideMenu, SideMenuTitle, Bio } from './SideMenu';
 import { SkillContainer, Skill } from './Skills';
-import { ReturnedResults, Replace, H1, H4, ProjectError } from './Text';
+import { ReturnedResults, Replace, H1, H4, Error } from './Text';
 import { PageWrapper, PortfolioWrapper, WorkWrapper, PerfectlyCentered } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Experience';
 import { Foot, FooterFinePrint } from './Footer';
@@ -27,6 +27,7 @@ import {
 export {
   Avatar,
   GoHome,
+  Commit,
   Bio,
   Nav,
   ResponsiveNav,
@@ -46,7 +47,7 @@ export {
   ButtonGrid,
   Replace,
   Me,
-  ProjectError,
+  Error,
   PerfectlyCentered,
   H1,
   H4,

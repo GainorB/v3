@@ -14,7 +14,7 @@ import {
   NewProjectButton,
 } from '../components/Styled';
 import Loading from '../utils/Loading';
-import InvalidProject from '../utils/InvalidProject';
+import ErrorMessage from '../utils/ErrorMessage';
 import { removeUnderline, key } from '../utils';
 import RenderTechnologies from '../utils/RenderTechnologies';
 import api from '../api';
@@ -180,7 +180,7 @@ class CaseStudy extends PureComponent {
     if (loading) {
       return <Loading />;
     } else if (error) {
-      return <InvalidProject error={error} />;
+      return <ErrorMessage error={error} />;
     }
     return this.renderProject(project);
   }

@@ -13,6 +13,7 @@ import SideMenu from './components/SideMenu';
 import Technical from './components/Technical';
 import CaseStudy from './components/CaseStudy';
 import ProjectsPerTech from './components/ProjectsPerTech';
+import Changelog from './components/Changelog';
 
 // UTILS
 import SocialIcons from './utils/SocialIcons';
@@ -138,6 +139,7 @@ class App extends Component {
             <Route exact path="/" render={() => this.mainLayout()} />
             <Route exact path="/case-study/:id/:project" component={CaseStudy} />
             <Route exact path="/work" component={ProjectsPerTech} />
+            <Route exact path="/changelog" component={Changelog} />
             <Route component={NotFound} />
           </Switch>
           <Footer />
