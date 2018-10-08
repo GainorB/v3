@@ -17,38 +17,22 @@ export const Avatar = styled.div`
   }
 `;
 
-export const SocialIcons = styled.div`
+export const SocialIconsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  font-size: 1.7rem;
+`;
 
+export const SocialIcon = styled.span`
   i {
     opacity: 0.5;
-  }
-
-  .resume i {
-    color: #fcc846;
-  }
-
-  .linkedin i {
-    color: #0577b2;
-  }
-
-  .email i {
-    color: #ba4444;
-  }
-
-  .github i {
-    color: #24292e;
-  }
-
-  .twitter i {
-    color: #1e95dc;
-  }
-
-  i {
     transition: all 500ms;
     padding: 10px;
+    font-size: 1.7rem;
+    ${props => props.resume && `color: #fcc846`};
+    ${props => props.linkedin && `color: #0577b2`};
+    ${props => props.email && `color: #ba4444`};
+    ${props => props.github && `color: #24292e`};
+    ${props => props.twitter && `color: #1e95dc`};
   }
 
   i:hover {

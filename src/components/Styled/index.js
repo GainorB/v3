@@ -7,7 +7,7 @@ import { ReturnedResults, Replace, H1, H4, Error } from './Text';
 import { PageWrapper, PortfolioWrapper, WorkWrapper, PerfectlyCentered } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Experience';
 import { Foot, FooterFinePrint } from './Footer';
-import { Avatar, SocialIcons } from './Images';
+import { Avatar, SocialIconsWrapper, SocialIcon } from './Images';
 import { Me } from './About';
 import { Button, NewProjectButton, GoHome } from './Button';
 import { Section, SectionDesc, SectionHeader } from './Section';
@@ -53,7 +53,8 @@ export {
   H4,
   Button,
   Foot,
-  SocialIcons,
+  SocialIconsWrapper,
+  SocialIcon,
   FooterFinePrint,
   InTouch,
   PageWrapper,
