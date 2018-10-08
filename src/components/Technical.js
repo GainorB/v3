@@ -4,7 +4,7 @@ import { debounce, flattenDeep } from 'lodash';
 import { Link } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Loading from '../utils/Loading';
-import { Section, Skill, SkillContainer, ReturnedResults, Replace } from './Styled';
+import { Section, Skill, SkillWrapper, ReturnedResults, Replace } from './Styled';
 import { mapTech, key, removeWhiteSpace } from '../utils';
 import Select from '../utils/MySelect';
 import api from '../api';
@@ -73,7 +73,7 @@ class Technical extends PureComponent {
             <span className="skill__Tech">{t.tech}</span>
           </div>
           {tally[t.tech] && (
-            <Link to={`/work?tech=${removeWhiteSpace(t.tech.toLowerCase())}`}>
+            <Link to={`/projects?tech=${removeWhiteSpace(t.tech.toLowerCase())}`}>
               <div className="skill__projectCount">
                 Used in {tally[t.tech]} project
                 {plural}
@@ -84,7 +84,7 @@ class Technical extends PureComponent {
       );
     });
 
-    return <SkillContainer>{output}</SkillContainer>;
+    return <SkillWrapper>{output}</SkillWrapper>;
   };
 
   render() {
@@ -100,7 +100,7 @@ class Technical extends PureComponent {
               Currently displaying {length} skill
               {length > 1 ? 's' : ''}.
             </ReturnedResults>
-            {!typing && <Replace>replace 'technical' above with a technology to filter skills</Replace>}
+            {!typing && <Replace>replace 'technical' above with a technology to filter</Replace>}
           </Section>
         </ThemeProvider>
         {loading ? <Loading /> : this.renderSkills(displayedSkills, techUsed)}

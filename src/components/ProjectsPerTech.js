@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import { Link } from 'react-router-dom';
 import { flattenDeep } from 'lodash';
 import PropTypes from 'prop-types';
-import { StudySplash, StudyContent, Study, StudyHeader } from '../components/Styled';
+import { PageHeader, StudyContent, Study, StudyHeader } from '../components/Styled';
 import api from '../api';
 import Loading from '../utils/Loading';
 import NotFound from '../utils/NotFound';
@@ -75,11 +75,11 @@ export default class ProjectsPerTech extends Component {
     if (error) return <NotFound />;
     return (
       <div>
-        <StudySplash>
+        <PageHeader>
           <Link to="/">
             <span>{query}</span>
           </Link>
-        </StudySplash>
+        </PageHeader>
         <Study>
           <StudyHeader>Find more projects using</StudyHeader>
           <StudyContent>

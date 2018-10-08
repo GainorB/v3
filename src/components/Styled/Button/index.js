@@ -1,5 +1,19 @@
 import styled from 'styled-components';
 
+// ButtonGrid on CaseStudy Page
+export const ButtonGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  align-items: center;
+
+  @media only screen and (max-width: 1200px) {
+    margin-top: 5px;
+    grid-template-columns: 100%;
+    grid-gap: 5px;
+  }
+`;
+
 export const Button = styled.button`
   cursor: pointer;
   color: ${props => (props.notFound ? '#090909' : '#fff')};

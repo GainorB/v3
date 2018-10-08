@@ -2,14 +2,14 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
   StudyGrid,
-  StudySplash,
+  PageHeader,
   StudyContent,
   StudySplit,
   Study,
   StudyHeader,
   StudyInner,
   StudyGallery,
-  ListGroup,
+  UnorderedList,
   ButtonGrid,
   NewProjectButton,
 } from '../components/Styled';
@@ -99,11 +99,11 @@ class CaseStudy extends PureComponent {
     const { projects, currentIndex } = this.state;
     return (
       <StudyGrid>
-        <StudySplash>
+        <PageHeader>
           <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
             <span>{project.title}</span>
           </a>
-        </StudySplash>
+        </PageHeader>
         <Study>
           <StudyHeader>About the Project</StudyHeader>
           <StudyContent>{project.description}</StudyContent>
@@ -120,25 +120,25 @@ class CaseStudy extends PureComponent {
           <Study>
             <StudyHeader>Technical Information</StudyHeader>
             <StudyContent>
-              <ListGroup>
+              <UnorderedList>
                 {project.technicalInformation.map(f => (
                   <li className="techFeature" key={key()}>
                     {f}
                   </li>
                 ))}
-              </ListGroup>
+              </UnorderedList>
             </StudyContent>
           </Study>
           <Study>
             <StudyHeader>Features</StudyHeader>
             <StudyContent>
-              <ListGroup>
+              <UnorderedList>
                 {project.features.map(f => (
                   <li className="techFeature" key={key()}>
                     {f}
                   </li>
                 ))}
-              </ListGroup>
+              </UnorderedList>
             </StudyContent>
           </Study>
         </StudyInner>

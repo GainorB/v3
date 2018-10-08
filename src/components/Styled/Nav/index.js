@@ -84,7 +84,7 @@ export const ResponsiveNav = styled.ul`
 
   .responsiveNav__grid {
     display: grid;
-    grid-template-columns: 120px 1fr auto;
+    grid-template-columns: 120px 1fr 75px;
     align-items: center;
     color: #090909;
     padding: 1em;

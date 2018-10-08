@@ -1,78 +1,82 @@
-import { InTouch, ListGroup, Commit } from './List';
+import { UnorderedList, ContactListItem, CommitListItem, TechListItem } from './List';
 import { ResponsiveNav, Nav, NavItem, ResponsiveNavItem, ResponsiveNavSocial } from './Nav';
 import { ProjectGrid } from './Portfolio';
-import { Hub, SideMenu, SideMenuTitle, Bio } from './SideMenu';
-import { SkillContainer, Skill } from './Skills';
+import { SideMenuHub, SideMenu, SideMenuSectionTitle, SideMenuBio } from './SideMenu';
+import { Skill } from './Skills';
 import { ReturnedResults, Replace, H1, H4, Error } from './Text';
-import { PageWrapper, PortfolioWrapper, WorkWrapper, PerfectlyCentered } from './Wrapper';
+import { PageWrapper, PortfolioWrapper, AboutWrapper, SkillWrapper, PerfectlyCentered } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Experience';
 import { Foot, FooterFinePrint } from './Footer';
 import { Avatar, SocialIconsWrapper, SocialIcon } from './Images';
 import { Me } from './About';
-import { Button, NewProjectButton, GoHome } from './Button';
+import { Button, ButtonGrid, NewProjectButton, GoHome } from './Button';
 import { Section, SectionDesc, SectionHeader } from './Section';
-import {
-  StudyGrid,
-  StudySplash,
-  StudyContent,
-  Study,
-  StudyHeader,
-  StudyInner,
-  StudyGallery,
-  StudyTech,
-  ButtonGrid,
-  StudySplit,
-} from './CaseStudy';
+import { StudyGrid, StudyContent, Study, StudyHeader, StudyInner, StudyGallery, StudySplit } from './CaseStudy';
+import { PageHeader } from './Page';
 
 export {
+  // Page
+  PageHeader,
+  // Images
   Avatar,
-  GoHome,
-  Commit,
-  Bio,
+  SocialIconsWrapper,
+  SocialIcon,
+  // Lists
+  UnorderedList,
+  TechListItem,
+  CommitListItem,
+  ContactListItem,
+  // Sidemenu
+  SideMenu,
+  SideMenuSectionTitle,
+  SideMenuBio,
+  SideMenuHub,
+  // NAV
   Nav,
+  NavItem,
   ResponsiveNav,
   ResponsiveNavItem,
   ResponsiveNavSocial,
+  // CaseStudy
   StudyGrid,
-  StudySplash,
   StudyContent,
   StudyGallery,
   Study,
-  StudyTech,
   StudySplit,
   StudyInner,
   StudyHeader,
-  NavItem,
+  // Buttons
+  Button,
+  GoHome,
   NewProjectButton,
   ButtonGrid,
-  Replace,
   Me,
-  Error,
-  PerfectlyCentered,
+  // Text
   H1,
   H4,
-  Button,
+  Error,
+  ReturnedResults,
+  Replace,
+  // Footer
   Foot,
-  SocialIconsWrapper,
-  SocialIcon,
   FooterFinePrint,
-  InTouch,
-  PageWrapper,
+  // Section
   Section,
   SectionHeader,
   SectionDesc,
-  SideMenuTitle,
-  SideMenu,
-  Hub,
-  ListGroup,
+  // Wrapper
+  PerfectlyCentered,
+  PageWrapper,
   PortfolioWrapper,
-  WorkWrapper,
-  ExpContainer,
+  AboutWrapper,
+  SkillWrapper,
+  // Projects
   ProjectGrid,
+  // Skills
   Skill,
-  SkillContainer,
+  // Experience
   ExpGrid,
+  ExpContainer,
   ExpHeaderGrid,
   ExpFooter,
-  ReturnedResults,
 };

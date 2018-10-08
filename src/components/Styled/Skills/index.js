@@ -62,10 +62,3 @@ export const Skill = styled.div`
     box-shadow: 0px 0px 0px 2px #dbe2e8;
   }
 `;
-
-export const SkillContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 10px;
-  padding: 1em;
-`;

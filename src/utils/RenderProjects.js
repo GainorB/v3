@@ -10,22 +10,24 @@ const RenderProjects = ({ projects }) => {
   const output = projects.map(p => (
     <Link to={{ pathname: `/case-study/${p.id}/${removeWhiteSpace(p.name)}`, state: { project: p } }} key={key()}>
       <ProjectGrid>
-        <img src={p.image} alt={p.name} />
-        <div className="overlay">
-          <div className="overlay__text">
-            {p.name}
-            <div className="technologies">
-              {p.technologies.map((t, index) => {
-                const noComma = index === p.technologies.length - 1 ? '' : ', ';
-                return (
-                  <span key={key()}>
-                    {t}
-                    {noComma}
-                  </span>
-                );
-              })}
+        <div className="toolbar">
+          <div className="dot dot-red" />
+          <div className="dot dot-green" />
+          <div className="dot dot-regular" />
+        </div>
+        <div className="project__meta">
+          <div className="project__image">
+            <img src={p.image} alt={p.name} />
+            <div className="overlay">
+              <div className="overlay__text">
+                <i className="fas fa-eye" />
+              </div>
             </div>
           </div>
+        </div>
+        <div className="project__name">
+          <span>{p.name}</span>
+          <span>{p.oneLiner}</span>
         </div>
       </ProjectGrid>
     </Link>

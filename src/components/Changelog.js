@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Commits from '../api/Commits';
-import { StudySplash } from '../components/Styled';
+import { PageHeader } from '../components/Styled';
 
 class Changelog extends Component {
   render() {
     return (
       <div>
-        <StudySplash>
+        <PageHeader>
           <span>Changelog</span>
-        </StudySplash>
+        </PageHeader>
         <Commits />
       </div>
     );

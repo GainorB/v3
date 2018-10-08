@@ -8,7 +8,6 @@ export const Section = styled.div`
   align-items: center;
   justify-content: center;
   ${props => (props.theme.height ? `height: ${props.theme.height}` : 'min-height: 320px')};
-  padding: 15px;
 
   @media only screen and (max-width: 1200px) {
     min-height: 240px;

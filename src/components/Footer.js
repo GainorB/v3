@@ -12,9 +12,9 @@ const Footer = () => (
       <span className="footer__changelog">
         <Link to="/changelog">— Changelog</Link>
       </span>
-      <span className="footer__more">
+      {/* <span className="footer__more">
         <Link to="/more">More Information regarding webpage</Link>
-      </span>
+      </span> */}
     </p>
 
     <FooterFinePrint>

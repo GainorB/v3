@@ -1,7 +1,6 @@
-// import { distanceInWordsStrict } from 'date-fns';
 import React, { Fragment, PureComponent } from 'react';
 import Loading from '../utils/Loading';
-import { Hub, ListGroup, SideMenuTitle } from '../components/Styled';
+import { SideMenuHub, UnorderedList, SideMenuSectionTitle } from '../components/Styled';
 
 class Github extends PureComponent {
   state = {
@@ -61,26 +60,24 @@ class Github extends PureComponent {
     }
     return (
       <Fragment>
-        <SideMenuTitle>Github Snapshot</SideMenuTitle>
-        <Hub>
-          <ListGroup>
+        <SideMenuSectionTitle>Github Snapshot</SideMenuSectionTitle>
+        <SideMenuHub>
+          <UnorderedList>
             <li>
               <a href="https://github.com/GainorB?tab=repositories" target="_blank" rel="noopener noreferrer">
                 {profile.public_repos} repositories
               </a>
             </li>
-
-            <li>
+            {/* <li>
               <a href="https://github.com/GainorB?tab=followers" target="_blank" rel="noopener noreferrer">
                 {profile.followers} followers
               </a>
-            </li>
-
-            <li>
+            </li> */}
+            {/* <li>
               <a href="https://github.com/GainorB?tab=following" target="_blank" rel="noopener noreferrer">
                 Following {profile.following} cool devs
               </a>
-            </li>
+            </li> */}
             <li>
               <a href={myRepos[random].url} target="_blank" rel="noopener noreferrer">
                 <span>{myRepos[random].name}</span>
@@ -91,8 +88,8 @@ class Github extends PureComponent {
                 </div>
               </a>
             </li>
-          </ListGroup>
-        </Hub>
+          </UnorderedList>
+        </SideMenuHub>
       </Fragment>
     );
   }

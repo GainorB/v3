@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import { debounce, flattenDeep, uniq } from 'lodash';
 import { ThemeProvider } from 'styled-components';
 import Select from '../utils/MySelect';
-import { Section, WorkWrapper, ReturnedResults, Replace } from './Styled';
+import { Section, ReturnedResults, Replace } from './Styled';
 import Loading from '../utils/Loading';
 import RenderProjects from '../utils/RenderProjects';
 import api from '../api';
@@ -11,7 +11,7 @@ const theme = {
   fontColor: '#fff',
 };
 
-class Work extends PureComponent {
+class Projects extends PureComponent {
   state = {
     loading: true,
     typing: false,
@@ -74,22 +74,22 @@ class Work extends PureComponent {
     const { loading, displayedProjects, typing, techUsed, displayedProjectsTech } = this.state;
     const { length } = displayedProjects;
     return (
-      <WorkWrapper>
+      <div style={{ background: '#090909' }}>
         <ThemeProvider theme={theme}>
           <Section bg="#090909">
-            {techUsed && <Select placeholder="work." onChange={this.handleChange} options={techUsed} />}
+            {techUsed && <Select placeholder="projects." onChange={this.handleChange} options={techUsed} />}
             <ReturnedResults>
               Currently displaying {length} project
               {length > 1 ? 's' : ''} with{' '}
               {(displayedProjectsTech && displayedProjectsTech.length) || (techUsed && techUsed.length)} technologies.
             </ReturnedResults>
-            {!typing && <Replace>replace 'work' above with a technology to filter projects</Replace>}
+            {!typing && <Replace>replace 'projects' above with a technology to filter</Replace>}
           </Section>
         </ThemeProvider>
         {loading ? <Loading /> : <RenderProjects projects={displayedProjects} />}
-      </WorkWrapper>
+      </div>
     );
   }
 }
 
-export default Work;
+export default Projects;

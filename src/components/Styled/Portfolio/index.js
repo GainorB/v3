@@ -3,13 +3,47 @@ import styled from 'styled-components';
 export const ProjectGrid = styled.div`
   display: grid;
   position: relative;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 26px 1fr auto auto;
+  border: 1px solid #090909;
 
   img {
     width: 100%;
     height: 300px;
     object-fit: cover;
-    box-shadow: 0 2px 4px 0 rgba(46, 61, 73, 0.12);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    transition: filter 300ms ease-in;
+  }
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+    background: #303030;
+  }
+
+  .dot {
+    margin-right: 4px;
+    width: 8px;
+    height: 8px;
+    background: #acacac;
+    border-radius: 100%;
+  }
+
+  .dot-green {
+    background: green;
+  }
+
+  .dot-red {
+    background: red;
+  }
+
+  .project__image {
+    position: relative;
+  }
+
+  .project__meta {
+    padding: 20px;
   }
 
   .overlay {
@@ -20,33 +54,50 @@ export const ProjectGrid = styled.div`
     right: 0;
     height: 100%;
     width: 100%;
-    padding: 3em;
+    padding: 5em;
     opacity: 0;
-    transition: opacity 0.8s ease;
-    background-color: #090909;
   }
 
   &:hover .overlay {
     opacity: 1;
   }
 
+  &:hover img {
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+  }
+
   .overlay__text {
     color: #2348f3;
     font-weight: bold;
-    font-size: 2.4rem;
+    font-size: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
     height: 100%;
   }
 
-  .overlay__text .technologies {
-    font-size: 0.9rem;
+  .project__name {
+    font-size: 1.5rem;
+    padding: 10px;
     color: #fff;
-    margin-top: 10px;
-    font-weight: normal;
-    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 1px;
+    background: #090909;
+  }
+
+  .project__name span {
+    display: block;
+  }
+
+  .project__name span:nth-child(1) {
+    font-weight: bold;
+  }
+
+  .project__name span:nth-child(2) {
+    font-size: 0.9rem;
+    margin-top: 3px;
+    color: #dbe2e8;
   }
 `;

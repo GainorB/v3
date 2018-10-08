@@ -31,20 +31,27 @@ export const PageWrapper = styled.div`
   }
 `;
 
+export const SkillWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px;
+  padding: 1em;
+`;
+
+export const AboutWrapper = styled.div`
+  margin-top: 99px;
+
+  @media only screen and (max-width: 1200px) {
+    margin-top: 213px;
+  }
+`;
+
 export const PortfolioWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 10px;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   padding: 1em;
-`;
-
-export const WorkWrapper = styled.div`
-  margin-top: 100px;
-
-  @media only screen and (max-width: 1200px) {
-    margin-top: 208px;
-  }
 `;
 
 export const PerfectlyCentered = styled.div`

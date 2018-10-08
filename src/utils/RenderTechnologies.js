@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { uniq } from 'lodash';
 import { Link } from 'react-router-dom';
 import { key, removeWhiteSpace } from './index';
-import { StudyTech, ListGroup } from '../components/Styled';
+import { TechListItem, UnorderedList } from '../components/Styled';
 
 export const TallyTech = tech => {
   const tally = tech.reduce((obj, skill) => {
@@ -21,12 +21,12 @@ const RenderTechnologies = ({ technologies }) => {
   const { tally, avg } = TallyTech(technologies);
   if (technologies.length === 0) return <div>Something went wrong. Try refreshing.</div>;
   const output = uniq(technologies).map(t => (
-    <Link key={key()} to={`/work?tech=${removeWhiteSpace(t.toLowerCase())}`}>
-      <StudyTech hot={tally[t] > avg}>{t}</StudyTech>
+    <Link key={key()} to={`/projects?tech=${removeWhiteSpace(t.toLowerCase())}`}>
+      <TechListItem hot={tally[t] > avg}>{t}</TechListItem>
     </Link>
   ));
 
-  return <ListGroup>{output}</ListGroup>;
+  return <UnorderedList>{output}</UnorderedList>;
 };
 
 RenderTechnologies.propTypes = {

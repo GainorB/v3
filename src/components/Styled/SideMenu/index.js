@@ -63,7 +63,7 @@ export const SideMenu = styled.div`
   }
 `;
 
-export const SideMenuTitle = styled.h4`
+export const SideMenuSectionTitle = styled.h4`
   user-select: none;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -72,7 +72,7 @@ export const SideMenuTitle = styled.h4`
   color: #090909;
 `;
 
-export const Hub = styled.li`
+export const SideMenuHub = styled.li`
   display: block;
   background: #fff;
   color: #090909;
@@ -106,7 +106,7 @@ export const Hub = styled.li`
   }
 `;
 
-export const Bio = styled.div`
+export const SideMenuBio = styled.div`
   user-select: none;
   margin: 0.5em 0em;
   font-size: 1rem;

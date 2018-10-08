@@ -1,6 +1,6 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { SectionHeader, Section, Me } from './Styled';
+import { AboutWrapper, SectionHeader, Section, Me } from './Styled';
 
 const theme = {
   fontColor: '#fff',
@@ -9,7 +9,7 @@ const theme = {
 class About extends PureComponent {
   render() {
     return (
-      <Fragment>
+      <AboutWrapper>
         <ThemeProvider theme={theme}>
           <Section bg="#090909">
             <SectionHeader>me.</SectionHeader>
@@ -21,7 +21,7 @@ class About extends PureComponent {
           and expertise to provide unforgettable experiences. A lifelong learner dedicated to continuously learning and
           implementing new practices to perfect my craft and create innovative applications.
         </Me>
-      </Fragment>
+      </AboutWrapper>
     );
   }
 }

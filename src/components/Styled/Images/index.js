@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Avatar = styled.div`
   img {
-    width: 100%;
-    height: 100%;
+    width: ${props => props.size && props.size};
+    height: ${props => props.size && props.size};
     border-radius: 50% !important;
     margin-bottom: 20px;
     display: block;

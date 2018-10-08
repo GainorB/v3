@@ -6,7 +6,7 @@ import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 // PAGES
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Work from './components/Work';
+import Projects from './components/Projects';
 import About from './components/About';
 import Experience from './components/Experience';
 import SideMenu from './components/SideMenu';
@@ -37,8 +37,8 @@ class App extends Component {
         hash: '#about',
       },
       {
-        name: 'Work',
-        hash: '#work',
+        name: 'Projects',
+        hash: '#projects',
       },
       {
         name: 'Skills',
@@ -54,12 +54,19 @@ class App extends Component {
       },
     ],
     showMenu: false,
-    offset: -100,
+    offset: -99,
   };
 
   componentDidMount = () => {
     configureAnchors({ offset: this.state.offset, scrollDuration: 400 });
+    // window.addEventListener('resize', this.windowResizer);
   };
+
+  // windowResizer = () => {
+  //   if (window.innerWidth <= 1200) {
+  //     this.setState({ offset: -213 });
+  //   }
+  // };
 
   toggleMenu = () => this.setState(prevState => ({ showMenu: !prevState.showMenu }));
 
@@ -78,7 +85,7 @@ class App extends Component {
         <ResponsiveNav showMenu={showMenu}>
           <div className="responsiveNav__grid">
             <div>
-              <Logo />
+              <Logo size="100%" />
             </div>
             <div className="responsiveNav__logo">
               <span className="responsiveNav__name">Gainor Bostwick</span>
@@ -110,14 +117,14 @@ class App extends Component {
   mainLayout = () => (
     <Fragment>
       {this.Navigation()}
-      <ScrollableAnchor id="work">
-        <Work />
+      <ScrollableAnchor id="about">
+        <About />
+      </ScrollableAnchor>
+      <ScrollableAnchor id="projects">
+        <Projects />
       </ScrollableAnchor>
       <ScrollableAnchor id="skills">
         <Technical />
-      </ScrollableAnchor>
-      <ScrollableAnchor id="about">
-        <About />
       </ScrollableAnchor>
       <ScrollableAnchor id="exp">
         <Experience />
@@ -138,7 +145,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={() => this.mainLayout()} />
             <Route exact path="/case-study/:id/:project" component={CaseStudy} />
-            <Route exact path="/work" component={ProjectsPerTech} />
+            <Route exact path="/projects" component={ProjectsPerTech} />
             <Route exact path="/changelog" component={Changelog} />
             <Route component={NotFound} />
           </Switch>

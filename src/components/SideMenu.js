@@ -2,56 +2,56 @@ import React from 'react';
 import MyBio from '../api/Bio';
 import Github from '../api/Github';
 import GetInTouch from './GetInTouch';
-import { InTouch, ListGroup, SideMenu, SideMenuTitle } from './Styled';
+import { ContactListItem, UnorderedList, SideMenu, SideMenuSectionTitle } from './Styled';
 import { Logo } from '../utils/Logo';
 
 const Feed = () => (
   <SideMenu>
     <div className="intro">
-      <Logo />
+      <Logo size="200px" />
       <p className="name">Gainor Bostwick</p>
       <p className="title">Full Stack Developer</p>
       <MyBio />
     </div>
     <div className="toolSet">
-      <SideMenuTitle>Stack</SideMenuTitle>
-      <ListGroup>
+      <SideMenuSectionTitle>Stack</SideMenuSectionTitle>
+      <UnorderedList>
         <li>React.js</li>
         <li>Apollo</li>
         <li>Express.js</li>
         <li>Node.js</li>
         <li>GraphQL</li>
         <li>PostgreSQL</li>
-      </ListGroup>
+      </UnorderedList>
     </div>
     <div className="focusedOn">
-      <SideMenuTitle>Focused On</SideMenuTitle>
-      <ListGroup>
+      <SideMenuSectionTitle>Focused On</SideMenuSectionTitle>
+      <UnorderedList>
         <li>React.js</li>
         <li>GraphQL</li>
         <li>TypeScript</li>
         <li>Apollo</li>
-      </ListGroup>
+      </UnorderedList>
     </div>
     <div className="github">
       <Github />
     </div>
     <div className="resume">
-      <SideMenuTitle>My Resume</SideMenuTitle>
-      <ListGroup>
+      <SideMenuSectionTitle>My Resume</SideMenuSectionTitle>
+      <UnorderedList>
         <a
           href="https://drive.google.com/file/d/1SlXfoCp6r9FLhnv6xEieI5C768Fqsr_Q/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <InTouch resume>
+          <ContactListItem resume>
             <i className="fas fa-briefcase" />
-          </InTouch>
+          </ContactListItem>
         </a>
-      </ListGroup>
+      </UnorderedList>
     </div>
     <div className="inTouch">
-      <SideMenuTitle>Get in touch</SideMenuTitle>
+      <SideMenuSectionTitle>Get in touch</SideMenuSectionTitle>
       <GetInTouch />
     </div>
   </SideMenu>

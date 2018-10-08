@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Loading from '../utils/Loading';
-import { Bio } from '../components/Styled';
+import { SideMenuBio } from '../components/Styled';
 
 class MyBio extends Component {
   state = {
@@ -21,7 +21,7 @@ class MyBio extends Component {
   render() {
     const { loadingBio, bio } = this.state;
     if (loadingBio) return <Loading />;
-    return <Bio>{bio}</Bio>;
+    return <SideMenuBio>{bio}</SideMenuBio>;
   }
 }
 

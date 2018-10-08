@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { distanceInWords } from 'date-fns';
 import api from './index';
 import Loading from '../utils/Loading';
-import { ListGroup, Commit } from '../components/Styled';
+import { UnorderedList, CommitListItem } from '../components/Styled';
 import { key } from '../utils';
 import ErrorMessage from '../utils/ErrorMessage';
 import ReturnHome from '../utils/ReturnHome';
@@ -25,7 +25,7 @@ class Commits extends Component {
 
   parseCommits = commits => {
     const output = commits.map((c, idx) => (
-      <Commit key={key()} isAlt={idx % 2 === 0}>
+      <CommitListItem key={key()} isAlt={idx % 2 === 0}>
         <div className="commit__index">{idx === 0 ? <span className="commit__current">Recent</span> : idx}</div>
         <div className="commit__meta">
           <a href={c.html_url} target="_blank" rel="noopener noreferrer">
@@ -39,10 +39,10 @@ class Commits extends Component {
             </a>
           </span>
         </div>
-      </Commit>
+      </CommitListItem>
     ));
 
-    return <ListGroup>{output}</ListGroup>;
+    return <UnorderedList>{output}</UnorderedList>;
   };
 
   render() {

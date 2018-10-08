@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const ListGroup = styled.ul`
+export const UnorderedList = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
 `;
 
 // GET IN TOUCH BUTTONS
-export const InTouch = styled.li`
+export const ContactListItem = styled.li`
   background: #fff;
   text-transform: uppercase;
   border: 2px solid transparent;
@@ -47,7 +47,7 @@ export const InTouch = styled.li`
   }
 `;
 
-export const Commit = styled.li`
+export const CommitListItem = styled.li`
   display: grid;
   grid-template-columns: 100px 1fr;
   grid-gap: 10px;
@@ -83,5 +83,35 @@ export const Commit = styled.li`
     margin-top: 5px;
     font-style: italic;
     font-size: 0.9rem;
+  }
+`;
+
+export const TechListItem = styled.li`
+  user-select: none;
+  display: inline-block;
+  text-align: center;
+  outline: none;
+  margin: 5px;
+  padding: 3px 6px 2px;
+  line-height: 17px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  background: ${props => (props.hot ? '#2447F9' : 'none')};
+  color: ${props => (props.hot ? '#fff' : '#090909')};
+  border: 1px solid ${props => (props.hot ? '#2447F9' : '#090909')};
+  -webkit-transition: all 0.1s ease-in-out, 1s;
+  -moz-transition: all 0.1s ease-in-out, 1s;
+  -o-transition: all 0.1s ease-in-out, 1s;
+  transition: all 0.1s ease-in-out, 1s;
+
+  &:hover {
+    opacity: ${props => (props.hot ? 'none' : '0.2')};
+    box-shadow: 0px 0px 0px 2px ${props => (props.hot ? '#2447F9' : '#090909')};
+  }
+
+  @media only screen and (max-width: 1200px) {
+    padding: 0.3 1em;
   }
 `;
