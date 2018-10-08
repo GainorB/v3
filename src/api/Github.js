@@ -62,24 +62,37 @@ class Github extends PureComponent {
     return (
       <Fragment>
         <SideMenuTitle>Github Snapshot</SideMenuTitle>
-        <ListGroup>
-          {/* <Hub>Last updated {distanceInWordsStrict(new Date(), profile.updated_at, { addSuffix: true })}</Hub> */}
-          <a href="https://github.com/GainorB?tab=repositories" target="_blank" rel="noopener noreferrer">
-            <Hub>{profile.public_repos} repositories</Hub>
-          </a>
-          {/* <a href="https://github.com/GainorB?tab=followers" target="_blank" rel="noopener noreferrer">
-          <Hub>{profile.followers} followers</Hub>
-        </a> */}
-          {/* <a href="https://github.com/GainorB?tab=following" target="_blank" rel="noopener noreferrer">
-          <Hub>Following {profile.following} cool devs</Hub>
-        </a> */}
-          <a href={myRepos[random].url} target="_blank" rel="noopener noreferrer">
-            <Hub>
-              <span>{myRepos[random].name}</span>
-              <div>{myRepos[random].description}</div>
-            </Hub>
-          </a>
-        </ListGroup>
+        <Hub>
+          <ListGroup>
+            <li>
+              <a href="https://github.com/GainorB?tab=repositories" target="_blank" rel="noopener noreferrer">
+                {profile.public_repos} repositories
+              </a>
+            </li>
+
+            <li>
+              <a href="https://github.com/GainorB?tab=followers" target="_blank" rel="noopener noreferrer">
+                {profile.followers} followers
+              </a>
+            </li>
+
+            <li>
+              <a href="https://github.com/GainorB?tab=following" target="_blank" rel="noopener noreferrer">
+                Following {profile.following} cool devs
+              </a>
+            </li>
+            <li>
+              <a href={myRepos[random].url} target="_blank" rel="noopener noreferrer">
+                <span>{myRepos[random].name}</span>
+                <div>
+                  {myRepos[random].description === null
+                    ? `Repo doesn't have a description`
+                    : myRepos[random].description}
+                </div>
+              </a>
+            </li>
+          </ListGroup>
+        </Hub>
       </Fragment>
     );
   }

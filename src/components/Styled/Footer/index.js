@@ -11,6 +11,13 @@ export const Foot = styled.div`
   font-size: 1.1rem;
   letter-spacing: 1px;
 
+  .footer__more {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
   .footer__changelog a {
     font-weight: normal;
     color: rgba(255, 255, 255, 0.2);

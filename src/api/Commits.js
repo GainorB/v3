@@ -24,7 +24,6 @@ class Commits extends Component {
   };
 
   parseCommits = commits => {
-    console.log('commits', commits);
     const output = commits.map((c, idx) => (
       <Commit key={key()} isAlt={idx % 2 === 0}>
         <div className="commit__index">{idx === 0 ? <span className="commit__current">Recent</span> : idx}</div>

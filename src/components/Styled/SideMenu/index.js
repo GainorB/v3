@@ -80,9 +80,19 @@ export const Hub = styled.li`
   margin: 0.5em 0;
   border: 1px solid #eff0f5;
   box-shadow: 3px 3px 0px #bababa;
+  transition: all 500ms;
+
+  li {
+    border-bottom: 1px solid #e9ecef;
+    padding: 10px 0px;
+    transition: border-bottom 500ms;
+  }
+
+  li:hover {
+    border-bottom: 1px solid #3249f0;
+  }
 
   &:hover {
-    cursor: pointer;
     color: #0a0a0a;
     border: 1px solid #b0b0b0;
     box-shadow: 3px 4px 0px #b0b0b0;
@@ -92,6 +102,7 @@ export const Hub = styled.li`
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
+    padding: 4px 0px;
   }
 `;
 
