@@ -44,6 +44,7 @@ export const ProjectGrid = styled.div`
 
   .project__meta {
     padding: 20px;
+    background: #dedede;
   }
 
   .overlay {
@@ -68,7 +69,7 @@ export const ProjectGrid = styled.div`
   }
 
   .overlay__text {
-    color: #2348f3;
+    color: #090909;
     font-weight: bold;
     font-size: 3rem;
     display: flex;
