@@ -11,17 +11,22 @@ import { Avatar, SocialIconsWrapper, SocialIcon } from './Images';
 import { Me } from './About';
 import { Button, ButtonGrid, NewProjectButton, GoHome } from './Button';
 import { Section, SectionDesc, SectionHeader } from './Section';
-import { StudyGrid, StudyContent, Study, StudyHeader, StudyInner, StudyGallery, StudySplit } from './CaseStudy';
 import { PageHeader } from './Page';
 
+import { StudyContent, Study, StudyHeader } from './CaseStudy';
 import {
   BrowserHeader,
   BrowserWrapper,
   BrowserBar,
   BrowserBookmarks,
+  Project,
+  ProjectInnerGrid,
+  ProjectGallery,
   ProjectTitle,
+  ProjectContent,
   ProjectHeadline,
-  ProjectLayout,
+  ProjectHeader,
+  ProjectColumns,
   ProjectDescription,
 } from './Browser';
 
@@ -31,9 +36,14 @@ export {
   BrowserWrapper,
   BrowserBar,
   BrowserBookmarks,
+  Project,
+  ProjectInnerGrid,
+  ProjectGallery,
+  ProjectHeader,
+  ProjectContent,
   ProjectTitle,
   ProjectHeadline,
-  ProjectLayout,
+  ProjectColumns,
   ProjectDescription,
   // Page
   PageHeader,
@@ -58,12 +68,8 @@ export {
   ResponsiveNavItem,
   ResponsiveNavSocial,
   // CaseStudy
-  StudyGrid,
   StudyContent,
-  StudyGallery,
   Study,
-  StudySplit,
-  StudyInner,
   StudyHeader,
   // Buttons
   Button,

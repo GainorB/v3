@@ -1,25 +1,19 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
-  StudyGrid,
-  PageHeader,
-  StudyContent,
-  StudySplit,
-  Study,
-  StudyHeader,
-  StudyInner,
-  StudyGallery,
   UnorderedList,
-  ButtonGrid,
-  NewProjectButton,
-  //
   BrowserHeader,
   BrowserWrapper,
   BrowserBookmarks,
+  Project,
+  ProjectGallery,
   BrowserBar,
   ProjectHeadline,
-  ProjectLayout,
+  ProjectInnerGrid,
+  ProjectContent,
+  ProjectColumns,
   ProjectTitle,
+  ProjectHeader,
   ProjectDescription,
 } from '../components/Styled';
 import Loading from '../utils/Loading';
@@ -104,133 +98,93 @@ class CaseStudy extends PureComponent {
     }
   };
 
-  // renderProject = project => {
-  //   const { projects, currentIndex } = this.state;
-  //   return (
-  //     <StudyGrid>
-  //       <PageHeader>
-  //         <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
-  //           <span>{project.title}</span>
-  //         </a>
-  //       </PageHeader>
-  //       <Study>
-  //         <StudyHeader>About the Project</StudyHeader>
-  //         <StudyContent>{project.description}</StudyContent>
-  //         <StudySplit>
-  //           {this.whichRepo(project.resources[0])}
-  //           <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
-  //             <div>
-  //               <i className="fas fa-eye" />
-  //             </div>
-  //           </a>
-  //         </StudySplit>
-  //       </Study>
-  //       <StudyInner>
-  //         <Study>
-  //           <StudyHeader>Technical Information</StudyHeader>
-  //           <StudyContent>
-  //             <UnorderedList>
-  //               {project.technicalInformation.map(f => (
-  //                 <li className="techFeature" key={key()}>
-  //                   {f}
-  //                 </li>
-  //               ))}
-  //             </UnorderedList>
-  //           </StudyContent>
-  //         </Study>
-  //         <Study>
-  //           <StudyHeader>Features</StudyHeader>
-  //           <StudyContent>
-  //             <UnorderedList>
-  //               {project.features.map(f => (
-  //                 <li className="techFeature" key={key()}>
-  //                   {f}
-  //                 </li>
-  //               ))}
-  //             </UnorderedList>
-  //           </StudyContent>
-  //         </Study>
-  //       </StudyInner>
-  //       <Study>
-  //         <StudyHeader>Powered by</StudyHeader>
-  //         <StudyContent>
-  //           <RenderTechnologies technologies={project.technologies} />
-  //         </StudyContent>
-  //       </Study>
-  //       {project.gallery.length > 1 && (
-  //         <Study>
-  //           <StudyHeader>Gallery</StudyHeader>
-  //           <StudyContent>
-  //             <StudyGallery>
-  //               {project.gallery.map(p => (
-  //                 <div key={key()}>
-  //                   <img src={p} alt={project.name} />
-  //                 </div>
-  //               ))}
-  //             </StudyGallery>
-  //           </StudyContent>
-  //         </Study>
-  //       )}
-  //       <ButtonGrid>
-  //         <NewProjectButton onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
-  //           Previous Project
-  //         </NewProjectButton>
-  //
-  //         <NewProjectButton onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
-  //           Next Project
-  //         </NewProjectButton>
-  //       </ButtonGrid>
-  //     </StudyGrid>
-  //   );
-  // };
-
   renderProject = project => {
     const { projects, currentIndex } = this.state;
     console.log(project);
     return (
-      <div style={{ width: '100%', height: '100%' }}>
+      <BrowserWrapper>
         <BrowserHeader>
           <div className="dot dot-one" />
           <div className="dot dot-two" />
           <div className="dot dot-third" />
-          {/* <div className="browser__title">
-            {project.name} - {project.oneLiner}
-          </div> */}
         </BrowserHeader>
-        <BrowserWrapper>
-          <BrowserBar>
-            <button onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
-              <i className="fas fa-arrow-left" />
-            </button>
-            <button onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
-              <i className="fas fa-arrow-right" />
-            </button>
-            <ReturnHome />
-            <div className="browser__searchBar">
-              <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
-                {project.resources[1]}
-              </a>
-            </div>
-            {this.whichRepo(project.resources[0])}
-          </BrowserBar>
-          <BrowserBookmarks>
-            <div className="bookmark">
-              <i className="fas fa-folder" /> <span>Frontend</span>
-            </div>
-            <div className="bookmark">
-              <i className="fas fa-folder" /> <span>Backend</span>
-            </div>
-            <div className="bookmark">
-              <i className="fas fa-folder" /> <span>Fullstack</span>
-            </div>
-          </BrowserBookmarks>
-          <ProjectLayout>
-            <ProjectTitle>{project.name}</ProjectTitle>
-            <ProjectHeadline>{project.oneLiner}</ProjectHeadline>
-            <ProjectDescription>{project.description}</ProjectDescription>
-          </ProjectLayout>
-        </BrowserWrapper>
-      </div>
+        <BrowserBar>
+          <button onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
+            <i className="fas fa-arrow-left" />
+          </button>
+          <button onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
+            <i className="fas fa-arrow-right" />
+          </button>
+          <ReturnHome />
+          <div className="browser__searchBar">
+            <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
+              {project.resources[1]}
+            </a>
+          </div>
+          {this.whichRepo(project.resources[0])}
+          <i className="fas fa-toggle-on" />
+        </BrowserBar>
+        <BrowserBookmarks>
+          <div className="bookmark">
+            <i className="fas fa-folder" /> <span>Frontend</span>
+          </div>
+          <div className="bookmark">
+            <i className="fas fa-folder" /> <span>Backend</span>
+          </div>
+          <div className="bookmark">
+            <i className="fas fa-folder" /> <span>Fullstack</span>
+          </div>
+        </BrowserBookmarks>
+        <ProjectTitle>{project.name}</ProjectTitle>
+        <ProjectHeadline>{project.oneLiner}</ProjectHeadline>
+        <ProjectDescription>{project.description}</ProjectDescription>
+        <ProjectInnerGrid>
+          <ProjectColumns>
+            <Project>
+              <ProjectHeader>Features</ProjectHeader>
+              <ProjectContent>
+                <UnorderedList>
+                  {project.features.map(f => (
+                    <li className="techFeature" key={key()}>
+                      {f}
+                    </li>
+                  ))}
+                </UnorderedList>
+              </ProjectContent>
+            </Project>
+            <Project>
+              <ProjectHeader>Technical Information</ProjectHeader>
+              <ProjectContent>
+                <UnorderedList>
+                  {project.technicalInformation.map(f => (
+                    <li className="techFeature" key={key()}>
+                      {f}
+                    </li>
+                  ))}
+                </UnorderedList>
+              </ProjectContent>
+            </Project>
+          </ProjectColumns>
+          <Project>
+            <ProjectHeader>Powered by</ProjectHeader>
+            <ProjectContent>
+              <RenderTechnologies technologies={project.technologies} />
+            </ProjectContent>
+          </Project>
+          <Project>
+            <ProjectHeader>Gallery</ProjectHeader>
+            <ProjectContent>
+              <ProjectGallery>
+                {project.gallery.map(p => (
+                  <div key={key()}>
+                    <img src={p} alt={project.name} />
+                  </div>
+                ))}
+              </ProjectGallery>
+            </ProjectContent>
+          </Project>
+        </ProjectInnerGrid>
+      </BrowserWrapper>
     );
   };
 
