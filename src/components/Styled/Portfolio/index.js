@@ -26,7 +26,6 @@ export const ProjectGrid = styled.div`
     margin-right: 4px;
     width: 12px;
     height: 12px;
-    background: #acacac;
     border-radius: 100%;
   }
 

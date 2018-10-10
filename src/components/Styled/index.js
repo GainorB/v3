@@ -14,7 +14,27 @@ import { Section, SectionDesc, SectionHeader } from './Section';
 import { StudyGrid, StudyContent, Study, StudyHeader, StudyInner, StudyGallery, StudySplit } from './CaseStudy';
 import { PageHeader } from './Page';
 
+import {
+  BrowserHeader,
+  BrowserWrapper,
+  BrowserBar,
+  BrowserBookmarks,
+  ProjectTitle,
+  ProjectHeadline,
+  ProjectLayout,
+  ProjectDescription,
+} from './Browser';
+
 export {
+  // Browser
+  BrowserHeader,
+  BrowserWrapper,
+  BrowserBar,
+  BrowserBookmarks,
+  ProjectTitle,
+  ProjectHeadline,
+  ProjectLayout,
+  ProjectDescription,
   // Page
   PageHeader,
   // Images
