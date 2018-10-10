@@ -3,16 +3,28 @@ import styled from 'styled-components';
 export const PageWrapper = styled.div`
   display: grid;
   grid-template-columns: 400px 5fr;
-  grid-template-areas: 'sidebar main';
+
+  .relativelyPositioned {
+    position: relative;
+  }
 
   .sidebar {
+    opacity: ${props => (props.showSideMenu ? '1' : '0')};
+    visibility: ${props => (props.showSideMenu ? 'visible' : 'hidden')};
+    position: absolute;
     grid-area: 'sidebar';
     max-height: 100vh;
+    -moz-transition: all 0.8s ease;
+    transition: all 0.8s ease;
   }
 
   .miniWrapper {
+    position: absolute;
     grid-area: 'main';
     max-height: 100vh;
+    left: ${props => (props.showSideMenu ? `0` : `-400px`)};
+    -moz-transition: left 0.8s ease;
+    transition: left 0.8s ease;
   }
 
   @media only screen and (max-width: 1200px) {

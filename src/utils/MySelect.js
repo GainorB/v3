@@ -31,7 +31,7 @@ const theme = {
   }),
   container: styles => ({
     ...styles,
-    width: '100%',
+    width: '90%',
     caretColor: '#2348f3',
     textAlign: 'center',
   }),

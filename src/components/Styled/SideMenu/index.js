@@ -50,16 +50,6 @@ export const SideMenu = styled.div`
 
   @media only screen and (max-width: 1200px) {
     display: none;
-    position: static;
-    width: 100%;
-
-    .focusedOn,
-    .github,
-    .resume,
-    .toolSet,
-    .inTouch {
-      display: none;
-    }
   }
 `;
 

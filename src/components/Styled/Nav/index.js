@@ -18,6 +18,23 @@ export const Nav = styled.ul`
   transition: all ease 0.5s;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
 
+  i {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+    transition: color ease 0.5s;
+  }
+
+  i:hover {
+    color: #3149ea;
+  }
+
+  button {
+    background: none;
+    border: none;
+    margin-right: 50px;
+  }
+
   @media only screen and (max-width: 1200px) {
     display: none;
   }

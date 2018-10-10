@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ProjectGrid = styled.div`
   display: grid;
   position: relative;
-  grid-template-rows: 26px 1fr auto auto;
+  grid-template-rows: auto 1fr auto auto;
   border: 1px solid #090909;
 
   img {
@@ -18,24 +18,28 @@ export const ProjectGrid = styled.div`
   .toolbar {
     display: flex;
     align-items: center;
-    padding: 9px;
+    padding: 10px;
     background: #303030;
   }
 
   .dot {
     margin-right: 4px;
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
     background: #acacac;
     border-radius: 100%;
   }
 
-  .dot-green {
-    background: green;
+  .dot-one {
+    background: #ff564f;
   }
 
-  .dot-red {
-    background: red;
+  .dot-two {
+    background: #ffb429;
+  }
+
+  .dot-third {
+    background: #24c239;
   }
 
   .project__image {
@@ -44,7 +48,7 @@ export const ProjectGrid = styled.div`
 
   .project__meta {
     padding: 20px;
-    background: #dedede;
+    background: #ebebeb;
   }
 
   .overlay {

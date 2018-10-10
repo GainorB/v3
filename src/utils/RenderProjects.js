@@ -11,9 +11,9 @@ const RenderProjects = ({ projects }) => {
     <Link to={{ pathname: `/case-study/${p.id}/${removeWhiteSpace(p.name)}`, state: { project: p } }} key={key()}>
       <ProjectGrid>
         <div className="toolbar">
-          <div className="dot dot-red" />
-          <div className="dot dot-green" />
-          <div className="dot dot-regular" />
+          <div className="dot dot-one" />
+          <div className="dot dot-two" />
+          <div className="dot dot-third" />
         </div>
         <div className="project__meta">
           <div className="project__image">

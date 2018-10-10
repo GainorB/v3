@@ -54,6 +54,7 @@ class App extends Component {
       },
     ],
     showMenu: false,
+    showSideMenu: true,
     offset: -99,
   };
 
@@ -68,14 +69,17 @@ class App extends Component {
   //   }
   // };
 
-  toggleMenu = () => this.setState(prevState => ({ showMenu: !prevState.showMenu }));
+  toggle = str => this.setState(prevState => ({ [str]: !prevState[str] }));
 
   Navigation = () => {
     const { hash } = this.props.location;
-    const { items, showMenu } = this.state;
+    const { items, showMenu, showSideMenu } = this.state;
     return (
       <Fragment>
         <Nav>
+          <button onClick={() => this.toggle('showSideMenu')}>
+            {showSideMenu ? <i className="fas fa-toggle-on" /> : <i className="fas fa-toggle-off" />}
+          </button>
           {items.map(e => (
             <a href={e.hash} key={key()}>
               <NavItem isActive={hash === e.hash}>{e.name}</NavItem>
@@ -92,7 +96,7 @@ class App extends Component {
               <span className="responsiveNav__title">Full Stack Developer</span>
             </div>
             <div className="responsiveNav__menu">
-              <button onClick={this.toggleMenu}>
+              <button onClick={() => this.toggle('showMenu')}>
                 {!showMenu ? <i className="fas fa-bars" /> : <i className="fas fa-times" />}
               </button>
             </div>
@@ -136,20 +140,25 @@ class App extends Component {
   );
 
   render() {
+    const { showSideMenu } = this.state;
     return (
-      <PageWrapper>
-        <div className="sidebar">
-          <SideMenu />
+      <PageWrapper showSideMenu={showSideMenu}>
+        <div className="relativelyPositioned">
+          <div className="sidebar">
+            <SideMenu />
+          </div>
         </div>
-        <div className="miniWrapper">
-          <Switch>
-            <Route exact path="/" render={() => this.mainLayout()} />
-            <Route exact path="/case-study/:id/:project" component={CaseStudy} />
-            <Route exact path="/projects" component={ProjectsPerTech} />
-            <Route exact path="/changelog" component={Changelog} />
-            <Route component={NotFound} />
-          </Switch>
-          <Footer />
+        <div className="relativelyPositioned">
+          <div className="miniWrapper">
+            <Switch>
+              <Route exact path="/" render={() => this.mainLayout()} />
+              <Route exact path="/case-study/:id/:project" component={CaseStudy} />
+              <Route exact path="/projects" component={ProjectsPerTech} />
+              <Route exact path="/changelog" component={Changelog} />
+              <Route component={NotFound} />
+            </Switch>
+            <Footer />
+          </div>
         </div>
       </PageWrapper>
     );
