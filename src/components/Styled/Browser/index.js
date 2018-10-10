@@ -133,6 +133,7 @@ export const ProjectDescription = styled.div`
   font-size: 1.4rem;
   padding: 30px;
   line-height: 35px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);
 `;
 
 export const ProjectColumns = styled.div`

@@ -13,7 +13,6 @@ import { Button, ButtonGrid, NewProjectButton, GoHome } from './Button';
 import { Section, SectionDesc, SectionHeader } from './Section';
 import { PageHeader } from './Page';
 
-import { StudyContent, Study, StudyHeader } from './CaseStudy';
 import {
   BrowserHeader,
   BrowserWrapper,
@@ -67,10 +66,6 @@ export {
   ResponsiveNav,
   ResponsiveNavItem,
   ResponsiveNavSocial,
-  // CaseStudy
-  StudyContent,
-  Study,
-  StudyHeader,
   // Buttons
   Button,
   GoHome,

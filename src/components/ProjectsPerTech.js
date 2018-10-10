@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import { Link } from 'react-router-dom';
 import { flattenDeep } from 'lodash';
 import PropTypes from 'prop-types';
-import { PageHeader, StudyContent, Study, StudyHeader } from '../components/Styled';
+import { PageHeader, ProjectContent, Project, ProjectHeader } from '../components/Styled';
 import api from '../api';
 import Loading from '../utils/Loading';
 import NotFound from '../utils/NotFound';
@@ -80,13 +80,13 @@ export default class ProjectsPerTech extends Component {
             <span>{query}</span>
           </Link>
         </PageHeader>
-        <Study>
-          <StudyHeader>Find more projects using</StudyHeader>
-          <StudyContent>
+        <Project>
+          <ProjectHeader>Find more projects using</ProjectHeader>
+          <ProjectContent>
             <RenderTechnologies technologies={techUsed} />
-          </StudyContent>
-        </Study>
-        <StudyHeader>Projects Powered with {query} </StudyHeader>
+          </ProjectContent>
+        </Project>
+        <ProjectHeader>Projects Powered with {query} </ProjectHeader>
         <RenderProjects projects={projectsPerTech} />
         <ReturnHome />
       </div>

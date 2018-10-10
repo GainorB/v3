@@ -152,7 +152,11 @@ class App extends Component {
           <div className="miniWrapper">
             <Switch>
               <Route exact path="/" render={() => this.mainLayout()} />
-              <Route exact path="/case-study/:id/:project" component={CaseStudy} />
+              <Route
+                exact
+                path="/case-study/:id/:project"
+                render={props => <CaseStudy toggle={this.toggle} showSideMenu={showSideMenu} {...props} />}
+              />
               <Route exact path="/projects" component={ProjectsPerTech} />
               <Route exact path="/changelog" component={Changelog} />
               <Route component={NotFound} />

@@ -102,5 +102,4 @@ export const SideMenuBio = styled.div`
   font-size: 1rem;
   font-style: italic;
   padding: 10px;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.1);
 `;

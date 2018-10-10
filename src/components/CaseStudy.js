@@ -27,6 +27,8 @@ class CaseStudy extends PureComponent {
   static propTypes = {
     match: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
+    toggle: PropTypes.func.isRequired,
+    showSideMenu: PropTypes.bool.isRequired,
   };
 
   state = {
@@ -100,6 +102,7 @@ class CaseStudy extends PureComponent {
 
   renderProject = project => {
     const { projects, currentIndex } = this.state;
+    const { toggle, showSideMenu } = this.props;
     console.log(project);
     return (
       <BrowserWrapper>
@@ -122,7 +125,9 @@ class CaseStudy extends PureComponent {
             </a>
           </div>
           {this.whichRepo(project.resources[0])}
-          <i className="fas fa-toggle-on" />
+          <button onClick={() => toggle('showSideMenu')}>
+            {showSideMenu ? <i className="fas fa-toggle-on" /> : <i className="fas fa-toggle-off" />}
+          </button>
         </BrowserBar>
         <BrowserBookmarks>
           <div className="bookmark">
