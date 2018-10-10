@@ -104,7 +104,7 @@ class App extends Component {
           <div className="responsiveNav__items">
             {items.map(e => (
               <a href={e.hash} key={key()}>
-                <ResponsiveNavItem isActive={hash === e.hash} onClick={this.toggleMenu}>
+                <ResponsiveNavItem isActive={hash === e.hash} onClick={() => this.toggle('showMenu')}>
                   {e.name}
                 </ResponsiveNavItem>
               </a>
