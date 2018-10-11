@@ -28,9 +28,16 @@ export const BrowserHeader = styled.div`
 
 export const BrowserWrapper = styled.div`
   display: grid;
-  background: #ebebeb;
-  grid-template-rows: repeat(5, auto) 1fr;
+  background: #eceff1;
+  grid-template-rows: repeat(6, auto) 1fr;
   grid-gap: 10px;
+
+  .seperator {
+    height: 10px;
+    -webkit-box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.1);
+    box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.1);
+  }
 
   @media only screen and (max-width: 1200px) {
     grid-gap: 5px;
@@ -46,7 +53,7 @@ export const ProjectInnerGrid = styled.div`
 
 export const BrowserBar = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, auto) 1fr auto auto;
+  grid-template-columns: auto 1fr auto;
   grid-gap: 10px;
   align-items: center;
   padding: 10px 10px 0px 10px;
@@ -80,17 +87,24 @@ export const BrowserBar = styled.div`
   .browser__searchBar:hover {
     background: #b6b6b6;
   }
+
+  .browseBar__miniGrid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 10px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: 100%;
+    justify-items: center;
+  }
 `;
 
 export const BrowserBookmarks = styled.div`
   display: flex;
   align-items: center;
-  padding: 0px 10px 10px 10px;
-  padding-bottom: 5px;
+  padding: 0px 10px 0px 10px;
   font-size: 1.1rem;
-  -webkit-box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.1);
-  box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.1);
 
   .bookmark {
     display: grid;
@@ -112,6 +126,10 @@ export const BrowserBookmarks = styled.div`
   .bookmark span {
     font-size: 0.8rem;
   }
+
+  @media only screen and (max-width: 1200px) {
+    margin: 0 auto;
+  }
 `;
 
 export const ProjectTitle = styled.div`
@@ -119,21 +137,33 @@ export const ProjectTitle = styled.div`
   text-align: center;
   font-weight: 500;
   margin-top: 20px;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 3rem;
+  }
 `;
 
 export const ProjectHeadline = styled.div`
   font-size: 2rem;
   text-align: center;
   font-weight: 500;
-  color: #c6c6c6;
+  color: #616161;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const ProjectDescription = styled.div`
   text-align: center;
   font-size: 1.4rem;
-  padding: 30px;
+  padding: 20px 30px 0px 30px;
   line-height: 35px;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ProjectColumns = styled.div`
@@ -152,11 +182,11 @@ export const ProjectHeader = styled.h1`
   font-size: 1rem;
   padding: 10px;
   margin: 0;
-  color: #fff;
+  color: #616161;
   font-weight: normal;
   text-align: center;
-  background: #090909;
-  text-transform: uppercase;
+  background-color: #f5f5f5;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12) inset;
 `;
 
 export const ProjectContent = styled.div`
@@ -175,18 +205,14 @@ export const ProjectContent = styled.div`
 `;
 
 export const Project = styled.div`
-  background-color: #fff;
-  border: 1px solid #090909;
-  transition: box-shadow 0.7s ease;
-  -webkit-transition: box-shadow 0.7s ease;
+  background-color: rgb(255, 255, 255);
+  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  font-size: 0.9rem;
 
   .techFeature {
     border-bottom: 1px solid #e9ecef;
     padding: 5px 0px;
-  }
-
-  &:hover {
-    box-shadow: 0px 0px 0px 2px #090909;
   }
 `;
 

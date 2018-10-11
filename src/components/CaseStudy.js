@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { debounce } from 'lodash';
 import {
   UnorderedList,
   BrowserHeader,
@@ -37,6 +38,7 @@ class CaseStudy extends PureComponent {
     projects: null,
     currentIndex: null,
     error: null,
+    windowWidth: 0,
   };
 
   async componentDidMount() {
@@ -52,6 +54,8 @@ class CaseStudy extends PureComponent {
     } else {
       await this.setStateAsync({ error: 'Invalid Project', loading: false });
     }
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -61,11 +65,19 @@ class CaseStudy extends PureComponent {
     }
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
   setStateAsync(state) {
     return new Promise(resolve => {
       this.setState(state, resolve);
     });
   }
+
+  updateWindowDimensions = debounce(() => {
+    this.setState({ windowWidth: window.innerWidth });
+  }, 700);
 
   whichRepo = repoLink => {
     if (repoLink === '') return;
@@ -101,9 +113,9 @@ class CaseStudy extends PureComponent {
   };
 
   renderProject = project => {
-    const { projects, currentIndex } = this.state;
+    const { projects, currentIndex, windowWidth } = this.state;
     const { toggle, showSideMenu } = this.props;
-    console.log(project);
+    console.log(projects);
     return (
       <BrowserWrapper>
         <BrowserHeader>
@@ -112,22 +124,33 @@ class CaseStudy extends PureComponent {
           <div className="dot dot-third" />
         </BrowserHeader>
         <BrowserBar>
-          <button onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
-            <i className="fas fa-arrow-left" />
-          </button>
-          <button onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
-            <i className="fas fa-arrow-right" />
-          </button>
-          <ReturnHome />
+          <div className="browseBar__miniGrid">
+            <button onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
+              {currentIndex <= 0 ? <i className="fas fa-ban" /> : <i className="fas fa-arrow-left" />}
+            </button>
+            <button onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
+              {currentIndex === projects.length - 1 ? (
+                <i className="fas fa-ban" />
+              ) : (
+                <i className="fas fa-arrow-right" />
+              )}
+            </button>
+            <ReturnHome />
+          </div>
           <div className="browser__searchBar">
             <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
               {project.resources[1]}
             </a>
           </div>
-          {this.whichRepo(project.resources[0])}
-          <button onClick={() => toggle('showSideMenu')}>
-            {showSideMenu ? <i className="fas fa-toggle-on" /> : <i className="fas fa-toggle-off" />}
-          </button>
+          <div className="browseBar__miniGrid">
+            {project.technologies.includes('React.js') && <i className="fab fa-react" />}
+            {this.whichRepo(project.resources[0])}
+            {windowWidth >= 1200 && (
+              <button onClick={() => toggle('showSideMenu')}>
+                {showSideMenu ? <i className="fas fa-toggle-on" /> : <i className="fas fa-toggle-off" />}
+              </button>
+            )}
+          </div>
         </BrowserBar>
         <BrowserBookmarks>
           <div className="bookmark">
@@ -140,6 +163,7 @@ class CaseStudy extends PureComponent {
             <i className="fas fa-folder" /> <span>Fullstack</span>
           </div>
         </BrowserBookmarks>
+        <div className="seperator" />
         <ProjectTitle>{project.name}</ProjectTitle>
         <ProjectHeadline>{project.oneLiner}</ProjectHeadline>
         <ProjectDescription>{project.description}</ProjectDescription>
@@ -176,18 +200,20 @@ class CaseStudy extends PureComponent {
               <RenderTechnologies technologies={project.technologies} />
             </ProjectContent>
           </Project>
-          <Project>
-            <ProjectHeader>Gallery</ProjectHeader>
-            <ProjectContent>
-              <ProjectGallery>
-                {project.gallery.map(p => (
-                  <div key={key()}>
-                    <img src={p} alt={project.name} />
-                  </div>
-                ))}
-              </ProjectGallery>
-            </ProjectContent>
-          </Project>
+          {project.gallery.length > 1 && (
+            <Project>
+              <ProjectHeader>Gallery</ProjectHeader>
+              <ProjectContent>
+                <ProjectGallery>
+                  {project.gallery.map(p => (
+                    <div key={key()}>
+                      <img src={p} alt={project.name} />
+                    </div>
+                  ))}
+                </ProjectGallery>
+              </ProjectContent>
+            </Project>
+          )}
         </ProjectInnerGrid>
       </BrowserWrapper>
     );
