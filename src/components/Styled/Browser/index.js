@@ -90,8 +90,8 @@ export const BrowserBar = styled.div`
 
   .browseBar__miniGrid {
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-gap: 10px;
+    grid-template-columns: repeat(3, 45px);
+    grid-gap: 5px;
   }
 
   @media only screen and (max-width: 1200px) {

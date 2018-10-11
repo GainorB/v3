@@ -82,7 +82,7 @@ export const ResponsiveNav = styled.ul`
   padding: 0;
   transition: all ease 0.5s;
   border-top: 5px solid #2447f9;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.24), 0 2px 2px rgba(0, 0, 0, 0.34);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.14), 0 2px 2px rgba(0, 0, 0, 0.14);
 
   .responsiveNav__title {
     display: block;
