@@ -91,6 +91,7 @@ export const BrowserBar = styled.div`
   .browseBar__miniGrid {
     display: grid;
     grid-template-columns: repeat(3, 45px);
+    justify-items: center;
     grid-gap: 5px;
   }
 

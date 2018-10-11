@@ -97,9 +97,7 @@ class App extends Component {
         </Nav>
         <ResponsiveNav showMenu={showMenu}>
           <div className="responsiveNav__grid">
-            <div>
-              <Logo size="100%" />
-            </div>
+            <Logo size="100%" />
             <div className="responsiveNav__logo">
               <span className="responsiveNav__name">Gainor Bostwick</span>
               <span className="responsiveNav__title">Full Stack Developer</span>
