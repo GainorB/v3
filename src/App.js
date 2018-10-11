@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { debounce } from 'lodash';
 import { Switch, Route } from 'react-router-dom';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
@@ -55,19 +56,27 @@ class App extends Component {
     ],
     showMenu: false,
     showSideMenu: true,
-    offset: -99,
+    windowWidth: 0,
   };
 
   componentDidMount = () => {
-    configureAnchors({ offset: this.state.offset, scrollDuration: 400 });
-    // window.addEventListener('resize', this.windowResizer);
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
   };
 
-  // windowResizer = () => {
-  //   if (window.innerWidth <= 1200) {
-  //     this.setState({ offset: -213 });
-  //   }
-  // };
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions = debounce(() => {
+    this.setState({ windowWidth: window.innerWidth }, () => {
+      if (this.state.windowWidth <= 1200) {
+        configureAnchors({ offset: -213, scrollDuration: 400 });
+      } else {
+        configureAnchors({ offset: -99, scrollDuration: 400 });
+      }
+    });
+  }, 700);
 
   toggle = str => this.setState(prevState => ({ [str]: !prevState[str] }));
 

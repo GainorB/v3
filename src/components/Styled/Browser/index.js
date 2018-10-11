@@ -159,7 +159,6 @@ export const ProjectDescription = styled.div`
   font-size: 1.4rem;
   padding: 20px 30px 0px 30px;
   line-height: 35px;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);
 
   @media only screen and (max-width: 1200px) {
     font-size: 1rem;
