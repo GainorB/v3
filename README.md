@@ -3,6 +3,8 @@
 # BUGS
 1. ~~Fix direct routing with React Router in Prod~~
 2.  ~~Fix sidebar grid layout (Stretching)~~
+3. ~~Smooth Scroll on Mobile view~~
+4. Changelog page's width
 
 # TODO
 1.  ~~Setup Firebase~~

@@ -71,7 +71,7 @@ class App extends Component {
   updateWindowDimensions = debounce(() => {
     this.setState({ windowWidth: window.innerWidth }, () => {
       if (this.state.windowWidth <= 1200) {
-        configureAnchors({ offset: -213, scrollDuration: 400 });
+        configureAnchors({ offset: -212, scrollDuration: 400 });
       } else {
         configureAnchors({ offset: -99, scrollDuration: 400 });
       }
