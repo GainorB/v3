@@ -27,6 +27,8 @@ import {
   ProjectHeader,
   ProjectColumns,
   ProjectDescription,
+  Dropdown,
+  DropdownList,
 } from './Browser';
 
 export {
@@ -44,6 +46,8 @@ export {
   ProjectHeadline,
   ProjectColumns,
   ProjectDescription,
+  Dropdown,
+  DropdownList,
   // Page
   PageHeader,
   // Images

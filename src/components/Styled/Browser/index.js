@@ -133,6 +133,46 @@ export const BrowserBookmarks = styled.div`
   }
 `;
 
+export const Dropdown = styled.div`
+  position: absolute;
+  width: auto;
+  top: 20px;
+  color: rgb(72, 72, 72) !important;
+  border: 1px solid #e1e1e1;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
+  padding: 0px 20px;
+`;
+
+export const DropdownList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: #dddddd !important;
+
+  li {
+    display: block;
+    padding: 20px 0px 20px 0;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid;
+  }
+
+  .logout {
+    color: #df1e1e !important;
+  }
+
+  li:last-of-type {
+    border: none;
+  }
+
+  a:hover {
+    color: #1d1e2d !important;
+  }
+`;
+
 export const ProjectTitle = styled.div`
   font-size: 4rem;
   text-align: center;

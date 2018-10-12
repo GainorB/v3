@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { debounce } from 'lodash';
+import { debounce, groupBy } from 'lodash';
 import {
   UnorderedList,
   BrowserHeader,
@@ -16,6 +16,8 @@ import {
   ProjectTitle,
   ProjectHeader,
   ProjectDescription,
+  Dropdown,
+  DropdownList,
 } from '../components/Styled';
 import Loading from '../utils/Loading';
 import ErrorMessage from '../utils/ErrorMessage';
@@ -112,10 +114,35 @@ class CaseStudy extends PureComponent {
     }
   };
 
+  renderCategories = projects => {
+    const categories = groupBy(projects, 'type');
+    console.log(categories);
+
+    return (
+      <BrowserBookmarks>
+        <div className="bookmark">
+          <i className="fas fa-folder" /> <span>Frontend</span>
+          <Dropdown>
+            <DropdownList>
+              <li>Test</li>
+              <li>Home</li>
+            </DropdownList>
+          </Dropdown>
+        </div>
+        <div className="bookmark">
+          <i className="fas fa-folder" /> <span>Backend</span>
+        </div>
+        <div className="bookmark">
+          <i className="fas fa-folder" /> <span>Fullstack</span>
+        </div>
+      </BrowserBookmarks>
+    );
+  };
+
   renderProject = project => {
     const { projects, currentIndex, windowWidth } = this.state;
     const { toggle, showSideMenu } = this.props;
-    console.log(projects);
+
     return (
       <BrowserWrapper>
         <BrowserHeader>
@@ -152,17 +179,7 @@ class CaseStudy extends PureComponent {
             )}
           </div>
         </BrowserBar>
-        <BrowserBookmarks>
-          <div className="bookmark">
-            <i className="fas fa-folder" /> <span>Frontend</span>
-          </div>
-          <div className="bookmark">
-            <i className="fas fa-folder" /> <span>Backend</span>
-          </div>
-          <div className="bookmark">
-            <i className="fas fa-folder" /> <span>Fullstack</span>
-          </div>
-        </BrowserBookmarks>
+        {this.renderCategories(projects)}
         <div className="seperator" />
         <ProjectTitle>{project.name}</ProjectTitle>
         <ProjectHeadline>{project.oneLiner}</ProjectHeadline>
