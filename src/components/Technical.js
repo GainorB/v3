@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import { debounce, flattenDeep } from 'lodash';
 // import FlipMove from 'react-flip-move';
 import { Link } from 'react-router-dom';
@@ -92,7 +92,7 @@ class Technical extends PureComponent {
     const { length } = displayedSkills;
 
     return (
-      <Fragment>
+      <div style={{ background: '#fff' }}>
         <ThemeProvider theme={theme}>
           <Section bg="#090909">
             {selectOptions && <Select placeholder="technical." onChange={this.handleChange} options={selectOptions} />}
@@ -104,7 +104,7 @@ class Technical extends PureComponent {
           </Section>
         </ThemeProvider>
         {loading ? <Loading /> : this.renderSkills(displayedSkills, techUsed)}
-      </Fragment>
+      </div>
     );
   }
 }

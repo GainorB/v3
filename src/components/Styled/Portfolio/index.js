@@ -4,7 +4,6 @@ export const ProjectGrid = styled.div`
   display: grid;
   position: relative;
   grid-template-rows: auto 1fr auto auto;
-  border: 1px solid #090909;
 
   img {
     width: 100%;

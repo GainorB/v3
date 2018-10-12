@@ -74,7 +74,7 @@ class Projects extends PureComponent {
     const { loading, displayedProjects, typing, techUsed, displayedProjectsTech } = this.state;
     const { length } = displayedProjects;
     return (
-      <div style={{ background: '#090909' }}>
+      <div style={{ background: '#fff' }}>
         <ThemeProvider theme={theme}>
           <Section bg="#090909">
             {techUsed && <Select placeholder="projects." onChange={this.handleChange} options={techUsed} />}

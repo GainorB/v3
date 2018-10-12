@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Loading from '../utils/Loading';
 import { SectionHeader, Section, ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Styled';
@@ -28,7 +28,7 @@ class Experience extends PureComponent {
 
   renderExperience = experience => {
     const output = experience.map(e => (
-      <Fragment key={key()}>
+      <div key={key()}>
         <ExpGrid>
           <ExpHeaderGrid>
             <img src={e.companyLogo} alt={e.companyName} />
@@ -48,7 +48,7 @@ class Experience extends PureComponent {
         <ExpFooter>
           {e.date} | {e.location}
         </ExpFooter>
-      </Fragment>
+      </div>
     ));
 
     return <ExpContainer>{output}</ExpContainer>;
@@ -57,14 +57,14 @@ class Experience extends PureComponent {
   render() {
     const { experience, loading } = this.state;
     return (
-      <Fragment>
+      <div style={{ background: '#fff' }}>
         <ThemeProvider theme={theme}>
           <Section bg="#090909">
             <SectionHeader>experience.</SectionHeader>
           </Section>
         </ThemeProvider>
         {loading ? <Loading /> : this.renderExperience(experience)}
-      </Fragment>
+      </div>
     );
   }
 }

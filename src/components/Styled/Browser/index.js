@@ -28,7 +28,7 @@ export const BrowserHeader = styled.div`
 
 export const BrowserWrapper = styled.div`
   display: grid;
-  background: #eceff1;
+  background: #fff;
   grid-template-rows: repeat(6, auto) 1fr;
   grid-gap: 10px;
 
