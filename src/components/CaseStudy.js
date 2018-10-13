@@ -34,6 +34,12 @@ class CaseStudy extends PureComponent {
     showSideMenu: PropTypes.bool.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+
+    this.timeOutId = null;
+  }
+
   state = {
     project: null,
     loading: true,
@@ -41,6 +47,7 @@ class CaseStudy extends PureComponent {
     currentIndex: null,
     error: null,
     windowWidth: 0,
+    openedBookmark: '',
   };
 
   async componentDidMount() {
@@ -70,6 +77,19 @@ class CaseStudy extends PureComponent {
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
   }
+
+  onBlurHandler = () => {
+    console.log('yo');
+    this.timeOutId = setTimeout(() => {
+      this.setState({
+        openedBookmark: '',
+      });
+    });
+  };
+
+  onFocusHandler = () => {
+    clearTimeout(this.timeOutId);
+  };
 
   setStateAsync(state) {
     return new Promise(resolve => {
@@ -115,28 +135,39 @@ class CaseStudy extends PureComponent {
   };
 
   renderCategories = projects => {
+    const { openedBookmark } = this.state;
     const categories = groupBy(projects, 'type');
-    console.log(categories);
-
-    return (
-      <BrowserBookmarks>
-        <div className="bookmark">
-          <i className="fas fa-folder" /> <span>Frontend</span>
+    const bookmarks = ['Frontend', 'Backend', 'Fullstack'];
+    const output = bookmarks.map(b => (
+      <div
+        onBlur={this.onBlurHandler}
+        onFocus={this.onFocusHandler}
+        className="bookmark"
+        key={key()}
+        role="presentation"
+        onClick={categories[b] && categories[b].length !== 0 ? () => this.setState({ openedBookmark: b }) : null}
+      >
+        <i className="fas fa-folder" /> <span>{b}</span>
+        {openedBookmark === b && (
           <Dropdown>
             <DropdownList>
-              <li>Test</li>
-              <li>Home</li>
+              {categories[b] &&
+                categories[b].map(p => (
+                  <li
+                    key={key()}
+                    role="presentation"
+                    onClick={() => this.setState({ project: projects[p.id], currentIndex: p.id })}
+                  >
+                    {p.name}
+                  </li>
+                ))}
             </DropdownList>
           </Dropdown>
-        </div>
-        <div className="bookmark">
-          <i className="fas fa-folder" /> <span>Backend</span>
-        </div>
-        <div className="bookmark">
-          <i className="fas fa-folder" /> <span>Fullstack</span>
-        </div>
-      </BrowserBookmarks>
-    );
+        )}
+      </div>
+    ));
+
+    return <BrowserBookmarks>{output}</BrowserBookmarks>;
   };
 
   renderProject = project => {

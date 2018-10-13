@@ -5,6 +5,7 @@
 2.  ~~Fix sidebar grid layout (Stretching)~~
 3. ~~Smooth Scroll on Mobile view~~
 4. Changelog page's width
+5. Buttons on CaseStudy page aren't clickable in Firefox
 
 # TODO
 1.  ~~Setup Firebase~~

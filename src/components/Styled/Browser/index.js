@@ -108,6 +108,7 @@ export const BrowserBookmarks = styled.div`
   font-size: 1.1rem;
 
   .bookmark {
+    position: relative;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-gap: 4px;
@@ -135,14 +136,14 @@ export const BrowserBookmarks = styled.div`
 
 export const Dropdown = styled.div`
   position: absolute;
-  width: auto;
-  top: 20px;
-  color: rgb(72, 72, 72) !important;
+  width: 300px;
+  top: 30px;
+  left: 10px;
   border: 1px solid #e1e1e1;
+  border-radius: 5px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 2000;
-  padding: 0px 20px;
+  z-index: 10;
 `;
 
 export const DropdownList = styled.ul`
@@ -152,24 +153,16 @@ export const DropdownList = styled.ul`
   color: #dddddd !important;
 
   li {
-    display: block;
-    padding: 20px 0px 20px 0;
-    font-size: 14px;
-    font-weight: 400;
+    cursor: pointer;
+    color: #090909;
+    font-size: 0.8rem;
+    padding: 5px 10px;
     letter-spacing: 1.5px;
-    border-bottom: 1px solid;
   }
 
-  .logout {
-    color: #df1e1e !important;
-  }
-
-  li:last-of-type {
-    border: none;
-  }
-
-  a:hover {
-    color: #1d1e2d !important;
+  li:hover {
+    color: #3149ea;
+    background: #dddddd;
   }
 `;
 
