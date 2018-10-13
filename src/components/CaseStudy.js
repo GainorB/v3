@@ -78,19 +78,6 @@ class CaseStudy extends PureComponent {
     window.removeEventListener('resize', this.updateWindowDimensions);
   }
 
-  onBlurHandler = () => {
-    console.log('yo');
-    this.timeOutId = setTimeout(() => {
-      this.setState({
-        openedBookmark: '',
-      });
-    });
-  };
-
-  onFocusHandler = () => {
-    clearTimeout(this.timeOutId);
-  };
-
   setStateAsync(state) {
     return new Promise(resolve => {
       this.setState(state, resolve);
@@ -113,6 +100,12 @@ class CaseStudy extends PureComponent {
         </div>
       </a>
     );
+  };
+
+  toggleBookmark = (e, book) => {
+    const selected = e.target.textContent;
+    if (selected === '' || book === '') return this.setState({ openedBookmark: '' });
+    this.setState({ openedBookmark: selected });
   };
 
   newProject = dir => {
@@ -140,12 +133,12 @@ class CaseStudy extends PureComponent {
     const bookmarks = ['Frontend', 'Backend', 'Fullstack'];
     const output = bookmarks.map(b => (
       <div
-        onBlur={this.onBlurHandler}
-        onFocus={this.onFocusHandler}
         className="bookmark"
         key={key()}
         role="presentation"
-        onClick={categories[b] && categories[b].length !== 0 ? () => this.setState({ openedBookmark: b }) : null}
+        onClick={
+          categories[b] && categories[b].length !== 0 ? e => this.toggleBookmark(e, b) : e => this.toggleBookmark(e, '')
+        }
       >
         <i className="fas fa-folder" /> <span>{b}</span>
         {openedBookmark === b && (

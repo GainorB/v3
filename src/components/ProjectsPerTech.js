@@ -86,7 +86,7 @@ export default class ProjectsPerTech extends Component {
             <RenderTechnologies technologies={techUsed} />
           </ProjectContent>
         </Project>
-        <ProjectHeader>Projects Powered with {query} </ProjectHeader>
+        <ProjectHeader>Projects powered with {query} </ProjectHeader>
         <RenderProjects projects={projectsPerTech} />
         <ReturnHome />
       </div>

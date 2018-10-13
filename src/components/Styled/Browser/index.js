@@ -136,7 +136,7 @@ export const BrowserBookmarks = styled.div`
 
 export const Dropdown = styled.div`
   position: absolute;
-  width: 300px;
+  width: 200px;
   top: 30px;
   left: 10px;
   border: 1px solid #e1e1e1;
@@ -161,7 +161,6 @@ export const DropdownList = styled.ul`
   }
 
   li:hover {
-    color: #3149ea;
     background: #dddddd;
   }
 `;
