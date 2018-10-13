@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import Commits from '../api/Commits';
 import { PageHeader } from '../components/Styled';
 
 class Changelog extends Component {
   render() {
     return (
-      <div>
+      <Fragment>
         <PageHeader>
           <span>Changelog</span>
         </PageHeader>
         <Commits />
-      </div>
+      </Fragment>
     );
   }
 }

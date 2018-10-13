@@ -35,7 +35,7 @@ class Commits extends Component {
             commited {distanceInWords(new Date(), c.commit.committer.date, { addSuffix: true, includeSeconds: true })}{' '}
             by{' '}
             <a href={c.author.html_url} target="_blank" rel="noopener noreferrer">
-              GainorB
+              {c.author.login}
             </a>
           </span>
         </div>

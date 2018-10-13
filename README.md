@@ -6,6 +6,8 @@
 3. ~~Smooth Scroll on Mobile view~~
 4. Changelog page's width
 5. Buttons on CaseStudy page aren't clickable in Firefox
+6. Click outside DropDown menu should close menu
+7. Width on ChangeLog page
 
 # TODO
 1.  ~~Setup Firebase~~
@@ -25,6 +27,7 @@
 15. Need to implement some type of state management to track, HOT TECH.
 16. Visualize data?
 17. Google Analytics
+18. CaseStudy mobile view
 
 # FEATURES
 1.  ~~Redux? 🤔~~
@@ -35,4 +38,4 @@
 1.  Accessibility
 2.  ~~AutoFocus input field when in view~~
 3.  ~~When performing skill search, prevent "jumpiness".~~
-4.  ~~Responsiveness~~
+4.  Responsiveness

@@ -20,6 +20,9 @@ class About extends PureComponent {
           applications that will bring about change in peoples’ lives by utilizing my personal experiences, interests,
           and expertise to provide unforgettable experiences. A lifelong learner dedicated to continuously learning and
           implementing new practices to perfect my craft and create innovative applications.
+          <p>
+            This site is developed with <a href="https://reactjs.org/">React.js</a>.
+          </p>
         </Me>
       </AboutWrapper>
     );

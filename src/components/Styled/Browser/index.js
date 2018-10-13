@@ -121,11 +121,11 @@ export const BrowserBookmarks = styled.div`
   }
 
   .bookmark:hover {
-    cursor: pointer;
     background: #b6b6b6;
   }
 
   .bookmark span {
+    cursor: pointer;
     font-size: 0.8rem;
   }
 
