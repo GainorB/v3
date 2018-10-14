@@ -5,7 +5,7 @@
 2.  ~~Fix sidebar grid layout (Stretching)~~
 3. ~~Smooth Scroll on Mobile view~~
 4. Changelog page's width (caused by Absolute positioning)
-5. Buttons on CaseStudy page aren't clickable in Firefox
+5. ~~Buttons on CaseStudy page aren't clickable in Firefox~~
 6. Click outside DropDown menu should close menu
 
 # TODO

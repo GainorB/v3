@@ -17,11 +17,6 @@ export const PageHeader = styled.div`
     transition: 500ms color;
     text-align: center;
     white-space: nowrap;
-    text-transform: uppercase;
-  }
-
-  span:hover {
-    color: #2649f0;
   }
 
   @media only screen and (max-width: 1200px) {

@@ -55,8 +55,6 @@ export const ProjectGrid = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100%;
-    width: 100%;
     padding: 5em;
     opacity: 0;
   }
@@ -99,7 +97,7 @@ export const ProjectGrid = styled.div`
   }
 
   .project__name span:nth-child(2) {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-top: 3px;
     color: #dbe2e8;
   }

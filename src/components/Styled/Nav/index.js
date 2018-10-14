@@ -104,7 +104,7 @@ export const ResponsiveNav = styled.ul`
     grid-template-columns: 120px 1fr 75px;
     align-items: center;
     color: #090909;
-    padding: 1em;
+    padding: 2em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   }
 
@@ -119,7 +119,7 @@ export const ResponsiveNav = styled.ul`
 
   .responsiveNav__menu {
     font-size: 1.6rem;
-    justify-self: end;
+    justify-self: center;
   }
 
   .responsiveNav__menu button {

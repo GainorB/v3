@@ -12,7 +12,6 @@ import {
   ProjectHeadline,
   ProjectInnerGrid,
   ProjectContent,
-  ProjectColumns,
   ProjectTitle,
   ProjectHeader,
   ProjectDescription,
@@ -207,32 +206,30 @@ class CaseStudy extends PureComponent {
         <ProjectHeadline>{project.oneLiner}</ProjectHeadline>
         <ProjectDescription>{project.description}</ProjectDescription>
         <ProjectInnerGrid>
-          <ProjectColumns>
-            <Project>
-              <ProjectHeader>Features</ProjectHeader>
-              <ProjectContent>
-                <UnorderedList>
-                  {project.features.map(f => (
-                    <li className="techFeature" key={key()}>
-                      {f}
-                    </li>
-                  ))}
-                </UnorderedList>
-              </ProjectContent>
-            </Project>
-            <Project>
-              <ProjectHeader>Technical Information</ProjectHeader>
-              <ProjectContent>
-                <UnorderedList>
-                  {project.technicalInformation.map(f => (
-                    <li className="techFeature" key={key()}>
-                      {f}
-                    </li>
-                  ))}
-                </UnorderedList>
-              </ProjectContent>
-            </Project>
-          </ProjectColumns>
+          <Project>
+            <ProjectHeader>Technical Information</ProjectHeader>
+            <ProjectContent>
+              <UnorderedList>
+                {project.technicalInformation.map(f => (
+                  <li className="techFeature" key={key()}>
+                    {f}
+                  </li>
+                ))}
+              </UnorderedList>
+            </ProjectContent>
+          </Project>
+          <Project>
+            <ProjectHeader>Features</ProjectHeader>
+            <ProjectContent>
+              <UnorderedList>
+                {project.features.map(f => (
+                  <li className="techFeature" key={key()}>
+                    {f}
+                  </li>
+                ))}
+              </UnorderedList>
+            </ProjectContent>
+          </Project>
           <Project>
             <ProjectHeader>Powered by</ProjectHeader>
             <ProjectContent>

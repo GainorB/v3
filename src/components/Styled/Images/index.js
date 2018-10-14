@@ -31,7 +31,7 @@ export const SocialIcon = styled.span`
     ${props => props.resume && `color: #fcc846`};
     ${props => props.linkedin && `color: #0577b2`};
     ${props => props.email && `color: #ba4444`};
-    ${props => props.github && `color: #24292e`};
+    ${props => props.github && `color: #fff`};
     ${props => props.twitter && `color: #1e95dc`};
   }
 
@@ -40,26 +40,25 @@ export const SocialIcon = styled.span`
   }
 `;
 
-const rotate360 = keyframes`
+const fadeInAndOut = keyframes`
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
 
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 `;
 
 export const LoadingImage = styled.div`
   display: block;
-  animation: ${rotate360} 2s linear infinite;
+  animation: ${fadeInAndOut} 2s linear infinite;
   margin: 0 auto;
   text-align: center;
   width: 50px;
   height: 50px;
 
   img {
-    margin: 10px;
     width: 100%;
     height: 100%;
     object-fit: cover;

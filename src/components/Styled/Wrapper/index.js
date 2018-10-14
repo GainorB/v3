@@ -59,7 +59,7 @@ export const AboutWrapper = styled.div`
 
 export const PortfolioWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 10px;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   padding: 1em;

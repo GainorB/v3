@@ -4,12 +4,18 @@ export const Me = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2em;
+  padding: 1em 2em;
   color: #090909;
   background: #fff;
   font-size: 1.7rem;
+  line-height: 1.6;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   margin: 0;
+
+  .developedWith {
+    margin: 0;
+    margin-top: 1em;
+  }
 
   h1 {
     font-size: 2.1rem;
@@ -31,17 +37,8 @@ export const Me = styled.div`
     white-space: nowrap;
   }
 
-  .developedWith {
-    line-height: 1.6;
-    font-size: 1.3rem;
-  }
-
   @media only screen and (max-width: 1200px) {
-    font-size: 1.2rem;
-
-    .developedWith {
-      font-size: 1rem;
-    }
+    font-size: 1.1rem;
 
     h1 {
       font-size: 1.4rem;

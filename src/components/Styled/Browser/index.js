@@ -34,9 +34,9 @@ export const BrowserWrapper = styled.div`
 
   .seperator {
     height: 10px;
-    -webkit-box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.1);
-    box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.3);
   }
 
   @media only screen and (max-width: 1200px) {
@@ -46,7 +46,7 @@ export const BrowserWrapper = styled.div`
 
 export const ProjectInnerGrid = styled.div`
   display: grid;
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(5, auto);
   grid-gap: 10px;
   margin: 20px;
 `;
@@ -166,10 +166,10 @@ export const DropdownList = styled.ul`
 `;
 
 export const ProjectTitle = styled.div`
-  font-size: 4rem;
+  font-size: 3.5rem;
   text-align: center;
-  font-weight: 500;
-  margin-top: 20px;
+  font-weight: bold;
+  margin-top: 10px;
 
   @media only screen and (max-width: 1200px) {
     font-size: 3rem;
@@ -177,7 +177,7 @@ export const ProjectTitle = styled.div`
 `;
 
 export const ProjectHeadline = styled.div`
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   font-weight: 500;
   color: #616161;
@@ -189,8 +189,8 @@ export const ProjectHeadline = styled.div`
 
 export const ProjectDescription = styled.div`
   text-align: center;
-  font-size: 1.4rem;
-  padding: 20px 30px 0px 30px;
+  font-size: 1.2rem;
+  padding: 0 30px;
   line-height: 35px;
 
   @media only screen and (max-width: 1200px) {
@@ -198,16 +198,16 @@ export const ProjectDescription = styled.div`
   }
 `;
 
-export const ProjectColumns = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+// export const ProjectColumns = styled.div`
+//   display: grid;
+//   grid-template-rows: repeat(2, auto);
+//   grid-gap: 10px;
 
-  @media only screen and (max-width: 1200px) {
-    grid-template-columns: 100%;
-    grid-gap: 5px;
-  }
-`;
+//   @media only screen and (max-width: 1200px) {
+//     grid-template-columns: 100%;
+//     grid-gap: 5px;
+//   }
+// `;
 
 export const ProjectHeader = styled.h1`
   user-select: none;
