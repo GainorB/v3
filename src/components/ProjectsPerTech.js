@@ -34,7 +34,7 @@ export default class ProjectsPerTech extends Component {
     const techUsed = flattenDeep(projects.map(e => e.technologies));
     const isThisTechValid = techUsed.map(t => t.toLowerCase()).includes(parsed);
     if (isThisTechValid) {
-      await this.setStateAsync({
+      await this.setState({
         loading: false,
         techUsed,
         projects,
@@ -42,7 +42,7 @@ export default class ProjectsPerTech extends Component {
         query: parsed,
       });
     } else {
-      await this.setStateAsync({ error: 'Invalid Technology', loading: false });
+      await this.setState({ error: 'Invalid Technology', loading: false });
     }
   };
 
@@ -55,12 +55,6 @@ export default class ProjectsPerTech extends Component {
       this.setState({ query: parsed, projectsPerTech });
     }
   };
-
-  setStateAsync(state) {
-    return new Promise(resolve => {
-      this.setState(state, resolve);
-    });
-  }
 
   parseQuery = query => {
     const parsed = queryString.parse(query);

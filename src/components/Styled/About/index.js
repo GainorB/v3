@@ -19,6 +19,15 @@ export const Me = styled.div`
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   }
 
+  a:link {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .developedWith {
+    font-size: 1.3rem;
+  }
+
   @media only screen and (max-width: 1200px) {
     font-size: 1.2rem;
 

@@ -30,14 +30,8 @@ class Projects extends PureComponent {
       label: `${e.toLowerCase()}.`,
     }));
 
-    await this.setStateAsync({ projects, displayedProjects: projects, loading: false, techUsed });
+    await this.setState({ projects, displayedProjects: projects, loading: false, techUsed });
   };
-
-  setStateAsync(state) {
-    return new Promise(resolve => {
-      this.setState(state, resolve);
-    });
-  }
 
   filterProjects = debounce(query => {
     if (query) {

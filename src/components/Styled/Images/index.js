@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Avatar = styled.div`
   img {
@@ -37,5 +37,31 @@ export const SocialIcon = styled.span`
 
   i:hover {
     color: #fff;
+  }
+`;
+
+const rotate360 = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const LoadingImage = styled.div`
+  display: block;
+  animation: ${rotate360} 2s linear infinite;
+  margin: 0 auto;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+
+  img {
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `;

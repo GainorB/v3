@@ -17,14 +17,8 @@ class Experience extends PureComponent {
 
   componentDidMount = async () => {
     const experience = await api.experience();
-    await this.setStateAsync({ experience, loading: false });
+    await this.setState({ experience, loading: false });
   };
-
-  setStateAsync(state) {
-    return new Promise(resolve => {
-      this.setState(state, resolve);
-    });
-  }
 
   renderExperience = experience => {
     const output = experience.map(e => (

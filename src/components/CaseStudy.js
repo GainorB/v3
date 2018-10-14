@@ -50,7 +50,7 @@ class CaseStudy extends PureComponent {
     openedBookmark: '',
   };
 
-  async componentDidMount() {
+  componentDidMount = async () => {
     // eslint-disable-next-line
     let { id, project } = this.props.match.params;
     project = removeUnderline(project);
@@ -59,13 +59,13 @@ class CaseStudy extends PureComponent {
     const currentProjectNames = projects.map(e => e.name);
     const currentIndex = Number(id);
     if (currentProjects.includes(currentIndex) && currentProjectNames.includes(project)) {
-      await this.setStateAsync({ project: projects[currentIndex], projects, loading: false, currentIndex });
+      await this.setState({ project: projects[currentIndex], projects, loading: false, currentIndex });
     } else {
-      await this.setStateAsync({ error: 'Invalid Project', loading: false });
+      await this.setState({ error: 'Invalid Project', loading: false });
     }
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
-  }
+  };
 
   componentDidUpdate(prevProps, prevState) {
     const { currentIndex, projects } = this.state;
@@ -76,12 +76,6 @@ class CaseStudy extends PureComponent {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
-  }
-
-  setStateAsync(state) {
-    return new Promise(resolve => {
-      this.setState(state, resolve);
-    });
   }
 
   updateWindowDimensions = debounce(() => {
