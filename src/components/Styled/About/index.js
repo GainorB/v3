@@ -21,15 +21,27 @@ export const Me = styled.div`
 
   a:link {
     text-decoration: none;
-    font-weight: bold;
+  }
+
+  .code {
+    border: 1px solid #dedede;
+    background-color: #ebebeb;
+    border-radius: 3px;
+    padding: 0.1rem 0.2rem;
+    white-space: nowrap;
   }
 
   .developedWith {
+    line-height: 1.5;
     font-size: 1.3rem;
   }
 
   @media only screen and (max-width: 1200px) {
     font-size: 1.2rem;
+
+    .developedWith {
+      font-size: 1rem;
+    }
 
     h1 {
       font-size: 1.4rem;

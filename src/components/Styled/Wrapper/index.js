@@ -12,7 +12,7 @@ export const PageWrapper = styled.div`
     opacity: ${props => (props.showSideMenu ? '1' : '0')};
     visibility: ${props => (props.showSideMenu ? 'visible' : 'hidden')};
     grid-area: 'sidebar';
-    min-height: 100vh;
+    max-height: 100vh;
     -moz-transition: all 0.6s linear;
     transition: all 0.6s linear;
   }
@@ -20,7 +20,7 @@ export const PageWrapper = styled.div`
   .miniWrapper {
     position: absolute;
     grid-area: 'main';
-    min-height: 100vh;
+    max-height: 100vh;
     left: ${props => (props.showSideMenu ? `0` : `-400px`)};
     -moz-transition: left 0.6s linear;
     transition: left 0.6s linear;
@@ -32,11 +32,11 @@ export const PageWrapper = styled.div`
 
     .sidebar {
       grid-area: 'sidebar';
-      min-height: none;
+      max-height: none;
     }
 
     .miniWrapper {
-      min-height: none;
+      max-height: none;
       grid-area: 'main';
     }
   }
