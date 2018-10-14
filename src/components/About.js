@@ -57,8 +57,8 @@ class About extends PureComponent {
                 opened sourced
               </a>
             </span>{' '}
-            because I love collaborating with other developers. With that being said if there is anything you see that
-            can be made better: clone and submit a pull request!
+            because I ❤️ collaborating with other developers. With that being said if there is anything you see that can
+            be made better: clone and submit a pull request!
           </p>
         </Me>
       </AboutWrapper>

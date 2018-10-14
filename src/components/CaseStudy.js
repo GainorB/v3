@@ -124,8 +124,7 @@ class CaseStudy extends PureComponent {
   renderCategories = projects => {
     const { openedBookmark } = this.state;
     const categories = groupBy(projects, 'type');
-    const bookmarks = ['Frontend', 'Backend', 'Fullstack'];
-    const output = bookmarks.map(b => (
+    const output = ['Frontend', 'Backend', 'Fullstack'].map(b => (
       <div
         className="bookmark"
         key={key()}
@@ -134,7 +133,12 @@ class CaseStudy extends PureComponent {
           categories[b] && categories[b].length !== 0 ? e => this.toggleBookmark(e, b) : e => this.toggleBookmark(e, '')
         }
       >
-        <i className="fas fa-folder" /> <span>{b}</span>
+        {categories[b] && categories[b].length !== 0 ? (
+          <i className="fas fa-folder-open" />
+        ) : (
+          <i className="fas fa-folder" />
+        )}{' '}
+        <span>{b}</span>
         {openedBookmark === b && (
           <Dropdown>
             <DropdownList>

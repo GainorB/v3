@@ -4,7 +4,7 @@ export const Me = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5%;
+  padding: 2em;
   color: #090909;
   background: #fff;
   font-size: 1.7rem;
@@ -32,7 +32,7 @@ export const Me = styled.div`
   }
 
   .developedWith {
-    line-height: 1.5;
+    line-height: 1.6;
     font-size: 1.3rem;
   }
 
