@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { debounce } from 'lodash';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
 // PAGES
@@ -20,6 +20,7 @@ import Changelog from './components/Changelog';
 import SocialIcons from './utils/SocialIcons';
 import NotFound from './utils/NotFound';
 import { Logo } from './utils/Logo';
+import ProgressRoute from './utils/ProgressRoute';
 
 // CSS
 import { PageWrapper, Nav, ResponsiveNav, NavItem, ResponsiveNavItem, ResponsiveNavSocial } from './components/Styled';
@@ -158,15 +159,15 @@ class App extends Component {
         <div className="relativelyPositioned">
           <div className="miniWrapper">
             <Switch>
-              <Route exact path="/" render={() => this.mainLayout()} />
-              <Route
+              <ProgressRoute exact path="/" render={() => this.mainLayout()} />
+              <ProgressRoute
                 exact
                 path="/case-study/:id/:project"
                 render={props => <CaseStudy toggle={this.toggle} showSideMenu={showSideMenu} {...props} />}
               />
-              <Route exact path="/projects" component={ProjectsPerTech} />
-              <Route exact path="/changelog" component={Changelog} />
-              <Route component={NotFound} />
+              <ProgressRoute exact path="/projects" component={ProjectsPerTech} />
+              <ProgressRoute exact path="/changelog" component={Changelog} />
+              <ProgressRoute component={NotFound} />
             </Switch>
             <Footer />
           </div>

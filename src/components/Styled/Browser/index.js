@@ -103,8 +103,8 @@ export const BrowserBar = styled.div`
 
 export const BrowserBookmarks = styled.div`
   display: flex;
-  align-items: center;
   padding: 0px 10px 0px 10px;
+  align-items: center;
   font-size: 1.1rem;
 
   .bookmark {
@@ -113,15 +113,18 @@ export const BrowserBookmarks = styled.div`
     grid-template-columns: auto 1fr;
     grid-gap: 4px;
     align-items: center;
-    background: #dddddd;
-    padding: 5px 15px;
+    padding: 5px 10px;
     border-radius: 30px;
     margin: 5px;
     transition: background 0.5s ease;
   }
 
   .bookmark:hover {
-    background: #b6b6b6;
+    background: #e5e5e5;
+  }
+
+  .actualStack {
+    background: #dddddd;
   }
 
   .bookmark span {

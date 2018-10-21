@@ -121,41 +121,47 @@ class CaseStudy extends PureComponent {
   };
 
   renderCategories = projects => {
+    const { project } = this.state;
     const { openedBookmark } = this.state;
     const categories = groupBy(projects, 'type');
-    const output = ['Frontend', 'Backend', 'Fullstack'].map(b => (
-      <div
-        className="bookmark"
-        key={key()}
-        role="presentation"
-        onClick={
-          categories[b] && categories[b].length !== 0 ? e => this.toggleBookmark(e, b) : e => this.toggleBookmark(e, '')
-        }
-      >
-        {categories[b] && categories[b].length !== 0 ? (
-          <i className="fas fa-folder-open" />
-        ) : (
-          <i className="fas fa-folder" />
-        )}{' '}
-        <span>{b}</span>
-        {openedBookmark === b && (
-          <Dropdown>
-            <DropdownList>
-              {categories[b] &&
-                categories[b].map(p => (
-                  <li
-                    key={key()}
-                    role="presentation"
-                    onClick={() => this.setState({ project: projects[p.id], currentIndex: p.id })}
-                  >
-                    {p.name}
-                  </li>
-                ))}
-            </DropdownList>
-          </Dropdown>
-        )}
-      </div>
-    ));
+    const output = ['Frontend', 'Backend', 'Fullstack'].map(b => {
+      const className = b === project.type ? 'bookmark actualStack' : 'bookmark';
+      return (
+        <div
+          className={className}
+          key={key()}
+          role="presentation"
+          onClick={
+            categories[b] && categories[b].length !== 0
+              ? e => this.toggleBookmark(e, b)
+              : e => this.toggleBookmark(e, '')
+          }
+        >
+          {categories[b] && categories[b].length !== 0 ? (
+            <i className="fas fa-folder-open" />
+          ) : (
+            <i className="fas fa-folder" />
+          )}{' '}
+          <span>{b}</span>
+          {openedBookmark === b && (
+            <Dropdown>
+              <DropdownList>
+                {categories[b] &&
+                  categories[b].map(p => (
+                    <li
+                      key={key()}
+                      role="presentation"
+                      onClick={() => this.setState({ project: projects[p.id], currentIndex: p.id })}
+                    >
+                      {p.name}
+                    </li>
+                  ))}
+              </DropdownList>
+            </Dropdown>
+          )}
+        </div>
+      );
+    });
 
     return <BrowserBookmarks>{output}</BrowserBookmarks>;
   };

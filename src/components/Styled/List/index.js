@@ -97,9 +97,8 @@ export const TechListItem = styled.li`
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 0.1rem;
-  font-weight: 500;
-  background: ${props => (props.hot ? '#2447F9' : 'none')};
-  color: ${props => (props.hot ? '#fff' : '#090909')};
+  font-weight: ${props => (props.hot ? 'bold' : 'normal')};
+  color: ${props => (props.hot ? '#2447F9' : '#090909')};
   border: 1px solid ${props => (props.hot ? '#2447F9' : '#090909')};
   -webkit-transition: all 0.1s ease-in-out, 1s;
   -moz-transition: all 0.1s ease-in-out, 1s;

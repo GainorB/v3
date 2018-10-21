@@ -24,7 +24,7 @@ const Feed = () => (
         <li>PostgreSQL</li>
       </UnorderedList>
     </div>
-    <div className="focusedOn">
+    {/* <div className="focusedOn">
       <SideMenuSectionTitle>Focused On</SideMenuSectionTitle>
       <UnorderedList>
         <li>React.js</li>
@@ -32,7 +32,7 @@ const Feed = () => (
         <li>TypeScript</li>
         <li>Apollo</li>
       </UnorderedList>
-    </div>
+    </div> */}
     <div className="github">
       <Github />
     </div>

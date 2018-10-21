@@ -21,6 +21,7 @@ export const PageWrapper = styled.div`
     position: absolute;
     grid-area: 'main';
     max-height: 100vh;
+    min-width: 100%;
     left: ${props => (props.showSideMenu ? `0` : `-400px`)};
     -moz-transition: left 0.6s linear;
     transition: left 0.6s linear;
