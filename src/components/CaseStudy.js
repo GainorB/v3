@@ -20,7 +20,7 @@ import {
 } from '../components/Styled';
 import Loading from '../utils/Loading';
 import ErrorMessage from '../utils/ErrorMessage';
-import { removeUnderline, key } from '../utils';
+import { removeUnderline, key, removeWhiteSpace } from '../utils';
 import RenderTechnologies from '../utils/RenderTechnologies';
 import api from '../api';
 import ReturnHome from '../utils/ReturnHome';
@@ -32,12 +32,6 @@ class CaseStudy extends PureComponent {
     toggle: PropTypes.func.isRequired,
     showSideMenu: PropTypes.bool.isRequired,
   };
-
-  constructor(props) {
-    super(props);
-
-    this.timeOutId = null;
-  }
 
   state = {
     project: null,
@@ -69,7 +63,7 @@ class CaseStudy extends PureComponent {
   componentDidUpdate(prevProps, prevState) {
     const { currentIndex, projects } = this.state;
     if (prevState.currentIndex !== currentIndex && prevState.currentIndex !== null) {
-      this.props.history.push(`/case-study/${currentIndex}/${projects[currentIndex].name}`);
+      this.props.history.push(`/case-study/${currentIndex}/${removeWhiteSpace(projects[currentIndex].name)}`);
     }
   }
 

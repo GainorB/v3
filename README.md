@@ -1,43 +1,51 @@
-# Gainor Bostwick's Portfolio
+# Gainor.io
+Professional portfolio for me, **Gainor Bostwick**. A Single Page application built with React.js and powered by Google Firebase.  
+1. https://www.gainor.io/
+2. https://www.gainor.codes/
+3. https://www.gainorbostwick.com/
 
-# BUGS
-1. ~~Fix direct routing with React Router in Prod~~
-2.  ~~Fix sidebar grid layout (Stretching)~~
-3. ~~Smooth Scroll on Mobile view~~
-4. Changelog page's width (caused by Absolute positioning)
-    * fixed when page is full width, broken when sideMenu is hidden
-5. ~~Buttons on CaseStudy page aren't clickable in Firefox~~
-6. Click outside DropDown menu should close menu
-7. When menu is hidden on CaseStudy page, it doesn't become responsive
-8. DropdownMenu on mobile
+| **BUGS** |
+| ------------- |
+| ~~Fix direct routing with React Router in Prod~~ |
+| ~~Fix sidebar grid layout (Stretching)~~ |
+| ~~Smooth Scroll on Mobile view~~ |
+| Changelog page's width (caused by Absolute positioning) * fixed when page is full width, broken when sideMenu is hidden |
+| ~~Buttons on CaseStudy page aren't clickable in Firefox~~ |
+| Click outside DropDown menu should close menu |
+| ~~When menu is hidden on CaseStudy page, it doesn't become responsive~~ |
+| ~~DropdownMenu on mobile~~ |
 
-# TODO
-1. ~~Setup Firebase~~
-2. ~~Include Filters for skills~~
-3. ~~Case studies~~
-4. ~~Favicon~~
-5. ~~A page that uses a query param to build a page that displays projects with that technology~~
-6. ~~On Case Study Page, implement a next project or previous project selector~~
-7. ~~Filter Project by skill~~
-8. ~~Loading component~~
-9. ~~Modal for Image Preview~~
-10. ~~Provide AutoComplete when doing Work and Skills search~~
-11. ~~Timestamp EXPERIENCE so it can automatically be sorted instead of using Strings for date~~
-12. ~~For technical Skills, create a tally for the amount of projects using each skill~~
-13. Get recommendations from LinkedIn API
-14. ~~Context API~~
-15. ~~Need to implement some type of state management to track, HOT TECH.~~
-16. ~~Visualize data?~~
-17. Google Analytics
-18. CaseStudy mobile view
 
-# FEATURES
-1.  ~~Redux? 🤔~~
-2. LazyLoading?
-3. Code Split?
+| **TODO** |
+| ------------- |
+| ~~Setup Firebase~~ |
+| ~~Include Filters for skills~~ |
+| ~~Case studies~~ |
+| ~~Favicon~~ |
+| ~~A page that uses a query param to build a page that displays projects with that technology~~ |
+| ~~On Case Study Page, implement a next project or previous project selector~~ |
+| ~~Filter Project by skill~~ |
+| ~~Loading component~~ |
+| ~~Modal for Image Preview~~ |
+| ~~Provide AutoComplete when doing Work and Skills search~~ |
+| ~~Timestamp EXPERIENCE so it can automatically be sorted instead of using Strings for date~~ |
+| ~~For technical Skills, create a tally for the amount of projects using each skill~~ |
+| Get recommendations from LinkedIn API |
+| ~~Context API~~ |
+| ~~Need to implement some type of state management to track, HOT TECH.~~ |
+| ~~Visualize data?~~ |
+| Google Analytics |
+| ~~CaseStudy mobile view~~ |
 
-# TAKE A SECOND LOOK
-1.  Accessibility
-2.  ~~AutoFocus input field when in view~~
-3.  ~~When performing skill search, prevent "jumpiness".~~
-4.  Responsiveness
+| **FEATURES** |
+| ------------- |
+| ~~Redux? 🤔~~ |
+| ~~LazyLoading?~~ |
+| ~~Code Split?~~ |
+
+| **TAKE A SECOND LOOK** |
+| ------------- |
+| Accessibility |
+| ~~AutoFocus input field when in view~~ |
+| ~~When performing skill search, prevent "jumpiness".~~ |
+| Responsiveness 🔥 |
