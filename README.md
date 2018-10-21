@@ -16,6 +16,7 @@ Professional portfolio for me, **Gainor Bostwick**. A Single Page application bu
 | ~~When menu is hidden on CaseStudy page, it doesn't become responsive~~ |
 | ~~DropdownMenu on mobile~~ |
 
+***
 
 | **TODO** |
 | ------------- |
@@ -38,11 +39,15 @@ Professional portfolio for me, **Gainor Bostwick**. A Single Page application bu
 | Google Analytics |
 | ~~CaseStudy mobile view~~ |
 
+***
+
 | **FEATURES** |
 | ------------- |
 | ~~Redux? 🤔~~ |
 | ~~LazyLoading?~~ |
 | ~~Code Split?~~ |
+
+***
 
 | **TAKE A SECOND LOOK** |
 | ------------- |

@@ -5,7 +5,6 @@ import Loading from '../utils/Loading';
 import { UnorderedList, CommitListItem } from '../components/Styled';
 import { key } from '../utils';
 import ErrorMessage from '../utils/ErrorMessage';
-import ReturnHome from '../utils/ReturnHome';
 
 class Commits extends Component {
   state = {
