@@ -57,8 +57,8 @@ export const LoadingImage = styled.div`
   }
 
   img {
-    width: 70px;
-    height: 70px;
+    width: ${props => (props.size ? `${props.size}px` : '70px')};
+    height: ${props => (props.size ? `${props.size}px` : '70px')};
     object-fit: cover;
   }
 `;

@@ -1,13 +1,20 @@
 import React from 'react';
-import { LoadingImage } from '../components/Styled';
+import PropTypes from 'prop-types';
+import { LoadingImage, PerfectlyCentered } from '../components/Styled';
 
 const logo = 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028357/portfolio/logo.jpg';
 
-const Loading = () => (
-  <LoadingImage>
-    <img src={logo} alt="Loading.." />
-    <p>Loading..</p>
-  </LoadingImage>
+const Loading = ({ size }) => (
+  <PerfectlyCentered>
+    <LoadingImage size={size}>
+      <img src={logo} alt="Loading.." />
+      <p>Loading..</p>
+    </LoadingImage>
+  </PerfectlyCentered>
 );
+
+Loading.propTypes = {
+  size: PropTypes.string.isRequired,
+};
 
 export default Loading;
