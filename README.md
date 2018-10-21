@@ -9,6 +9,7 @@
 5. ~~Buttons on CaseStudy page aren't clickable in Firefox~~
 6. Click outside DropDown menu should close menu
 7. When menu is hidden on CaseStudy page, it doesn't become responsive
+8. DropdownMenu on mobile
 
 # TODO
 1. ~~Setup Firebase~~

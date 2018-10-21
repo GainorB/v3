@@ -66,6 +66,10 @@ export const PortfolioWrapper = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 10px;
   padding: 1em;
+
+  @media only screen and (max-width: 1200px) {
+    padding: 1em 0;
+  }
 `;
 
 export const PerfectlyCentered = styled.div`

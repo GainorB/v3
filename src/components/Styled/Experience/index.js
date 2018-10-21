@@ -73,4 +73,7 @@ export const ExpFooter = styled.div`
 
 export const ExpContainer = styled.div`
   padding: 1em;
+  @media only screen and (max-width: 1200px) {
+    padding: 1em 0;
+  }
 `;

@@ -147,6 +147,10 @@ export const Dropdown = styled.div`
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 10;
+
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 export const DropdownList = styled.ul`
@@ -175,7 +179,7 @@ export const ProjectTitle = styled.div`
   margin-top: 10px;
 
   @media only screen and (max-width: 1200px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 `;
 
@@ -186,7 +190,7 @@ export const ProjectHeadline = styled.div`
   color: #616161;
 
   @media only screen and (max-width: 1200px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;
 
