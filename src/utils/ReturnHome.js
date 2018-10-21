@@ -1,13 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { GoHome } from '../components/Styled';
 
-const ReturnHome = () => (
+const ReturnHome = props => (
   <GoHome>
-    <Link to="/">
+    <button onClick={() => props.history.push('/')}>
       <i className="fas fa-home" />
-    </Link>
+    </button>
   </GoHome>
 );
 
-export default ReturnHome;
+ReturnHome.propTypes = {
+  history: PropTypes.object.isRequired,
+};
+
+export default withRouter(ReturnHome);

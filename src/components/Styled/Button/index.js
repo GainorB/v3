@@ -67,16 +67,18 @@ export const NewProjectButton = styled(Button)`
   }
 `;
 
-export const GoHome = styled.button`
-  display: block;
-  font-size: 2rem;
-  color: #090909;
-  transition: 500ms color;
-  background: none;
-  border: none;
-  margin: 10px auto;
+export const GoHome = styled.div`
+  button {
+    display: block;
+    font-size: 2rem;
+    color: #090909;
+    transition: 500ms color;
+    background: none;
+    border: none;
+    margin: 10px auto;
+  }
 
-  &:hover {
+  button:hover {
     cursor: pointer;
   }
 `;
