@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import SocialIcons from '../utils/SocialIcons';
 import { Foot, FooterFinePrint } from './Styled';
 
 const date = new Date();
@@ -12,9 +11,6 @@ const Footer = () => (
       <span className="footer__changelog">
         <Link to="/changelog">— Changelog</Link>
       </span>
-      {/* <span className="footer__more">
-        <Link to="/more">More Information regarding webpage</Link>
-      </span> */}
     </p>
 
     <FooterFinePrint>
@@ -38,7 +34,6 @@ const Footer = () => (
         .
       </p>
     </FooterFinePrint>
-    {/* <SocialIcons /> */}
   </Foot>
 );
 

@@ -24,7 +24,6 @@ import ProgressRoute from './utils/ProgressRoute';
 
 // CSS
 import { PageWrapper, Nav, ResponsiveNav, NavItem, ResponsiveNavItem, ResponsiveNavSocial } from './components/Styled';
-import '../assets/styles/fade.css';
 import { key } from './utils';
 
 class App extends Component {

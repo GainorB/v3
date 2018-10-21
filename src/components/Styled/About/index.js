@@ -9,7 +9,6 @@ export const Me = styled.div`
   background: #fff;
   font-size: 1.7rem;
   line-height: 1.6;
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   margin: 0;
 
   .developedWith {
@@ -22,7 +21,6 @@ export const Me = styled.div`
     font-weight: bold;
     letter-spacing: -0.026em;
     margin: 0;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   }
 
   a:link {

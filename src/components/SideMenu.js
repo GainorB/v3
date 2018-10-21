@@ -7,7 +7,7 @@ import { ContactListItem, UnorderedList, SideMenu, SideMenuSectionTitle } from '
 import { Logo } from '../utils/Logo';
 import { key } from '../utils';
 
-const techStack = ['react.js', 'apollo', 'express.js', 'node.js', 'graphql', 'postgresql'];
+const techStack = ['React.js', 'Apollo', 'Express.js', 'Node.js', 'GraphQL', 'PostgreSQL'];
 
 const Feed = () => (
   <SideMenu>
@@ -22,7 +22,7 @@ const Feed = () => (
       <UnorderedList>
         {techStack.map(t => (
           <li className="techStack" key={key()}>
-            <Link to={`/projects?tech=${t}`}>{t}</Link>
+            <Link to={`/projects?tech=${t.toLowerCase()}`}>{t}</Link>
           </li>
         ))}
       </UnorderedList>
@@ -42,12 +42,8 @@ const Feed = () => (
     <div className="resume">
       <SideMenuSectionTitle>My Resume</SideMenuSectionTitle>
       <UnorderedList>
-        <a
-          href="https://github.com/GainorB/v3/blob/master/static/GainorBostwickResume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <ContactListItem network="resume">
+        <a href="https://www.gainor.io/GainorBostwickResume.pdf" target="_blank" rel="noopener noreferrer">
+          <ContactListItem network="resume" color="#fcc846">
             <i className="fas fa-user-tie" />
           </ContactListItem>
         </a>

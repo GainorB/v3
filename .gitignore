@@ -3,6 +3,7 @@
 /node_modules
 /build
 firebase
+assets/images
 
 # environments
 .env

@@ -24,15 +24,10 @@ export const SocialIconsWrapper = styled.div`
 
 export const SocialIcon = styled.span`
   i {
-    opacity: 0.5;
     transition: all 500ms;
     padding: 10px;
     font-size: 1.7rem;
-    ${props => props.resume && `color: #fcc846`};
-    ${props => props.linkedin && `color: #0577b2`};
-    ${props => props.email && `color: #ba4444`};
-    ${props => props.github && `color: #fff`};
-    ${props => props.twitter && `color: #1e95dc`};
+    ${props => props.network && `color: ${props.color}`};
   }
 
   i:hover {

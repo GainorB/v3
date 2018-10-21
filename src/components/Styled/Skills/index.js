@@ -7,7 +7,6 @@ export const Skill = styled.div`
   grid-gap: 10px;
   padding: 1em;
   border: 1px solid #dbe2e8;
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   transition: box-shadow 0.7s ease, border 0.7s ease;
   -webkit-transition: box-shadow 0.7s ease, border 0.7s ease;
   ${props =>

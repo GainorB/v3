@@ -1,14 +1,16 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Commits from '../api/Commits';
 import { PageHeader } from '../components/Styled';
+import ReturnHome from '../utils/ReturnHome';
 
 const Changelog = () => (
-  <Fragment>
+  <div style={{ padding: '20px' }}>
     <PageHeader>
       <span className="title">Changelog</span>
     </PageHeader>
+    <ReturnHome />
     <Commits />
-  </Fragment>
+  </div>
 );
 
 export default Changelog;

@@ -49,12 +49,7 @@ class Commits extends Component {
     const { response, loading, error } = this.state;
     if (error) return <ErrorMessage error={error} />;
     if (loading) return <Loading />;
-    return (
-      <div>
-        {this.parseCommits(response)}
-        <ReturnHome />
-      </div>
-    );
+    return this.parseCommits(response);
   }
 }
 
