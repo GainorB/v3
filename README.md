@@ -8,6 +8,7 @@
     * fixed when page is full width, broken when sideMenu is hidden
 5. ~~Buttons on CaseStudy page aren't clickable in Firefox~~
 6. Click outside DropDown menu should close menu
+7. When menu is hidden on CaseStudy page, it doesn't become responsive
 
 # TODO
 1. ~~Setup Firebase~~
