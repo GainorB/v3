@@ -28,6 +28,9 @@ export const ExpGrid = styled.div`
 
   @media only screen and (max-width: 1200px) {
     font-size: 1rem;
+    border: none;
+    border-top: 2px solid #090909;
+    border-bottom: 2px solid #090909;
   }
 `;
 

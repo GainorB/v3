@@ -12,7 +12,6 @@ export const PageHeader = styled.div`
   .title {
     color: #090909;
     text-align: center;
-    white-space: nowrap;
     font-weight: bold;
   }
 
@@ -22,6 +21,11 @@ export const PageHeader = styled.div`
   }
 
   @media only screen and (max-width: 1200px) {
-    font-size: 2rem;
+    font-size: 1.7rem;
+
+    .tech {
+      padding: 0;
+      border: none;
+    }
   }
 `;
