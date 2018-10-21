@@ -263,11 +263,8 @@ class CaseStudy extends PureComponent {
 
   render() {
     const { project, loading, error } = this.state;
-    if (loading) {
-      return <Loading />;
-    } else if (error) {
-      return <ErrorMessage error={error} />;
-    }
+    if (error) return <ErrorMessage error={error} />;
+    if (loading) return <Loading />;
     return this.renderProject(project);
   }
 }

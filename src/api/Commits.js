@@ -19,7 +19,7 @@ class Commits extends Component {
     if (data.length > 5) {
       this.setState({ response: data, loading: false });
     } else {
-      this.setState({ error: 'API Error', loading: false });
+      this.setState({ error: 'API Error: please try again shortly.', loading: false });
     }
   };
 

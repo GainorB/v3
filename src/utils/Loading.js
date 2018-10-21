@@ -6,6 +6,7 @@ const logo = 'https://res.cloudinary.com/dplvzflkc/image/upload/v1536028357/port
 const Loading = () => (
   <LoadingImage>
     <img src={logo} alt="Loading.." />
+    <p>Loading..</p>
   </LoadingImage>
 );
 

@@ -4,7 +4,8 @@
 1. ~~Fix direct routing with React Router in Prod~~
 2.  ~~Fix sidebar grid layout (Stretching)~~
 3. ~~Smooth Scroll on Mobile view~~
-4. ~~Changelog page's width (caused by Absolute positioning)~~
+4. Changelog page's width (caused by Absolute positioning)
+    * fixed when page is full width, broken when sideMenu is hidden
 5. ~~Buttons on CaseStudy page aren't clickable in Firefox~~
 6. Click outside DropDown menu should close menu
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SideMenu = styled.div`
   display: grid;
   position: fixed;
-  grid-template-rows: repeat(6, auto);
+  grid-template-rows: repeat(5, auto);
   grid-row-gap: 15px;
   padding: 40px 20px;
   font-size: 0.9rem;
@@ -100,6 +100,5 @@ export const SideMenuBio = styled.div`
   user-select: none;
   margin: 0.5em 0em;
   font-size: 1rem;
-  font-style: italic;
   padding: 10px;
 `;

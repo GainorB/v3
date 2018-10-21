@@ -4,7 +4,7 @@ export const BrowserHeader = styled.div`
   display: flex;
   align-items: center;
   padding: 10px;
-  background: #303030;
+  background-color: #272c33;
 
   .dot {
     margin-right: 4px;
@@ -217,10 +217,10 @@ export const ProjectHeader = styled.h1`
   font-size: 1rem;
   padding: 10px;
   margin: 0;
-  color: #616161;
+  color: #ffffff;
   font-weight: normal;
   text-align: center;
-  background-color: #f5f5f5;
+  background-color: #272c33;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12) inset;
 `;
 
@@ -244,6 +244,7 @@ export const Project = styled.div`
   -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
   font-size: 0.9rem;
+  margin: ${props => (props.margin ? '10px 10px 0 10px' : '')};
 
   .techFeature {
     border-bottom: 1px solid #e9ecef;

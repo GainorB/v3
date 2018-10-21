@@ -5,6 +5,7 @@ import { SideMenuBio } from '../components/Styled';
 class MyBio extends Component {
   state = {
     loadingBio: true,
+    error: false,
     bio: '',
   };
 
@@ -15,11 +16,16 @@ class MyBio extends Component {
   fetchBio = async () => {
     const ENDPOINT = 'https://api.github.com/users/GainorB';
     const { bio } = await fetch(ENDPOINT).then(res => res.json());
-    this.setState({ bio, loadingBio: false });
+    if (bio) {
+      this.setState({ bio, loadingBio: false, error: false });
+    } else {
+      this.setState({ error: true });
+    }
   };
 
   render() {
-    const { loadingBio, bio } = this.state;
+    const { loadingBio, bio, error } = this.state;
+    if (error) return null;
     if (loadingBio) return <Loading />;
     return <SideMenuBio>{bio}</SideMenuBio>;
   }

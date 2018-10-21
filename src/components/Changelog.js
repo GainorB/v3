@@ -5,7 +5,7 @@ import { PageHeader } from '../components/Styled';
 const Changelog = () => (
   <Fragment>
     <PageHeader>
-      <span>Changelog</span>
+      <span className="title">Changelog</span>
     </PageHeader>
     <Commits />
   </Fragment>

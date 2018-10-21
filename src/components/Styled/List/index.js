@@ -4,6 +4,10 @@ export const UnorderedList = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
+
+  .techStack a {
+    text-transform: capitalize;
+  }
 `;
 
 // GET IN TOUCH BUTTONS
@@ -20,13 +24,13 @@ export const ContactListItem = styled.li`
   transition: all 0.1s ease-in-out, 1s;
   margin: 0.4em 0;
   padding: 1em;
-  ${props => props.twitter && 'color: #1E95DC'};
-  ${props => props.instagram && 'color: #B13DAC'};
-  ${props => props.github && 'color: #24292E'};
-  ${props => props.linkedin && 'color: #0577B2'};
-  ${props => props.stack && 'color: #F38134'};
-  ${props => props.email && 'color: #ba4444'};
-  ${props => props.resume && 'color: #fcc846'};
+  ${props => (props.network === 'twitter' ? 'color: #1E95DC' : '')};
+  ${props => (props.network === 'instagram' ? 'color: #B13DAC' : '')};
+  ${props => (props.network === 'github' ? 'color: #24292E' : '')};
+  ${props => (props.network === 'linkedin' ? 'color: #0577B2' : '')};
+  ${props => (props.network === 'stack' ? 'color: #F38134' : '')};
+  ${props => (props.network === 'email' ? 'color: #ba4444' : '')};
+  ${props => (props.network === 'resume' ? 'color: #fcc846' : '')};
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.1);
 
   i {
@@ -36,13 +40,13 @@ export const ContactListItem = styled.li`
   &:hover {
     cursor: pointer;
     color: #fff;
-    ${props => props.twitter && 'background: #1E95DC'};
-    ${props => props.instagram && 'background: #B13DAC'};
-    ${props => props.github && 'background: #24292E'};
-    ${props => props.linkedin && 'background: #0577B2'};
-    ${props => props.stack && 'background: #F38134'};
-    ${props => props.email && 'background: #ba4444'};
-    ${props => props.resume && 'background: #fcc846'};
+    ${props => (props.network === 'twitter' ? 'background: #1E95DC' : '')};
+    ${props => (props.network === 'instagram' ? 'background: #B13DAC' : '')};
+    ${props => (props.network === 'github' ? 'background: #24292E' : '')};
+    ${props => (props.network === 'linkedin' ? 'background: #0577B2' : '')};
+    ${props => (props.network === 'stack' ? 'background: #F38134' : '')};
+    ${props => (props.network === 'email' ? 'background: #ba4444' : '')};
+    ${props => (props.network === 'resume' ? 'background: #fcc846' : '')};
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
   }
 `;

@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MyBio from '../api/Bio';
 import Github from '../api/Github';
 import GetInTouch from './GetInTouch';
 import { ContactListItem, UnorderedList, SideMenu, SideMenuSectionTitle } from './Styled';
 import { Logo } from '../utils/Logo';
+import { key } from '../utils';
+
+const techStack = ['react.js', 'apollo', 'express.js', 'node.js', 'graphql', 'postgresql'];
 
 const Feed = () => (
   <SideMenu>
@@ -16,12 +20,11 @@ const Feed = () => (
     <div className="toolSet">
       <SideMenuSectionTitle>Stack</SideMenuSectionTitle>
       <UnorderedList>
-        <li>React.js</li>
-        <li>Apollo</li>
-        <li>Express.js</li>
-        <li>Node.js</li>
-        <li>GraphQL</li>
-        <li>PostgreSQL</li>
+        {techStack.map(t => (
+          <li className="techStack" key={key()}>
+            <Link to={`/projects?tech=${t}`}>{t}</Link>
+          </li>
+        ))}
       </UnorderedList>
     </div>
     {/* <div className="focusedOn">
@@ -40,12 +43,12 @@ const Feed = () => (
       <SideMenuSectionTitle>My Resume</SideMenuSectionTitle>
       <UnorderedList>
         <a
-          href="https://drive.google.com/file/d/1SlXfoCp6r9FLhnv6xEieI5C768Fqsr_Q/view?usp=sharing"
+          href="https://github.com/GainorB/v3/blob/master/static/GainorBostwickResume.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ContactListItem resume>
-            <i className="fas fa-briefcase" />
+          <ContactListItem network="resume">
+            <i className="fas fa-user-tie" />
           </ContactListItem>
         </a>
       </UnorderedList>

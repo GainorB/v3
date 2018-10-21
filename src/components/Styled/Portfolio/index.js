@@ -18,7 +18,7 @@ export const ProjectGrid = styled.div`
     display: flex;
     align-items: center;
     padding: 10px;
-    background: #303030;
+    background-color: #272c33;
   }
 
   .dot {

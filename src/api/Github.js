@@ -25,15 +25,14 @@ class Github extends PureComponent {
         profile: { id, public_repos, followers, following, updated_at },
       });
     } else {
-      this.setState({ error: 'API Error' });
+      this.setState({ error: true });
     }
   };
 
   recentRepos = async () => {
     const ENDPOINT = 'https://api.github.com/users/GainorB/repos';
     const repos = await fetch(ENDPOINT).then(res => res.json());
-
-    if (repos.length) {
+    if (repos.length >= 0) {
       const myRepos = repos.filter(r => r.fork === false).map(r => ({
         name: r.name,
         created_at: r.created_at,
@@ -47,13 +46,23 @@ class Github extends PureComponent {
         myRepos,
       });
     } else {
-      this.setState({ error: 'API Error' });
+      this.setState({ error: true });
     }
+  };
+
+  notSoRandomRepo = repos => {
+    const random = Math.floor(Math.random() * repos.length);
+
+    return (
+      <a href={repos[random].url} target="_blank" rel="noopener noreferrer">
+        <span>{repos[random].name}</span>
+        <div>{repos[random].description === null ? `Repo doesn't have a description` : repos[random].description}</div>
+      </a>
+    );
   };
 
   render() {
     const { loadingProfile, loadingRepos, profile, myRepos, error } = this.state;
-    const random = Math.floor(Math.random() * myRepos.length);
     if (error) return null;
     if (loadingProfile || loadingRepos) {
       return <Loading />;
@@ -78,16 +87,7 @@ class Github extends PureComponent {
                 Following {profile.following} cool devs
               </a>
             </li> */}
-            <li>
-              <a href={myRepos[random].url} target="_blank" rel="noopener noreferrer">
-                <span>{myRepos[random].name}</span>
-                <div>
-                  {myRepos[random].description === null
-                    ? `Repo doesn't have a description`
-                    : myRepos[random].description}
-                </div>
-              </a>
-            </li>
+            <li>{this.notSoRandomRepo(myRepos)}</li>
           </UnorderedList>
         </SideMenuHub>
       </Fragment>

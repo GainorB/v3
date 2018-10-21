@@ -6,17 +6,19 @@ export const PageHeader = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  font-weight: bold;
   background: none;
-  min-height: 200px;
+  min-height: 150px;
 
-  span {
-    padding: 15px 25px;
-    background: #090909;
-    color: #fff;
-    transition: 500ms color;
+  .title {
+    color: #090909;
     text-align: center;
     white-space: nowrap;
+    font-weight: bold;
+  }
+
+  .tech {
+    border-bottom: 2px solid #090909;
+    padding-bottom: 5px;
   }
 
   @media only screen and (max-width: 1200px) {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
-import { Link } from 'react-router-dom';
 import { flattenDeep } from 'lodash';
 import PropTypes from 'prop-types';
 import { PageHeader, ProjectContent, Project, ProjectHeader } from '../components/Styled';
@@ -70,19 +69,18 @@ export default class ProjectsPerTech extends Component {
     return (
       <div>
         <PageHeader>
-          <Link to="/">
-            <span>{query}</span>
-          </Link>
+          <span className="title">
+            powered with <span className="tech">{query}</span>
+          </span>
         </PageHeader>
-        <Project>
+        <ReturnHome />
+        <Project margin>
           <ProjectHeader>Find more projects using</ProjectHeader>
           <ProjectContent>
             <RenderTechnologies technologies={techUsed} />
           </ProjectContent>
         </Project>
-        <ProjectHeader>Projects powered with {query} </ProjectHeader>
         <RenderProjects projects={projectsPerTech} />
-        <ReturnHome />
       </div>
     );
   }

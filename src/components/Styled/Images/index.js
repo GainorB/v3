@@ -51,16 +51,19 @@ const fadeInAndOut = keyframes`
 `;
 
 export const LoadingImage = styled.div`
-  display: block;
-  animation: ${fadeInAndOut} 2s linear infinite;
-  margin: 0 auto;
-  text-align: center;
-  width: 50px;
-  height: 50px;
+  animation: ${fadeInAndOut} 2s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 1rem;
+  }
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 70px;
+    height: 70px;
     object-fit: cover;
   }
 `;

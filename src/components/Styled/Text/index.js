@@ -35,4 +35,5 @@ export const Error = styled.div`
   font-weight: bold;
   text-align: center;
   color: #df3939;
+  margin: 10px;
 `;
