@@ -62,6 +62,11 @@ class App extends Component {
   componentDidMount = () => {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
+    const spinner = document.getElementById('spinner');
+
+    if (spinner && !spinner.hasAttribute('hidden')) {
+      spinner.setAttribute('hidden', 'true');
+    }
   };
 
   componentWillUnmount() {
