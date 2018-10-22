@@ -69,8 +69,25 @@ export const CommitListItem = styled.li`
   .commit__date {
     display: block;
     margin-top: 5px;
-    font-style: italic;
     font-size: 0.9rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 1rem;
+    text-align: center;
+    grid-template-columns: 1fr;
+
+    .commit__current {
+      font-size: 1rem;
+    }
+
+    .commit__index {
+      font-size: 2rem;
+    }
+
+    .commit__date {
+      font-size: 0.8rem;
+    }
   }
 `;
 

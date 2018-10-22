@@ -28,7 +28,7 @@ const Footer = () => (
       </p>
       <p>
         Take a peak{' '}
-        <a href="https://github.com/GainorB/v3" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/GainorB/gainorio" target="_blank" rel="noopener noreferrer">
           under the hood
         </a>
         .

@@ -104,7 +104,7 @@ export const ResponsiveNav = styled.ul`
     grid-template-columns: 120px 1fr 75px;
     align-items: center;
     color: #090909;
-    padding: 2em;
+    padding: 0.5em 2em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   }
 
@@ -138,7 +138,7 @@ export const ResponsiveNav = styled.ul`
 `;
 
 export const ResponsiveNavItem = styled.li`
-  padding: 20px;
+  padding: 15px;
   display: inline-block;
   font-weight: ${props => (props.isActive ? 'bold' : 'none')};
   color: ${props => (props.isActive ? '#2649f0' : '#fff')};
@@ -147,8 +147,6 @@ export const ResponsiveNavItem = styled.li`
   transition: all 0.1s;
   font-size: 20px;
   text-transform: lowercase;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
   width: 100%;
   text-align: center;
   position: relative;
@@ -163,5 +161,5 @@ export const ResponsiveNavItem = styled.li`
 export const ResponsiveNavSocial = styled.div`
   background: #090909;
   text-align: center;
-  padding: 10px;
+  padding: 0 10px;
 `;

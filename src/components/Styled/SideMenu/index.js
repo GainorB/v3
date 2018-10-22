@@ -40,7 +40,13 @@ export const SideMenu = styled.div`
   .focusedOn li,
   .toolSet li {
     border-bottom: 1px solid #e9ecef;
+    transition: border-bottom 500ms;
     padding: 5px 0px;
+  }
+
+  .focusedOn li:hover,
+  .toolSet li:hover {
+    border-bottom: 1px solid #3249f0;
   }
 
   .title {
@@ -69,16 +75,10 @@ export const SideMenuHub = styled.li`
   margin: 0.5em 0;
   border: 1px solid #eff0f5;
   box-shadow: 3px 3px 0px #bababa;
-  transition: all 500ms;
 
   li {
     border-bottom: 1px solid #e9ecef;
     padding: 10px 0px;
-    transition: border-bottom 500ms;
-  }
-
-  li:hover {
-    border-bottom: 1px solid #3249f0;
   }
 
   &:hover {

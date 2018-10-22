@@ -21,7 +21,7 @@ const Feed = () => (
       <SideMenuSectionTitle>Stack</SideMenuSectionTitle>
       <UnorderedList>
         {techStack.map(t => (
-          <li className="techStack" key={key()}>
+          <li key={key()}>
             <Link to={`/projects?tech=${t.toLowerCase()}`}>{t}</Link>
           </li>
         ))}
