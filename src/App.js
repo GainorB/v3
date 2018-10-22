@@ -25,7 +25,6 @@ import ProgressRoute from './utils/ProgressRoute';
 // CSS
 import { PageWrapper, Nav, ResponsiveNav, NavItem, ResponsiveNavItem, ResponsiveNavSocial } from './components/Styled';
 import { key } from './utils';
-import Loading from './utils/Loading';
 
 class App extends Component {
   static propTypes = {
@@ -58,13 +57,11 @@ class App extends Component {
     showMenu: false,
     showSideMenu: true,
     windowWidth: 0,
-    loading: true,
   };
 
   componentDidMount = () => {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
-    setTimeout(() => this.setState({ loading: false }), 1000);
   };
 
   componentWillUnmount() {
@@ -150,8 +147,7 @@ class App extends Component {
   );
 
   render() {
-    const { showSideMenu, loading } = this.state;
-    if (loading) return <Loading size="100px" />;
+    const { showSideMenu } = this.state;
     return (
       <PageWrapper showSideMenu={showSideMenu}>
         <div className="relativelyPositioned">
