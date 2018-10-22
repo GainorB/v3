@@ -57,7 +57,7 @@ export const AboutWrapper = styled.div`
   margin-top: 99px;
 
   @media only screen and (max-width: 1200px) {
-    margin-top: 213px;
+    margin-top: 182px;
   }
 `;
 
