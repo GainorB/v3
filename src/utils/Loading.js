@@ -14,7 +14,11 @@ const Loading = ({ size }) => (
 );
 
 Loading.propTypes = {
-  size: PropTypes.string.isRequired,
+  size: PropTypes.string,
+};
+
+Loading.defaultProps = {
+  size: '70px',
 };
 
 export default Loading;
