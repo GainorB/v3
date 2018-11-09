@@ -35,7 +35,7 @@ Professional portfolio for me, **Gainor Bostwick**. A Single Page application bu
 | ~~Context API~~ |
 | ~~Need to implement some type of state management to track, HOT TECH.~~ |
 | ~~Visualize data?~~ |
-| Google Analytics |
+| ~~Google Analytics~~ |
 | ~~CaseStudy mobile view~~ |
 
 
