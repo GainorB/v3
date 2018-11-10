@@ -69,6 +69,7 @@ export const NewProjectButton = styled(Button)`
 
 export const GoHome = styled.div`
   button {
+    cursor: pointer;
     display: block;
     font-size: 2rem;
     color: #090909;
@@ -76,9 +77,5 @@ export const GoHome = styled.div`
     background: none;
     border: none;
     margin: 10px auto;
-  }
-
-  button:hover {
-    cursor: pointer;
   }
 `;

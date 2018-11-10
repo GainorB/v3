@@ -41,6 +41,7 @@ class CaseStudy extends PureComponent {
     error: null,
     windowWidth: 0,
     openedBookmark: '',
+    imageIndex: 0,
   };
 
   componentDidMount = async () => {
@@ -98,20 +99,32 @@ class CaseStudy extends PureComponent {
   newProject = dir => {
     let { currentIndex } = this.state;
     const { projects } = this.state;
-    const max = projects.length;
-    if (currentIndex !== max || currentIndex !== -1) {
-      switch (dir) {
-        case 'next':
-          currentIndex += 1;
-          break;
-        case 'prev':
-          currentIndex -= 1;
-          break;
-        default:
-          break;
-      }
-      this.setState({ project: projects[currentIndex], currentIndex });
+    switch (dir) {
+      case 'next':
+        currentIndex += 1;
+        break;
+      case 'prev':
+        currentIndex -= 1;
+        break;
+      default:
+        break;
     }
+    this.setState({ project: projects[currentIndex], currentIndex });
+  };
+
+  newImage = dir => {
+    let { imageIndex } = this.state;
+    switch (dir) {
+      case 'next':
+        imageIndex += 1;
+        break;
+      case 'prev':
+        imageIndex -= 1;
+        break;
+      default:
+        break;
+    }
+    this.setState({ imageIndex });
   };
 
   renderCategories = projects => {
@@ -161,7 +174,7 @@ class CaseStudy extends PureComponent {
   };
 
   renderProject = project => {
-    const { projects, currentIndex, windowWidth } = this.state;
+    const { projects, currentIndex, windowWidth, imageIndex } = this.state;
     const { toggle, showSideMenu } = this.props;
 
     return (
@@ -241,11 +254,22 @@ class CaseStudy extends PureComponent {
               <ProjectHeader>Gallery</ProjectHeader>
               <ProjectContent>
                 <ProjectGallery>
-                  {project.gallery.map(p => (
-                    <div key={key()}>
-                      <img src={p} alt={project.name} />
+                  <button onClick={() => this.newImage('prev')} disabled={imageIndex === 0}>
+                    {imageIndex === 0 ? <i className="fas fa-ban" /> : <i className="fas fa-angle-double-left" />}
+                  </button>
+                  <div>
+                    <img src={project.gallery[imageIndex]} alt={project.name} />
+                    <div className="gallery__count">
+                      ({imageIndex}/{project.gallery.length - 1})
                     </div>
-                  ))}
+                  </div>
+                  <button onClick={() => this.newImage('next')} disabled={imageIndex === project.gallery.length - 1}>
+                    {imageIndex === project.gallery.length - 1 ? (
+                      <i className="fas fa-ban" />
+                    ) : (
+                      <i className="fas fa-angle-double-right" />
+                    )}
+                  </button>
                 </ProjectGallery>
               </ProjectContent>
             </Project>

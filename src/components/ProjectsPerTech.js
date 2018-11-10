@@ -69,9 +69,8 @@ export default class ProjectsPerTech extends Component {
     return (
       <div>
         <PageHeader>
-          <span className="title">
-            powered with <span className="tech">{query}</span>
-          </span>
+          <span className="poweredWith">powered with</span>
+          <span className="tech">{query}</span>
         </PageHeader>
         <ReturnHome />
         <Project margin>

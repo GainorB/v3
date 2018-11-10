@@ -9,15 +9,16 @@ export const PageHeader = styled.div`
   background: none;
   min-height: 150px;
 
-  .title {
+  .poweredWith {
     color: #090909;
     text-align: center;
-    font-weight: bold;
+    font-size: 1.4rem;
+    letter-spacing: 0.1px;
   }
 
   .tech {
-    border-bottom: 2px solid #090909;
-    padding-bottom: 5px;
+    font-weight: bold;
+    font-style: italic;
   }
 
   @media only screen and (max-width: 1200px) {

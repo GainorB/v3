@@ -177,6 +177,7 @@ export const ProjectTitle = styled.div`
   text-align: center;
   font-weight: bold;
   margin-top: 10px;
+  user-select: none;
 
   @media only screen and (max-width: 1200px) {
     font-size: 2rem;
@@ -188,6 +189,7 @@ export const ProjectHeadline = styled.div`
   text-align: center;
   font-weight: 500;
   color: #616161;
+  user-select: none;
 
   @media only screen and (max-width: 1200px) {
     font-size: 1.2rem;
@@ -198,23 +200,12 @@ export const ProjectDescription = styled.div`
   text-align: center;
   font-size: 1.2rem;
   padding: 0 30px;
-  line-height: 35px;
+  line-height: 30px;
 
   @media only screen and (max-width: 1200px) {
     font-size: 1rem;
   }
 `;
-
-// export const ProjectColumns = styled.div`
-//   display: grid;
-//   grid-template-rows: repeat(2, auto);
-//   grid-gap: 10px;
-
-//   @media only screen and (max-width: 1200px) {
-//     grid-template-columns: 100%;
-//     grid-gap: 5px;
-//   }
-// `;
 
 export const ProjectHeader = styled.h1`
   user-select: none;
@@ -258,17 +249,39 @@ export const Project = styled.div`
 
 export const ProjectGallery = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: 80px 1fr 80px;
+  grid-template-areas: 'prev image next';
   grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
 
-  div {
-    height: 300px;
+  i {
+    font-size: 2rem;
+    color: #090909;
+  }
+
+  button {
+    cursor: pointer;
+    display: block;
+    background: none;
+    border: none;
   }
 
   img {
     width: 100%;
-    height: 100%;
+    height: 500px;
     object-fit: cover;
     border: 1px solid #eff0f5;
+  }
+
+  .gallery__count {
+    user-select: none;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'prev' 'image' 'next';
   }
 `;
