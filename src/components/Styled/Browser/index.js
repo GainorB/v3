@@ -274,10 +274,19 @@ export const ProjectGallery = styled.div`
     border: 1px solid #eff0f5;
   }
 
+  .gallery__caption,
   .gallery__count {
-    user-select: none;
-    font-size: 1.5rem;
     text-align: center;
+    user-select: none;
+  }
+
+  .gallery__caption {
+    font-size: 1.3rem;
+  }
+
+  .gallery__count {
+    font-size: 1rem;
+    margin-bottom: 5px;
   }
 
   @media only screen and (max-width: 1200px) {

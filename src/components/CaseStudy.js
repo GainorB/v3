@@ -258,9 +258,12 @@ class CaseStudy extends PureComponent {
                     {imageIndex === 0 ? <i className="fas fa-ban" /> : <i className="fas fa-angle-double-left" />}
                   </button>
                   <div>
-                    <img src={project.gallery[imageIndex]} alt={project.name} />
                     <div className="gallery__count">
                       ({imageIndex}/{project.gallery.length - 1})
+                    </div>
+                    <img src={project.gallery[imageIndex].src} alt={project.name} />
+                    <div className="gallery__caption">
+                      {project.gallery[imageIndex].caption === '' ? '' : project.gallery[imageIndex].caption}
                     </div>
                   </div>
                   <button onClick={() => this.newImage('next')} disabled={imageIndex === project.gallery.length - 1}>
