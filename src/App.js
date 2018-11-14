@@ -5,16 +5,18 @@ import { Switch } from 'react-router-dom';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
 // PAGES
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Projects from './components/Projects';
-import About from './components/About';
-import Experience from './components/Experience';
-import SideMenu from './components/SideMenu';
-import Technical from './components/Technical';
-import CaseStudy from './components/CaseStudy';
-import ProjectsPerTech from './components/ProjectsPerTech';
-import Changelog from './components/Changelog';
+import {
+  Contact,
+  Footer,
+  Projects,
+  About,
+  Experience,
+  SideMenu,
+  Technical,
+  CaseStudy,
+  ProjectsPerTech,
+  Changelog,
+} from './components';
 
 // UTILS
 import SocialIcons from './utils/SocialIcons';

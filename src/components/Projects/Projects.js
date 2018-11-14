@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
 import { debounce, flattenDeep, uniq } from 'lodash';
 import { ThemeProvider } from 'styled-components';
-import Select from '../utils/MySelect';
-import { Section, ReturnedResults, Replace } from './Styled';
-import Loading from '../utils/Loading';
-import RenderProjects from '../utils/RenderProjects';
-import api from '../api';
+import Select from '../../utils/MySelect';
+import { Section, ReturnedResults, Replace } from '../Styled';
+import Loading from '../../utils/Loading';
+import RenderProjects from '../../utils/RenderProjects';
+import api from '../../api';
 
 const theme = {
   fontColor: '#fff',

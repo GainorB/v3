@@ -1,6 +1,6 @@
 import React from 'react';
-import { ContactListItem, UnorderedList } from './Styled';
-import { key, mediaLinks } from '../utils';
+import { ContactListItem, UnorderedList } from '../Styled';
+import { key, mediaLinks } from '../../utils';
 
 const GetInTouch = () => (
   <UnorderedList>

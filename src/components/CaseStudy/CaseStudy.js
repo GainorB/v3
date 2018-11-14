@@ -17,13 +17,13 @@ import {
   ProjectDescription,
   Dropdown,
   DropdownList,
-} from '../components/Styled';
-import Loading from '../utils/Loading';
-import ErrorMessage from '../utils/ErrorMessage';
-import { removeUnderline, key, removeWhiteSpace } from '../utils';
-import RenderTechnologies from '../utils/RenderTechnologies';
-import api from '../api';
-import ReturnHome from '../utils/ReturnHome';
+} from '../Styled';
+import Loading from '../../utils/Loading';
+import ErrorMessage from '../../utils/ErrorMessage';
+import { removeUnderline, key, removeWhiteSpace } from '../../utils';
+import RenderTechnologies from '../../utils/RenderTechnologies';
+import api from '../../api';
+import ReturnHome from '../../utils/ReturnHome';
 
 class CaseStudy extends PureComponent {
   static propTypes = {

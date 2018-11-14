@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import { ThemeProvider } from 'styled-components';
-import Loading from '../utils/Loading';
-import { SectionHeader, Section, ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Styled';
-import { key } from '../utils';
-import api from '../api';
+import Loading from '../../utils/Loading';
+import { SectionHeader, Section, ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from '../Styled';
+import { key } from '../../utils';
+import api from '../../api';
 
 const theme = {
   fontColor: '#fff',

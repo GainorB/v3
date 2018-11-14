@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MyBio from '../api/Bio';
-import Github from '../api/Github';
-import GetInTouch from './GetInTouch';
-import { ContactListItem, UnorderedList, SideMenu, SideMenuSectionTitle } from './Styled';
-import { Logo } from '../utils/Logo';
-import { key } from '../utils';
+import MyBio from '../../api/Bio';
+import Github from '../../api/Github';
+import GetInTouch from '../GetInTouch/GetInTouch';
+import { ContactListItem, UnorderedList, SideMenu, SideMenuSectionTitle } from '../Styled';
+import { Logo } from '../../utils/Logo';
+import { key } from '../../utils';
 
 const techStack = ['React.js', 'Apollo', 'Express.js', 'Node.js', 'GraphQL', 'PostgreSQL'];
 

@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import queryString from 'query-string';
 import { flattenDeep } from 'lodash';
 import PropTypes from 'prop-types';
-import { PageHeader, ProjectContent, Project, ProjectHeader } from '../components/Styled';
-import api from '../api';
-import Loading from '../utils/Loading';
-import NotFound from '../utils/NotFound';
-import { removeUnderline } from '../utils';
-import RenderProjects from '../utils/RenderProjects';
-import RenderTechnologies from '../utils/RenderTechnologies';
-import ReturnHome from '../utils/ReturnHome';
+import { PageHeader, ProjectContent, Project, ProjectHeader } from '../Styled';
+import api from '../../api';
+import Loading from '../../utils/Loading';
+import NotFound from '../../utils/NotFound';
+import { removeUnderline } from '../../utils';
+import RenderProjects from '../../utils/RenderProjects';
+import RenderTechnologies from '../../utils/RenderTechnologies';
+import ReturnHome from '../../utils/ReturnHome';
 
 export default class ProjectsPerTech extends Component {
   static propTypes = {

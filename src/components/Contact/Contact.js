@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { SectionDesc, SectionHeader, Section, Button } from './Styled';
+import { SectionDesc, SectionHeader, Section, Button } from '../Styled';
 
 const theme = {
   fontColor: '#FFFFFF',

@@ -3,12 +3,12 @@ import { debounce, flattenDeep } from 'lodash';
 // import FlipMove from 'react-flip-move';
 import { Link } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import Loading from '../utils/Loading';
-import { Section, Skill, SkillWrapper, ReturnedResults, Replace } from './Styled';
-import { mapTech, key, removeWhiteSpace } from '../utils';
-import Select from '../utils/MySelect';
-import api from '../api';
-import { TallyTech } from '../utils/RenderTechnologies';
+import Loading from '../../utils/Loading';
+import { Section, Skill, SkillWrapper, ReturnedResults, Replace } from '../Styled';
+import { mapTech, key, removeWhiteSpace } from '../../utils';
+import Select from '../../utils/MySelect';
+import api from '../../api';
+import { TallyTech } from '../../utils/RenderTechnologies';
 
 const theme = {
   fontColor: '#fff',

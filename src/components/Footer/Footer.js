@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Foot, FooterFinePrint } from './Styled';
+import { Foot, FooterFinePrint } from '../Styled';
 
 const date = new Date();
 
