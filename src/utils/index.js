@@ -86,6 +86,9 @@ export const mapTech = tech => {
     Cloudinary: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1538272733/portfolio/cloudinary.png', tech },
     Apollo: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1538272913/portfolio/apollo.png', tech },
     Trello: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1539478488/portfolio/trello.png', tech },
+    Jira: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1547686590/portfolio/jira.png', tech },
+    Docker: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1547686590/portfolio/docker.png', tech },
+    Jest: { src: 'https://res.cloudinary.com/dplvzflkc/image/upload/v1547686590/portfolio/jest.png', tech },
   };
 
   return map[tech];
