@@ -4,6 +4,7 @@ export const Skill = styled.div`
   user-select: none;
   display: grid;
   grid-template-rows: 1fr auto;
+  min-height: 140px;
   grid-gap: 10px;
   padding: 1em;
   border: 1px solid #dbe2e8;
