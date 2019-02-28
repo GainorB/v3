@@ -103,14 +103,7 @@ module.exports = {
         minifyURLs: true,
       },
     }),
-    new SWPrecacheWebpackPlugin({
-      cacheId: 'gainor.io',
-      dontCacheBustUrlsMatching: /\.\w{8}\./,
-      filename: 'service-worker.js',
-      minify: true,
-      navigateFallback: `${PUBLIC_PATH}index.html`,
-      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
-    }),
+    new SWPrecacheWebpackPlugin(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
