@@ -87,7 +87,7 @@ module.exports = {
       navigateFallback: '/',
       offlineGoogleAnalytics: true,
       navigateFallbackWhitelist: [/^(?!\/__).*/],
-      swDest: `/service-worker.js`,
+      swDest: `service-worker.js`,
       include: [/\.(?:js|css|html|json)$/, /\.(?:png|gif|jpg|jpeg|svg)$/],
       skipWaiting: true,
       clientsClaim: true,
