@@ -6,8 +6,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
+const PUBLIC_PATH = isProduction ? 'https://www.gainor.io/' : '/';
 
 module.exports = {
   // entry file for react
@@ -16,7 +18,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: isProduction ? 'assets/js/[name].[contenthash].js' : 'assets/js/[name].[hash].js',
-    publicPath: '/', // enable in Prod
+    publicPath: PUBLIC_PATH,
   },
   // Enable sourcemaps for debugging webpack's output.
   devtool: !isProduction ? 'source-map' : 'inline-source-map',
@@ -80,6 +82,7 @@ module.exports = {
   },
   // creates the template for the index.html file that react is injected into
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.HashedModuleIdsPlugin(),
     new FriendlyErrorsWebpackPlugin(), // easier to read error messages
     new CleanWebpackPlugin(['dist']), // deletes the build folder in between builds
@@ -99,6 +102,14 @@ module.exports = {
         minifyCSS: true,
         minifyURLs: true,
       },
+    }),
+    new SWPrecacheWebpackPlugin({
+      cacheId: 'gainor.io',
+      dontCacheBustUrlsMatching: /\.\w{8}\./,
+      filename: 'service-worker.js',
+      minify: true,
+      navigateFallback: `${PUBLIC_PATH}index.html`,
+      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
     }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
@@ -123,7 +134,8 @@ module.exports = {
     historyApiFallback: true, // serving index.html in place of any 404s
     disableHostCheck: true, // fix this error: Invalid Host header
     https: false, // enable SSL for localhost environment?
-    port: 3002,
+    port: 4001,
+    hot: true,
     quiet: true, // turns off webpack output including error message because FriendlyErrorsWebpackPlugin is enabled
     // proxy: [
     //   {

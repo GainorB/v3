@@ -18,3 +18,9 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById('app')
 );
+
+(function() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+})();

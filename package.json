@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open --hot",
+    "dev": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
   },
   "keywords": [],
@@ -57,6 +57,7 @@
     "mini-css-extract-plugin": "^0.4.3",
     "prettier": "^1.14.3",
     "style-loader": "^0.20.3",
+    "sw-precache-webpack-plugin": "^0.11.5",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.8",
