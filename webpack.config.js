@@ -88,7 +88,12 @@ module.exports = {
       offlineGoogleAnalytics: true,
       navigateFallbackWhitelist: [/^(?!\/__).*/],
       swDest: `service-worker.js`,
-      include: [/\.(?:js|css|html|json)$/, /\.(?:png|gif|jpg|jpeg|svg)$/],
+      include: [
+        /\.(?:js|css|html|json)$/,
+        /\.(?:png|gif|jpg|jpeg|svg)$/,
+        /^https:\/\/fonts\.googleapis\.com/,
+        /^https:\/\/fonts\.gstatic\.com/,
+      ],
       skipWaiting: true,
       clientsClaim: true,
       cleanupOutdatedCaches: true,
