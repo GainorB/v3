@@ -19,9 +19,9 @@ ReactDOM.render(
   document.getElementById('app')
 );
 
-(function() {
-  if ('serviceWorker' in navigator) {
-    console.log('SW Registered');
-    navigator.serviceWorker.register('service-worker.js');
-  }
-})();
+// (function() {
+//   if ('serviceWorker' in navigator) {
+//     console.log('SW Registered');
+//     navigator.serviceWorker.register('service-worker.js');
+//   }
+// })();
