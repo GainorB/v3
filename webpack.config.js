@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const PUBLIC_PATH = isProduction ? 'https://www.gainor.io/' : '/';
@@ -82,8 +82,16 @@ module.exports = {
   },
   // creates the template for the index.html file that react is injected into
   plugins: [
-    new WorkboxPlugin.InjectManifest({
-      swSrc: './src/sw.js',
+    new GenerateSW({
+      cacheId: 'gainor.io',
+      navigateFallback: '/',
+      offlineGoogleAnalytics: true,
+      navigateFallbackWhitelist: [/^(?!\/__).*/],
+      swDest: `/service-worker.js`,
+      include: [/\.html$/, /\.js$/, /\.jpg$/, /\.png$/],
+      skipWaiting: true,
+      clientsClaim: true,
+      cleanupOutdatedCaches: true,
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.HashedModuleIdsPlugin(),

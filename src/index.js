@@ -22,6 +22,6 @@ ReactDOM.render(
 (function() {
   if ('serviceWorker' in navigator) {
     console.log('SW Registered');
-    navigator.serviceWorker.register('/sw.js');
+    navigator.serviceWorker.register('/service-worker.js');
   }
 })();
