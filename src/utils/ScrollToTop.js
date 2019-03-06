@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import ReactGA from 'react-ga';
 
 ReactGA.initialize('UA-127150520-1');
 
-class ScrollToTop extends Component {
+class ScrollToTop extends React.Component {
   static propTypes = {
     location: PropTypes.object.isRequired,
     children: PropTypes.object.isRequired,

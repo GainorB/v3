@@ -6,6 +6,7 @@ import GetInTouch from '../GetInTouch/GetInTouch';
 import { ContactListItem, UnorderedList, SideMenu, SideMenuSectionTitle } from '../Styled';
 import { Logo } from '../../utils/Logo';
 import { key } from '../../utils';
+import Config from '../../utils/Config';
 
 const techStack = ['React.js', 'Apollo', 'Express.js', 'Node.js', 'GraphQL', 'PostgreSQL'];
 
@@ -13,8 +14,8 @@ const Feed = () => (
   <SideMenu>
     <div className="intro">
       <Logo size="200px" />
-      <p className="name">Gainor Bostwick</p>
-      <p className="title">Full Stack Developer</p>
+      <p className="name">{Config.global.name}</p>
+      <p className="title">{Config.global.title}</p>
       <MyBio />
     </div>
     <div className="toolSet">
@@ -42,11 +43,7 @@ const Feed = () => (
     <div className="resume">
       <SideMenuSectionTitle>My Resume</SideMenuSectionTitle>
       <UnorderedList>
-        <a
-          href="https://www.dropbox.com/s/tdksg2d3qolwb6d/GainorBostwickResume.pdf?dl=0"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={Config.global.resumeLink} target="_blank" rel="noopener noreferrer">
           <ContactListItem network="resume" color="#fcc846">
             <i className="fas fa-user-tie" />
           </ContactListItem>

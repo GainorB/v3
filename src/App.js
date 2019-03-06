@@ -27,6 +27,7 @@ import ProgressRoute from './utils/ProgressRoute';
 // CSS
 import { PageWrapper, Nav, ResponsiveNav, NavItem, ResponsiveNavItem, ResponsiveNavSocial } from './components/Styled';
 import { key } from './utils';
+import Config from './utils/Config';
 
 class App extends Component {
   static propTypes = {
@@ -34,28 +35,6 @@ class App extends Component {
   };
 
   state = {
-    items: [
-      {
-        name: 'About',
-        hash: '#about',
-      },
-      {
-        name: 'Projects',
-        hash: '#projects',
-      },
-      {
-        name: 'Skills',
-        hash: '#skills',
-      },
-      {
-        name: 'Experience',
-        hash: '#exp',
-      },
-      {
-        name: 'Contact',
-        hash: '#contact',
-      },
-    ],
     showMenu: false,
     showSideMenu: true,
     windowWidth: 0,
@@ -89,14 +68,14 @@ class App extends Component {
 
   Navigation = () => {
     const { hash } = this.props.location;
-    const { items, showMenu, showSideMenu } = this.state;
+    const { showMenu, showSideMenu } = this.state;
     return (
       <Fragment>
         <Nav>
           <button onClick={() => this.toggle('showSideMenu')}>
             {showSideMenu ? <i className="fas fa-toggle-on" /> : <i className="fas fa-toggle-off" />}
           </button>
-          {items.map(e => (
+          {Config.global.navigation.navLinks.map(e => (
             <a href={e.hash} key={key()}>
               <NavItem isActive={hash === e.hash}>{e.name}</NavItem>
             </a>
@@ -106,8 +85,8 @@ class App extends Component {
           <div className="responsiveNav__grid">
             <Logo size="100%" />
             <div className="responsiveNav__logo">
-              <span className="responsiveNav__name">Gainor Bostwick</span>
-              <span className="responsiveNav__title">Full Stack Developer</span>
+              <span className="responsiveNav__name">{Config.global.name}</span>
+              <span className="responsiveNav__title">{Config.global.title}</span>
             </div>
             <div className="responsiveNav__menu">
               <button onClick={() => this.toggle('showMenu')}>
@@ -116,7 +95,7 @@ class App extends Component {
             </div>
           </div>
           <div className="responsiveNav__items">
-            {items.map(e => (
+            {Config.global.navigation.navLinks.map(e => (
               <a href={e.hash} key={key()}>
                 <ResponsiveNavItem isActive={hash === e.hash} onClick={() => this.toggle('showMenu')}>
                   {e.name}

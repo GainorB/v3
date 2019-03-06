@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Loading from '../../utils/Loading';
 import { Section, Skill, SkillWrapper, ReturnedResults, Replace } from '../Styled';
-import { mapTech, key, removeWhiteSpace } from '../../utils';
+import { key, removeWhiteSpace } from '../../utils';
+import myTechnicalSkills from '../../utils/TechMap';
 import Select from '../../utils/MySelect';
 import api from '../../api';
 import { TallyTech } from '../../utils/RenderTechnologies';
@@ -64,19 +65,20 @@ class Technical extends PureComponent {
   renderSkills = (skills, projectTech) => {
     const { tally, avg } = TallyTech(projectTech);
 
-    const output = skills.map(mapTech).map(t => {
-      const plural = tally[t.tech] !== 1 ? 's' : '';
+    const output = skills.map(myTechnicalSkills).map(t => {
+      const techCount = tally[t.tech];
+      const isPlural = techCount !== 1 ? 's' : '';
       return (
-        <Skill key={key()} stack={tally[t.tech] > avg}>
+        <Skill key={key()} stack={techCount > avg}>
           <div className="skill__rows">
             <img src={t.src} alt={t.tech} />
             <span className="skill__Tech">{t.tech}</span>
           </div>
-          {tally[t.tech] && (
+          {techCount && (
             <Link to={`/projects?tech=${removeWhiteSpace(t.tech.toLowerCase())}`}>
               <div className="skill__projectCount">
-                Used in {tally[t.tech]} project
-                {plural}
+                Used in {techCount} project
+                {isPlural}
               </div>
             </Link>
           )}
