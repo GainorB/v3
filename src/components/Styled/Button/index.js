@@ -19,16 +19,16 @@ export const Button = styled.button`
   color: ${props => (props.notFound ? '#090909' : '#fff')};
   border: ${props => (props.notFound ? '2px solid #090909' : 'none')};
   font-weight: lighter;
-  letter-spacing: 1px;
+  letter-spacing: -1px;
   background: none;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   position: relative;
   text-align: center;
   -webkit-transition: all 0.1s ease-in-out, 1s;
   -moz-transition: all 0.1s ease-in-out, 1s;
   -o-transition: all 0.1s ease-in-out, 1s;
   transition: all 0.1s ease-in-out, 1s;
-  padding: 1.6em 3em;
+  padding: 1em;
 
   i {
     position: absolute;

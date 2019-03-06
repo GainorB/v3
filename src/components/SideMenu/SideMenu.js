@@ -42,7 +42,11 @@ const Feed = () => (
     <div className="resume">
       <SideMenuSectionTitle>My Resume</SideMenuSectionTitle>
       <UnorderedList>
-        <a href="https://www.gainor.io/GainorBostwickResume.pdf" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.dropbox.com/s/tdksg2d3qolwb6d/GainorBostwickResume.pdf?dl=0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <ContactListItem network="resume" color="#fcc846">
             <i className="fas fa-user-tie" />
           </ContactListItem>

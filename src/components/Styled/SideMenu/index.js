@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const SideMenu = styled.div`
   display: grid;
   position: fixed;
-  grid-template-rows: repeat(5, auto);
+  grid-template-rows: 380px auto minmax(auto, 285px) auto auto;
   grid-row-gap: 15px;
-  padding: 40px 20px;
+  padding: 20px;
   font-size: 0.9rem;
   height: 100%;
   background: #f8f9fa;
