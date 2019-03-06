@@ -3,9 +3,9 @@ import { Button, PerfectlyCentered, H1 } from '../components/Styled';
 
 const NotFound = () => (
   <PerfectlyCentered>
-    <H1 error>The requested page was not found</H1>.
+    <H1 error>404, Not Found</H1>.
     <Button notFound onClick={() => window.history.go(-1)}>
-      Return to previous page
+      Go back
     </Button>
   </PerfectlyCentered>
 );

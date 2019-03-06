@@ -19,9 +19,9 @@ export const Button = styled.button`
   color: ${props => (props.notFound ? '#090909' : '#fff')};
   border: ${props => (props.notFound ? '2px solid #090909' : 'none')};
   font-weight: lighter;
-  letter-spacing: -1px;
+  letter-spacing: -0.8px;
   background: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   position: relative;
   text-align: center;
   -webkit-transition: all 0.1s ease-in-out, 1s;

@@ -100,7 +100,7 @@ export const removeUnderline = str => str.replace(/_/g, ' ');
 export const mediaLinks = [
   {
     icon: 'fas fa-user-tie',
-    link: 'https://www.gainor.io/GainorBostwickResume.pdf',
+    link: 'https://www.dropbox.com/s/tdksg2d3qolwb6d/GainorBostwickResume.pdf?dl=0',
     network: 'resume',
     showOnSideMenu: false,
     color: '#fcc846',
