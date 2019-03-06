@@ -19,16 +19,15 @@ export const Button = styled.button`
   color: ${props => (props.notFound ? '#090909' : '#fff')};
   border: ${props => (props.notFound ? '2px solid #090909' : 'none')};
   font-weight: lighter;
-  letter-spacing: -0.8px;
   background: none;
-  font-size: 1rem;
+  font-size: ${({ footer }) => (footer ? '1.2rem' : '1rem')};
   position: relative;
   text-align: center;
   -webkit-transition: all 0.1s ease-in-out, 1s;
   -moz-transition: all 0.1s ease-in-out, 1s;
   -o-transition: all 0.1s ease-in-out, 1s;
   transition: all 0.1s ease-in-out, 1s;
-  padding: 1em;
+  padding: ${({ footer }) => (footer ? '2rem 3rem' : '1rem')};
 
   i {
     position: absolute;

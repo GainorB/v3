@@ -1,6 +1,8 @@
 import { v1 } from 'uuid';
 import Config from './Config';
 
+const { Twitter, LinkedIn, Github, Instagram, StackOverflow } = Config.global.socialMediaLinks;
+
 export const key = () => v1();
 export const removeWhiteSpace = str => str.replace(/\s/g, '_');
 export const removeUnderline = str => str.replace(/_/g, ' ');
@@ -14,42 +16,42 @@ export const mediaLinks = [
   },
   {
     icon: 'fab fa-twitter',
-    link: 'https://twitter.com/GainorBostwick',
+    link: Twitter,
     network: 'twitter',
     showOnSideMenu: true,
     color: '#1e95dc',
   },
   {
     icon: 'fab fa-linkedin-in',
-    link: 'https://www.linkedin.com/in/gainorbostwick/',
+    link: LinkedIn,
     network: 'linkedin',
     showOnSideMenu: true,
     color: '#0577b2',
   },
   // {
   //   icon: 'fab fa-instagram',
-  //   link: 'https://www.instagram.com/gainorbos/',
+  //   link: Instagram,
   //   network: 'instagram',
   //   showOnSideMenu: true,
   //   color: '#B13DAC',
   // },
   {
     icon: 'fab fa-github',
-    link: 'https://github.com/GainorB',
+    link: Github,
     network: 'github',
     showOnSideMenu: true,
     color: '#24292E',
   },
   // {
   //   icon: 'fab fa-stack-overflow',
-  //   link: 'https://stackoverflow.com/users/7965894/gainorb',
+  //   link: StackOverflow,
   //   network: 'stack',
   //   showOnSideMenu: true,
   //   color: '#F38134',
   // },
   {
     icon: 'fas fa-envelope',
-    link: 'mailto:gainorbostwick@gmail.com',
+    link: `mailto:${Config.global.email}`,
     network: 'email',
     showOnSideMenu: true,
     color: '#ba4444',

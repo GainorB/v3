@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { SectionDesc, SectionHeader, Section, Button } from '../Styled';
+import Config from '../../utils/Config';
 
 const theme = {
   fontColor: '#FFFFFF',
@@ -14,7 +15,7 @@ class Contact extends PureComponent {
         <Section bg="#2447F9">
           <SectionHeader>Like my work?</SectionHeader>
           <SectionDesc>Let’s talk about your project and how I can help you.</SectionDesc>
-          <a href="mailto:gainorbostwick@gmail.com" target="_blank" rel="noopener noreferrer">
+          <a href={`mailto:${Config.global.email}`} target="_blank" rel="noopener noreferrer">
             <Button footer>
               <i className="fas fa-paper-plane" /> <span>Shoot me a message</span>
             </Button>
