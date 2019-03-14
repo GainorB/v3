@@ -80,7 +80,7 @@ export const ResponsiveNav = styled.ul`
   width: 100%;
   margin: 0;
   padding: 0;
-  transition: all ease 0.5s;
+  transition: all 0.6s ease;
   border-top: 5px solid #2447f9;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.14), 0 2px 2px rgba(0, 0, 0, 0.14);
 
@@ -96,7 +96,7 @@ export const ResponsiveNav = styled.ul`
     opacity: ${props => (props.showMenu ? '1' : '0')};
     max-height: ${props => (props.showMenu ? '500px' : '0')};
     visibility: ${props => (props.showMenu ? 'visible' : 'hidden')};
-    transition: all 0.4s ease-in;
+    transition: all 0.6s ease;
   }
 
   .responsiveNav__grid {
@@ -151,7 +151,7 @@ export const ResponsiveNavItem = styled.li`
   text-align: center;
   position: relative;
   letter-spacing: 1px;
-  transition: all ease 0.5s;
+  transition: all 0.6s ease;
 
   &:hover {
     color: #2447f9;

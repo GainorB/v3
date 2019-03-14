@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Foot, FooterFinePrint } from '../Styled';
+import { Footer, FooterFinePrint } from '../Styled';
 
 const date = new Date();
 
-const Footer = () => (
-  <Foot>
-    <p>
-      &copy; {date.getFullYear()} Gainor Bostwick.{' '}
-      <span className="footer__changelog">
-        <Link to="/changelog">— Changelog</Link>
-      </span>
-    </p>
-
+const TheFooter = () => (
+  <Footer>
+    <p>&copy; {date.getFullYear()} Gainor Bostwick. </p>
     <FooterFinePrint>
-      <p>This app is licensed under the MIT License.</p>
+      {/* <p>This app is licensed under the MIT License.</p> */}
+      <p>
+        Take a peak{' '}
+        <a href="https://github.com/GainorB/gainorio" target="_blank" rel="noopener noreferrer">
+          under the hood
+        </a>
+        .
+      </p>
       <p>
         Powered by{' '}
         <a href="https://github.com/GainorB/create-gainor-app" target="_blank" rel="noopener noreferrer">
@@ -27,14 +28,12 @@ const Footer = () => (
         .
       </p>
       <p>
-        Take a peak{' '}
-        <a href="https://github.com/GainorB/gainorio" target="_blank" rel="noopener noreferrer">
-          under the hood
-        </a>
-        .
+        <span className="footer__changelog">
+          <Link to="/changelog">Changelog</Link>
+        </span>
       </p>
     </FooterFinePrint>
-  </Foot>
+  </Footer>
 );
 
-export default Footer;
+export default TheFooter;

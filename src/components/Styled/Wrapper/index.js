@@ -9,12 +9,11 @@ export const PageWrapper = styled.div`
   }
 
   .sidebar {
-    opacity: ${props => (props.showSideMenu ? '1' : '0')};
-    visibility: ${props => (props.showSideMenu ? 'visible' : 'hidden')};
+    opacity: ${({ showSideMenu }) => (showSideMenu ? '1' : '0')};
+    visibility: ${({ showSideMenu }) => (showSideMenu ? 'visible' : 'hidden')};
     grid-area: 'sidebar';
-    max-height: 100vh;
-    -moz-transition: all 0.6s linear;
-    transition: all 0.6s linear;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease;
   }
 
   .miniWrapper {
@@ -25,9 +24,9 @@ export const PageWrapper = styled.div`
     grid-area: 'main';
     min-height: 100vh;
     min-width: 100%;
-    left: ${props => (props.showSideMenu ? `0` : `-400px`)};
-    -moz-transition: left 0.6s linear;
-    transition: left 0.6s linear;
+    left: ${({ showSideMenu }) => (showSideMenu ? `0` : `-400px`)};
+    -moz-transition: left 1s ease;
+    transition: left 1s ease;
   }
 
   @media only screen and (max-width: 1200px) {

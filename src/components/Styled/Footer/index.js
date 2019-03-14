@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Foot = styled.div`
+export const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,6 +21,7 @@ export const Foot = styled.div`
   .footer__changelog a {
     font-weight: normal;
     color: rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
   }
 
   a {
@@ -41,7 +42,7 @@ export const FooterFinePrint = styled.div`
   font-size: 0.8rem;
 
   p {
-    margin: 0.4rem 0;
+    margin: 0.3rem 0;
     padding: 0;
   }
 

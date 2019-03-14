@@ -6,7 +6,7 @@ import { Skill } from './Skills';
 import { ReturnedResults, Replace, H1, H4, Error } from './Text';
 import { PageWrapper, PortfolioWrapper, AboutWrapper, SkillWrapper, PerfectlyCentered } from './Wrapper';
 import { ExpGrid, ExpHeaderGrid, ExpFooter, ExpContainer } from './Experience';
-import { Foot, FooterFinePrint } from './Footer';
+import { Footer, FooterFinePrint } from './Footer';
 import { Avatar, SocialIconsWrapper, SocialIcon, LoadingImage } from './Images';
 import { Me } from './About';
 import { Button, ButtonGrid, NewProjectButton, GoHome } from './Button';
@@ -82,7 +82,7 @@ export {
   ReturnedResults,
   Replace,
   // Footer
-  Foot,
+  Footer,
   FooterFinePrint,
   // Section
   Section,

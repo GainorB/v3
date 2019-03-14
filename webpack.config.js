@@ -84,19 +84,16 @@ module.exports = {
   plugins: [
     new GenerateSW({
       cacheId: 'gainor.io',
-      navigateFallback: '/',
-      offlineGoogleAnalytics: true,
-      navigateFallbackWhitelist: [/^(?!\/__).*/],
-      swDest: `service-worker.js`,
-      include: [
-        /\.(?:js|css|html|json)$/,
-        /\.(?:png|gif|jpg|jpeg|svg)$/,
-        /^https:\/\/fonts\.googleapis\.com/,
-        /^https:\/\/fonts\.gstatic\.com/,
+      exclude: [/\.map$/, /asset-manifest\.json$/],
+      importWorkboxFrom: 'cdn',
+      navigateFallback: `/`,
+      navigateFallbackBlacklist: [
+        // Exclude URLs starting with /_, as they're likely an API call
+        new RegExp('^/_'),
+        // Exclude URLs containing a dot, as they're likely a resource in
+        // public/ and not a SPA route
+        new RegExp('/[^/]+\\.[^/]+$'),
       ],
-      skipWaiting: true,
-      clientsClaim: true,
-      cleanupOutdatedCaches: true,
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.HashedModuleIdsPlugin(),
@@ -125,7 +122,7 @@ module.exports = {
       filename: !isProduction ? 'assets/css/[name].css' : 'assets/css/[name].[hash].css',
       chunkFilename: !isProduction ? 'assets/css/[id].css' : 'assets/css/[id].[hash].css',
     }),
-    new ManifestPlugin(), // will generate a manifest.json file in your root output directory with a mapping of all source file names to their corresponding output file,
+    new ManifestPlugin({ fileName: 'asset-manifest.json' }), // will generate a manifest.json file in your root output directory with a mapping of all source file names to their corresponding output file,
     new CopyWebpackPlugin([
       {
         from: './static',
