@@ -27,21 +27,7 @@ export const BrowserHeader = styled.div`
 `;
 
 export const BrowserWrapper = styled.div`
-  display: grid;
-  background: #fff;
-  grid-template-rows: repeat(6, auto) 1fr;
-  grid-gap: 10px;
-
-  .seperator {
-    height: 10px;
-    -webkit-box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.3);
-    box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.3);
-  }
-
-  @media only screen and (max-width: 1200px) {
-    grid-gap: 5px;
-  }
+  position: relative;
 `;
 
 export const ProjectInnerGrid = styled.div`
@@ -85,7 +71,7 @@ export const BrowserBar = styled.div`
   }
 
   .browser__searchBar:hover {
-    background: #b6b6b6;
+    background-color: #b6b6b6;
   }
 
   .browseBar__miniGrid {
@@ -96,8 +82,20 @@ export const BrowserBar = styled.div`
   }
 
   @media only screen and (max-width: 1200px) {
-    grid-template-columns: 100%;
     justify-items: center;
+  }
+`;
+
+export const BrowserTop = styled.div`
+  height: 150px;
+  background-color: #fff;
+  -webkit-box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px 6px 5px -4px rgba(0, 0, 0, 0.3);
+
+  @media only screen and (max-width: 1200px) {
+    position: fixed;
+    width: 100%;
   }
 `;
 
@@ -117,23 +115,27 @@ export const BrowserBookmarks = styled.div`
     border-radius: 30px;
     margin: 5px;
     transition: background 0.5s ease;
+    user-select: none;
+
+    span {
+      font-size: 0.8rem;
+    }
   }
 
-  .bookmark:hover {
+  .bookmark:not(.empty):hover {
     background: #e5e5e5;
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  .empty {
+    opacity: 0.5;
   }
 
   .actualStack {
     background: #dddddd;
-  }
-
-  .bookmark span {
-    cursor: pointer;
-    font-size: 0.8rem;
-  }
-
-  @media only screen and (max-width: 1200px) {
-    margin: 0 auto;
   }
 `;
 
@@ -141,16 +143,9 @@ export const Dropdown = styled.div`
   position: absolute;
   width: 200px;
   top: 30px;
-  left: 10px;
-  border: 1px solid #e1e1e1;
-  border-radius: 5px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 10;
-
-  @media only screen and (max-width: 1200px) {
-    width: 100%;
-  }
 `;
 
 export const DropdownList = styled.ul`
@@ -163,12 +158,13 @@ export const DropdownList = styled.ul`
     cursor: pointer;
     color: #090909;
     font-size: 0.8rem;
-    padding: 5px 10px;
+    padding: 8px 10px;
     letter-spacing: 1.5px;
+    border-bottom: 1px solid #e1e1e1;
   }
 
   li:hover {
-    background: #dddddd;
+    background-color: #dddddd;
   }
 `;
 
@@ -198,9 +194,11 @@ export const ProjectHeadline = styled.div`
 
 export const ProjectDescription = styled.div`
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 0 30px;
   line-height: 30px;
+  width: 80%;
+  margin: 0 auto;
 
   @media only screen and (max-width: 1200px) {
     font-size: 1rem;
@@ -234,6 +232,12 @@ export const ProjectContent = styled.div`
   }
 `;
 
+export const ProjectInformation = styled.div`
+  @media only screen and (max-width: 1200px) {
+    margin-top: 160px;
+  }
+`;
+
 export const Project = styled.div`
   background-color: rgb(255, 255, 255);
   -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
@@ -248,13 +252,6 @@ export const Project = styled.div`
 `;
 
 export const ProjectGallery = styled.div`
-  display: grid;
-  grid-template-columns: 80px 1fr 80px;
-  grid-template-areas: 'prev image next';
-  grid-gap: 10px;
-  justify-items: center;
-  align-items: center;
-
   i {
     font-size: 2rem;
     color: #090909;
@@ -265,6 +262,12 @@ export const ProjectGallery = styled.div`
     display: block;
     background: none;
     border: none;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 20px;
   }
 
   img {
@@ -282,11 +285,12 @@ export const ProjectGallery = styled.div`
 
   .gallery__caption {
     font-size: 1.3rem;
+    font-weight: bold;
   }
 
   .gallery__count {
     font-size: 1rem;
-    margin-bottom: 5px;
+    margin: 0;
   }
 
   @media only screen and (max-width: 1200px) {

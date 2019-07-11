@@ -17,8 +17,10 @@ import {
   BrowserHeader,
   BrowserWrapper,
   BrowserBar,
+  BrowserTop,
   BrowserBookmarks,
   Project,
+  ProjectInformation,
   ProjectInnerGrid,
   ProjectGallery,
   ProjectTitle,
@@ -32,6 +34,7 @@ import {
 
 export {
   // Browser
+  BrowserTop,
   BrowserHeader,
   BrowserWrapper,
   BrowserBar,
@@ -96,6 +99,7 @@ export {
   SkillWrapper,
   // Projects
   ProjectGrid,
+  ProjectInformation,
   // Skills
   Skill,
   // Experience

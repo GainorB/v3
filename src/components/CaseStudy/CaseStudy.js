@@ -6,10 +6,12 @@ import {
   BrowserHeader,
   BrowserWrapper,
   BrowserBookmarks,
+  BrowserTop,
   Project,
   ProjectGallery,
   BrowserBar,
   ProjectHeadline,
+  ProjectInformation,
   ProjectInnerGrid,
   ProjectContent,
   ProjectTitle,
@@ -133,9 +135,10 @@ class CaseStudy extends PureComponent {
     const categories = groupBy(projects, 'type');
     const output = ['Frontend', 'Backend', 'Fullstack'].map(b => {
       const className = b === project.type ? 'bookmark actualStack' : 'bookmark';
+      const emptyClassName = categories[b] && categories[b].length !== 0 ? null : 'empty';
       return (
         <div
-          className={className}
+          className={`${className} ${emptyClassName}`}
           key={key()}
           role="presentation"
           onClick={
@@ -179,105 +182,111 @@ class CaseStudy extends PureComponent {
 
     return (
       <BrowserWrapper>
-        <BrowserHeader>
-          <div className="dot dot-one" />
-          <div className="dot dot-two" />
-          <div className="dot dot-third" />
-        </BrowserHeader>
-        <BrowserBar>
-          <div className="browseBar__miniGrid">
-            <button onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
-              {currentIndex <= 0 ? <i className="fas fa-ban" /> : <i className="fas fa-arrow-left" />}
-            </button>
-            <button onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
-              {currentIndex === projects.length - 1 ? (
-                <i className="fas fa-ban" />
-              ) : (
-                <i className="fas fa-arrow-right" />
-              )}
-            </button>
-            <ReturnHome />
-          </div>
-          <div className="browser__searchBar">
-            <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
-              {project.resources[1]}
-            </a>
-          </div>
-          <div className="browseBar__miniGrid">
-            {project.technologies.includes('React.js') && <i className="fab fa-react" />}
-            {this.whichRepo(project.resources[0])}
-            {windowWidth >= 1200 && (
-              <button onClick={() => toggle('showSideMenu')}>
-                {showSideMenu ? <i className="fas fa-toggle-on" /> : <i className="fas fa-toggle-off" />}
+        <BrowserTop>
+          <BrowserHeader>
+            <div className="dot dot-one" />
+            <div className="dot dot-two" />
+            <div className="dot dot-third" />
+          </BrowserHeader>
+          <BrowserBar>
+            <div className="browseBar__miniGrid">
+              <button onClick={() => this.newProject('prev')} disabled={currentIndex <= 0}>
+                {currentIndex <= 0 ? <i className="fas fa-ban" /> : <i className="fas fa-arrow-left" />}
               </button>
-            )}
-          </div>
-        </BrowserBar>
-        {this.renderCategories(projects)}
-        <div className="seperator" />
-        <ProjectTitle>{project.name}</ProjectTitle>
-        <ProjectHeadline>{project.oneLiner}</ProjectHeadline>
-        <ProjectDescription>{project.description}</ProjectDescription>
-        <ProjectInnerGrid>
-          <Project>
-            <ProjectHeader>Technical Information</ProjectHeader>
-            <ProjectContent>
-              <UnorderedList>
-                {project.technicalInformation.map(f => (
-                  <li className="techFeature" key={key()}>
-                    {f}
-                  </li>
-                ))}
-              </UnorderedList>
-            </ProjectContent>
-          </Project>
-          <Project>
-            <ProjectHeader>Features</ProjectHeader>
-            <ProjectContent>
-              <UnorderedList>
-                {project.features.map(f => (
-                  <li className="techFeature" key={key()}>
-                    {f}
-                  </li>
-                ))}
-              </UnorderedList>
-            </ProjectContent>
-          </Project>
-          <Project>
-            <ProjectHeader>Powered by</ProjectHeader>
-            <ProjectContent>
-              <RenderTechnologies technologies={project.technologies} />
-            </ProjectContent>
-          </Project>
-          {project.gallery.length > 1 && (
+              <button onClick={() => this.newProject('next')} disabled={currentIndex === projects.length - 1}>
+                {currentIndex === projects.length - 1 ? (
+                  <i className="fas fa-ban" />
+                ) : (
+                  <i className="fas fa-arrow-right" />
+                )}
+              </button>
+              <ReturnHome />
+            </div>
+            <div className="browser__searchBar">
+              <a href={project.resources[1]} target="_blank" rel="noopener noreferrer">
+                {project.resources[1]}
+              </a>
+            </div>
+            <div className="browseBar__miniGrid">
+              {project.technologies.includes('React.js') && <i className="fab fa-react" />}
+              {this.whichRepo(project.resources[0])}
+              {windowWidth >= 1200 && (
+                <button onClick={() => toggle('showSideMenu')}>
+                  {showSideMenu ? <i className="fas fa-toggle-on" /> : <i className="fas fa-toggle-off" />}
+                </button>
+              )}
+            </div>
+          </BrowserBar>
+          {this.renderCategories(projects)}
+        </BrowserTop>
+        <ProjectInformation>
+          <ProjectTitle>{project.name}</ProjectTitle>
+          <ProjectHeadline>{project.oneLiner}</ProjectHeadline>
+          <ProjectDescription>{project.description}</ProjectDescription>
+          <ProjectInnerGrid>
             <Project>
-              <ProjectHeader>Gallery</ProjectHeader>
+              <ProjectHeader>Technical Information</ProjectHeader>
               <ProjectContent>
-                <ProjectGallery>
-                  <button onClick={() => this.newImage('prev')} disabled={imageIndex === 0}>
-                    {imageIndex === 0 ? <i className="fas fa-ban" /> : <i className="fas fa-angle-double-left" />}
-                  </button>
-                  <div>
-                    <div className="gallery__count">
-                      ({imageIndex}/{project.gallery.length - 1})
+                <UnorderedList>
+                  {project.technicalInformation.map(f => (
+                    <li className="techFeature" key={key()}>
+                      {f}
+                    </li>
+                  ))}
+                </UnorderedList>
+              </ProjectContent>
+            </Project>
+            <Project>
+              <ProjectHeader>Features</ProjectHeader>
+              <ProjectContent>
+                <UnorderedList>
+                  {project.features.map(f => (
+                    <li className="techFeature" key={key()}>
+                      {f}
+                    </li>
+                  ))}
+                </UnorderedList>
+              </ProjectContent>
+            </Project>
+            <Project>
+              <ProjectHeader>Powered by</ProjectHeader>
+              <ProjectContent>
+                <RenderTechnologies technologies={project.technologies} />
+              </ProjectContent>
+            </Project>
+            {project.gallery.length > 1 && (
+              <Project>
+                <ProjectHeader>Gallery</ProjectHeader>
+                <ProjectContent>
+                  <ProjectGallery>
+                    <div className="gallery">
+                      {imageIndex === 0 ? null : (
+                        <button onClick={() => this.newImage('prev')} disabled={imageIndex === 0}>
+                          <i className="fas fa-angle-double-left" />
+                        </button>
+                      )}
+                      <img src={project.gallery[imageIndex].src} alt={project.name} />
+                      {imageIndex === project.gallery.length - 1 ? null : (
+                        <button
+                          onClick={() => this.newImage('next')}
+                          disabled={imageIndex === project.gallery.length - 1}
+                        >
+                          <i className="fas fa-angle-double-right" />
+                        </button>
+                      )}
                     </div>
-                    <img src={project.gallery[imageIndex].src} alt={project.name} />
                     <div className="gallery__caption">
                       {project.gallery[imageIndex].caption === '' ? '' : project.gallery[imageIndex].caption}
                     </div>
-                  </div>
-                  <button onClick={() => this.newImage('next')} disabled={imageIndex === project.gallery.length - 1}>
-                    {imageIndex === project.gallery.length - 1 ? (
-                      <i className="fas fa-ban" />
-                    ) : (
-                      <i className="fas fa-angle-double-right" />
-                    )}
-                  </button>
-                </ProjectGallery>
-              </ProjectContent>
-            </Project>
-          )}
-        </ProjectInnerGrid>
+                    <div className="gallery__count">
+                      ({imageIndex}/{project.gallery.length - 1})
+                    </div>
+                  </ProjectGallery>
+                </ProjectContent>
+              </Project>
+            )}
+          </ProjectInnerGrid>
+        </ProjectInformation>
       </BrowserWrapper>
     );
   };
